@@ -1,13 +1,11 @@
 package persistence.interfaces;
 
-import persistence.data.User;
-
-import java.util.List;
+import java.util.Optional;
 
 public interface DAO<T> {
-    public List<T> getAllData();
-    public T getDataById(String key, Object value);
-    public void updateData(T arg);
-    public void deleteData(T arg);
-    public void insertData(T arg);
+    public Optional<T> get(T obj);
+    public void save(T obj);
+    public void update(T obj);
+    public void getAll();
+    public void delete(T obj);
 }
