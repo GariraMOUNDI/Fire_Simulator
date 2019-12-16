@@ -1,6 +1,6 @@
 package ui.controller;
 
-import com.sun.prism.paint.Color;
+
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
