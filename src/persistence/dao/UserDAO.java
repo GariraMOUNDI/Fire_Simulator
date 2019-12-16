@@ -12,6 +12,11 @@ public class UserDAO implements DAO<User> {
     private ArrayList<User> users;
     private ConnectorIF connector;
 
+    public User getByUsername(String username) {
+        User temp = new User(username,"password");
+        return temp;
+    }
+
     @Override
     public Optional<User> get(User obj) {
         return Optional.empty();
