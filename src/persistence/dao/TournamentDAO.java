@@ -23,8 +23,8 @@ public class TournamentDAO implements DAO<Tournament> {
     }
 
     @Override
-    public void getAll() {
-
+    public Object getAll() {
+        return null;
     }
 
     @Override
