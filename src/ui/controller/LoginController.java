@@ -1,24 +1,33 @@
 package ui.controller;
 
 
+import businessLogic.SessionFacade;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import ui.interfaces.LoginInterface;
 import ui.model.LoginUI;
 
 public class LoginController implements LoginInterface {
 
+    SessionFacade SF = new SessionFacade(this);
     @FXML
-    Button bonjour;
+    Button sendLogin;
     @FXML
-    TextArea text;
+    TextField username, password;
 
-    public void clikedButton(ActionEvent actionEvent) {
-        System.out.println("Button clicked");
-        text.setText(text.getText() + "\nParfait");
+
+    public void sendLogin(ActionEvent actionEvent) {
+        if (SF.login(username.getText(),password.getText())){
+            System.out.println("Connection OK");
+        }
+        else{
+            System.out.println("Connection Echec");
+        }
+
     }
 
     public static void main(String[] args) {
