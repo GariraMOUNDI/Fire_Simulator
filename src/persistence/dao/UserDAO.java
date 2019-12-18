@@ -20,7 +20,6 @@ public class UserDAO implements DAO<User> {
         connector = MongoDBConnector.getMongoConnector();
     }
     public User getByUsername(String username) {
-        System.out.println("UserDAO : "+username);
         this.getAll();
         return (User) connector.getDataById("username",username);
     }
