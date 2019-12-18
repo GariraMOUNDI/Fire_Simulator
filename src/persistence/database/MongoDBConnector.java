@@ -41,21 +41,14 @@ public class MongoDBConnector implements ConnectorIF {
     @Override
     public Object getAllData(Object arg) {
         coll = database.getCollection((String) arg);
-        System.out.println("Collection got !!!");
         return coll;
     }
 
     public Object getDataById(String key,Object value) {
         query = new BasicDBObject(key,value);
-
-        System.out.println("Connector : "+key+"  "+ value);
-
         for (Document doc : coll.find(query)){
-            System.out.println(doc.toJson());
             data = gson.fromJson(doc.toJson(),User.class);
         }
-        System.out.println(data);
-
         return data;
     }
 
