@@ -18,20 +18,21 @@ public class SessionFacade {
         dao = (UserDAO) DAOFactory.getFactory().createDAO(DAOType.User);
     }
 
-    public boolean login(String username, String password){
+    public void login(String username, String password){
         temp = dao.getByUsername(username);
-        return checkCredentials(temp, password);
+        checkCredentials(temp, password);
     }
 
-    private boolean checkCredentials(User user, String password) {
-            if (user == null || !(user.getPassword().equals(password))){
-                loginIF.getResult("Error");
-                return false;
-            }else {
-                loginIF.getResult(temp);
-                setUserLoggedIn(user);
-                return true;
-            }
+    private void checkCredentials(User user, String password) {
+            if (user == null )
+                loginIF.printResults("This user is not registered !!!");
+            else
+                if (!(user.getPassword().equals(password)))
+                    loginIF.printResults("Incorrect password !!!");
+                else {
+                    loginIF.printResults(temp);
+                    setUserLoggedIn(user);
+                }
     }
 
     private void setUserLoggedIn(User user) {
