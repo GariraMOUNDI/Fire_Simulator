@@ -25,13 +25,7 @@ public class LoginController implements LoginInterface {
 
 
     public void sendLogin(ActionEvent actionEvent) {
-        System.out.println(username.getText() + " "+ password.getText());
-        if (SF.login(username.getText(),password.getText())){
-            System.out.println("Connection OK");
-        }
-        else{
-            System.out.println("Connection Echec");
-        }
+        SF.login(username.getText(),password.getText());
     }
 
     public static void main(String[] args) {
@@ -39,15 +33,10 @@ public class LoginController implements LoginInterface {
     }
 
     @Override
-    public void getResult(Object arg) {
+    public void printResults(Object arg) {
         if( arg instanceof User)
             print.setText("Done !!!");
         else
-            print.setText("Error !!!");
-    }
-
-    @Override
-    public String sessionException(String arg) {
-        return null;
+            print.setText((String) arg);
     }
 }
