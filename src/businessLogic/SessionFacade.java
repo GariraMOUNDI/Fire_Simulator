@@ -1,38 +1,40 @@
 package businessLogic;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
 import persistence.factories.DAOFactory;
-import persistence.factories.DAOType;
-import persistence.dao.UserDAO;
+import persistence.dao.MongoDBDAO;
 import persistence.data.User;
+import persistence.factories.DAOType;
+import persistence.interfaces.DAO;
 import ui.interfaces.LoginInterface;
 
 public class SessionFacade {
     private LoginInterface loginIF;
-    private UserDAO dao;
-    private DAOFactory factory;
+    private DAO dao;
     private User userLoggedIn;
-    private User temp;
+    private Gson gson = new Gson();
 
     public SessionFacade(LoginInterface loginIF) {
         this.loginIF = loginIF;
-        dao = (UserDAO) DAOFactory.getFactory().createDAO(DAOType.User);
+        dao = DAOFactory.getInstance().createDAO(DAOType.User);
+        dao.setCollectionName("users");
     }
 
     public void login(String username, String password){
-        temp = dao.getByUsername(username);
-        checkCredentials(temp, password);
+        checkCredentials(convertToUser((String) dao.getDataById("username", username)), password);
+    }
+
+    public void register(String username, String password, String email) {
+
     }
 
     private void checkCredentials(User user, String password) {
-            if (user == null )
-                loginIF.printResults("This user is not registered !!!");
-            else
-                if (!(user.getPassword().equals(password)))
-                    loginIF.printResults("Incorrect password !!!");
-                else {
-                    loginIF.printResults(temp);
-                    setUserLoggedIn(user);
-                }
+        if (user != null && user.getPassword().equals(password)){
+            setUserLoggedIn(user);
+            loginIF.printResults("Done !!!");
+        }
+        else loginIF.printResults("Incorrect username or password.");
     }
 
     private void setUserLoggedIn(User user) {
@@ -43,4 +45,7 @@ public class SessionFacade {
         return userLoggedIn;
     }
 
+    private User convertToUser(String arg){
+        return gson.fromJson(arg, User.class);
+    }
 }
