@@ -34,9 +34,6 @@ public class LoginController implements LoginInterface {
 
     @Override
     public void printResults(Object arg) {
-        if( arg instanceof User)
-            print.setText("Done !!!");
-        else
-            print.setText((String) arg);
+        print.setText((String) arg);
     }
 }
