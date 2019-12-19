@@ -1,14 +1,29 @@
 package persistence.factories;
 
-public class DAOFactory extends AbstractFactory {
-    // Singleton Pattern
-    private static DAOFactory dao = null;
-    public static DAOFactory getFactory(){
-        if (dao == null)
-            dao = new DAOFactory();
-        return dao;
+import persistence.dao.MongoDBDAO;
+import persistence.data.Tournament;
+import persistence.data.User;
+import persistence.interfaces.DAO;
+
+public class DAOFactory {
+    static DAOFactory fac = null;
+
+    private DAOFactory() {}
+
+    public static DAOFactory getInstance() {
+        if (fac == null) {
+            fac = new DAOFactory();
+        }
+        return fac;
     }
 
-    private DAOFactory(){ }
-
+    public DAO createDAO(DAOType type) {
+        switch (type){
+            case User:
+                return new MongoDBDAO<User>();
+            case Tournament:
+                return new MongoDBDAO<Tournament>();
+            default: return null;
+        }
+    }
 }

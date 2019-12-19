@@ -1,38 +1,33 @@
 package businessLogic;
 
 import persistence.factories.DAOFactory;
-import persistence.factories.DAOType;
-import persistence.dao.UserDAO;
+import persistence.dao.MongoDBDAO;
 import persistence.data.User;
+import persistence.factories.DAOType;
+import persistence.interfaces.DAO;
 import ui.interfaces.LoginInterface;
 
 public class SessionFacade {
     private LoginInterface loginIF;
-    private UserDAO dao;
-    private DAOFactory factory;
+    private DAO dao;
     private User userLoggedIn;
-    private User temp;
 
     public SessionFacade(LoginInterface loginIF) {
         this.loginIF = loginIF;
-        dao = (UserDAO) DAOFactory.getFactory().createDAO(DAOType.User);
+        this.dao = DAOFactory.getInstance().createDAO(DAOType.User);
     }
 
     public void login(String username, String password){
-        temp = dao.getByUsername(username);
-        checkCredentials(temp, password);
+        checkCredentials((User) dao.getDataById("username", username), password);
+    }
+
+    public void register(String username, String password, String email) {
+
     }
 
     private void checkCredentials(User user, String password) {
-            if (user == null )
-                loginIF.printResults("This user is not registered !!!");
-            else
-                if (!(user.getPassword().equals(password)))
-                    loginIF.printResults("Incorrect password !!!");
-                else {
-                    loginIF.printResults(temp);
-                    setUserLoggedIn(user);
-                }
+        if (user != null && user.getPassword().equals(password)) setUserLoggedIn(user);
+        else loginIF.printResults("Incorrect username or password.");
     }
 
     private void setUserLoggedIn(User user) {
