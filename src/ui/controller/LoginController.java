@@ -26,7 +26,6 @@ public class LoginController implements LoginInterface {
 
     public void sendLogin(ActionEvent actionEvent) {
         SF.login(username.getText(),password.getText());
-        print.setText("Logged in");
     }
 
     public static void main(String[] args) {
@@ -35,9 +34,6 @@ public class LoginController implements LoginInterface {
 
     @Override
     public void printResults(Object arg) {
-        if( arg instanceof User)
-            print.setText("Done !!!");
-        else
-            print.setText((String) arg);
+        print.setText((String) arg);
     }
 }
