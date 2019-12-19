@@ -1,11 +1,9 @@
 package businessLogic;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonElement;
-import persistence.factories.DAOFactory;
-import persistence.dao.MongoDBDAO;
+import persistence.factories.MongoDBDAOFactory;
 import persistence.data.User;
-import persistence.factories.DAOType;
+import persistence.interfaces.DAOType;
 import persistence.interfaces.DAO;
 import ui.interfaces.LoginInterface;
 
@@ -17,12 +15,11 @@ public class SessionFacade {
 
     public SessionFacade(LoginInterface loginIF) {
         this.loginIF = loginIF;
-        dao = DAOFactory.getInstance().createDAO(DAOType.User);
-        dao.setCollectionName("users");
+        dao = MongoDBDAOFactory.getInstance().createDAO(DAOType.User);
     }
 
     public void login(String username, String password){
-        checkCredentials(convertToUser((String) dao.getDataById("username", username)), password);
+        checkCredentials((User) dao.getDataById("username", username), password);
     }
 
     public void register(String username, String password, String email) {
@@ -45,7 +42,4 @@ public class SessionFacade {
         return userLoggedIn;
     }
 
-    private User convertToUser(String arg){
-        return gson.fromJson(arg, User.class);
-    }
 }
