@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.RegisterController">
+    <children>
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter username" />
+        <TextField id="username" fx:id="username" promptText="Username">
+            <VBox.margin>
+                <Insets left="30.0" right="30.0" top="30.0" />
+            </VBox.margin>
+        </TextField>
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your email address" />
+        <TextField id="username" fx:id="email" promptText="Email">
+            <VBox.margin>
+                <Insets left="30.0" right="30.0" top="30.0" />
+            </VBox.margin>
+        </TextField>
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Confirm your email" />
+        <TextField fx:id="confirm_email" promptText="Confirm email">
+            <VBox.margin>
+                <Insets left="30.0" right="30.0" top="30.0" />
+            </VBox.margin>
+        </TextField>
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter password">
+            <VBox.margin>
+                <Insets top="30.0" />
+            </VBox.margin>
+        </Text>
+        <PasswordField fx:id="password" promptText="Password">
+            <VBox.margin>
+                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+            </VBox.margin>
+        </PasswordField>
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Confirm password">
+            <VBox.margin>
+                <Insets top="30.0" />
+            </VBox.margin>
+        </Text>
+        <PasswordField fx:id="confirm_password" promptText="Confirm">
+            <VBox.margin>
+                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+            </VBox.margin>
+        </PasswordField>
+        <Button fx:id="sendRegister" mnemonicParsing="false" onAction="#sendRegister" prefHeight="25.0" prefWidth="110.0" text="Register">
+            <VBox.margin>
+                <Insets />
+            </VBox.margin>
+        </Button>
+        <Label fx:id="print" alignment="CENTER" contentDisplay="CENTER" textAlignment="CENTER">
+            <font>
+                <Font size="28.0" />
+            </font>
+            <VBox.margin>
+                <Insets top="20.0" />
+            </VBox.margin>
+        </Label>
+    </children>
+</VBox>

@@ -26,6 +26,7 @@ public class LoginController implements LoginInterface {
 
     public void sendLogin(ActionEvent actionEvent) {
         SF.login(username.getText(),password.getText());
+        print.setText("Logged in");
     }
 
     public static void main(String[] args) {
