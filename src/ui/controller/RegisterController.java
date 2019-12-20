@@ -27,17 +27,15 @@ public class RegisterController implements LoginInterface {
     @FXML
     Button sendRegister;
     @FXML
-    TextField username, email, confirm_email, password, confirm_password;
+    TextField register_username, register_email, register_password, register_confirm_password, register_help;
     @FXML
     Label print;
 
 
     public void sendRegister(ActionEvent actionEvent) {
-        if (!email.getText().equals(confirm_email.getText())) {
-            print.setText("Emails do not match");
-        } else if (!password.getText().equals(confirm_password.getText())) {
+        if (!register_password.getText().equals(register_confirm_password.getText())) {
             print.setText("Passwords do not match");
-        } else SF.register(username.getText(),password.getText(), email.getText());
+        } else SF.register(register_username.getText(), register_password.getText(), register_email.getText(), register_help.getText());
     }
 
     public static void main(String[] args) {
