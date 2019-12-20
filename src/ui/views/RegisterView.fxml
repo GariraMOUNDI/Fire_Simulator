@@ -13,40 +13,43 @@
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="230.0" minWidth="10.0" prefWidth="230.0" />
         </columnConstraints>
         <rowConstraints>
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+           <RowConstraints minHeight="5.0" prefHeight="5.0" vgrow="SOMETIMES" />
+           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Email" GridPane.rowIndex="1">
+            <Label GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <Label fx:id="email_label" text="Email" GridPane.rowIndex="2">
                <font>
                   <Font name="Berlin Sans FB" size="18.0" />
                </font></Label>
-            <Label text="Password" GridPane.rowIndex="2">
+            <Label fx:id="password_label" text="Password" GridPane.rowIndex="3">
                <font>
                   <Font name="Berlin Sans FB" size="18.0" />
                </font></Label>
-            <Label text="Confirm passsword" GridPane.rowIndex="3">
+            <Label fx:id="confpwd_label" text="Confirm passsword" GridPane.rowIndex="4">
                <font>
                   <Font name="Berlin Sans FB" size="18.0" />
                </font></Label>
-            <Label text="Username">
+            <Label fx:id="username_label" text="Username" GridPane.rowIndex="1">
                <font>
                   <Font name="Berlin Sans FB" size="18.0" />
                </font>
             </Label>
-            <Label text="Help word" GridPane.rowIndex="4">
+            <Label fx:id="help_label" text="Help word" GridPane.rowIndex="5">
                <font>
                   <Font name="Berlin Sans FB" size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="register_username" prefHeight="30.0" promptText="Moundi" GridPane.columnIndex="1" />
-            <TextField fx:id="register_email" prefHeight="30.0" promptText="remirez@fire.com" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <PasswordField fx:id="register_password" prefHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <PasswordField fx:id="register_confirm_password" prefHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <TextField fx:id="register_help" prefHeight="30.0" prefWidth="230.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label fx:id="error" textFill="#f20000" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <TextField fx:id="register_username" onKeyTyped="#resetError" prefHeight="30.0" promptText="Moundi" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="register_email" onKeyTyped="#resetError" prefHeight="30.0" promptText="remirez@fire.com" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <PasswordField fx:id="register_password" onKeyTyped="#resetError" prefHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <PasswordField fx:id="register_confirm_password" onKeyTyped="#resetError" prefHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="register_help" prefHeight="30.0" prefWidth="230.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
          </children>
       </GridPane>
    </center>
@@ -54,7 +57,10 @@
       <Pane prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
    </left>
    <right>
-      <Pane prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+      <Pane prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+
+         </children></Pane>
    </right>
    <top>
       <FlowPane alignment="CENTER" columnHalignment="CENTER" depthTest="ENABLE" prefHeight="80.0" prefWidth="600.0" BorderPane.alignment="CENTER">
@@ -81,6 +87,7 @@
                   <Font name="Bookman Old Style" size="20.0" />
                </font>
             </Button>
+
          </children></FlowPane>
    </bottom>
 </BorderPane>
