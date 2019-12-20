@@ -1,63 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<?import javafx.geometry.*?>
 
-
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.RegisterController">
-    <children>
-        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter username" />
-        <TextField id="username" fx:id="username" promptText="Username">
-            <VBox.margin>
-                <Insets left="30.0" right="30.0" top="30.0" />
-            </VBox.margin>
-        </TextField>
-        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your email address" />
-        <TextField id="username" fx:id="email" promptText="Email">
-            <VBox.margin>
-                <Insets left="30.0" right="30.0" top="30.0" />
-            </VBox.margin>
-        </TextField>
-        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Confirm your email" />
-        <TextField fx:id="confirm_email" promptText="Confirm email">
-            <VBox.margin>
-                <Insets left="30.0" right="30.0" top="30.0" />
-            </VBox.margin>
-        </TextField>
-        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter password">
-            <VBox.margin>
-                <Insets top="30.0" />
-            </VBox.margin>
-        </Text>
-        <PasswordField fx:id="password" promptText="Password">
-            <VBox.margin>
-                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
-            </VBox.margin>
-        </PasswordField>
-        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Confirm password">
-            <VBox.margin>
-                <Insets top="30.0" />
-            </VBox.margin>
-        </Text>
-        <PasswordField fx:id="confirm_password" promptText="Confirm">
-            <VBox.margin>
-                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
-            </VBox.margin>
-        </PasswordField>
-        <Button fx:id="sendRegister" mnemonicParsing="false" onAction="#sendRegister" prefHeight="25.0" prefWidth="110.0" text="Register">
-            <VBox.margin>
-                <Insets />
-            </VBox.margin>
-        </Button>
-        <Label fx:id="print" alignment="CENTER" contentDisplay="CENTER" textAlignment="CENTER">
-            <font>
-                <Font size="28.0" />
-            </font>
-            <VBox.margin>
-                <Insets top="20.0" />
-            </VBox.margin>
-        </Label>
-    </children>
-</VBox>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.LoginController">
+   <center>
+      <GridPane prefHeight="258.0" prefWidth="238.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="10.0" prefWidth="170.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="230.0" minWidth="10.0" prefWidth="230.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Email" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Berlin Sans FB" size="18.0" />
+               </font></Label>
+            <Label text="Password" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Berlin Sans FB" size="18.0" />
+               </font></Label>
+            <Label text="Confirm passsword" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Berlin Sans FB" size="18.0" />
+               </font></Label>
+            <Label text="Username">
+               <font>
+                  <Font name="Berlin Sans FB" size="18.0" />
+               </font>
+            </Label>
+            <Label text="Help word" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Berlin Sans FB" size="18.0" />
+               </font>
+            </Label>
+            <TextField prefHeight="30.0" promptText="Moundi" GridPane.columnIndex="1" />
+            <TextField prefHeight="30.0" promptText="remirrez@fire.com" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField prefHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField prefHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField prefHeight="30.0" prefWidth="230.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+         </children>
+      </GridPane>
+   </center>
+   <left>
+      <Pane prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <Pane prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+   </right>
+   <top>
+      <FlowPane alignment="CENTER" columnHalignment="CENTER" depthTest="ENABLE" prefHeight="80.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="53.0" prefWidth="259.0" text="Fire Simulator" textAlignment="CENTER" textFill="#cd2525">
+               <font>
+                  <Font name="Blackadder ITC" size="40.0" />
+               </font>
+            </Label>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="5.0" />
+         </padding>
+      </FlowPane>
+   </top>
+   <bottom>
+      <FlowPane alignment="CENTER" prefHeight="80.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" text="Register">
+               <font>
+                  <Font name="Bookman Old Style" size="20.0" />
+               </font>
+            </Button>
+         </children></FlowPane>
+   </bottom>
+</BorderPane>
