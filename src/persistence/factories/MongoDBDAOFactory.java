@@ -7,9 +7,8 @@ import com.mongodb.client.MongoDatabase;
 import persistence.dao.MongoDBDAOUser;
 import persistence.interfaces.DAO;
 import persistence.interfaces.DAOType;
-import persistence.interfaces.MethodFactory;
 
-public class MongoDBDAOFactory implements MethodFactory {
+public class MongoDBDAOFactory {
 
     static MongoDBDAOFactory fac = null;
     public static MongoDBDAOFactory getInstance() {
