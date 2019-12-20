@@ -21,9 +21,11 @@ import javafx.scene.control.TextField;
 import persistence.data.User;
 import ui.interfaces.LoginInterface;
 import ui.model.LoginUI;
+import ui.model.RegisterUI;
 
 public class RegisterController implements LoginInterface {
-    SessionFacade SF = new SessionFacade(this);
+    SessionFacade SF = SessionFacade.getInstance(this);
+
     @FXML
     Button sendRegister;
     @FXML
@@ -39,7 +41,7 @@ public class RegisterController implements LoginInterface {
     }
 
     public static void main(String[] args) {
-        Application.launch(LoginUI.class);
+        Application.launch(RegisterUI.class);
     }
 
     @Override
