@@ -22,8 +22,8 @@ public class SessionFacade {
         checkCredentials((User) dao.getDataById("username", username), password);
     }
 
-    public void register(String username, String password, String email) {
-
+    public void register(String username, String password, String email, String helpWord) {
+        dao.insertData(new User(username, password, email, helpWord));
     }
 
     private void checkCredentials(User user, String password) {
