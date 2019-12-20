@@ -31,13 +31,19 @@ public class RegisterController implements LoginInterface {
     @FXML
     TextField register_username, register_email, register_password, register_confirm_password, register_help;
     @FXML
-    Label print;
+    Label error;
 
 
     public void sendRegister(ActionEvent actionEvent) {
         if (!register_password.getText().equals(register_confirm_password.getText())) {
-            print.setText("Passwords do not match");
+            error.setText("Passwords do not match");
+        } else if (register_username.getText().trim().isEmpty() || register_password.getText().trim().isEmpty() || register_email.getText().trim().isEmpty()) {
+            error.setText("You must enter valid credentials");
         } else SF.register(register_username.getText(), register_password.getText(), register_email.getText(), register_help.getText());
+    }
+
+    public void resetError() {
+        error.setText("");
     }
 
     public static void main(String[] args) {
@@ -47,8 +53,8 @@ public class RegisterController implements LoginInterface {
     @Override
     public void printResults(Object arg) {
         if( arg instanceof User)
-            print.setText("Done !!!");
+            error.setText("Done !!!");
         else
-            print.setText((String) arg);
+            error.setText((String) arg);
     }
 }
