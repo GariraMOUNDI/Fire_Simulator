@@ -25,9 +25,7 @@ public class MongoDBDAOFactory implements MethodFactory {
 
     private MongoDBDAOFactory() {
         mongoClient = MongoClients.create("mongodb+srv://admin:FireSimulator2019@firesim-qcpoi.mongodb.net/test?retryWrites=true&w=majority");
-        System.out.println("Database connected !!!");
         database = mongoClient.getDatabase("FireBase");
-        System.out.println("Database got !!!");
     }
 
     public DAO createDAO(DAOType type) {
