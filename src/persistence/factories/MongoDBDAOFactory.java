@@ -7,15 +7,9 @@ import com.mongodb.client.MongoDatabase;
 import persistence.dao.MongoDBDAOUser;
 import persistence.interfaces.DAO;
 import persistence.interfaces.DAOType;
+import persistence.interfaces.MethodFactory;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Properties;
-
-public class MongoDBDAOFactory {
-
-    private Properties prop = new Properties();
+public class MongoDBDAOFactory implements MethodFactory {
 
     static MongoDBDAOFactory fac = null;
     public static MongoDBDAOFactory getInstance() {
@@ -30,13 +24,8 @@ public class MongoDBDAOFactory {
     private MongoCollection collection;
 
     private MongoDBDAOFactory() {
-        try (InputStream input = new FileInputStream("src/resources/database.properties")) {
-            prop.load(input);
-            mongoClient = MongoClients.create(prop.getProperty("DBconnectionURL"));
-            database = mongoClient.getDatabase("FireBase");
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
+        mongoClient = MongoClients.create("mongodb+srv://admin:FireSimulator2019@firesim-qcpoi.mongodb.net/test?retryWrites=true&w=majority");
+        database = mongoClient.getDatabase("FireBase");
     }
 
     public DAO createDAO(DAOType type) {
