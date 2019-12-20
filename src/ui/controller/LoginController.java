@@ -15,7 +15,7 @@ import ui.model.LoginUI;
 
 public class LoginController implements LoginInterface {
 
-    SessionFacade SF = new SessionFacade(this);
+    SessionFacade SF = SessionFacade.getInstance(this);
     @FXML
     Button sendLogin;
     @FXML

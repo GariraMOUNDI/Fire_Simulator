@@ -12,8 +12,15 @@ public class SessionFacade {
     private DAO dao;
     private User userLoggedIn;
     private Gson gson = new Gson();
+    private static SessionFacade instance = null;
 
-    public SessionFacade(LoginInterface loginIF) {
+    public static SessionFacade getInstance(LoginInterface loginIF){
+        if (instance == null)
+            instance = new SessionFacade(loginIF);
+        return instance;
+    }
+
+    private SessionFacade(LoginInterface loginIF) {
         this.loginIF = loginIF;
         dao = MongoDBDAOFactory.getInstance().createDAO(DAOType.User);
     }
