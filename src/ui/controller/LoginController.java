@@ -5,9 +5,8 @@ import businessLogic.SessionFacade;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import persistence.data.User;
 import ui.interfaces.LoginInterface;
 import ui.model.LoginUI;
 
@@ -17,18 +16,19 @@ public class LoginController implements LoginInterface {
     @FXML
     Button sendLogin;
     @FXML
-    Button registerView;
-    @FXML
     TextField username, password;
     @FXML
     Label print;
+    @FXML
+    Hyperlink toRegister;
 
 
     public void sendLogin(ActionEvent actionEvent) {
         SF.login(username.getText(),password.getText());
     }
 
-    public void registerView (ActionEvent actionEvent) throws Exception {LoginUI.registerView(LoginUI.getStage()); }
+    public void toRegister() {}
+
 
     public static void main(String[] args) {
         Application.launch(LoginUI.class);
