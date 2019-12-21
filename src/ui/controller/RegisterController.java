@@ -14,7 +14,7 @@ import ui.interfaces.LoginInterface;
 import ui.model.LoginUI;
 
 public class RegisterController implements LoginInterface {
-
+    private boolean alreadyExists = false;
     SessionFacade SF = SessionFacade.getInstance(this);
 
     @FXML
@@ -28,24 +28,33 @@ public class RegisterController implements LoginInterface {
 
 
     public void sendRegister(ActionEvent actionEvent) {
-        if (!register_password.getText().equals(register_confirm_password.getText())) {
-            error.setText("Passwords do not match");
-        } else if (register_username.getText().trim().isEmpty() || register_password.getText().trim().isEmpty() || register_email.getText().trim().isEmpty()) {
+        if (register_username.getText().trim().isEmpty() || register_password.getText().trim().isEmpty() || register_email.getText().trim().isEmpty()) {
             error.setText("You must enter valid credentials");
-        } else SF.register(register_username.getText(), register_password.getText(), register_email.getText(), register_help.getText());
+        } else if (!register_password.getText().equals(register_confirm_password.getText())) {
+            error.setText("Passwords do not match");
+        } else if (!checkExisting()) {
+            SF.register(register_username.getText(), register_password.getText(), register_email.getText(), register_help.getText());
+        }
     }
 
     public void resetError() {
         error.setText("");
     }
 
-    public void checkExisting() {
+    private boolean checkExisting() {
         if (!register_username.getText().trim().isEmpty()) {
-            if (SF.exists("username", register_username.getText())) error.setText("This username is already taken!");
+            if (SF.exists("username", register_username.getText())) {
+                printResults("This username is already taken!");
+                return true;
+            }
         }
         if (!register_email.getText().trim().isEmpty()) {
-            if (SF.exists("email", register_email.getText())) error.setText("This email is already taken!");
+            if (SF.exists("email", register_email.getText())) {
+                printResults("This email is already taken!");
+                return true;
+            }
         }
+        return false;
     }
 
 
