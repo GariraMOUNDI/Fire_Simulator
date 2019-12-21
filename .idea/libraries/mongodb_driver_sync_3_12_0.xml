@@ -1,7 +1,11 @@
 <component name="libraryTable">
   <library name="mongodb-driver-sync-3.12.0">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/librairies/mongodb-driver-sync-3.12.0.jar!/" />
+      <root url="jar://C:/Program Files/Java/mongodb-driver-sync-3.12.0.jar!/" />
+      <root url="jar://C:/Program Files/Java/mongodb-driver-core-3.12.0.jar!/" />
+      <root url="jar://C:/Program Files/Java/mongodb-driver-3.12.0.jar!/" />
+      <root url="jar://C:/Program Files/Java/bson-3.12.0.jar!/" />
+      <root url="jar://C:/Program Files/Java/gson-2.8.2.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
