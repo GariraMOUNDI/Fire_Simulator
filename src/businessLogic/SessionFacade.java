@@ -29,20 +29,24 @@ public class SessionFacade {
         return dao.getDataById(type, credential) instanceof User;
     }
 
-    public void login(String username, String password){
-        checkCredentials((User) dao.getDataById("username", username), password);
+    public boolean login(String username, String password){
+        return checkCredentials((User) dao.getDataById("username", username), password);
     }
 
     public void register(String username, String password, String email, String helpWord) {
         dao.insertData(new User(username, password, email, helpWord));
     }
 
-    private void checkCredentials(User user, String password) {
+    private boolean checkCredentials(User user, String password) {
         if (user != null && user.getPassword().equals(password)){
             setUserLoggedIn(user);
             loginIF.printResults("Done !!!");
+            return true;
         }
-        else loginIF.printResults("Incorrect username or password.");
+        else {
+            loginIF.printResults("Incorrect username or password.");
+            return false;
+        }
     }
 
     private void setUserLoggedIn(User user) {
