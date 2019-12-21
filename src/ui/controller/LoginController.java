@@ -27,8 +27,7 @@ public class LoginController implements LoginInterface {
         SF.login(username.getText(),password.getText());
     }
 
-    public void toRegister() {}
-
+    public void toRegister (ActionEvent actionEvent) throws Exception {LoginUI.registerView(LoginUI.getStage()); }
 
     public static void main(String[] args) {
         Application.launch(LoginUI.class);
