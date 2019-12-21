@@ -38,4 +38,11 @@ public class LoginUI extends Application {
         return primaryStage;
     }
 
+    public static void mainPageView(Stage stage) throws Exception{
+        Parent root = FXMLLoader.load(LoginUI.class.getResource("../views/MainPageView.fxml"));
+        stage.setTitle("Main Menu");
+        stage.setScene(new Scene(root));
+        stage.show();
+    }
+
 }
