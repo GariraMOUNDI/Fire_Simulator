@@ -1,11 +1,9 @@
 package businessLogic;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonElement;
-import persistence.factories.DAOFactory;
-import persistence.dao.MongoDBDAO;
+import persistence.factories.MongoDBDAOFactory;
 import persistence.data.User;
-import persistence.factories.DAOType;
+import persistence.interfaces.DAOType;
 import persistence.interfaces.DAO;
 import ui.interfaces.LoginInterface;
 
@@ -24,28 +22,31 @@ public class SessionFacade {
 
     private SessionFacade(LoginInterface loginIF) {
         this.loginIF = loginIF;
-        dao = DAOFactory.getInstance().createDAO(DAOType.User);
-        dao.setCollectionName("users");
+        dao = MongoDBDAOFactory.getInstance().createDAO(DAOType.User);
     }
 
     public boolean exists(String type, String credential) {
         return dao.getDataById(type, credential) instanceof User;
     }
 
-    public void login(String username, String password){
-        checkCredentials(convertToUser((String) dao.getDataById("username", username)), password);
+    public boolean login(String username, String password){
+        return checkCredentials((User) dao.getDataById("username", username), password);
     }
 
     public void register(String username, String password, String email, String helpWord) {
         dao.insertData(new User(username, password, email, helpWord));
     }
 
-    private void checkCredentials(User user, String password) {
+    private boolean checkCredentials(User user, String password) {
         if (user != null && user.getPassword().equals(password)){
             setUserLoggedIn(user);
             loginIF.printResults("Done !!!");
+            return true;
         }
-        else loginIF.printResults("Incorrect username or password.");
+        else {
+            loginIF.printResults("Incorrect username or password.");
+            return false;
+        }
     }
 
     private void setUserLoggedIn(User user) {
@@ -56,7 +57,4 @@ public class SessionFacade {
         return userLoggedIn;
     }
 
-    private User convertToUser(String arg){
-        return gson.fromJson(arg, User.class);
-    }
 }
