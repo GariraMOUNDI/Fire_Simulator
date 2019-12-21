@@ -28,6 +28,10 @@ public class SessionFacade {
         dao.setCollectionName("users");
     }
 
+    public boolean exists(String type, String credential) {
+        return dao.getDataById(type, credential) instanceof User;
+    }
+
     public void login(String username, String password){
         checkCredentials(convertToUser((String) dao.getDataById("username", username)), password);
     }

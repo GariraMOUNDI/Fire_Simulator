@@ -5,6 +5,7 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import persistence.data.User;
@@ -17,7 +18,9 @@ public class RegisterController implements LoginInterface {
     SessionFacade SF = SessionFacade.getInstance(this);
 
     @FXML
-    Button sendRegister, backToLogin;
+    Button sendRegister;
+    @FXML
+    Hyperlink backToLogin;
     @FXML
     TextField register_username, register_email, register_password, register_confirm_password, register_help;
     @FXML
@@ -34,6 +37,15 @@ public class RegisterController implements LoginInterface {
 
     public void resetError() {
         error.setText("");
+    }
+
+    public void checkExisting() {
+        if (!register_username.getText().trim().isEmpty()) {
+            if (SF.exists("username", register_username.getText())) error.setText("This username is already taken!");
+        }
+        if (!register_email.getText().trim().isEmpty()) {
+            if (SF.exists("email", register_email.getText())) error.setText("This email is already taken!");
+        }
     }
 
 
