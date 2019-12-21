@@ -23,12 +23,15 @@ public class LoginController implements LoginInterface {
     Hyperlink toRegister;
 
 
-    public void sendLogin(ActionEvent actionEvent) {
-        SF.login(username.getText(),password.getText());
+    public void sendLogin(ActionEvent actionEvent) throws Exception {
+        if(SF.login(username.getText(),password.getText())){
+            LoginUI.mainPageView(LoginUI.getStage());
+        };
     }
 
-    public void toRegister() {}
-
+    public void toRegister (ActionEvent actionEvent) throws Exception {
+        LoginUI.registerView(LoginUI.getStage());
+    }
 
     public static void main(String[] args) {
         Application.launch(LoginUI.class);
