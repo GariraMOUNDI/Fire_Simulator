@@ -8,26 +8,16 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import persistence.data.User;
-import ui.model.LoginUI;
 
-import businessLogic.SessionFacade;
-import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
-import persistence.data.User;
 import ui.interfaces.LoginInterface;
 import ui.model.LoginUI;
-import ui.model.RegisterUI;
 
 public class RegisterController implements LoginInterface {
+
     SessionFacade SF = SessionFacade.getInstance(this);
 
     @FXML
-    Button sendRegister;
+    Button sendRegister, backToLogin;
     @FXML
     TextField register_username, register_email, register_password, register_confirm_password, register_help;
     @FXML
@@ -46,9 +36,6 @@ public class RegisterController implements LoginInterface {
         error.setText("");
     }
 
-    public static void main(String[] args) {
-        Application.launch(RegisterUI.class);
-    }
 
     @Override
     public void printResults(Object arg) {
@@ -56,5 +43,9 @@ public class RegisterController implements LoginInterface {
             error.setText("Done !!!");
         else
             error.setText((String) arg);
+    }
+
+    public void backToLogin(ActionEvent actionEvent) throws Exception {
+        LoginUI.loginView(LoginUI.getStage());
     }
 }
