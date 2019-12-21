@@ -25,6 +25,10 @@ public class SessionFacade {
         dao = MongoDBDAOFactory.getInstance().createDAO(DAOType.User);
     }
 
+    public boolean exists(String type, String credential) {
+        return dao.getDataById(type, credential) instanceof User;
+    }
+
     public void login(String username, String password){
         checkCredentials((User) dao.getDataById("username", username), password);
     }

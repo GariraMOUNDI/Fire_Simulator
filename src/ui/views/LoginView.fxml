@@ -77,6 +77,7 @@
                <Label text="Don't have an account? " />
                <Hyperlink fx:id="toRegister" accessibleRole="HYPERLINK" contentDisplay="TEXT_ONLY" graphicTextGap="0.0" mnemonicParsing="false" onAction="#toRegister" prefHeight="25.0" prefWidth="110.0" text="Register" underline="true">
                </Hyperlink>
+               <Label fx:id="print" />
             </FlowPane>
          </children>
       </GridPane>
