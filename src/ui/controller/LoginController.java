@@ -23,11 +23,12 @@ public class LoginController implements LoginInterface {
 
 
     public void sendLogin(ActionEvent actionEvent) throws Exception {
-        if (!username.getText().trim().isEmpty() || !password.getText().trim().isEmpty()) {
+        if (!username.getText().trim().isEmpty() && !password.getText().trim().isEmpty()) {
             if (SF.login(username.getText(), password.getText())) {
                 ApplicationUI.mainPageView(ApplicationUI.getStage());
             }
-        } else printResults("You must enter a username and password.");
+        } else printResults("Incorrect username or password.");
+
     }
 
     public void toRegister (ActionEvent actionEvent) throws Exception {
