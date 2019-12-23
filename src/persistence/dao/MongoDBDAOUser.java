@@ -51,6 +51,5 @@ public class MongoDBDAOUser implements DAO<User> {
     @Override
     public void insertData(User arg) {
         collection.insertOne(Document.parse(gson.toJson(arg)));
-        System.out.println("Object Inserted !!!");
     }
 }
