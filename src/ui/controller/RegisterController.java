@@ -23,8 +23,6 @@ public class RegisterController implements LoginInterface {
     private TextField register_username, register_email, register_password, register_confirm_password, register_help;
     @FXML
     private Label error;
-    @FXML
-    private ImageView logo_img;
 
 
     public void sendRegister() throws Exception {
@@ -34,7 +32,7 @@ public class RegisterController implements LoginInterface {
             printResults("Passwords do not match");
         } else if (!checkExisting()) {
             SF.register(register_username.getText(), register_password.getText(), register_email.getText(), register_help.getText());
-            backToLogin();
+            goToMainPage();
         }
     }
 
@@ -60,6 +58,10 @@ public class RegisterController implements LoginInterface {
 
     public void backToLogin() throws Exception {
         ApplicationUI.loginView(ApplicationUI.getStage());
+    }
+
+    private void goToMainPage() throws Exception {
+        ApplicationUI.mainPageView(ApplicationUI.getStage());
     }
 
     @Override
