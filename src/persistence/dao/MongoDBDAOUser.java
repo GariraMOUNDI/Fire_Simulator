@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.mongodb.BasicDBObject;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import org.bson.BSONObject;
 import org.bson.Document;
 import persistence.data.User;
 import persistence.interfaces.DAO;
@@ -15,7 +16,7 @@ public class MongoDBDAOUser implements DAO<User> {
 
     private MongoCollection<Document> collection;
     private Gson gson = new Gson();
-    private BasicDBObject query;
+    private BasicDBObject query, up;
 
     public MongoDBDAOUser(MongoDatabase database){
         collection = database.getCollection("users");
@@ -40,12 +41,23 @@ public class MongoDBDAOUser implements DAO<User> {
 
     @Override
     public void updateData(User arg) {
+        query = new BasicDBObject("username", arg.getUsername());
+        query.append("password",arg.getPassword());
 
+        up = new BasicDBObject();
+        up.append("$set",Document.parse(gson.toJson(arg)));
+
+        collection.findOneAndUpdate(query, up);
+        System.out.println("Object updated !!!");
     }
 
     @Override
-    public void deleteData(Object arg) {
+    public void deleteData(User arg) {
+        query = new BasicDBObject("username",arg.getUsername());
+        query.append("password",arg.getPassword());
 
+        collection.findOneAndDelete(query);
+        System.out.println("Object deleted !!!");
     }
 
     @Override
