@@ -33,6 +33,10 @@ public class SessionFacade {
         return checkCredentials((User) dao.getDataById("username", username), password);
     }
 
+    public void logout() {
+        userLoggedIn = null;
+    }
+
     public void register(String username, String password, String email, String helpWord) {
         dao.insertData(new User(username, password, email, helpWord));
     }
