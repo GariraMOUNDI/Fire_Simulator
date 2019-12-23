@@ -6,9 +6,8 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import persistence.data.User;
 import ui.interfaces.LoginInterface;
-import ui.model.LoginUI;
+import ui.model.ApplicationUI;
 
 public class LoginController implements LoginInterface {
 
@@ -24,17 +23,15 @@ public class LoginController implements LoginInterface {
 
 
     public void sendLogin(ActionEvent actionEvent) throws Exception {
-        if(SF.login(username.getText(),password.getText())){
-            LoginUI.mainPageView(LoginUI.getStage());
-        };
+        if (!username.getText().trim().isEmpty() || !password.getText().trim().isEmpty()) {
+            if (SF.login(username.getText(), password.getText())) {
+                ApplicationUI.mainPageView(ApplicationUI.getStage());
+            }
+        } else printResults("You must enter a username and password.");
     }
 
     public void toRegister (ActionEvent actionEvent) throws Exception {
-        LoginUI.registerView(LoginUI.getStage());
-    }
-
-    public static void main(String[] args) {
-        Application.launch(LoginUI.class);
+        ApplicationUI.registerView(ApplicationUI.getStage());
     }
 
     @Override
