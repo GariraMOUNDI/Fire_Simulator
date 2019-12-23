@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
@@ -76,6 +77,9 @@
                <image>
                   <Image url="@/resources/logo.png" />
                </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </ImageView>
             <Separator orientation="VERTICAL" prefHeight="117.0" prefWidth="38.0" visible="false" />
             <Label text="Fire Simulator" textFill="RED">
