@@ -6,7 +6,6 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import persistence.dao.MongoDBDAOUser;
 import persistence.interfaces.DAO;
-import persistence.interfaces.DAOType;
 
 import java.io.FileInputStream;
 import java.io.IOException;

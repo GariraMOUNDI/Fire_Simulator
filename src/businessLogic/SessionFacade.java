@@ -3,7 +3,7 @@ package businessLogic;
 import com.google.gson.Gson;
 import persistence.factories.MongoDBDAOFactory;
 import persistence.data.User;
-import persistence.interfaces.DAOType;
+import persistence.factories.DAOType;
 import persistence.interfaces.DAO;
 import ui.interfaces.LoginInterface;
 

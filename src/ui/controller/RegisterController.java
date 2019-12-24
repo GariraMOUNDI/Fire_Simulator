@@ -34,7 +34,7 @@ public class RegisterController implements LoginInterface {
             printResults("Passwords do not match");
         } else if (!checkExisting()) {
             SF.register(register_username.getText(), register_password.getText(), register_email.getText(), register_help.getText());
-            backToLogin();
+            goToMainPage();
         }
     }
 
@@ -58,6 +58,9 @@ public class RegisterController implements LoginInterface {
         return false;
     }
 
+    public void goToMainPage() throws Exception {
+        ApplicationUI.mainPageView(ApplicationUI.getStage());
+    }
     public void backToLogin() throws Exception {
         ApplicationUI.loginView(ApplicationUI.getStage());
     }
