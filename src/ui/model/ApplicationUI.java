@@ -12,7 +12,7 @@ import java.awt.*;
 public class ApplicationUI extends Application {
 
     private static Stage primaryStage;
-    private static Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+    private static Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();;
     public static void main(String[] args) {
         Application.launch(ApplicationUI.class);
     }
@@ -28,11 +28,8 @@ public class ApplicationUI extends Application {
     public static void loginView(Stage stage) throws Exception{
         Parent root = FXMLLoader.load(ApplicationUI.class.getResource("../views/LoginView.fxml"));
         stage.setTitle("Login");
-        primaryStage.setScene(new Scene(root));
         stage.setScene(new Scene(root));
-        primaryStage.show();
         stage.show();
-        ApplicationUI.primaryStage = primaryStage;
         stage.setResizable(false);
         stage.setX((dim.getWidth() - stage.getWidth())/2);
         stage.setY((dim.getHeight() - stage.getHeight())/2);
