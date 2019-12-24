@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.RegisterController">
+   <center>
+      <GridPane prefHeight="258.0" prefWidth="238.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="10.0" prefWidth="170.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="230.0" minWidth="10.0" prefWidth="230.0" />
+        </columnConstraints>
+        <rowConstraints>
+           <RowConstraints minHeight="5.0" prefHeight="5.0" vgrow="SOMETIMES" />
+           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <Label fx:id="email_label" text="Email" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Berlin Sans FB" size="18.0" />
+               </font></Label>
+            <Label fx:id="password_label" text="Password" textAlignment="RIGHT" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Berlin Sans FB" size="18.0" />
+               </font></Label>
+            <Label fx:id="confpwd_label" text="Confirm passsword" textAlignment="RIGHT" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Berlin Sans FB" size="18.0" />
+               </font></Label>
+            <Label fx:id="username_label" text="Username" textAlignment="RIGHT" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Berlin Sans FB" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="help_label" text="Help word" GridPane.rowIndex="5">
+               <font>
+                  <Font name="Berlin Sans FB" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="error" textFill="#f20000" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <TextField fx:id="register_username" onKeyTyped="#resetError" prefHeight="30.0" promptText="Required" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="register_email" onKeyTyped="#resetError" prefHeight="30.0" promptText="Required" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <PasswordField fx:id="register_password" onKeyTyped="#resetError" prefHeight="30.0" promptText="Required" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <PasswordField fx:id="register_confirm_password" onKeyTyped="#resetError" prefHeight="30.0" promptText="Required" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="register_help" prefHeight="30.0" prefWidth="230.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+         </children>
+      </GridPane>
+   </center>
+   <left>
+      <Pane prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Hyperlink fx:id="backToLogin" alignment="TOP_CENTER" mnemonicParsing="false" onAction="#backToLogin" prefHeight="28.0" prefWidth="66.0" text="☜ Back">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" />
+               </padding></Hyperlink>
+         </children></Pane>
+   </left>
+   <right>
+      <Pane prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+   </right>
+   <top>
+      <FlowPane alignment="CENTER" columnHalignment="CENTER" depthTest="ENABLE" prefHeight="80.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="logo_img" fitHeight="117.0" fitWidth="136.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@/resources/logo.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Separator orientation="VERTICAL" prefHeight="117.0" prefWidth="38.0" visible="false" />
+            <Label text="Fire Simulator" textFill="RED">
+               <font>
+                  <Font size="46.0" />
+               </font>
+            </Label>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="5.0" />
+         </padding>
+      </FlowPane>
+   </top>
+   <bottom>
+      <FlowPane alignment="CENTER" prefHeight="80.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="sendRegister" defaultButton="true" mnemonicParsing="false" onAction="#sendRegister" prefHeight="35.0" prefWidth="150.0" text="Register" />
+
+         </children></FlowPane>
+   </bottom>
+</BorderPane>
