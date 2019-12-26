@@ -113,7 +113,7 @@
                         <Insets left="5.0" />
                      </GridPane.margin>
                   </ImageView>
-                  <ImageView fitHeight="100.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
+                  <ImageView fitHeight="100.0" fitWidth="40.0" onMouseClicked="#toPosts" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
                      <image>
                         <Image url="@../../resources/posts.png" />
                      </image>
