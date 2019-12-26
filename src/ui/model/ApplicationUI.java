@@ -8,12 +8,15 @@ import javafx.stage.Stage;
 import ui.controller.FriendsController;
 
 import java.awt.*;
+import java.io.IOException;
 
 
 public class ApplicationUI extends Application {
 
     private static Stage primaryStage;
     private static Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();;
+    private static FXMLLoader loader;
+
     public static void main(String[] args) {
         Application.launch(ApplicationUI.class);
     }
@@ -23,49 +26,47 @@ public class ApplicationUI extends Application {
         //ApplicationUI.friendsView(primaryStage);
     }
 
+    @Override
+    public void stop() throws Exception {
+        Object controller = loader.getController();
+        if ( controller instanceof FriendsController)
+            ((FriendsController) controller).getSession().updateUser();
+    }
+
     public static Stage getStage(){
         return primaryStage;
     }
 
     public static void loginView(Stage stage) throws Exception{
-        Parent root = FXMLLoader.load(ApplicationUI.class.getResource("../views/LoginView.fxml"));
-        stage.setTitle("Login");
-        stage.setScene(new Scene(root));
-        stage.show();
-        stage.setResizable(false);
-        stage.setX((dim.getWidth() - stage.getWidth())/2);
-        stage.setY((dim.getHeight() - stage.getHeight())/2);
+        uploadView(stage, "Login","../views/LoginView.fxml");
         ApplicationUI.primaryStage = stage;
     }
 
     public static void registerView(Stage stage) throws Exception{
-        Parent root = FXMLLoader.load(ApplicationUI.class.getResource("../views/RegisterView.fxml"));
-        stage.setTitle("Register");
-        stage.setScene(new Scene(root));
-        stage.show();
-        stage.setResizable(false);
-        stage.setX((dim.getWidth() - stage.getWidth())/2);
-        stage.setY((dim.getHeight() - stage.getHeight())/2);
+        uploadView(stage, "Register", "../views/RegisterView.fxml");
     }
 
     public static void mainPageView(Stage stage) throws Exception{
-        Parent root = FXMLLoader.load(ApplicationUI.class.getResource("../views/MainPageView.fxml"));
-        stage.setTitle("Main Menu");
-        stage.setScene(new Scene(root));
-        stage.show();
-        stage.setX((dim.getWidth() - stage.getWidth())/2);
-        stage.setY((dim.getHeight() - stage.getHeight())/2);
+        uploadView(stage, "Main","../views/MainPageView.fxml");
     }
 
     public static void friendsView(Stage stage) throws Exception{
-        FXMLLoader loader = new FXMLLoader(ApplicationUI.class.getResource("../views/FriendsView.fxml"));
+        uploadView(stage, "Friends", "../views/FriendsView.fxml");
+        ((FriendsController)loader.getController()).init(stage);
+    }
+
+    public static void profileView(Stage stage) throws Exception{
+        uploadView(stage, "Profile","../views/ProfileView.fxml");
+    }
+
+    private static void uploadView(Stage stage,String title, String path) throws IOException {
+        loader = new FXMLLoader(ApplicationUI.class.getResource(path));
         Parent root = loader.load();
-        stage.setTitle("Friends");
+        stage.setTitle(title);
         stage.setScene(new Scene(root));
         stage.show();
         stage.setX((dim.getWidth() - stage.getWidth())/2);
         stage.setY((dim.getHeight() - stage.getHeight())/2);
-        ((FriendsController)loader.getController()).init(stage);
         stage.setResizable(false);
     }
 }
