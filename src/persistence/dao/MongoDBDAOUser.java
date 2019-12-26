@@ -42,7 +42,6 @@ public class MongoDBDAOUser implements DAO<User> {
     public void updateData(User arg) {
         query = new BasicDBObject("username", arg.getUsername());
         query.append("password",arg.getPassword());
-
         up = new BasicDBObject();
         up.append("$set",Document.parse(gson.toJson(arg)));
 

@@ -1,17 +1,19 @@
 package businessLogic;
 
-import com.google.gson.Gson;
 import persistence.factories.MongoDBDAOFactory;
 import persistence.data.User;
 import persistence.factories.DAOType;
 import persistence.interfaces.DAO;
 import ui.interfaces.LoginInterface;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SessionFacade {
     private LoginInterface loginIF;
     private DAO dao;
     private User userLoggedIn;
-    private Gson gson = new Gson();
+    private List<String> others, friends;
     private static SessionFacade instance = null;
 
     public static SessionFacade getInstance(LoginInterface loginIF){
@@ -61,4 +63,30 @@ public class SessionFacade {
         return userLoggedIn;
     }
 
+    // Methods for the management of friends
+    public void updateUser(){
+        dao.updateData(userLoggedIn);
+    }
+
+    public List<String> getUserLoggedInFriends(){
+        return userLoggedIn.getFriends();
+    }
+
+    public void addFriendToUserLoggedIn(String arg){
+        userLoggedIn.addFriend(arg);
+    }
+
+    public void removeFriendToUserLoggedIn(String arg){
+        userLoggedIn.removeFriend(arg);
+    }
+
+    public List<String> getOtherUser(){
+        others = new ArrayList<>();
+        friends = getUserLoggedInFriends();
+        for(User other : (List<User>) dao.getAllData()){
+            if (!friends.contains(other.getUsername()))
+                others.add(other.getUsername());
+        }
+        return others;
+    }
 }

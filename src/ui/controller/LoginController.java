@@ -2,7 +2,6 @@ package ui.controller;
 
 
 import businessLogic.SessionFacade;
-import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
