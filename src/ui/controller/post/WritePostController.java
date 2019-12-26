@@ -19,8 +19,10 @@ public class WritePostController implements LoginInterface {
     }
 
     public void publishPost() throws Exception {
-        PF.writePost(SF.getUser().getUsername(), content.getText());
-        backToPosts();
+        if (!content.getText().isEmpty()) {
+            PF.writePost(SF.getUser().getUsername(), content.getText());
+            backToPosts();
+        }
     }
 
     @Override

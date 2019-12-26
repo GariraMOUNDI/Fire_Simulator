@@ -80,7 +80,7 @@ public class PostController implements LoginInterface {
         if (SF.getUser().getUsername().equals(post.getUsername())) {
             top.setStyle("-fx-background-color: #8ab9ff;-fx-background-radius: 5px 5px 0px 0px;");
             Hyperlink edit = new Hyperlink("Edit...");
-            edit.setStyle("-fx-text-fill: blue");
+            edit.setStyle("-fx-text-fill: #2256a3");
             edit.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent actionEvent) {
@@ -144,10 +144,9 @@ public class PostController implements LoginInterface {
             }
         });
         GridPane commentPane = new GridPane();
+        commentPane.prefWidthProperty().bind(root.widthProperty());
         commentPane.setPadding(new Insets(5,5,5,5));
         commentPane.setHgap(5);
-        commentPane.getColumnConstraints().add(new ColumnConstraints(415));
-        commentPane.getColumnConstraints().add(new ColumnConstraints(125));
         commentPane.add(field,0,0);
         commentPane.add(button,1,0);
         pane.add(commentPane,0,i);
@@ -157,9 +156,10 @@ public class PostController implements LoginInterface {
     private GridPane createComment(Post c) {
         GridPane pane = new GridPane();
         pane.getRowConstraints().add(new RowConstraints(10));
+        pane.prefWidthProperty().bind(root.widthProperty());
         if (SF.getUser().getUsername().equals(c.getUsername())) {
-            pane.setStyle("-fx-border-color: gray;-fx-border-width: 0 0 1 0;-fx-padding: 10;-fx-background-color: #f0f6ff");
-        } else pane.setStyle("-fx-border-color: gray;-fx-border-width: 0 0 1 0;-fx-padding: 10;-fx-background-color: #f2f2f2");
+            pane.setStyle("-fx-border-color: #dbdbdb;-fx-border-width: 0 0 1 0;-fx-padding: 10;-fx-background-color: #f0f6ff");
+        } else pane.setStyle("-fx-border-color: #dbdbdb;-fx-border-width: 0 0 1 0;-fx-padding: 10;-fx-background-color: #f2f2f2");
         pane.getChildren().add(new Label(c.getUsername()+ " : "+c.getContent()));
 
         return pane;
