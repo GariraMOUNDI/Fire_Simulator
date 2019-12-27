@@ -38,13 +38,14 @@ public class MongoDBDAOPost implements DAO<Post> {
     @Override
     public List<Post> getDataById(String key, Object value) {
         List<Post> posts = new ArrayList<>();
-        query = new BasicDBObject(key,new ObjectId(value.toString()));
+        if (key.equals("_id")) query = new BasicDBObject(key,new ObjectId(value.toString()));
+        else query = new BasicDBObject(key,value);
         for (Document doc : collection.find(query)){
             Post g = gson.fromJson(doc.toJson(), Post.class);
             posts.add(g);
         }
         for (Post p : posts) {
-            p.setId(Post.parseId(posts.get(0).getId()));
+            p.setId(Post.parseId(p.getId()));
         }
         return posts;
     }

@@ -51,4 +51,9 @@ public class PostFacade {
         original.modifyPost(content);
         dao.updateData(original);
     }
+
+    public void deletePost(Object postId) {
+        Post original = ((List<Post>) dao.getDataById("_id", new ObjectId(Post.parseId(postId)))).get(0);
+        dao.deleteData(original);
+    }
 }

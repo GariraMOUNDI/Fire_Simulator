@@ -34,7 +34,7 @@
                      <Cursor fx:constant="HAND" />
                  </cursor>
              </ImageView>
-            <CheckBox mnemonicParsing="false" style="-fx-alignment: top-right;" text="Private only" GridPane.halignment="RIGHT">
+            <CheckBox fx:id="my_posts" mnemonicParsing="false" onAction="#initialize" style="-fx-alignment: top-right;" text="My posts" GridPane.halignment="RIGHT">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>

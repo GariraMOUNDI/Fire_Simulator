@@ -5,7 +5,10 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.geometry.HPos;
+import javafx.geometry.Pos;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
@@ -22,14 +25,20 @@ public class PostController implements LoginInterface {
     private PostFacade PF = PostFacade.getInstance(this);
     private SessionFacade SF = SessionFacade.getInstance(this);
 
+    private Image image = new Image("resources/gear.png",20, 20, false, false);
+
     @FXML
     ScrollPane post_view;
     @FXML
     BorderPane root;
+    @FXML
+    CheckBox my_posts;
 
     @FXML
     public void initialize() {
-        List<Post> posts = PF.getAllPosts();
+        List<Post> posts;
+        if (my_posts.isSelected()) posts = PF.getUserPosts(SF.getUser().getUsername());
+        else posts = PF.getAllPosts();
 
         GridPane pane = new GridPane();
         ColumnConstraints col = new ColumnConstraints();
@@ -78,9 +87,12 @@ public class PostController implements LoginInterface {
         pane.setStyle("-fx-border-color: black;-fx-background-color: white; -fx-background-radius: 5px;-fx-border-radius: 5px");
 
         if (SF.getUser().getUsername().equals(post.getUsername())) {
+            MenuButton menuButton = new MenuButton();
+            menuButton.setGraphic(new ImageView(image));
+            menuButton.setStyle("-fx-background-color: #e6f0ff");
+
             top.setStyle("-fx-background-color: #8ab9ff;-fx-background-radius: 5px 5px 0px 0px;");
-            Hyperlink edit = new Hyperlink("Edit...");
-            edit.setStyle("-fx-text-fill: #2256a3");
+            MenuItem edit = new MenuItem("Edit...");
             edit.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent actionEvent) {
@@ -92,20 +104,41 @@ public class PostController implements LoginInterface {
                     }
                 }
             });
-            top.add(edit,2,0);
+
+            MenuItem delete = new MenuItem("Delete post");
+            delete.setOnAction(new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent actionEvent) {
+                    try {
+                        PF.deletePost(post.getId());
+                        initialize();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+
+            menuButton.getItems().addAll(edit, delete);
+            top.setHalignment(menuButton, HPos.RIGHT);
+            top.add(menuButton,2,0);
         } else {
             top.setStyle("-fx-background-color: #c9c9c9;-fx-background-radius: 5px 5px 0px 0px;");
         }
         top.prefWidthProperty().bind(root.widthProperty());
+        double width = root.getPrefWidth();
+        top.getColumnConstraints().add(new ColumnConstraints(width/2.5));
+        top.getColumnConstraints().add(new ColumnConstraints(width/3));
+        top.getColumnConstraints().add(new ColumnConstraints(width - width/2.5 - width/3 - 50));
+        top.setPadding(new Insets(2.5,2.5,2.5,2.5));
 
         center.setStyle("-fx-padding: 15;-fx-border-color: #dbdbdb;-fx-border-width: 0 0 1 0");
         center.prefWidthProperty().bind(root.widthProperty());
 
-        user.setPadding(new Insets(0, 15, 0, 15));
-        user.setStyle("-fx-font-size: 16;");
+        user.setPadding(new Insets(5, 15, 5, 15));
+        user.setStyle("-fx-font-size: 18;");
 
         date.setPadding(new Insets(0, 15, 0, 15));
-        date.setStyle("-fx-text-alignment: right;");
+        date.setStyle("-fx-font-size: 10");
 
         cont.setWrappingWidth(500);
 
