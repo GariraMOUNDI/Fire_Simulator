@@ -7,13 +7,15 @@ public class Box {
     private int x;
     private int y;
     private int life;
+    private Element element;
 
 
-    public Box(StateBox state, int x, int y, int life){
+    public Box(StateBox state, int x, int y, int life, Element element){
         this.state = state;
         this.x = x;
         this.y = y;
         this.life = life;
+        this.element = element;
     }
 
     public StateBox getState() {
@@ -48,8 +50,12 @@ public class Box {
         this.life = life;
     }
 
-    public void placeElement(){
+    public Element getElement() {
+        return element;
+    }
 
+    public void setElement(Element element) {
+        this.element = element;
     }
 
     public void changeState(){

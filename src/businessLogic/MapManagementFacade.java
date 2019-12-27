@@ -1,6 +1,7 @@
 package businessLogic;
 
 import com.google.gson.Gson;
+import persistence.data.Matrice;
 import persistence.data.Terrain;
 import persistence.factories.DAOType;
 import persistence.factories.MongoDBDAOFactory;
@@ -31,8 +32,8 @@ public class MapManagementFacade {
         return (List<Terrain>) dao.getDataById("username", username);
     }
 
-    public void createMap(String name) {
-        dao.insertData(new Terrain(name));
+    public void createMap(String name, Matrice map) {
+        dao.insertData(new Terrain(name, map));
     }
 
 }
