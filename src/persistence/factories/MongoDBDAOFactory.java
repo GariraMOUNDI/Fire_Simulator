@@ -4,6 +4,8 @@ import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import persistence.dao.MongoDBDAOElement;
+import persistence.dao.MongoDBDAOMapManagement;
 import persistence.dao.MongoDBDAOUser;
 import persistence.interfaces.DAO;
 
@@ -40,6 +42,10 @@ public class MongoDBDAOFactory {
 
     public DAO createDAO(DAOType type) {
         switch (type){
+            case Element:
+                return new MongoDBDAOElement(database);
+            case Terrain:
+                return new MongoDBDAOMapManagement(database);
             case User:
                 return new MongoDBDAOUser(database);
             default: return null;
