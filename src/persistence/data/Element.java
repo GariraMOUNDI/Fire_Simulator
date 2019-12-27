@@ -1,6 +1,6 @@
 package persistence.data;
 
-import java.awt.*;
+import javafx.scene.paint.Color;
 
 public class Element {
     private Object _id;

@@ -1,6 +1,6 @@
 package businessLogic;
 
-import com.google.gson.Gson;
+import persistence.factories.DAOType;
 import persistence.factories.MongoDBDAOFactory;
 import persistence.interfaces.DAO;
 import ui.interfaces.LoginInterface;
@@ -12,7 +12,7 @@ public class ElementFacade {
 
     public ElementFacade(LoginInterface loginIF) {
         this.loginIF = loginIF;
-        //dao = MongoDBDAOFactory.getInstance().createDAO(DAOType.Element);
+        dao = MongoDBDAOFactory.getInstance().createDAO(DAOType.Element);
     }
 
     public static ElementFacade getInstance(LoginInterface loginIF){
