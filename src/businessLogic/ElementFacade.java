@@ -1,14 +1,12 @@
 package businessLogic;
 
 import persistence.data.Element;
-import persistence.data.Terrain;
-import persistence.data.TypeElement;
+import persistence.data.TypeElementEnum;
 import persistence.factories.DAOType;
 import persistence.factories.MongoDBDAOFactory;
 import persistence.interfaces.DAO;
 import ui.interfaces.LoginInterface;
 
-import java.lang.reflect.Type;
 import java.util.List;
 
 public class ElementFacade {
@@ -29,7 +27,7 @@ public class ElementFacade {
         return instance;
     }
 
-    public void createElement(String elementName, int flammability, String color,TypeElement type, String username){
+    public void createElement(String elementName, int flammability, String color, TypeElementEnum type, String username){
         Element newElement = new Element(elementName,flammability,color,type, username);
         dao.insertData(newElement);
     }

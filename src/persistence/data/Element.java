@@ -2,25 +2,26 @@ package persistence.data;
 
 import javafx.scene.paint.Color;
 
+import java.util.Arrays;
+
 public class Element {
     private Object _id;
     private String elementName;
     private int flammability;
     private String color;
     private boolean basic;
-    private TypeElement type;
-
-
-
     private String username;
+    private TypeElementEnum type;
 
-    public Element(String elementName, int flammability, String color,TypeElement type, String username){
-        this.elementName = elementName;
-        this.flammability = flammability;
-        this.color = color;
-        this.basic = false;
-        this.type = type;
-        this.username = username;
+    public Element(String elementName, int flammability, String color,TypeElementEnum type, String username){
+        if(check(flammability,color,type)){
+            this.elementName = elementName;
+            this.flammability = flammability;
+            this.color = color;
+            this.basic = true;
+            this.type = type;
+            this.username = username;
+        }
     }
 
     public Element getElement(){
@@ -59,11 +60,11 @@ public class Element {
         this.color = color;
     }
 
-    public TypeElement getType(){
+    public TypeElementEnum getType(){
         return this.type;
     }
 
-    public void setType(TypeElement type){
+    public void setType(TypeElementEnum type){
         this.type = type;
     }
     public String getUsername() {
@@ -81,5 +82,17 @@ public class Element {
     public static String parseId(Object id) {
         String p = id.toString().split("=")[1];
         return p.substring(0,p.length()-1);
+    }
+
+    public boolean check(int flammability, String color, TypeElementEnum type){
+        String colors[] = ColorElement.getColors(type);
+
+        if(type.equals(TypeElementEnum.Water) || type.equals(TypeElementEnum.Rock)){
+            return (flammability == 0 && Arrays.asList(colors).contains(color));
+        }
+        else if(type.equals(TypeElementEnum.Vegetation)){
+            return (flammability > 0 && flammability < 100 && Arrays.asList(colors).contains(color) );
+        }
+        return false;
     }
 }

@@ -75,7 +75,7 @@ public class ApplicationUI extends Application {
     }
 
     public static void elementManagementView(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(ApplicationUI.class.getResource("../views/ElementManagementView.fxml"));
+        Parent root = FXMLLoader.load(ApplicationUI.class.getResource("../views/tmp.fxml"));
         stage.setTitle("Element Menu");
         stageDeploy(stage, root);
     }
