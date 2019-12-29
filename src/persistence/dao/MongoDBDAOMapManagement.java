@@ -5,6 +5,7 @@ import com.mongodb.BasicDBObject;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
+import org.bson.types.ObjectId;
 import persistence.data.Terrain;
 import persistence.interfaces.DAO;
 
@@ -34,11 +35,17 @@ public class MongoDBDAOMapManagement implements DAO<Terrain> {
 
     @Override
     public Object getDataById(String key, Object value) {
-        query = new BasicDBObject(key,value);
+        List<Terrain> maps = new ArrayList<>();
+        if (key.equals("_id")) query = new BasicDBObject(key,new ObjectId(value.toString()));
+        else query = new BasicDBObject(key,value);
         for (Document doc : collection.find(query)){
-            return gson.fromJson(doc.toJson(), Terrain.class);
+            Terrain g = gson.fromJson(doc.toJson(), Terrain.class);
+            maps.add(g);
         }
-        return null;
+        for (Terrain m : maps) {
+            m.set_id(Terrain.parseId(m.get_id()));
+        }
+        return maps;
     }
 
     @Override
@@ -48,7 +55,9 @@ public class MongoDBDAOMapManagement implements DAO<Terrain> {
 
     @Override
     public void deleteData(Terrain arg) {
-
+        System.out.println(arg.get_id());
+        query = new BasicDBObject("_id", new ObjectId((String) arg.get_id()));
+        collection.findOneAndDelete(query);
     }
 
     @Override

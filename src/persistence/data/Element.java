@@ -6,10 +6,10 @@ public class Element {
     private Object _id;
     private String elementName;
     private int flammability;
-    private Color color;
+    private String color;
     private boolean basic;
 
-    public Element(String elementName, int flammability, Color color){
+    public Element(String elementName, int flammability, String color){
         this.elementName = elementName;
         this.flammability = flammability;
         this.color = color;
@@ -36,7 +36,7 @@ public class Element {
         return flammability;
     }
 
-    public Color getColor() {
+    public String getColor() {
         return color;
     }
 
@@ -48,7 +48,7 @@ public class Element {
         this.flammability = flammability;
     }
 
-    public void setColor(Color color) {
+    public void setColor(String color) {
         this.color = color;
     }
 }

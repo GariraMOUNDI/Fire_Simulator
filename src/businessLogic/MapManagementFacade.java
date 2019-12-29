@@ -1,6 +1,7 @@
 package businessLogic;
 
 import com.google.gson.Gson;
+import org.bson.types.ObjectId;
 import persistence.data.Matrice;
 import persistence.data.Terrain;
 import persistence.factories.DAOType;
@@ -13,11 +14,20 @@ import java.util.List;
 public class MapManagementFacade {
     private LoginInterface loginIF;
     private DAO dao;
-    private Terrain CurrentTerrain;
+
+
+    private Terrain currentTerrain;
     private Gson gson = new Gson();
     private static MapManagementFacade instance = null;
 
 
+    public Terrain getCurrentTerrain() {
+        return currentTerrain;
+    }
+
+    public void setCurrentTerrain(Terrain currentTerrain) {
+        this.currentTerrain = currentTerrain;
+    }
     private MapManagementFacade(LoginInterface loginIF) {
         this.loginIF = loginIF;
         dao = MongoDBDAOFactory.getInstance().createDAO(DAOType.Terrain);
@@ -28,12 +38,21 @@ public class MapManagementFacade {
         return instance;
     }
 
+    public Terrain getMap(Object _id){return (Terrain) dao.getDataById("_id", _id);}
+
     public List<Terrain> getUserMaps(String username){
         return (List<Terrain>) dao.getDataById("username", username);
     }
 
-    public void createMap(String name, Matrice map) {
-        dao.insertData(new Terrain(name, map));
+    public void deleteMap(Terrain map){
+        dao.deleteData(map);
     }
+
+
+    public void createMap(String name, Matrice map, String username) {
+        this.currentTerrain = new Terrain(name, map, username);
+        dao.insertData(this.currentTerrain);
+    }
+
 
 }
