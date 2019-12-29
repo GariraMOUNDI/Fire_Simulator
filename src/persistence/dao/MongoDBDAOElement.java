@@ -5,7 +5,9 @@ import com.mongodb.BasicDBObject;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
+import org.bson.types.ObjectId;
 import persistence.data.Element;
+import persistence.data.Terrain;
 import persistence.interfaces.DAO;
 
 import java.util.ArrayList;
@@ -30,9 +32,21 @@ public class MongoDBDAOElement implements DAO<Element> {
         return allElements;
     }
 
+
+
     @Override
     public Object getDataById(String key, Object value) {
-        return null;
+        List<Element> elements = new ArrayList<>();
+        if (key.equals("_id")) query = new BasicDBObject(key,new ObjectId(value.toString()));
+        else query = new BasicDBObject(key,value);
+        for (Document doc : collection.find(query)){
+            Element e = gson.fromJson(doc.toJson(), Element.class);
+            elements.add(e);
+        }
+        for (Element e : elements) {
+            e.set_id(Element.parseId(e.get_id()));
+        }
+        return elements;
     }
 
     @Override
@@ -43,7 +57,6 @@ public class MongoDBDAOElement implements DAO<Element> {
     @Override
     public void deleteData(Element arg) {
         query = new BasicDBObject("elementName", arg.getElementName());
-        //append ?
         collection.findOneAndDelete(query);
     }
 

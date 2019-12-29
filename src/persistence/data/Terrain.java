@@ -52,7 +52,6 @@ public class Terrain {
 
     public static String parseId(Object id) {
         String p = id.toString().split("=")[1];
-        System.out.println(p.substring(0,p.length()-1));
         return p.substring(0,p.length()-1);
     }
 }

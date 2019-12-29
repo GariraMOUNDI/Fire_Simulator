@@ -8,12 +8,19 @@ public class Element {
     private int flammability;
     private String color;
     private boolean basic;
+    private TypeElement type;
 
-    public Element(String elementName, int flammability, String color){
+
+
+    private String username;
+
+    public Element(String elementName, int flammability, String color,TypeElement type, String username){
         this.elementName = elementName;
         this.flammability = flammability;
         this.color = color;
         this.basic = false;
+        this.type = type;
+        this.username = username;
     }
 
     public Element getElement(){
@@ -50,5 +57,29 @@ public class Element {
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    public TypeElement getType(){
+        return this.type;
+    }
+
+    public void setType(TypeElement type){
+        this.type = type;
+    }
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void set_id(Object _id) {
+        this._id = _id;
+    }
+
+    public static String parseId(Object id) {
+        String p = id.toString().split("=")[1];
+        return p.substring(0,p.length()-1);
     }
 }

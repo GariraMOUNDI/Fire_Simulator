@@ -20,7 +20,7 @@ public class Matrice {
         this.boxes = new Box[size][size];
         for (int i = 0; i < size; i++){
             for (int j = 0; j < size; j++){
-                this.boxes[i][j] = new Box(StateBox.intact, i, j, 100, new Element("BasicTree", 50, "#228B22"));;
+                this.boxes[i][j] = new Box(StateBox.intact, i, j, 100, new Element("BasicTree", 50, "#228B22",new TypeElement(0,100,"#228B22") ,"Vincent"));;
             }
         }
     }

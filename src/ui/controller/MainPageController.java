@@ -28,6 +28,10 @@ public class MainPageController implements LoginInterface {
         ApplicationUI.mainPageView(ApplicationUI.getStage());
     }
 
+    public void elementManagementView() throws Exception{
+        ApplicationUI.elementManagementView(ApplicationUI.getStage());
+    }
+
 
     @Override
     public void printResults(Object arg) {

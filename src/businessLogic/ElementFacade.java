@@ -1,16 +1,23 @@
 package businessLogic;
 
+import persistence.data.Element;
+import persistence.data.Terrain;
+import persistence.data.TypeElement;
 import persistence.factories.DAOType;
 import persistence.factories.MongoDBDAOFactory;
 import persistence.interfaces.DAO;
 import ui.interfaces.LoginInterface;
 
+import java.lang.reflect.Type;
+import java.util.List;
+
 public class ElementFacade {
     private LoginInterface loginIF;
     private DAO dao;
+    private Element currentElement;
     private static ElementFacade instance = null;
 
-    public ElementFacade(LoginInterface loginIF) {
+    private ElementFacade(LoginInterface loginIF) {
         this.loginIF = loginIF;
         dao = MongoDBDAOFactory.getInstance().createDAO(DAOType.Element);
     }
@@ -20,5 +27,22 @@ public class ElementFacade {
             instance = new ElementFacade(loginIF);
         }
         return instance;
+    }
+
+    public void createElement(String elementName, int flammability, String color,TypeElement type, String username){
+        Element newElement = new Element(elementName,flammability,color,type, username);
+        dao.insertData(newElement);
+    }
+
+    public Element getCurrentElement() {
+        return currentElement;
+    }
+
+    public void setCurrentElement(Element currentElement) {
+        this.currentElement = currentElement;
+    }
+
+    public List<Element> getUserElements(String username){
+        return (List<Element>) dao.getDataById("username", username);
     }
 }
