@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import ui.controller.FriendsController;
+import ui.controller.ProfileController;
 
 import java.awt.*;
 import java.io.IOException;
@@ -24,6 +25,7 @@ public class ApplicationUI extends Application {
     public void start(Stage primaryStage) throws Exception{
         ApplicationUI.loginView(primaryStage);
         //ApplicationUI.friendsView(primaryStage);
+        //ApplicationUI.profileView(primaryStage);
     }
 
     @Override
@@ -57,6 +59,7 @@ public class ApplicationUI extends Application {
 
     public static void profileView(Stage stage) throws Exception{
         uploadView(stage, "Profile","../views/ProfileView.fxml");
+        ((ProfileController)loader.getController()).init(stage);
     }
 
     private static void uploadView(Stage stage,String title, String path) throws IOException {

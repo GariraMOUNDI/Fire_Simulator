@@ -55,11 +55,11 @@ public class SessionFacade {
         }
     }
 
-    private void setUserLoggedIn(User user) {
+    public void setUserLoggedIn(User user) {
         this.userLoggedIn = user;
     }
 
-    public User getUser(){
+    public User getUserLoggedIn(){
         return userLoggedIn;
     }
 

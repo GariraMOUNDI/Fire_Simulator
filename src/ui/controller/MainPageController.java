@@ -25,4 +25,8 @@ public class MainPageController implements LoginInterface {
     public void goToFriendsWindow() throws Exception {
         ApplicationUI.friendsView(ApplicationUI.getStage());
     }
+
+    public void goToProfilePage() throws Exception{
+        ApplicationUI.profileView(ApplicationUI.getStage());
+    }
 }

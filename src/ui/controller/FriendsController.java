@@ -39,10 +39,14 @@ public class FriendsController implements LoginInterface {
 
     }
 
+    @FXML
+    public void initialize(){
+        refreshLists();
+    }
+
     public void init(Stage stage){
         unknowPane.setPrefWidth(stage.getWidth() / 2.5);
         friendsPane.setPrefWidth(stage.getWidth() / 2.5);
-        refreshLists();
     }
 
     public void refreshLists(){

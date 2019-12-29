@@ -4,6 +4,7 @@ import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import persistence.dao.MongoDBDAOItem;
 import persistence.dao.MongoDBDAOUser;
 import persistence.interfaces.DAO;
 
@@ -42,6 +43,8 @@ public class MongoDBDAOFactory {
         switch (type){
             case User:
                 return new MongoDBDAOUser(database);
+            case Item:
+                return new MongoDBDAOItem(database);
             default: return null;
         }
     }
