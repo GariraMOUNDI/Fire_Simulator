@@ -39,33 +39,65 @@ public class ElementController implements LoginInterface {
 
     public void initialize() {
         List<Element> elements;
-        elements = EF.getBasicsElements();
+        elements = EF.getUserElements(SF.getUser().getUsername());
+        List<Element> basicElements = EF.getBasicsElements();
+
         GridPane rock = new GridPane();
         GridPane water = new GridPane();
         GridPane vegetation = new GridPane();
         ColumnConstraints col = new ColumnConstraints();
         col.setHalignment(HPos.CENTER);
         rock.getColumnConstraints().add(col);
-        rock.setPadding(new Insets(15, 12, 15, 12));
+        rock.setPadding(new Insets(20, 10, 20, 10));
         rock.setVgap(20);
 
         water.getColumnConstraints().add(col);
-        water.setPadding(new Insets(15, 12, 15, 12));
+        water.setPadding(new Insets(20, 10, 20, 10));
         water.setVgap(20);
 
         vegetation.getColumnConstraints().add(col);
-        vegetation.setPadding(new Insets(15, 12, 15, 12));
+        vegetation.setPadding(new Insets(20, 10, 20, 10));
         vegetation.setVgap(20);
 
         int i = 0;
         int j = 0;
         int k = 0;
 
+        for (Element e : basicElements) {
+            GridPane gPane = new GridPane();
+
+            gPane.getColumnConstraints().add(col);
+            gPane.setPadding(new Insets(20, 10, 20, 10));
+            gPane.setHgap(20);
+
+            Label element_name = new Label("Element name : " + e.getElementName());
+            Label flammability = new Label("Flammability : " + String.valueOf(e.getFlammability()));
+            Button modify = new Button("Modify");
+
+
+            gPane.add(element_name, 0, 0);
+            gPane.add(flammability, 1, 0);
+            gPane.add(modify, 2, 0);
+
+            if (e.getType().equals(TypeElementEnum.Rock)){
+                rock.add(gPane, 0, i);
+                i++;
+            }
+            else if (e.getType().equals(TypeElementEnum.Water)){
+                water.add(gPane, 0, j);
+                j++;
+            }
+            else if (e.getType().equals(TypeElementEnum.Vegetation)){
+                vegetation.add(gPane, 0, k);
+                k++;
+            }
+        }
+
         for (Element e : elements) {
             GridPane gPane = new GridPane();
 
             gPane.getColumnConstraints().add(col);
-            gPane.setPadding(new Insets(20, 20, 20, 20));
+            gPane.setPadding(new Insets(20, 10, 20, 10));
             gPane.setHgap(20);
 
             Label element_name = new Label("Element name : " + e.getElementName());
