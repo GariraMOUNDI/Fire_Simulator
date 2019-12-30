@@ -14,10 +14,7 @@ import java.util.List;
 public class MapManagementFacade {
     private LoginInterface loginIF;
     private DAO dao;
-
-
     private Terrain currentTerrain;
-    private Gson gson = new Gson();
     private static MapManagementFacade instance = null;
 
 
@@ -53,6 +50,4 @@ public class MapManagementFacade {
         this.currentTerrain = new Terrain(name, map, username);
         dao.insertData(this.currentTerrain);
     }
-
-
 }

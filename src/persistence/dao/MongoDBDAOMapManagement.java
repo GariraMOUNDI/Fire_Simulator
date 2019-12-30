@@ -55,7 +55,6 @@ public class MongoDBDAOMapManagement implements DAO<Terrain> {
 
     @Override
     public void deleteData(Terrain arg) {
-        System.out.println(arg.get_id());
         query = new BasicDBObject("_id", new ObjectId((String) arg.get_id()));
         collection.findOneAndDelete(query);
     }

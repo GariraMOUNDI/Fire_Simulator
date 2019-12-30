@@ -43,4 +43,8 @@ public class ElementFacade {
     public List<Element> getUserElements(String username){
         return (List<Element>) dao.getDataById("username", username);
     }
+
+    public List<Element> getBasicsElements(){
+        return (List<Element>) dao.getDataById("basic", true);
+    }
 }

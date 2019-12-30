@@ -57,7 +57,7 @@ public class ApplicationUI extends Application {
 
     public static void toMapmenu(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(ApplicationUI.class.getResource("../views/MapManagement/mapMenu.fxml"));
-        stage.setTitle("Solo Menu");
+        stage.setTitle("map Menu");
         stageDeploy(stage, root);
     }
 
@@ -75,7 +75,7 @@ public class ApplicationUI extends Application {
     }
 
     public static void elementManagementView(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(ApplicationUI.class.getResource("../views/tmp.fxml"));
+        Parent root = FXMLLoader.load(ApplicationUI.class.getResource("../views/ElementManagementView.fxml"));
         stage.setTitle("Element Menu");
         stageDeploy(stage, root);
     }

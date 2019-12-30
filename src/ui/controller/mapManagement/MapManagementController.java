@@ -48,10 +48,7 @@ public class MapManagementController implements LoginInterface {
                 Label map_size = new Label("Size : " + String.valueOf(m.getMap().getSize()));
                 Button modify = new Button("Modify");
                 Button delete = new Button("Delete");
-                map_name.setPrefSize(100,50);
-                map_size.setPrefSize(100,50);
-                modify.setPrefSize(100,50);
-                delete.setPrefSize(100,50);
+
 
                 gPane.add(map_name, 0, 0);
                 gPane.add(map_size, 1, 0);
@@ -79,8 +76,8 @@ public class MapManagementController implements LoginInterface {
                         }
                     }
                 });
-                gPane.setHgap(35);
-                gPane.setVgap(35);
+                gPane.setHgap(50);
+                gPane.setVgap(50);
                 pane.add(gPane, 0, i);
                 i--;
             }
