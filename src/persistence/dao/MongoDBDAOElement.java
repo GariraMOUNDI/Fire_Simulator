@@ -57,7 +57,7 @@ public class MongoDBDAOElement implements DAO<Element> {
 
     @Override
     public void deleteData(Element arg) {
-        query = new BasicDBObject("elementName", arg.getElementName());
+        query = new BasicDBObject("_id", new ObjectId((String) arg.get_id()));
         collection.findOneAndDelete(query);
     }
 

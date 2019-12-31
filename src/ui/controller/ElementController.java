@@ -29,10 +29,7 @@ public class ElementController implements LoginInterface {
 
 
 
-    @FXML
-    private TextField ElementName_input, flammability_input, color_input, type_input;
-    @FXML
-    Button createElement;
+
     @FXML
     ScrollPane rock_view, vegetation_view, water_view;
 
@@ -64,21 +61,7 @@ public class ElementController implements LoginInterface {
         int k = 0;
 
         for (Element e : basicElements) {
-            GridPane gPane = new GridPane();
-
-            gPane.getColumnConstraints().add(col);
-            gPane.setPadding(new Insets(20, 10, 20, 10));
-            gPane.setHgap(20);
-
-            Label element_name = new Label("Element name : " + e.getElementName());
-            Label flammability = new Label("Flammability : " + String.valueOf(e.getFlammability()));
-            Button modify = new Button("Modify");
-
-
-            gPane.add(element_name, 0, 0);
-            gPane.add(flammability, 1, 0);
-            gPane.add(modify, 2, 0);
-
+            GridPane gPane = createBasicPane(e);
             if (e.getType().equals(TypeElementEnum.Rock)){
                 rock.add(gPane, 0, i);
                 i++;
@@ -94,22 +77,7 @@ public class ElementController implements LoginInterface {
         }
 
         for (Element e : elements) {
-            GridPane gPane = new GridPane();
-
-            gPane.getColumnConstraints().add(col);
-            gPane.setPadding(new Insets(20, 10, 20, 10));
-            gPane.setHgap(20);
-
-            Label element_name = new Label("Element name : " + e.getElementName());
-            Label flammability = new Label("Flammability : " + String.valueOf(e.getFlammability()));
-            Button modify = new Button("Modify");
-            Button delete = new Button("Delete");
-
-
-            gPane.add(element_name, 0, 0);
-            gPane.add(flammability, 1, 0);
-            gPane.add(modify, 2, 0);
-            gPane.add(delete, 3, 0);
+            GridPane gPane = createElementPane(e);
 
             if (e.getType().equals(TypeElementEnum.Rock)){
                 rock.add(gPane, 0, i);
@@ -138,9 +106,83 @@ public class ElementController implements LoginInterface {
 
     }
 
-    public void createElement(ActionEvent actionEvent){
-    //Warning
-        EF.createElement(ElementName_input.getText(),Integer.parseInt(flammability_input.getText()),color_input.getText(), TypeElementEnum.Water,SF.getUser().getUsername());
+
+
+    public void deleteElement(Element element){
+        EF.deleteElement(element);
+    }
+
+    public GridPane createBasicPane(Element e){
+        GridPane gPane = new GridPane();
+        ColumnConstraints col = new ColumnConstraints();
+        col.setHalignment(HPos.CENTER);
+        gPane.getColumnConstraints().add(col);
+        gPane.setPadding(new Insets(20, 10, 20, 10));
+        gPane.setHgap(20);
+
+        Label element_name = new Label("Element name : " + e.getElementName());
+        Label flammability = new Label("Flammability : " + String.valueOf(e.getFlammability()));
+        Button modify = new Button("Modify");
+        modify.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                try {
+                    EF.setCurrentElement(e);
+                    ApplicationUI.toElementMaker(ApplicationUI.getStage());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        gPane.add(element_name, 0, 0);
+        gPane.add(flammability, 1, 0);
+        gPane.add(modify, 2, 0);
+
+        return gPane;
+    }
+
+    public GridPane createElementPane(Element e){
+        GridPane gPane = new GridPane();
+        ColumnConstraints col = new ColumnConstraints();
+        col.setHalignment(HPos.CENTER);
+        gPane.getColumnConstraints().add(col);
+        gPane.setPadding(new Insets(20, 10, 20, 10));
+        gPane.setHgap(20);
+
+        Label element_name = new Label("Element name : " + e.getElementName());
+        Label flammability = new Label("Flammability : " + String.valueOf(e.getFlammability()));
+        Button modify = new Button("Modify");
+        modify.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                try {
+                    EF.setCurrentElement(e);
+                    ApplicationUI.toElementMaker(ApplicationUI.getStage());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        Button delete = new Button("Delete");
+        delete.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                try {
+                    deleteElement(e);
+                    initialize();
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
+
+        gPane.add(element_name, 0, 0);
+        gPane.add(flammability, 1, 0);
+        gPane.add(modify, 2, 0);
+        gPane.add(delete, 3, 0);
+
+        return gPane;
     }
 
 

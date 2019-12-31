@@ -1,6 +1,7 @@
 package businessLogic;
 
 import persistence.data.Element;
+import persistence.data.Terrain;
 import persistence.data.TypeElementEnum;
 import persistence.factories.DAOType;
 import persistence.factories.MongoDBDAOFactory;
@@ -46,5 +47,9 @@ public class ElementFacade {
 
     public List<Element> getBasicsElements(){
         return (List<Element>) dao.getDataById("basic", true);
+    }
+
+    public void deleteElement(Element element) {
+        dao.deleteData(element);
     }
 }

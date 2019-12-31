@@ -18,7 +18,7 @@ public class Element {
             this.elementName = elementName;
             this.flammability = flammability;
             this.color = color;
-            this.basic = true;
+            this.basic = false;
             this.type = type;
             this.username = username;
         }

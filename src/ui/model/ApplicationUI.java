@@ -80,6 +80,12 @@ public class ApplicationUI extends Application {
         stageDeploy(stage, root);
     }
 
+    public static void toElementMaker(Stage stage) throws Exception {
+        Parent root = FXMLLoader.load(ApplicationUI.class.getResource("../views/ElementMaker.fxml"));
+        stage.setTitle("Element Maker");
+        stageDeploy(stage, root);
+    }
+
 
     private static void stageDeploy(Stage stage, Parent root) {
         stage.setScene(new Scene(root));
