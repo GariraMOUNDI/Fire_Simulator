@@ -64,28 +64,39 @@
                <font>
                   <Font size="18.0" />
                </font></Label>
-            <HBox alignment="TOP_RIGHT" prefHeight="30.0" GridPane.columnIndex="2">
-               <children>
-                  <ImageView fitHeight="28.0" fitWidth="108.0" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#logOut" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
-                     <image>
-                        <Image url="@../../resources/quit.png" />
-                     </image>
-                     <HBox.margin>
-                        <Insets />
-                     </HBox.margin>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </ImageView>
-               </children>
-               <padding>
-                  <Insets bottom="1.0" left="4.0" right="4.0" top="1.0" />
-               </padding></HBox>
+             <GridPane GridPane.columnIndex="2">
+                 <columnConstraints>
+                     <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                </columnConstraints>
+                 <rowConstraints>
+                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                 </rowConstraints>
+                 <children>
+                     <ImageView fitHeight="28.0" fitWidth="108.0" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#toStore" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0">
+                         <image>
+                             <Image url="@../../resources/shop.png" />
+                         </image>
+                         <cursor>
+                             <Cursor fx:constant="HAND" />
+                         </cursor>
+                     </ImageView>
+                     <ImageView fitHeight="28.0" fitWidth="108.0" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#logOut" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
+                         <image>
+                             <Image url="@../../resources/quit.png" />
+                         </image>
+                         <cursor>
+                             <Cursor fx:constant="HAND" />
+                         </cursor>
+                     </ImageView>
+                 </children>
+             </GridPane>
             <GridPane alignment="CENTER">
               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -96,7 +107,7 @@
                         <Image url="@../../resources/user.png" />
                      </image>
                      <GridPane.margin>
-                        <Insets left="5.0" />
+                        <Insets />
                      </GridPane.margin>
                      <cursor>
                         <Cursor fx:constant="HAND" />
@@ -110,7 +121,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                      <GridPane.margin>
-                        <Insets left="5.0" />
+                        <Insets />
                      </GridPane.margin>
                   </ImageView>
                   <ImageView fitHeight="100.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
@@ -118,7 +129,7 @@
                         <Image url="@../../resources/posts.png" />
                      </image>
                      <GridPane.margin>
-                        <Insets left="5.0" />
+                        <Insets />
                      </GridPane.margin>
                      <cursor>
                         <Cursor fx:constant="HAND" />
