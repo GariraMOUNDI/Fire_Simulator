@@ -28,12 +28,12 @@ public class ApplicationUI extends Application {
         return primaryStage;
     }
 
-    public static void loginView(Stage stage) throws Exception{
+    public static void loginView(Stage stage) throws Exception {
         uploadView(stage, "Login","../views/LoginView.fxml");
         ApplicationUI.primaryStage = stage;
     }
 
-    public static void registerView(Stage stage) throws Exception{
+    public static void registerView(Stage stage) throws Exception {
         uploadView(stage, "Register", "../views/RegisterView.fxml");
     }
 
@@ -45,6 +45,18 @@ public class ApplicationUI extends Application {
         uploadView(stage, "Store","../views/StoreView.fxml");
     }
 
+    public static void postView(Stage stage) throws Exception {
+        uploadView(stage, "Posts","../views/post/PostView.fxml");
+    }
+
+    public static void writePostView(Stage stage) throws Exception {
+        uploadView(stage, "Write Post","../views/post/WritePostView.fxml");
+    }
+
+    public static void modifyPostView(Stage stage) throws Exception {
+        uploadView(stage, "Modify Post","../views/post/ModifyPostView.fxml");
+    }
+      
     private static void uploadView(Stage stage,String title, String path) throws IOException {
         loader = new FXMLLoader(ApplicationUI.class.getResource(path));
         Parent root = loader.load();
