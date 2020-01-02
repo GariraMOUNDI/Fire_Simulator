@@ -1,6 +1,7 @@
 package ui.controller;
 
 import businessLogic.SessionFacade;
+import persistence.factories.MongoDBDAOFactory;
 import ui.interfaces.LoginInterface;
 import ui.model.ApplicationUI;
 

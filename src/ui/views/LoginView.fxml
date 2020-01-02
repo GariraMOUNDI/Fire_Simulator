@@ -2,11 +2,13 @@
 
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.LoginController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="330.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.LoginController">
   <center>
       <GridPane prefHeight="122.0" prefWidth="360.0" BorderPane.alignment="CENTER">
          <columnConstraints>
@@ -41,18 +43,23 @@
       <Pane prefHeight="106.0" prefWidth="70.0" BorderPane.alignment="CENTER" />
    </right>
    <top>
-      <FlowPane alignment="CENTER" columnHalignment="CENTER" depthTest="ENABLE" prefHeight="99.0" prefWidth="500.0" BorderPane.alignment="CENTER">
+      <FlowPane alignment="CENTER" columnHalignment="CENTER" depthTest="ENABLE" hgap="20.0" prefHeight="99.0" prefWidth="500.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="105.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../resources/icons/logo.png" />
                </image>
             </ImageView>
-            <Separator orientation="VERTICAL" prefHeight="117.0" prefWidth="38.0" visible="false" />
             <Label prefHeight="60.0" text="Fire Simulator" textFill="RED">
                <font>
-                  <Font size="46.0" />
+                  <Font name="Century Schoolbook" size="46.0" />
                </font>
+               <effect>
+                  <DropShadow height="77.01" radius="19.832500000000003" width="4.32">
+                     <color>
+                        <Color red="0.11764705926179886" green="0.42352941632270813" blue="0.0470588244497776" />
+                     </color></DropShadow>
+               </effect>
             </Label>
          </children>
          <opaqueInsets>

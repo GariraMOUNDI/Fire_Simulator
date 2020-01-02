@@ -1,5 +1,7 @@
 package businessLogic;
 
+import persistence.data.Character;
+import persistence.data.Item;
 import persistence.factories.MongoDBDAOFactory;
 import persistence.data.User;
 import persistence.factories.DAOType;
@@ -14,7 +16,9 @@ public class SessionFacade {
     private DAO dao;
     private User userLoggedIn;
     private List<String> others, friends;
+    private List<Character> characters;
     private static SessionFacade instance = null;
+    private int characterIndex;
 
     public static SessionFacade getInstance(LoginInterface loginIF){
         if (instance == null)
@@ -40,7 +44,9 @@ public class SessionFacade {
     }
 
     public void register(String username, String password, String email, String helpWord) {
-        dao.insertData(new User(username, password, email, helpWord));
+        User user = new User(username, password, email, helpWord);
+        dao.insertData(user);
+        setUserLoggedIn((User) dao.getDataById("username",username));
     }
 
     private boolean checkCredentials(User user, String password) {
@@ -56,6 +62,11 @@ public class SessionFacade {
     }
 
     public void setUserLoggedIn(User user) {
+        user.addItem(new Item("Gun", 2, 5, 20, 3, 4, "resources/icons/character3.png"));
+        user.addCharacter(new Character("resources/icons/character1.png",1,"Mage",12));
+        user.addCharacter(new Character("resources/icons/character2.png",2,"Witcher",20));
+        user.addCharacter(new Character("resources/icons/character3.png",3,"Vampire",54));
+
         this.userLoggedIn = user;
     }
 
@@ -84,9 +95,43 @@ public class SessionFacade {
         others = new ArrayList<>();
         friends = getUserLoggedInFriends();
         for(User other : (List<User>) dao.getAllData()){
-            if (!friends.contains(other.getUsername()))
+            if (!friends.contains(other.getUsername()) && !other.getUsername().equals(userLoggedIn.getUsername()))
                 others.add(other.getUsername());
         }
         return others;
+    }
+
+    public List<Item> getUserLoggedInItems(){
+        return userLoggedIn.getItems();
+    }
+
+    public Character getCharacterAt(int characterIndex){
+        try{
+            return getCharacters().get(characterIndex);
+        }catch(IndexOutOfBoundsException e){
+            return null;
+        }
+    }
+
+    public List<Character> getCharacters(){
+        return userLoggedIn.getCharacters();
+    }
+
+    public Character nextCharacter() {
+        characterIndex = (characterIndex + 1) % getCharacters().size();
+        return getCharacterAt(characterIndex);
+    }
+
+    public Character previousCharacter() {
+        int size = getCharacters().size();
+        characterIndex = (characterIndex - 1) % size;
+        if (characterIndex == -1)
+            characterIndex = size - 1;
+        return getCharacterAt(characterIndex);
+    }
+
+    public void deleteAccount() {
+        dao.deleteData(userLoggedIn);
+        userLoggedIn = null;
     }
 }

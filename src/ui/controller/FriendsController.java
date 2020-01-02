@@ -6,6 +6,8 @@ import javafx.scene.Node;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Paint;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import persistence.data.User;
 import resources.styles.FriendsButtons;
@@ -59,30 +61,37 @@ public class FriendsController implements LoginInterface {
     public void showList(ScrollPane scroll, GridPane grid, String arg, List<String> users, int nbButtons){
         deleteRows(grid);
         UserLabels user;
-        int i = 0;
-        boolean add;
-        for (String name : users){
-            if (arg == null)
-                add = true;
-            else
+        if (users.size() == 0){
+            user = new UserLabels("\n\tYou need a friend to fight with !!!");
+            user.setTextFill(Paint.valueOf("red"));
+            user.setStyle("-fx-font-weight: regular;");
+            grid.add(user,0,0,3,3);
+        }else{
+            int i = 0;
+            boolean add;
+            for (String name : users){
+                if (arg == null)
+                    add = true;
+                else
                 if (name.contains(arg))
                     add = true;
                 else
                     add = false;
 
-            if(add){
-                user = new UserLabels(name);
-                grid.getRowConstraints().add(row);
-                grid.add( user, 0, i );
+                if(add){
+                    user = new UserLabels(name);
+                    grid.getRowConstraints().add(row);
+                    grid.add( user, 0, i );
 
-                if (nbButtons == 2){
-                    grid.add(new FriendsButtons(this,"resources/icons/fight.png", name),1,i);
-                    grid.add(new FriendsButtons(this,"resources/icons/remove.png", name),2,i);
-                }else
+                    if (nbButtons == 2){
+                        grid.add(new FriendsButtons(this,"resources/icons/fight.png", name),1,i);
+                        grid.add(new FriendsButtons(this,"resources/icons/remove.png", name),2,i);
+                    }else
                     if (nbButtons == 1)
                         grid.add(new FriendsButtons(this,"resources/icons/add.png", name),2,i);
 
-                i++;
+                    i++;
+                }
             }
         }
         scroll.setContent(grid);

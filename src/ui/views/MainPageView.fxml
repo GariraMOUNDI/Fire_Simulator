@@ -3,15 +3,17 @@
 <?import javafx.geometry.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.MainPageController">
    <left>
       <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="34.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="34.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../resources/icons/logo.png" />
                </image>
@@ -21,7 +23,7 @@
    <right>
       <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="34.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="34.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../resources/icons/logo.png" />
                </image>
@@ -41,8 +43,28 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button mnemonicParsing="false" prefHeight="87.0" prefWidth="413.0" text="Solo menu" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" prefHeight="104.0" prefWidth="320.0" text="Online" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+            <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="200.0" style="-fx-background-color: #228b22; -fx-background-radius: 20;" text="Solo Menu" textFill="#842b0d" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Britannic Bold" size="25.0" />
+               </font>
+               <effect>
+                  <DropShadow height="100.0" radius="62.0" spread="0.35" width="150.0">
+                     <color>
+                        <Color red="0.6980392336845398" green="0.09019608050584793" blue="0.09019608050584793" />
+                     </color>
+                  </DropShadow>
+               </effect></Button>
+            <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="200.0" style="-fx-background-color: #228b22; -fx-background-radius: 20;" text="Online" textFill="#842b0d" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Britannic Bold" size="25.0" />
+               </font>
+               <effect>
+                  <DropShadow height="100.0" radius="62.0" spread="0.35" width="150.0">
+                     <color>
+                        <Color red="0.6980392336845398" green="0.09019608050584793" blue="0.09019608050584793" />
+                     </color>
+                  </DropShadow>
+               </effect></Button>
          </children>
          <BorderPane.margin>
             <Insets />
@@ -50,33 +72,44 @@
       </GridPane>
    </center>
    <top>
-      <GridPane prefHeight="30.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <GridPane prefHeight="76.0" prefWidth="600.0" BorderPane.alignment="CENTER">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="174.0" minWidth="10.0" prefWidth="174.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="351.0" minWidth="10.0" prefWidth="254.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="272.0" minWidth="10.0" prefWidth="172.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="174.0" minWidth="10.0" prefWidth="172.4" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="351.0" minWidth="10.0" percentWidth="50.0" prefWidth="256.4" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="272.0" minWidth="10.0" prefWidth="172.0" />
         </columnConstraints>
         <rowConstraints>
             <RowConstraints minHeight="20.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" text="Play Fire Simulator!" textFill="RED" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER">
+            <Label alignment="CENTER" contentDisplay="CENTER" text="Welcome to Fire Simulator!" textFill="RED" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER">
                <font>
-                  <Font size="18.0" />
-               </font></Label>
+                  <Font name="Century Schoolbook" size="20.0" />
+               </font>
+               <effect>
+                  <DropShadow height="35.53" radius="12.5525" spread="0.31" width="16.68">
+                     <color>
+                        <Color red="0.11764705926179886" green="0.42352941632270813" blue="0.0470588244497776" />
+                     </color>
+                  </DropShadow>
+               </effect></Label>
             <HBox alignment="TOP_RIGHT" prefHeight="30.0" GridPane.columnIndex="2">
                <children>
-                  <ImageView fitHeight="28.0" fitWidth="108.0" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#logOut" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
-                     <image>
-                        <Image url="@../../resources/icons/quit.png" />
-                     </image>
+                  <FlowPane alignment="CENTER" columnHalignment="CENTER" HBox.hgrow="NEVER">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </ImageView>
+                     <children>
+                        <ImageView fitHeight="28.0" fitWidth="108.0" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#logOut" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../resources/icons/quit.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </children>
+                  </FlowPane>
                </children>
                <padding>
                   <Insets bottom="1.0" left="4.0" right="4.0" top="1.0" />
@@ -126,7 +159,7 @@
                   </ImageView>
                </children>
                <GridPane.margin>
-                  <Insets />
+                  <Insets left="20.0" />
                </GridPane.margin>
             </GridPane>
          </children>

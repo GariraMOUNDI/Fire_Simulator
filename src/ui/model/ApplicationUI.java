@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import persistence.factories.MongoDBDAOFactory;
 import ui.controller.FriendsController;
 import ui.controller.ProfileController;
 
@@ -33,6 +34,7 @@ public class ApplicationUI extends Application {
         Object controller = loader.getController();
         if ( controller instanceof FriendsController)
             ((FriendsController) controller).getSession().updateUser();
+        MongoDBDAOFactory.getInstance().closeConnection();
     }
 
     public static Stage getStage(){
