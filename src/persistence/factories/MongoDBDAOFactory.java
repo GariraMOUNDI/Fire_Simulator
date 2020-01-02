@@ -4,7 +4,7 @@ import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
-import persistence.dao.MongoDBDAOUser;
+import persistence.dao.*;
 import persistence.interfaces.DAO;
 
 import java.io.FileInputStream;
@@ -42,6 +42,10 @@ public class MongoDBDAOFactory {
         switch (type){
             case User:
                 return new MongoDBDAOUser(database);
+            case Item:
+                return new MongoDBDAOItem(database);
+            case Character:
+                return new MongoDBDAOCharacter(database);
             default: return null;
         }
     }

@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.StoreController">
+    <top>
+        <GridPane alignment="TOP_CENTER" prefHeight="60.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <ImageView fitHeight="50.0" fitWidth="50.0" onMouseClicked="#backToMainPage" pickOnBounds="true" preserveRatio="true" translateX="15.0" BorderPane.alignment="CENTER">
+                    <image>
+                        <Image url="@/resources/back_icon.png" />
+                    </image>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </ImageView>
+                <Label text="Store" textFill="#347deb" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Label>
+            <GridPane style="-fx-background-color: #cccccc; -fx-background-radius: 10;" GridPane.columnIndex="2">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                   <HBox alignment="CENTER" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                       <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                               <Image url="@../../resources/icons/gold.png" />
+                           </image>
+                           <HBox.margin>
+                               <Insets right="10.0" />
+                           </HBox.margin>
+                       </ImageView>
+                       <Label fx:id="user_gold" text="100">
+                           <font>
+                               <Font size="23.0" />
+                           </font></Label>
+                   </HBox>
+                   <HBox alignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                       <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                               <Image url="@../../resources/icons/diamond.png" />
+                           </image>
+                           <HBox.margin>
+                               <Insets right="10.0" />
+                           </HBox.margin>
+                       </ImageView>
+                       <Label fx:id="user_diamond" text="100">
+                           <font>
+                               <Font size="23.0" />
+                           </font></Label>
+                   </HBox>
+               </children>
+               <GridPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </GridPane.margin>
+            </GridPane>
+            </children>
+        </GridPane>
+    </top>
+    <center>
+        <GridPane alignment="TOP_CENTER" prefHeight="60.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <Label text="Characters" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="0">
+                <font>
+                    <Font name="Arial Rounded MT Bold" size="25.0" />
+                </font>
+            </Label>
+            <BorderPane fx:id="characters" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #cccccc; -fx-background-radius: 20;" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                <center>
+                    <VBox alignment="CENTER" BorderPane.alignment="CENTER">
+                        <ImageView fx:id="character_image" fitHeight="318.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                            <image>
+                                <Image url="@../../resources/icons/character.png" />
+                            </image>
+                            <VBox.margin>
+                                <Insets bottom="20.0" />
+                            </VBox.margin>
+                        </ImageView>
+                        <Button fx:id="character_purchase" style="-fx-background-color: #a1caf1; -fx-background-radius: 20;" text="Purchase">
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor></Button>
+                    </VBox>
+                </center>
+                <bottom>
+                    <GridPane BorderPane.alignment="CENTER">
+                        <columnConstraints>
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        </rowConstraints>
+                        <children>
+                            <HBox alignment="CENTER" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER">
+                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../resources/icons/gold.png" />
+                                    </image>
+                                    <HBox.margin>
+                                        <Insets right="10.0" />
+                                    </HBox.margin>
+                                </ImageView>
+                                <Label fx:id="character_price" text="100">
+                                    <font>
+                                        <Font size="23.0" />
+                                    </font></Label>
+                            </HBox>
+                            <Label fx:id="character_scope" text="Label" GridPane.columnIndex="1">
+                                <font>
+                                    <Font size="23.0" />
+                                </font></Label>
+
+                        </children>
+                    </GridPane>
+                </bottom>
+                <left>
+                    <Button fx:id="character_left" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#prevCharacter" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #a1caf1; -fx-background-radius: 30;" text="&lt;" BorderPane.alignment="CENTER">
+                        <graphic>
+                            <ImageView fitHeight="50.0" fitWidth="50.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../../resources/icons/arrow.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                        <cursor>
+                            <Cursor fx:constant="HAND" />
+                        </cursor>
+                        <effect>
+                            <InnerShadow choke="0.2" offsetX="-2.0" radius="11.0" width="25.0" />
+                        </effect>
+                    </Button>
+                </left>
+                <right>
+                    <Button fx:id="character_right" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#nextCharacter" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #a1caf1; -fx-background-radius: 30;" BorderPane.alignment="CENTER">
+                        <graphic>
+                            <ImageView blendMode="HARD_LIGHT" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../../resources/icons/arrow.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                        <cursor>
+                            <Cursor fx:constant="HAND" />
+                        </cursor>
+                        <effect>
+                            <InnerShadow blurType="GAUSSIAN" choke="0.2" height="10.0" offsetX="2.0" radius="8.25" width="25.0" />
+                        </effect>
+                    </Button>
+                </right>
+                <padding>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                </padding>
+            <GridPane.margin>
+               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </GridPane.margin>
+            <opaqueInsets>
+               <Insets />
+            </opaqueInsets>
+            <top>
+               <Label fx:id="character_name" text="Label" BorderPane.alignment="CENTER">
+                  <font>
+                     <Font name="Arial Rounded MT Bold" size="50.0" />
+                  </font>
+               </Label>
+            </top>
+            </BorderPane>
+            <Label text="Items" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="0">
+                <font>
+                    <Font name="Arial Rounded MT Bold" size="25.0" />
+                </font>
+            </Label>
+            <BorderPane fx:id="items" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #cccccc; -fx-background-radius: 20;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <center>
+                    <VBox alignment="CENTER" BorderPane.alignment="CENTER">
+                        <ImageView fx:id="item_image" fitHeight="318.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                            <image>
+                                <Image url="@../../resources/items/gun/gun.png" />
+                            </image>
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                        </ImageView>
+                        <Button fx:id="item_purchase" style="-fx-background-color: #a1caf1; -fx-background-radius: 20;" text="Purchase">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                    </VBox>
+
+                </center>
+                <left>
+                    <Button fx:id="item_left" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#prevItem" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #a1caf1; -fx-background-radius: 30;" text="&lt;" BorderPane.alignment="CENTER">
+                        <graphic>
+                            <ImageView fitHeight="50.0" fitWidth="50.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../../resources/icons/arrow.png" />
+                                </image>
+                        <cursor>
+                           <Cursor fx:constant="HAND" />
+                        </cursor>
+                            </ImageView>
+                        </graphic>
+                        <cursor>
+                            <Cursor fx:constant="HAND" />
+                        </cursor>
+                        <effect>
+                            <InnerShadow choke="0.2" offsetX="-2.0" radius="11.0" width="25.0" />
+                        </effect>
+                    </Button>
+                </left>
+                <right>
+                    <Button fx:id="item_right" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#nextItem" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #a1caf1; -fx-background-radius: 30;" BorderPane.alignment="CENTER">
+                        <graphic>
+                            <ImageView blendMode="HARD_LIGHT" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../../resources/icons/arrow.png" />
+                                </image>
+                        <cursor>
+                           <Cursor fx:constant="HAND" />
+                        </cursor>
+                            </ImageView>
+                        </graphic>
+                        <cursor>
+                            <Cursor fx:constant="HAND" />
+                        </cursor>
+                        <effect>
+                            <InnerShadow blurType="GAUSSIAN" choke="0.2" height="10.0" offsetX="2.0" radius="8.25" width="25.0" />
+                        </effect>
+                    </Button>
+                </right>
+                <padding>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                </padding>
+                <GridPane.margin>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                </GridPane.margin>
+                <opaqueInsets>
+                    <Insets />
+                </opaqueInsets>
+            <bottom>
+               <GridPane BorderPane.alignment="CENTER">
+                 <columnConstraints>
+                   <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                   <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                 </columnConstraints>
+                 <rowConstraints>
+                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                 </rowConstraints>
+                  <children>
+                      <HBox alignment="CENTER" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER">
+                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                  <Image url="@../../resources/icons/gold.png" />
+                              </image>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                          </ImageView>
+                          <Label fx:id="item_price" text="100">
+                           <font>
+                              <Font size="23.0" />
+                           </font></Label>
+                      </HBox>
+                     <Label fx:id="item_scope" text="Label" GridPane.columnIndex="1">
+                        <font>
+                           <Font size="23.0" />
+                        </font></Label>
+                     <Label fx:id="item_damage" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <font>
+                           <Font size="23.0" />
+                        </font>
+                     </Label>
+                     <Label fx:id="item_regen" text="Label" GridPane.rowIndex="1">
+                        <font>
+                           <Font size="23.0" />
+                        </font>
+                     </Label>
+
+                  </children>
+               </GridPane>
+            </bottom>
+            <top>
+               <Label fx:id="item_name" text="Label" BorderPane.alignment="CENTER">
+                  <font>
+                     <Font name="Arial Rounded MT Bold" size="50.0" />
+                  </font>
+               </Label>
+            </top>
+            </BorderPane>
+        </GridPane>
+    </center>
+</BorderPane>
