@@ -39,6 +39,7 @@ public class SessionFacade {
 
     public void register(String username, String password, String email, String helpWord) {
         dao.insertData(new User(username, password, email, helpWord));
+        login(username,password);
     }
 
     private boolean checkCredentials(User user, String password) {
@@ -59,6 +60,10 @@ public class SessionFacade {
 
     public User getUser(){
         return userLoggedIn;
+    }
+
+    public void updateUser() {
+        dao.updateData(getUser());
     }
 
 }

@@ -7,12 +7,15 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.awt.*;
+import java.io.IOException;
 
 
 public class ApplicationUI extends Application {
 
     private static Stage primaryStage;
-    private static Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();;
+    private static Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+    private static FXMLLoader loader;
+
     public static void main(String[] args) {
         Application.launch(ApplicationUI.class);
     }
@@ -25,48 +28,43 @@ public class ApplicationUI extends Application {
         return primaryStage;
     }
 
-    public static void loginView(Stage stage) throws Exception{
-        Parent root = FXMLLoader.load(ApplicationUI.class.getResource("../views/LoginView.fxml"));
-        stage.setTitle("Login");
-        stageDeploy(stage, root);
+    public static void loginView(Stage stage) throws Exception {
+        uploadView(stage, "Login","../views/LoginView.fxml");
         ApplicationUI.primaryStage = stage;
     }
 
-    public static void registerView(Stage stage) throws Exception{
-        Parent root = FXMLLoader.load(ApplicationUI.class.getResource("../views/RegisterView.fxml"));
-        stage.setTitle("Register");
-        stageDeploy(stage, root);
+    public static void registerView(Stage stage) throws Exception {
+        uploadView(stage, "Register", "../views/RegisterView.fxml");
     }
 
     public static void mainPageView(Stage stage) throws Exception{
-        Parent root = FXMLLoader.load(ApplicationUI.class.getResource("../views/MainPageView.fxml"));
-        stage.setTitle("Main Menu");
-        stageDeploy(stage, root);
+        uploadView(stage, "Main","../views/MainPageView.fxml");
+    }
+
+    public static void storeView(Stage stage) throws Exception {
+        uploadView(stage, "Store","../views/StoreView.fxml");
     }
 
     public static void postView(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(ApplicationUI.class.getResource("../views/post/PostView.fxml"));
-        stage.setTitle("Posts");
-        stageDeploy(stage, root);
+        uploadView(stage, "Posts","../views/post/PostView.fxml");
     }
 
     public static void writePostView(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(ApplicationUI.class.getResource("../views/post/WritePostView.fxml"));
-        stage.setTitle("Write Post");
-        stageDeploy(stage, root);
+        uploadView(stage, "Write Post","../views/post/WritePostView.fxml");
     }
 
     public static void modifyPostView(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(ApplicationUI.class.getResource("../views/post/ModifyPostView.fxml"));
-        stage.setTitle("Modify Post");
-        stageDeploy(stage, root);
+        uploadView(stage, "Modify Post","../views/post/ModifyPostView.fxml");
     }
-
-    private static void stageDeploy(Stage stage, Parent root) {
+      
+    private static void uploadView(Stage stage,String title, String path) throws IOException {
+        loader = new FXMLLoader(ApplicationUI.class.getResource(path));
+        Parent root = loader.load();
+        stage.setTitle(title);
         stage.setScene(new Scene(root));
         stage.show();
-        stage.setResizable(false);
         stage.setX((dim.getWidth() - stage.getWidth())/2);
         stage.setY((dim.getHeight() - stage.getHeight())/2);
+        stage.setResizable(false);
     }
 }

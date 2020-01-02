@@ -19,9 +19,12 @@ public class MainPageController implements LoginInterface {
         ApplicationUI.postView(ApplicationUI.getStage());
     }
 
-
     public void backToLogin() throws Exception {
         ApplicationUI.loginView(ApplicationUI.getStage());
+    }
+
+    public void toStore() throws Exception {
+        ApplicationUI.storeView(ApplicationUI.getStage());
     }
 
     @Override
