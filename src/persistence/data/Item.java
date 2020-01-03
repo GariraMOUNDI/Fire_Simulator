@@ -10,7 +10,7 @@ public class Item {
     private float damage, price;
     private int level;
     private int regeneration;
-    private String imageURL = "";
+    private String imageURL;
 
     public Item(String name, int scope, float damage, float price, int level, int regeneration, String imageURL) {
         this.type = null;
@@ -72,7 +72,7 @@ public class Item {
     }
 
     public Object getId() {
-        return _id;
+        return parseId(_id);
     }
 
     public String getImageURL() {
@@ -85,5 +85,10 @@ public class Item {
 
     public void setPrice(float price) {
         this.price = price;
+    }
+
+    public static String parseId(Object id) {
+        String p = id.toString().split("=")[1];
+        return p.substring(0,p.length()-1);
     }
 }

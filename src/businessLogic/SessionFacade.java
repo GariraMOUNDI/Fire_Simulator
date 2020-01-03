@@ -44,9 +44,9 @@ public class SessionFacade {
     }
 
     public void register(String username, String password, String email, String helpWord) {
-        User user = new User(username, password, email, helpWord);
-        dao.insertData(user);
-        setUserLoggedIn((User) dao.getDataById("username",username));
+
+        dao.insertData(new User(username, password, email, helpWord));
+        login(username,password);
     }
 
     private boolean checkCredentials(User user, String password) {

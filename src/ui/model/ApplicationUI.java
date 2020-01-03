@@ -16,7 +16,9 @@ import java.io.IOException;
 public class ApplicationUI extends Application {
 
     private static Stage primaryStage;
+
     private static Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();;
+
     private static FXMLLoader loader;
 
     public static void main(String[] args) {
@@ -62,6 +64,22 @@ public class ApplicationUI extends Application {
     public static void profileView(Stage stage) throws Exception{
         uploadView(stage, "Profile","../views/ProfileView.fxml");
         ((ProfileController)loader.getController()).init(stage);
+    }
+
+    public static void storeView(Stage stage) throws Exception {
+        uploadView(stage, "Store","../views/StoreView.fxml");
+    }
+
+    public static void postView(Stage stage) throws Exception {
+        uploadView(stage, "Posts","../views/post/PostView.fxml");
+    }
+
+    public static void writePostView(Stage stage) throws Exception {
+        uploadView(stage, "Write Post","../views/post/WritePostView.fxml");
+    }
+
+    public static void modifyPostView(Stage stage) throws Exception {
+        uploadView(stage, "Modify Post","../views/post/ModifyPostView.fxml");
     }
 
     private static void uploadView(Stage stage,String title, String path) throws IOException {

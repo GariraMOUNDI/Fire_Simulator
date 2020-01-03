@@ -1,5 +1,6 @@
 package persistence.data;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,6 +11,7 @@ public class User {
     private List<Character> userCharacters;
     private Object _id;
     private int diamonds, XP, gold, level;
+
 
     public User(String username, String password, String email, String helpWord) {
         this.username = username;
@@ -28,21 +30,29 @@ public class User {
     public Object get_id(){
         return _id;
     }
+
     public String getPassword(){
         return password;
     }
+
     public String getUsername() { return username; }
+
     public String getEmail() { return email; }
+
     public String getHelpWord() { return helpWord; }
+
     public void setUsername(String username){
         this.username = username;
     }
+
     public void setEmail(String email){
         this.email = email;
     }
+
     public void setHelpWord(String help){
         this.helpWord = help;
     }
+
     public void setPassword(String password){
         this.password = password;
     }
@@ -51,33 +61,22 @@ public class User {
         return username + " : " + password ;
     }
 
-    public List<String> getFriends(){
-        return friends;
-    }
-    public void addFriend(String arg){
-        friends.add(0,arg);
-    }
-    public void removeFriend(String arg){
-        friends.remove(arg);
+    public void addItem(Item i) {
+        userItems.add(i);
     }
 
-    public List<Item> getItems(){
+    public List<Item> getItems() {
         return userItems;
     }
-    public void addItem(Item arg){
-        userItems.add(0,arg);
-    }
+
     public void removeItem(Item arg){
         userItems.remove(arg);
     }
 
-    public List<Character> getCharacters(){
-        return userCharacters;
-    }
+    public void addCharacter(Character c) { userCharacters.add(c); }
 
-    public void addCharacter(Character arg){
-        userCharacters.add(0,arg);
-    }
+    public List<Character> getCharacters() { return userCharacters; }
+
     public void removeCharacter(Character arg){
         userCharacters.remove(arg);
     }
@@ -112,5 +111,17 @@ public class User {
 
     public void setLevel(int level) {
         this.level = level;
+    }
+
+    public List<String> getFriends(){
+        return friends;
+    }
+
+    public void addFriend(String arg){
+        friends.add(0,arg);
+    }
+
+    public void removeFriend(String arg){
+        friends.remove(arg);
     }
 }
