@@ -75,7 +75,7 @@ public class StoreFacade {
 
     public User getUser() {
         if (SF != null) {
-            return SF.getUser();
+            return SF.getUserLoggedIn();
         }
         return null;
     }

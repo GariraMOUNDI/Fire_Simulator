@@ -1,7 +1,7 @@
 package ui.controller;
 
 import businessLogic.SessionFacade;
-import javafx.application.Application;
+
 import ui.interfaces.LoginInterface;
 import ui.model.ApplicationUI;
 
@@ -30,5 +30,13 @@ public class MainPageController implements LoginInterface {
     @Override
     public void printResults(Object arg) {
 
+    }
+
+    public void goToFriendsWindow() throws Exception {
+        ApplicationUI.friendsView(ApplicationUI.getStage());
+    }
+
+    public void goToProfilePage() throws Exception{
+        ApplicationUI.profileView(ApplicationUI.getStage());
     }
 }

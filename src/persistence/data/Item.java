@@ -10,7 +10,7 @@ public class Item {
     private float damage, price;
     private int level;
     private int regeneration;
-    private String imageURL = "";
+    private String imageURL;
 
     public Item(String name, int scope, float damage, float price, int level, int regeneration, String imageURL) {
         this.type = null;

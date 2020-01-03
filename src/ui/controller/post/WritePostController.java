@@ -20,7 +20,7 @@ public class WritePostController implements LoginInterface {
 
     public void publishPost() throws Exception {
         if (!content.getText().isEmpty()) {
-            PF.writePost(SF.getUser().getUsername(), content.getText());
+            PF.writePost(SF.getUserLoggedIn().getUsername(), content.getText());
             backToPosts();
         }
     }

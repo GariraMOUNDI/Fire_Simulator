@@ -1,5 +1,5 @@
 package persistence.factories;
 
 public enum DAOType {
-  User, Tournament, Item, Character, Post;
+  User, Tournament, Item, Character, Post
 }

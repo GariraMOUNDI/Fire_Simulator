@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.ProfileController">
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
+   </padding>
+   <top>
+      <BorderPane BorderPane.alignment="CENTER">
+         <center>
+            <FlowPane alignment="CENTER" prefHeight="50.0" prefWidth="960.0">
+               <children>
+                  <Label text="Your Profile">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </FlowPane>
+         </center>
+         <left>
+            <ImageView fitHeight="60.0" fitWidth="87.0" onMouseClicked="#backToMainPage" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+               <image>
+                  <Image url="@../../resources/icons/back_icon.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </left>
+      </BorderPane>
+   </top>
+   <center>
+      <TabPane fx:id="profileTabPane" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="100.0" tabMaxWidth="100.0" tabMinHeight="30.0" tabMinWidth="150.0" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab style="-fx-font-family: Arial; -fx-font-size: 14; -fx-font-weight: BOLD;" text="Personal Data">
+               <content>
+                  <BorderPane>
+                     <left>
+                        <VBox prefHeight="480.0" prefWidth="329.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <GridPane prefHeight="462.0" prefWidth="330.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints maxHeight="1.7976931348623157E308" minHeight="18.399993896484375" prefHeight="62.2" vgrow="NEVER" />
+                                    <RowConstraints maxHeight="109.60001220703126" minHeight="0.0" prefHeight="71.60000000000001" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="69.60002441406249" minHeight="0.0" prefHeight="45.400000000000006" vgrow="NEVER" />
+                                  <RowConstraints maxHeight="147.60001220703126" minHeight="10.0" prefHeight="57.79999389648438" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="134.39999999999998" minHeight="10.0" prefHeight="56.60003662109375" vgrow="NEVER" />
+                                    <RowConstraints maxHeight="134.39999999999998" minHeight="10.0" prefHeight="60.60000000000002" vgrow="NEVER" />
+                                    <RowConstraints maxHeight="134.39999999999998" minHeight="10.0" prefHeight="87.0" vgrow="NEVER" />
+                                    <RowConstraints maxHeight="134.39999999999998" minHeight="10.0" prefHeight="87.0" vgrow="NEVER" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label text="Username" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+                                       <font>
+                                          <Font name="Bell MT Bold" size="25.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="emailLabel" layoutX="10.0" layoutY="16.0" text="mazougarira@yahoo.fr" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="TOP">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="10.0" layoutY="16.0" text="E-mail" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="BOTTOM">
+                                       <font>
+                                          <Font name="Bell MT Bold" size="25.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="usernameLabel" layoutX="10.0" layoutY="16.0" text="meme" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" prefHeight="50.0" prefWidth="330.0" text="Current Information" textAlignment="CENTER" GridPane.valignment="TOP">
+                                       <font>
+                                          <Font name="System Bold Italic" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Help word" GridPane.halignment="LEFT" GridPane.rowIndex="5" GridPane.valignment="BOTTOM">
+                                       <font>
+                                          <Font name="Bell MT Bold" size="25.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="hwLabel" text="Meme" GridPane.halignment="RIGHT" GridPane.rowIndex="6" GridPane.valignment="TOP">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Button mnemonicParsing="false" onAction="#deleteAccount" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: red; -fx-background-radius: 15;" text="Delete Account" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+                                       <GridPane.margin>
+                                          <Insets top="30.0" />
+                                       </GridPane.margin>
+                                       <effect>
+                                          <DropShadow height="42.5" radius="23.875" width="55.0" />
+                                       </effect>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                 </children>
+                              </GridPane>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </VBox>
+                     </left>
+                     <right>
+                        <GridPane prefWidth="500.0" BorderPane.alignment="CENTER">
+                           <columnConstraints>
+                              <ColumnConstraints maxWidth="0.0" minWidth="0.0" prefWidth="0.0" />
+                              <ColumnConstraints maxWidth="1.7976931348623157E308" minWidth="10.0" percentWidth="50.0" />
+                              <ColumnConstraints maxWidth="1.7976931348623157E308" minWidth="10.0" percentWidth="50.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label alignment="CENTER" prefHeight="50.0" prefWidth="500.0" text="Do you want to change something ?" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.valignment="TOP">
+                                 <font>
+                                    <Font name="System Bold Italic" size="20.0" />
+                                 </font>
+                              </Label>
+                               <Label text="Former password" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                   <font>
+                                       <Font name="Bell MT Bold" size="20.0" />
+                                   </font>
+                                   <GridPane.margin>
+                                       <Insets left="80.0" />
+                                   </GridPane.margin>
+                               </Label>
+                              <Label layoutX="10.0" layoutY="124.0" text="E-mail" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Bell MT Bold" size="20.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="80.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label layoutX="10.0" layoutY="189.0" text="Username" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Bell MT Bold" size="20.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="80.0" />
+                                 </padding>
+                              </Label>
+                              <Label layoutX="10.0" layoutY="124.0" text="New password" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                  <font>
+                                      <Font name="Bell MT Bold" size="20.0" />
+                                  </font>
+                                  <GridPane.margin>
+                                      <Insets left="80.0" />
+                                  </GridPane.margin>
+                              </Label>
+                              <Label text="Confirm password" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                  <font>
+                                      <Font name="Bell MT Bold" size="20.0" />
+                                  </font>
+                                  <GridPane.margin>
+                                      <Insets left="80.0" />
+                                  </GridPane.margin>
+                              </Label>
+                              <Label text="Help word" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                  <font>
+                                      <Font name="Bell MT Bold" size="20.0" />
+                                  </font>
+                                  <GridPane.margin>
+                                      <Insets left="80.0" />
+                                  </GridPane.margin>
+                              </Label>
+                              <TextField fx:id="usernameField" prefHeight="30.0" promptText="username" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="20.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="emailField" prefHeight="30.0" promptText="you@gmail.com" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets right="20.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <PasswordField fx:id="formerPasswordField" prefHeight="30.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                 <GridPane.margin>
+                                    <Insets right="20.0" />
+                                 </GridPane.margin>
+                              </PasswordField>
+                              <PasswordField fx:id="newPasswordField" prefHeight="30.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                                 <GridPane.margin>
+                                    <Insets right="20.0" />
+                                 </GridPane.margin>
+                              </PasswordField>
+                              <PasswordField fx:id="confirmPasswordField" prefHeight="30.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                                 <GridPane.margin>
+                                    <Insets right="20.0" />
+                                 </GridPane.margin>
+                              </PasswordField>
+                              <TextField fx:id="hwField" prefHeight="30.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                                 <GridPane.margin>
+                                    <Insets right="20.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <Button fx:id="saveButton" mnemonicParsing="false" onAction="#saveChanges" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: #FF8C00; -fx-background-radius: 15;" text="Save" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <effect>
+                                    <DropShadow height="30.0" radius="20.75" width="55.0" />
+                                 </effect></Button>
+                           </children>
+                        </GridPane>
+                     </right>
+                     <center>
+                        <Separator orientation="VERTICAL" prefHeight="419.0" prefWidth="23.0" BorderPane.alignment="CENTER" />
+                     </center>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                  </BorderPane>
+               </content></Tab>
+          <Tab style="-fx-font-family: Arial; -fx-font-size: 14; -fx-font-weight: BOLD;" text="Game Data">
+               <content>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <top>
+                        <GridPane alignment="CENTER" prefHeight="37.0" prefWidth="960.0" style="-fx-background-color: #ffe8d0; -fx-background-radius: 10;" BorderPane.alignment="CENTER">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="40.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="20.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="20.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="20.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <FlowPane alignment="CENTER" GridPane.halignment="CENTER">
+                                 <children>
+                                    <Label prefHeight="30.0" prefWidth="98.0" text="Level : ">
+                                       <font>
+                                          <Font name="DejaVu Sans Condensed Bold" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="levelLabel" text="5" textFill="RED">
+                                       <font>
+                                          <Font name="Franklin Gothic Book" size="24.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </FlowPane>
+                              <FlowPane alignment="CENTER" hgap="10.0" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+                                 <children>
+                                    <Label contentDisplay="GRAPHIC_ONLY" text="XP : ">
+                                       <graphic>
+                                          <ImageView fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../resources/icons/XP.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Label>
+                                    <Label text="95" textFill="#1a8a12" fx:id="xpLabel">
+                                       <font>
+                                          <Font name="DejaVu Serif Bold Italic" size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </FlowPane>
+                              <FlowPane alignment="CENTER" columnHalignment="CENTER" hgap="10.0" GridPane.columnIndex="2" GridPane.halignment="CENTER">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="GRAPHIC_ONLY" text="Gold : ">
+                                       <graphic>
+                                          <ImageView fitHeight="34.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../resources/icons/gold.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Label>
+                                    <Label fx:id="goldLabel" text="40" textFill="#966917">
+                                       <font>
+                                          <Font name="DejaVu Serif Bold Italic" size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </FlowPane>
+                              <FlowPane alignment="CENTER" hgap="10.0" GridPane.columnIndex="3">
+                                 <children>
+                                    <Label contentDisplay="GRAPHIC_ONLY" text="Diamonds : ">
+                                       <graphic>
+                                          <ImageView fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../resources/icons/diamond.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Label>
+                                    <Label fx:id="diamondsLabel" text="100" textFill="#148cc4">
+                                       <font>
+                                          <Font name="DejaVu Serif Bold Italic" size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </FlowPane>
+                           </children>
+                        </GridPane>
+                     </top>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                     <center>
+                        <GridPane BorderPane.alignment="CENTER">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <BorderPane prefHeight="200.0" prefWidth="200.0">
+                                 <center>
+                                    <ImageView fx:id="characterImage" fitHeight="300.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                                       <image>
+                                          <Image url="@../../resources/icons/character2.png" />
+                                       </image>
+                                    </ImageView>
+                                 </center>
+                                 <bottom>
+                                    <FlowPane alignment="CENTER" prefHeight="50.0" prefWidth="480.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Label prefHeight="68.0" prefWidth="190.0" text="Scope = ">
+                                             <font>
+                                                <Font name="Harlow Solid Italic" size="50.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="scopeCharacter" text="5" textFill="RED">
+                                             <font>
+                                                <Font name="Harlow Solid Italic" size="50.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </FlowPane>
+                                 </bottom>
+                                 <left>
+                                    <Button fx:id="backwardCharacter" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#previousCharacter" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #a1caf1; -fx-background-radius: 30;" text="&lt;" BorderPane.alignment="CENTER">
+                                       <graphic>
+                                          <ImageView fitHeight="50.0" fitWidth="50.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../resources/icons/arrow.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <effect>
+                                          <InnerShadow choke="0.2" offsetX="-2.0" radius="11.0" width="25.0" />
+                                       </effect>
+                                    </Button>
+                                 </left>
+                                 <right>
+                                    <Button fx:id="forwardCharacter" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#nextCharacter" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #a1caf1; -fx-background-radius: 30;" BorderPane.alignment="CENTER">
+                                       <graphic>
+                                          <ImageView blendMode="HARD_LIGHT" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../resources/icons/arrow.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <effect>
+                                          <InnerShadow blurType="GAUSSIAN" choke="0.2" height="10.0" offsetX="2.0" radius="8.25" width="25.0" />
+                                       </effect>
+                                    </Button>
+                                 </right>
+                                 <top>
+                                    <Label text="Your characters" BorderPane.alignment="CENTER">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </top>
+                                 <padding>
+                                    <Insets top="5.0" />
+                                 </padding>
+                              </BorderPane>
+                              <BorderPane GridPane.columnIndex="1">
+                                 <center>
+                                    <ScrollPane fx:id="itemScrollPane" fitToWidth="true" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: transparent;">
+                                       <padding>
+                                          <Insets left="20.0" />
+                                       </padding>
+                                       <content>
+                                          <GridPane fx:id="itemGridPane" prefHeight="124.0" prefWidth="460.0">
+                                            <columnConstraints>
+                                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <Label alignment="CENTER" contentDisplay="CENTER" text="Label" />
+                                             </children>
+                                          </GridPane>
+                                       </content>
+                                    </ScrollPane>
+                                 </center>
+                                 <top>
+                                    <Label text="Your Items" BorderPane.alignment="CENTER">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </top>
+                                 <padding>
+                                    <Insets top="5.0" />
+                                 </padding>
+                              </BorderPane>
+                           </children>
+                        </GridPane>
+                     </center>
+                  </BorderPane>
+               </content></Tab>
+            <Tab style="-fx-font-family: Arial; -fx-font-size: 14; -fx-font-weight: BOLD;" text="Game's Rules">
+                <BorderPane>
+                  <top>
+                     <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="140.0" text="GamePlay" BorderPane.alignment="CENTER">
+                        <font>
+                           <Font name="Berlin Sans FB" size="30.0" />
+                        </font>
+                     </Label>
+                  </top>
+                  <center>
+                     <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" text="jqsjdjnq,snsdfdfsdf skjdfhkjdhfj  sdfkjdkf skjdfhkjsdbjk nsd2222222222222222222222222222222222jqshgdqsgdqsgqsjkhdqjkshdjkqshdkjqshdkjqshdjkqshdjqshjdhjsqhdnxbcnbw,xcxncbw,cbwbncwncbw,cb,wbcqjshdqskjdjksqhdjqskdwkjhjhdfjksd&#10;qsdsqdqs&#10;qsqsd&#10;qsd&#10;qsd&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq" wrapText="true" BorderPane.alignment="CENTER">
+                        <font>
+                           <Font size="20.0" />
+                        </font>
+                        <cursor>
+                           <Cursor fx:constant="CLOSED_HAND" />
+                        </cursor>
+                        <padding>
+                           <Insets left="10.0" right="10.0" />
+                        </padding>
+                     </TextArea>
+                  </center></BorderPane>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>

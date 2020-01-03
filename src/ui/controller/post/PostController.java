@@ -36,7 +36,7 @@ public class PostController implements LoginInterface {
     @FXML
     public void initialize() {
         List<Post> posts;
-        if (my_posts.isSelected()) posts = PF.getUserPosts(SF.getUser().getUsername());
+        if (my_posts.isSelected()) posts = PF.getUserPosts(SF.getUserLoggedIn().getUsername());
         else posts = PF.getAllPosts();
 
         GridPane pane = new GridPane();
@@ -85,7 +85,7 @@ public class PostController implements LoginInterface {
         pane.prefWidthProperty().bind(root.widthProperty());
         pane.setStyle("-fx-border-color: black;-fx-background-color: white; -fx-background-radius: 5px;-fx-border-radius: 5px");
 
-        if (SF.getUser().getUsername().equals(post.getUsername())) {
+        if (SF.getUserLoggedIn().getUsername().equals(post.getUsername())) {
             MenuButton menuButton = new MenuButton();
             menuButton.setGraphic(new ImageView(image));
             menuButton.setStyle("-fx-background-color: #e6f0ff");
@@ -170,7 +170,7 @@ public class PostController implements LoginInterface {
             @Override
             public void handle(ActionEvent actionEvent) {
                 if (!field.getText().isEmpty()) {
-                    PF.writeComment(post.getId(), SF.getUser().getUsername(), field.getText());
+                    PF.writeComment(post.getId(), SF.getUserLoggedIn().getUsername(), field.getText());
                     initialize();
                 }
             }
@@ -189,7 +189,7 @@ public class PostController implements LoginInterface {
         GridPane pane = new GridPane();
         pane.getRowConstraints().add(new RowConstraints(10));
         pane.prefWidthProperty().bind(root.widthProperty());
-        if (SF.getUser().getUsername().equals(c.getUsername())) {
+        if (SF.getUserLoggedIn().getUsername().equals(c.getUsername())) {
             pane.setStyle("-fx-border-color: #dbdbdb;-fx-border-width: 0 0 1 0;-fx-padding: 10;-fx-background-color: #f0f6ff");
         } else pane.setStyle("-fx-border-color: #dbdbdb;-fx-border-width: 0 0 1 0;-fx-padding: 10;-fx-background-color: #f2f2f2");
         pane.getChildren().add(new Label(c.getUsername()+ " : "+c.getContent()));
