@@ -23,6 +23,10 @@ public class MainPageController implements LoginInterface {
 
     }
 
+    public void toStore() throws Exception {
+
+    }
+
     public void goToFriendsWindow() throws Exception {
         ApplicationUI.friendsView(ApplicationUI.getStage());
     }

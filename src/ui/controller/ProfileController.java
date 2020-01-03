@@ -239,13 +239,13 @@ public class ProfileController implements LoginInterface {
                 i++;
             }
         else
-            itemGridPane.add(new ItemLabels("You don't have any item.","red"),0,0,3,4);
+            itemGridPane.add(new ItemLabels("You don't have any items.","red"),0,0,3,4);
     }
 
     private void showChacracter(int characterIndex) {
         Character character = session.getCharacterAt(characterIndex);
         if (character != null) {
-            characterImage.setImage(new Image(character.getImage()));
+            characterImage.setImage(new Image(character.getImageURL()));
             scopeCharacter.setText(String.valueOf(character.getScope()));
         }
         else
@@ -254,13 +254,13 @@ public class ProfileController implements LoginInterface {
 
     public void previousCharacter(){
         Character character = session.previousCharacter();
-        characterImage.setImage(new Image(character.getImage()));
+        characterImage.setImage(new Image(character.getImageURL()));
         scopeCharacter.setText(String.valueOf(character.getScope()));
     }
 
     public void nextCharacter(){
         Character character = session.nextCharacter();
-        characterImage.setImage(new Image(character.getImage()));
+        characterImage.setImage(new Image(character.getImageURL()));
         scopeCharacter.setText(String.valueOf(character.getScope()));
     }
 

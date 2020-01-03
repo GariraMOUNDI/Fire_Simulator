@@ -5,23 +5,28 @@ import java.util.List;
 
 public class User {
     private String username, password, email, helpWord;
-    private List<String> friends = new ArrayList<>();
-    private List<Item> items = new ArrayList<>();
-    private List<Character> characters = new ArrayList<>();
+    private List<String> friends;
+    private List<Item> userItems;
+    private List<Character> userCharacters;
     private Object _id;
-    private int diamonds = 10 , XP = 10, gold = 10, level = 1;
+    private int diamonds, XP, gold, level;
 
     public User(String username, String password, String email, String helpWord) {
         this.username = username;
         this.password = password;
         this.email = email;
         this.helpWord = helpWord;
+        this.userItems = new ArrayList<>();
+        this.userCharacters = new ArrayList<>();
+        this.friends = new ArrayList<>();
+        this.diamonds = 10;
+        this.XP = 10;
+        this.gold = 10;
+        this.level = 1;
     }
+
     public Object get_id(){
         return _id;
-    }
-    public void set_id(Object _id){
-        this._id = _id;
     }
     public String getPassword(){
         return password;
@@ -57,24 +62,24 @@ public class User {
     }
 
     public List<Item> getItems(){
-        return items;
+        return userItems;
     }
     public void addItem(Item arg){
-        items.add(0,arg);
+        userItems.add(0,arg);
     }
     public void removeItem(Item arg){
-        items.remove(arg);
+        userItems.remove(arg);
     }
 
     public List<Character> getCharacters(){
-        return characters;
+        return userCharacters;
     }
 
     public void addCharacter(Character arg){
-        characters.add(0,arg);
+        userCharacters.add(0,arg);
     }
     public void removeCharacter(Character arg){
-        characters.remove(arg);
+        userCharacters.remove(arg);
     }
 
     public int getDiamonds() {

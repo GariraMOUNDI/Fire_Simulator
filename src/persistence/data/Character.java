@@ -2,12 +2,11 @@ package persistence.data;
 
 public class Character {
 
-    private String imageURl;
-    private int scope;
-    private String name;
-    private double price;
+    private String imageURl, name;
+    private int scope, price;
+    private Object _id;
 
-    public Character(String imageURL, int scope, String name, double price){
+    public Character(String imageURL, int scope, String name, int price){
         this.imageURl = imageURL;
         this.scope = scope;
         this.name = name;
@@ -18,15 +17,24 @@ public class Character {
         return scope;
     }
 
-    public String getImage(){
+    public String getImageURL(){
         return this.imageURl;
+    }
+
+    public Object getId() {
+        return this._id;
+    }
+
+    public static String parseId(Object id) {
+        String p = id.toString().split("=")[1];
+        return p.substring(0,p.length()-1);
     }
 
     public String getName() {
         return name;
     }
 
-    public double getPrice() {
+    public int getPrice() {
         return price;
     }
 }

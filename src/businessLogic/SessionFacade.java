@@ -62,11 +62,6 @@ public class SessionFacade {
     }
 
     public void setUserLoggedIn(User user) {
-        user.addItem(new Item("Gun", 2, 5, 20, 3, 4, "resources/icons/character3.png"));
-        user.addCharacter(new Character("resources/icons/character1.png",1,"Mage",12));
-        user.addCharacter(new Character("resources/icons/character2.png",2,"Witcher",20));
-        user.addCharacter(new Character("resources/icons/character3.png",3,"Vampire",54));
-
         this.userLoggedIn = user;
     }
 
@@ -123,10 +118,7 @@ public class SessionFacade {
     }
 
     public Character previousCharacter() {
-        int size = getCharacters().size();
-        characterIndex = (characterIndex - 1) % size;
-        if (characterIndex == -1)
-            characterIndex = size - 1;
+        characterIndex = (characterIndex - 1 + getCharacters().size()) % (getCharacters().size());
         return getCharacterAt(characterIndex);
     }
 

@@ -22,7 +22,7 @@ public class MongoDBDAOUser implements DAO<User> {
         collection = database.getCollection("users");
     }
 
-    public User getDataById(String key, String value) {
+    public User getDataById(String key, Object value) {
         query = new BasicDBObject(key,value);
         for (Document doc : collection.find(query)){
             return gson.fromJson(doc.toJson(), User.class);
