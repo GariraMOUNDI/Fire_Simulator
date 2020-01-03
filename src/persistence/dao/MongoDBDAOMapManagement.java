@@ -50,7 +50,11 @@ public class MongoDBDAOMapManagement implements DAO<Terrain> {
 
     @Override
     public void updateData(Terrain arg) {
-
+        query = new BasicDBObject("_id", new ObjectId((String)arg.get_id()));
+        arg.set_id(null);
+        up = new BasicDBObject();
+        up.append("$set",Document.parse(gson.toJson(arg)));
+        collection.findOneAndUpdate(query, up);
     }
 
     @Override

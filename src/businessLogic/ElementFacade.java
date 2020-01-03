@@ -49,6 +49,12 @@ public class ElementFacade {
         return (List<Element>) dao.getDataById("basic", true);
     }
 
+    public List<Element> getAllElements(String username){
+        List<Element> result = (List<Element>) dao.getDataById("username", username);
+        result.addAll((List<Element>) dao.getDataById("basic", true));
+        return result;
+    }
+
     public void deleteElement(Element element) {
         dao.deleteData(element);
     }

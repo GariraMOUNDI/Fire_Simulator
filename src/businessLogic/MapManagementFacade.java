@@ -50,4 +50,8 @@ public class MapManagementFacade {
         this.currentTerrain = new Terrain(name, map, username);
         dao.insertData(this.currentTerrain);
     }
+
+    public void saveMap(Terrain map){
+        dao.updateData(map);
+    }
 }
