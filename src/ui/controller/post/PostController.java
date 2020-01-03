@@ -5,7 +5,6 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.geometry.HPos;
-import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -25,7 +24,7 @@ public class PostController implements LoginInterface {
     private PostFacade PF = PostFacade.getInstance(this);
     private SessionFacade SF = SessionFacade.getInstance(this);
 
-    private Image image = new Image("resources/gear.png",20, 20, false, false);
+    private Image image = new Image("resources/icons/gear.png",20, 20, false, false);
 
     @FXML
     ScrollPane post_view;

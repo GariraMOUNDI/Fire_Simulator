@@ -45,7 +45,7 @@
          <children>
             <ImageView fitHeight="117.0" fitWidth="136.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../resources/logo.png" />
+                  <Image url="@../../resources/icons/logo.png" />
                </image>
             </ImageView>
             <Separator orientation="VERTICAL" prefHeight="117.0" prefWidth="38.0" visible="false" />
