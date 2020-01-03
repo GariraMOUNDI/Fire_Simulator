@@ -284,7 +284,7 @@
                                        <graphic>
                                           <ImageView fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../../resources/icons/xp_icon.png" />
+                                                <Image url="@../../resources/icons/XP.png" />
                                              </image>
                                           </ImageView>
                                        </graphic>
@@ -302,7 +302,7 @@
                                        <graphic>
                                           <ImageView fitHeight="34.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../../resources/icons/gold_icon.png" />
+                                                <Image url="@../../resources/icons/gold.png" />
                                              </image>
                                           </ImageView>
                                        </graphic>
@@ -320,7 +320,7 @@
                                        <graphic>
                                           <ImageView fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../../resources/icons/diamonds.png" />
+                                                <Image url="@../../resources/icons/diamond.png" />
                                              </image>
                                           </ImageView>
                                        </graphic>
@@ -352,7 +352,7 @@
                                  <center>
                                     <ImageView fx:id="characterImage" fitHeight="300.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
                                        <image>
-                                          <Image url="@../../resources/icons/character4.png" />
+                                          <Image url="@../../resources/icons/character2.png" />
                                        </image>
                                     </ImageView>
                                  </center>
