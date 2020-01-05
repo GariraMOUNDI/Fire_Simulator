@@ -185,5 +185,7 @@ public class ElementController implements LoginInterface {
         return gPane;
     }
 
-
+    public void backToMainPage() throws Exception {
+        ApplicationUI.mainPageView(ApplicationUI.getStage());
+    }
 }

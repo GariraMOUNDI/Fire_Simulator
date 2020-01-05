@@ -99,7 +99,7 @@ public class MapMakerController implements LoginInterface {
         ApplicationUI.MapManagementView(ApplicationUI.getStage());
     }
 
-    public void toMapManagement(ActionEvent actionEvent) throws  Exception{
+    public void backToMapManagement() throws  Exception{
         ApplicationUI.MapManagementView(ApplicationUI.getStage());
     }
 

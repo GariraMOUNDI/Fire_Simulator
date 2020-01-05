@@ -23,9 +23,6 @@ public class MapManagementController implements LoginInterface {
     MapManagementFacade MMF = MapManagementFacade.getInstance(this);
     SessionFacade SF = SessionFacade.getInstance(this);
 
-
-    @FXML
-    Button toMapMenu;
     @FXML
     ScrollPane maps_view;
 
@@ -92,7 +89,7 @@ public class MapManagementController implements LoginInterface {
     public void toMapManagement(ActionEvent actionEvent) throws  Exception{
         ApplicationUI.MapManagementView(ApplicationUI.getStage());
     }
-    public void toMainPage() throws Exception {
+    public void backToMainPage() throws Exception {
         ApplicationUI.mainPageView(ApplicationUI.getStage());
     }
 
