@@ -3,11 +3,13 @@
 <?import javafx.geometry.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.RegisterController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: radial-gradient(focus-distance 0% , center 50% 50% , radius 60% , #006400, #FEA100);" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.RegisterController">
    <center>
       <GridPane prefHeight="245.0" prefWidth="238.0" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -47,10 +49,10 @@
                </font>
             </Label>
             <Label fx:id="error" textFill="#f20000" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-            <TextField fx:id="register_username" onKeyTyped="#resetError" prefHeight="30.0" promptText="Required" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField fx:id="register_email" onKeyTyped="#resetError" prefHeight="30.0" promptText="Required" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <PasswordField fx:id="register_password" onKeyTyped="#resetError" prefHeight="30.0" promptText="Required" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <PasswordField fx:id="register_confirm_password" onKeyTyped="#resetError" prefHeight="30.0" promptText="Required" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="register_username" onKeyTyped="#resetError" prefHeight="30.0" promptText="Username" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="register_email" onKeyTyped="#resetError" prefHeight="30.0" promptText="moi@moi.fr" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <PasswordField fx:id="register_password" onKeyTyped="#resetError" prefHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <PasswordField fx:id="register_confirm_password" onKeyTyped="#resetError" prefHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <TextField fx:id="register_help" prefHeight="30.0" prefWidth="230.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
          </children>
       </GridPane>
@@ -73,8 +75,15 @@
                   </ImageView>
                   <Label prefHeight="50.0" text="Fire Simulator" textFill="RED">
                      <font>
-                        <Font size="46.0" />
+                        <Font name="Century Schoolbook" size="46.0" />
                      </font>
+                     <effect>
+                        <DropShadow height="75.82" radius="18.455" width="0.0">
+                           <color>
+                              <Color red="0.11764705926179886" green="0.42352941632270813" blue="0.0470588244497776" />
+                           </color>
+                        </DropShadow>
+                     </effect>
                   </Label>
                </children>
                <BorderPane.margin>
@@ -103,7 +112,7 @@
    <bottom>
       <FlowPane alignment="CENTER" prefHeight="80.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="sendRegister" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" onAction="#sendRegister" prefHeight="35.0" prefWidth="150.0" text="Register">
+            <Button fx:id="sendRegister" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" onAction="#sendRegister" prefHeight="30.0" prefWidth="150.0" text="Register">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>

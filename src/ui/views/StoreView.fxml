@@ -6,9 +6,10 @@
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.StoreController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: radial-gradient(focus-distance 0% , center 50% 50% , radius 60% , #006400, #FEA100);" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.StoreController">
     <top>
         <GridPane alignment="TOP_CENTER" prefHeight="60.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
             <columnConstraints>
@@ -28,10 +29,16 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </ImageView>
-                <Label text="Store" textFill="#347deb" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+                <Label text="Store" textFill="RED" GridPane.columnIndex="1" GridPane.halignment="CENTER">
                     <font>
-                        <Font size="24.0" />
+                        <Font name="Century Schoolbook" size="36.0" />
                     </font>
+               <effect>
+                  <DropShadow height="112.01" radius="27.5025" width="0.0">
+                     <color>
+                        <Color red="0.11764705926179886" green="0.42352941632270813" blue="0.0470588244497776" />
+                     </color></DropShadow>
+               </effect>
                 </Label>
             <GridPane style="-fx-background-color: #cccccc; -fx-background-radius: 10;" GridPane.columnIndex="2">
               <columnConstraints>
@@ -96,7 +103,7 @@
             <BorderPane fx:id="characters" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #cccccc; -fx-background-radius: 20;" GridPane.columnIndex="0" GridPane.rowIndex="1">
                 <center>
                     <VBox alignment="CENTER" BorderPane.alignment="CENTER">
-                        <ImageView fx:id="character_image" fitHeight="318.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                        <ImageView fx:id="character_image" fitHeight="300.0" fitWidth="280.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
                             <image>
                                 <Image url="@../../resources/icons/character.png" />
                             </image>
@@ -202,7 +209,7 @@
             <BorderPane fx:id="items" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #cccccc; -fx-background-radius: 20;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                 <center>
                     <VBox alignment="CENTER" BorderPane.alignment="CENTER">
-                        <ImageView fx:id="item_image" fitHeight="318.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                        <ImageView fx:id="item_image" fitHeight="318.0" fitWidth="280.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
                             <image>
                                 <Image url="@../../resources/items/gun/gun.png" />
                             </image>

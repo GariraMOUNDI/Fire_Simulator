@@ -25,6 +25,8 @@ public class User {
         this.XP = 10;
         this.gold = 10;
         this.level = 1;
+        userCharacters.add(new Character("resources/icons/character2.png",2,"Character 2",3));
+        userCharacters.add(new Character("resources/icons/character3.png",4,"Character 3",10));
     }
 
     public Object get_id(){
