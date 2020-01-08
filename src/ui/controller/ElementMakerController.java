@@ -47,9 +47,10 @@ public class ElementMakerController implements LoginInterface {
         }
     }
 
-    public void createElement(ActionEvent actionEvent){
+    public void createElement(ActionEvent actionEvent) throws Exception {
         System.out.println();
         EF.createElement(ElementName_input.getText(),Integer.parseInt(flammability_input.getText()),menu_color.getText(), EF.getCurrentElement().getType(),SF.getUser().getUsername());
+        backToElementManagement();
     }
     @Override
     public void printResults(Object arg) {
