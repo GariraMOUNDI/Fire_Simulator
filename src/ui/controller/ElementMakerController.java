@@ -55,4 +55,8 @@ public class ElementMakerController implements LoginInterface {
     public void printResults(Object arg) {
 
     }
+
+    public void backToElementManagement() throws Exception{
+        ApplicationUI.elementManagementView(ApplicationUI.getStage());
+    }
 }
