@@ -41,6 +41,10 @@ public class MongoDBDAOFactory {
 
     public DAO createDAO(DAOType type) {
         switch (type){
+            case Element:
+                return new MongoDBDAOElement(database);
+            case Terrain:
+                return new MongoDBDAOMapManagement(database);
             case User:
                 return new MongoDBDAOUser(database);
             case Post:

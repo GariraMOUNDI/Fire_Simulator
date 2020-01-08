@@ -25,10 +25,10 @@ public class ApplicationUI extends Application {
         Application.launch(ApplicationUI.class);
     }
 
+
+
     public void start(Stage primaryStage) throws Exception{
         ApplicationUI.loginView(primaryStage);
-        //ApplicationUI.friendsView(primaryStage);
-        //ApplicationUI.profileView(primaryStage);
     }
 
     @Override
@@ -51,8 +51,32 @@ public class ApplicationUI extends Application {
     public static void registerView(Stage stage) throws Exception{
         uploadView(stage, "Register", "../views/RegisterView.fxml");
     }
+  
+    public static void MapManagementView(Stage stage) throws Exception {
+        uploadView(stage, "Map Management", "../views/MapManagement/MapManagement.fxml");
+    }
 
-    public static void mainPageView(Stage stage) throws Exception{
+    public static void toSoloMenu(Stage stage) throws Exception {
+        uploadView(stage, "Solo Menu", "../views/soloMenu.fxml");
+    }
+
+    public static void toMapmenu(Stage stage) throws Exception {
+        uploadView(stage, "Map Menu", "../views/MapManagement/mapMenu.fxml");
+    }
+
+    public static void toMapMaker(Stage stage) throws Exception {
+        uploadView(stage, "Map maker", "../views/MapManagement/mapMaker.fxml");
+    }
+  
+   public static void elementManagementView(Stage stage) throws Exception {
+        uploadView(stage, "Element Menu", "../views/ElementManagementView.fxml");
+    }
+
+    public static void toElementMaker(Stage stage) throws Exception {
+        uploadView(stage, "Element Maker", "../views/ElementMaker.fxml");
+    }
+
+    public static void mainPageView(Stage stage) throws Exception {
         uploadView(stage, "Main","../views/MainPageView.fxml");
     }
 
@@ -92,4 +116,5 @@ public class ApplicationUI extends Application {
         stage.setY((dim.getHeight() - stage.getHeight())/2);
         stage.setResizable(false);
     }
+
 }

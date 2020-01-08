@@ -23,6 +23,21 @@ public class MainPageController implements LoginInterface {
         ApplicationUI.loginView(ApplicationUI.getStage());
     }
 
+    public void toMapManagement() throws Exception {
+        ApplicationUI.MapManagementView(ApplicationUI.getStage());
+    }
+    public void toSoloMenu() throws Exception {
+        ApplicationUI.toSoloMenu(ApplicationUI.getStage());
+    }
+
+    public void toMainPage() throws Exception {
+        ApplicationUI.mainPageView(ApplicationUI.getStage());
+    }
+
+    public void elementManagementView() throws Exception{
+        ApplicationUI.elementManagementView(ApplicationUI.getStage());
+    }
+
     public void toStore() throws Exception {
         ApplicationUI.storeView(ApplicationUI.getStage());
     }
