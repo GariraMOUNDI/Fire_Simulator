@@ -47,8 +47,11 @@ public class MapManagementFacade {
 
 
     public void createMap(String name, Matrice map, String username) {
-        this.currentTerrain = new Terrain(name, map, username);
-        dao.insertData(this.currentTerrain);
+        // TODO
+        // BE SURE NAMES ARE UNIQUE
+        dao.insertData(new Terrain(name, map, username));
+        this.currentTerrain = ((List<Terrain>) dao.getDataById("name", name)).get(0);
+
     }
 
     public void saveMap(Terrain map){
