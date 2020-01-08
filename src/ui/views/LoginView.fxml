@@ -2,21 +2,23 @@
 
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.LoginController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="330.0" prefWidth="500.0" style="-fx-background-color: radial-gradient(focus-distance 0% , center 50% 50% , radius 60% , #006400, 	#FEA100);" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.LoginController">
   <center>
-      <GridPane prefHeight="99.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+      <GridPane prefHeight="122.0" prefWidth="360.0" BorderPane.alignment="CENTER">
          <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="50.0" prefWidth="134.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="266.0" minWidth="50.0" prefWidth="266.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="50.0" prefWidth="108.4" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="266.0" minWidth="50.0" prefWidth="192.39999999999995" />
          </columnConstraints>
          <rowConstraints>
             <RowConstraints minHeight="5.0" prefHeight="5.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="100.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="100.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="60.0" prefHeight="0.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="60.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
             <Label GridPane.columnIndex="0" GridPane.rowIndex="0" />
@@ -25,34 +27,39 @@
                <font>
                   <Font size="18.0" />
                </font></Text>
-            <TextField id="username" fx:id="username" promptText="Username" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField id="username" fx:id="username" prefHeight="30.0" promptText="Username" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Password" GridPane.columnIndex="0" GridPane.rowIndex="2">
                <font>
                   <Font size="18.0" />
                </font></Text>
-            <PasswordField fx:id="password" promptText="password" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <PasswordField fx:id="password" prefHeight="30.0" promptText="password" GridPane.columnIndex="1" GridPane.rowIndex="2" />
          </children>
       </GridPane>
   </center>
    <left>
-      <Pane prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+      <Pane prefHeight="200.0" prefWidth="70.0" BorderPane.alignment="CENTER" />
    </left>
    <right>
-      <Pane prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+      <Pane prefHeight="106.0" prefWidth="70.0" BorderPane.alignment="CENTER" />
    </right>
    <top>
-      <FlowPane alignment="CENTER" columnHalignment="CENTER" depthTest="ENABLE" prefHeight="80.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <FlowPane alignment="CENTER" columnHalignment="CENTER" depthTest="ENABLE" hgap="20.0" prefHeight="99.0" prefWidth="500.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="117.0" fitWidth="136.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="105.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../resources/logo.png" />
+                  <Image url="@../../resources/icons/logo.png" />
                </image>
             </ImageView>
-            <Separator orientation="VERTICAL" prefHeight="117.0" prefWidth="38.0" visible="false" />
-            <Label text="Fire Simulator" textFill="RED">
+            <Label prefHeight="60.0" text="Fire Simulator" textFill="RED">
                <font>
-                  <Font size="46.0" />
+                  <Font name="Century Schoolbook" size="46.0" />
                </font>
+               <effect>
+                  <DropShadow height="77.01" radius="19.832500000000003" width="4.32">
+                     <color>
+                        <Color red="0.11764705926179886" green="0.42352941632270813" blue="0.0470588244497776" />
+                     </color></DropShadow>
+               </effect>
             </Label>
          </children>
          <opaqueInsets>
@@ -73,8 +80,11 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <FlowPane alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <FlowPane alignment="CENTER" prefHeight="42.0" prefWidth="500.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
                <Button fx:id="sendLogin" defaultButton="true" mnemonicParsing="false" onAction="#sendLogin" prefHeight="25.0" prefWidth="110.0" text="Login" />
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
             </FlowPane>
             <FlowPane alignment="CENTER" hgap="10.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
                <Label text="Don't have an account? " />

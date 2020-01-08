@@ -4,9 +4,8 @@ import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
-import persistence.dao.MongoDBDAOElement;
-import persistence.dao.MongoDBDAOMapManagement;
-import persistence.dao.MongoDBDAOUser;
+
+import persistence.dao.*;
 import persistence.interfaces.DAO;
 
 import java.io.FileInputStream;
@@ -48,6 +47,12 @@ public class MongoDBDAOFactory {
                 return new MongoDBDAOMapManagement(database);
             case User:
                 return new MongoDBDAOUser(database);
+            case Post:
+                return new MongoDBDAOPost(database);
+            case Item:
+                return new MongoDBDAOItem(database);
+            case Character:
+                return new MongoDBDAOCharacter(database);
             default: return null;
         }
     }
