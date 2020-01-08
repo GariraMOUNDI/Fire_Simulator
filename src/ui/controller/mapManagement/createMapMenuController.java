@@ -42,7 +42,7 @@ public class createMapMenuController implements LoginInterface{
             printResults("You must enter valid input");
         }
         else{
-            MMF.createMap(name_input.getText(),new Matrice(Integer.parseInt(size_input.getText())), SF.getUser().getUsername());
+            MMF.createMap(name_input.getText(),new Matrice(Integer.parseInt(size_input.getText())), SF.getUserLoggedIn().getUsername());
             ApplicationUI.toMapMaker(ApplicationUI.getStage());
         }
     }

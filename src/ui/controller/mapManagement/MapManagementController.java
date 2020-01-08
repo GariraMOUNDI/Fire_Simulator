@@ -29,7 +29,7 @@ public class MapManagementController implements LoginInterface {
     @FXML
     public void initialize() {
         List<Terrain> maps;
-        maps = MMF.getUserMaps(SF.getUser().getUsername());
+        maps = MMF.getUserMaps(SF.getUserLoggedIn().getUsername());
         if (!maps.isEmpty()) {
             GridPane pane = new GridPane();
             ColumnConstraints col = new ColumnConstraints();

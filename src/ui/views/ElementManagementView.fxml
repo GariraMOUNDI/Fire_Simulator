@@ -60,7 +60,7 @@
          <children>
             <ImageView fitHeight="39.0" fitWidth="37.0" onMouseClicked="#backToMainPage" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../resources/back_icon.png" />
+                  <Image url="@../../resources/icons/back_icon.png" />
                </image>
                <cursor>
                   <Cursor fx:constant="HAND" />

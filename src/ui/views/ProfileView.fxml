@@ -18,7 +18,7 @@
          <center>
             <FlowPane alignment="CENTER" prefHeight="50.0" prefWidth="960.0">
                <children>
-                  <Label text="Your Profile" textFill="RED">
+                  <Label text="Your Profile" textFill="#842b0d">
                      <font>
                         <Font name="Century Schoolbook" size="35.0" />
                      </font>

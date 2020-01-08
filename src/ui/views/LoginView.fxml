@@ -8,7 +8,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="330.0" prefWidth="500.0" style="-fx-background-color: radial-gradient(focus-distance 0% , center 50% 50% , radius 60% , #006400, 	#FEA100);" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.LoginController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="330.0" prefWidth="500.0" style="-fx-background-color: radial-gradient(focus-distance 0% , center 50% 50% , radius 60% , #006400,  #FEA100);" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.LoginController">
   <center>
       <GridPane prefHeight="122.0" prefWidth="360.0" BorderPane.alignment="CENTER">
          <columnConstraints>
@@ -50,7 +50,7 @@
                   <Image url="@../../resources/icons/logo.png" />
                </image>
             </ImageView>
-            <Label prefHeight="60.0" text="Fire Simulator" textFill="RED">
+            <Label prefHeight="60.0" text="Fire Simulator" textFill="#842b0d">
                <font>
                   <Font name="Century Schoolbook" size="46.0" />
                </font>

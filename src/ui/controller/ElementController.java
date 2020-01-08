@@ -36,7 +36,7 @@ public class ElementController implements LoginInterface {
 
     public void initialize() {
         List<Element> elements;
-        elements = EF.getUserElements(SF.getUser().getUsername());
+        elements = EF.getUserElements(SF.getUserLoggedIn().getUsername());
         List<Element> basicElements = EF.getBasicsElements();
 
         GridPane rock = new GridPane();

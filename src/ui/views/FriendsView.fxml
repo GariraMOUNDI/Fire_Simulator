@@ -15,7 +15,7 @@
          <center>
             <VBox alignment="CENTER" spacing="10.0">
                <children>
-                  <Label text="Play with Friends !!!" textAlignment="CENTER" textFill="RED">
+                  <Label text="Play with Friends !!!" textAlignment="CENTER" textFill="#842b0d">
                      <font>
                         <Font name="Century Schoolbook" size="35.0" />
                      </font>

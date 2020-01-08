@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
 <?import javafx.geometry.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
@@ -45,7 +44,7 @@
         </rowConstraints>
          <children>
 
-            <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="200.0" style="-fx-background-color: #228b22; -fx-background-radius: 20;" text="Solo Menu" textFill="#842b0d" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+            <Button mnemonicParsing="false" onAction="#toSoloMenu" prefHeight="45.0" prefWidth="200.0" style="-fx-background-color: #228b22; -fx-background-radius: 20;" text="Solo Menu" textFill="#842b0d" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                <font>
                   <Font name="Britannic Bold" size="25.0" />
                </font>
@@ -84,7 +83,7 @@
             <RowConstraints minHeight="20.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" text="Welcome to Fire Simulator!" textFill="RED" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER">
+            <Label alignment="CENTER" contentDisplay="CENTER" text="Welcome to Fire Simulator!" textFill="#842b0d" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER">
                <font>
                   <Font name="Century Schoolbook" size="20.0" />
                </font>

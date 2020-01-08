@@ -39,7 +39,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                <image>
-                  <Image url="@../../../resources/back_icon.png" />
+                  <Image url="@../../../resources/icons/back_icon.png" />
                </image>
             </ImageView>
          </children>

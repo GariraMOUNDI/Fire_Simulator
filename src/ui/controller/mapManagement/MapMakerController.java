@@ -67,7 +67,7 @@ public class MapMakerController implements LoginInterface {
             }
         }
         scrollPane.setContent(matrice);
-        List<Element> elements = EF.getAllElements(SF.getUser().getUsername());
+        List<Element> elements = EF.getAllElements(SF.getUserLoggedIn().getUsername());
         GridPane element_pane = new GridPane();
 
         int i = elements.size()-1;
