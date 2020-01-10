@@ -1,6 +1,7 @@
 package businessLogic;
 
 import com.google.gson.Gson;
+import javafx.scene.control.Alert;
 import persistence.data.Character;
 import persistence.data.Item;
 import persistence.data.User;
@@ -21,7 +22,7 @@ public class StoreFacade {
     private static StoreFacade instance = null;
     private List<Item> storeItems;
     private List<Character> storeCharacters;
-    private int iIndex = -1, cIndex = -1;
+    private int iIndex = 0, cIndex = 0;
 
     public static StoreFacade getInstance(LoginInterface loginIF){
         if (instance == null)
@@ -36,6 +37,7 @@ public class StoreFacade {
         daoCharacter = MongoDBDAOFactory.getInstance().createDAO(DAOType.Character);
         storeItems = (List<Item>) daoItem.getAllData();
         storeCharacters = (List<Character>) daoCharacter.getAllData();
+        userLoggedIn = SF.getUserLoggedIn();
     }
 
     public List<Item> getStoreItems() {
@@ -48,29 +50,29 @@ public class StoreFacade {
 
     public Item getNextItem() {
         iIndex = (iIndex + 1) % (storeItems.size());
-        return getItem(iIndex);
+        return getItem();
     }
     public Item getPrevItem() {
         iIndex = (iIndex - 1 + storeItems.size()) % (storeItems.size());
-        return getItem(iIndex);
+        return getItem();
     }
 
-    public Item getItem(int index) {
-        return storeItems.get(index);
+    public Item getItem() {
+        return storeItems.get(iIndex);
     }
 
 
     public Character getNextCharacter() {
         cIndex = (cIndex + 1) % (storeCharacters.size());
-        return getCharacter(cIndex);
+        return getCharacter();
     }
     public Character getPrevCharacter() {
         cIndex = (cIndex - 1 + storeCharacters.size()) % (storeCharacters.size());
-        return getCharacter(cIndex);
+        return getCharacter();
     }
 
-    public Character getCharacter(int index) {
-        return storeCharacters.get(index);
+    public Character getCharacter() {
+        return storeCharacters.get(cIndex);
     }
 
     public User getUser() {
@@ -88,8 +90,16 @@ public class StoreFacade {
     }
 
     public void handleItemPurchase(Item i) {
-        getUser().addItem(i);
-        SF.updateUser();
+        if (userLoggedIn.getGold() >= i.getPrice()) {
+            userLoggedIn.setGold(userLoggedIn.getGold() - i.getPrice());
+            getUser().addItem(i);
+            SF.updateUser();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Warning");
+            alert.setContentText("You do not have enough gold to purchase this item!");
+            alert.showAndWait();
+        }
     }
     public boolean userOwnsCharacter(Character c) {
         for (Character e : getUser().getCharacters()) {
@@ -99,18 +109,15 @@ public class StoreFacade {
     }
 
     public void handleCharacterPurchase(Character c) {
-        getUser().addCharacter(c);
-        SF.updateUser();
+        if (userLoggedIn.getGold() >= c.getPrice()) {
+            userLoggedIn.setGold(userLoggedIn.getGold() - c.getPrice());
+            getUser().addCharacter(c);
+            SF.updateUser();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Warning");
+            alert.setContentText("You do not have enough gold to purchase this character!");
+            alert.showAndWait();
+        }
     }
-
-//    public void setUp() {
-//        List<Character> l = new ArrayList<>();
-//        l.add(new Character("resources/icons/character.png", 5, "Wario"));
-//        l.add(new Character("resources/icons/character2.png", 7, "Ice guy"));
-//        l.add(new Character("resources/icons/character3.png", 9, "Snake"));
-//        l.add(new Character("resources/icons/character4.png", 5, "Ninja"));
-//        for (Character c : l) {
-//            daoCharacter.insertData(c);
-//        }
-//    }
 }

@@ -9,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
@@ -24,6 +25,7 @@ import persistence.data.Item;
 import ui.interfaces.LoginInterface;
 import ui.model.ApplicationUI;
 
+import javax.swing.*;
 import java.util.List;
 
 
@@ -35,7 +37,7 @@ public class StoreController implements LoginInterface {
 //    @FXML
 //    Button right, left, item_right, item_left;
     @FXML
-    Label item_name, item_price, item_scope, item_damage, item_regen, character_name, character_price, character_scope;
+    Label item_name, item_price, item_scope, item_damage, item_regen, character_name, character_price, character_scope, user_gold, user_diamond;
     @FXML
     ImageView item_image, character_image;
     @FXML
@@ -44,8 +46,9 @@ public class StoreController implements LoginInterface {
     Button item_purchase, character_purchase;
     @FXML
     public void initialize() {
-        initCharacters(SF.getNextCharacter());
-        initItems(SF.getNextItem());
+        initCharacters(SF.getCharacter());
+        initItems(SF.getItem());
+        initCurrency(SF.getUser().getDiamonds(), SF.getUser().getGold());
     }
 
     @Override
@@ -67,7 +70,7 @@ public class StoreController implements LoginInterface {
             @Override
             public void handle(ActionEvent actionEvent) {
                 SF.handleCharacterPurchase(c);
-                character_purchase.setDisable(true);
+                initialize();
             }
         });
     }
@@ -84,22 +87,14 @@ public class StoreController implements LoginInterface {
             @Override
             public void handle(ActionEvent actionEvent) {
                 SF.handleItemPurchase(i);
-                item_purchase.setDisable(true);
+                initialize();
             }
         });
+    }
 
-//        List<Item> items = SF.getStoreItems();
-//        GridPane pane = new GridPane();
-//        pane.setVgap(10);
-//
-//        int i = 0;
-//        for (Item it : items) {
-//            pane.add(createItem(it),0,i);
-//            i++;
-//        }
-//        pane.setStyle("-fx-background-color: red");
-////        store_items.setAlignment(Pos.CENTER);
-////        store_items.setContent(pane);
+    private void initCurrency(int diamond, int gold) {
+        user_diamond.setText(""+diamond);
+        user_gold.setText(""+gold);
     }
 
     public void nextItem() {
@@ -116,41 +111,5 @@ public class StoreController implements LoginInterface {
 
     public void prevCharacter() {
         initCharacters(SF.getPrevCharacter());
-    }
-
-
-
-    private GridPane createItem(Item i) {
-        GridPane pane = new GridPane();
-//        ColumnConstraints c = new ColumnConstraints(store_items.getMaxWidth());
-//        c.setHalignment(HPos.CENTER);
-//        pane.getColumnConstraints().add(c);
-        pane.setHgap(10);
-        pane.setStyle("-fx-background-color: #b0b0b0;-fx-padding: 10;-fx-background-radius: 20px");
-        pane.add(new ImageView(new Image(i.getImageURL(),100,100,false,false)),0,0);
-        Label name = new Label(i.getName());
-        name.setPadding(new Insets(5,10,5,10));
-        name.setStyle("-fx-font-size: 18;-fx-font: Arial Rounded MT Bold");
-        pane.add(name,0,1);
-        pane.add(new Label("Scope : "+i.getScope()),1,0);
-        pane.add(new Label("Dammage : "+i.getDamage()),1,1);
-        pane.add(new Label("Price : "+i.getPrice()),2,0);
-        pane.add(new Label("Regeneration : "+i.getRegeneration()),2,1);
-
-        Button button = new Button();
-        button.setText("Purchase");
-        button.setStyle("-fx-background-color: #a1caf1; -fx-background-radius: 30;-fx-cursor: hand");
-        button.setDisable(SF.userOwnsItem(i));
-        button.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                SF.handleItemPurchase(i);
-                initialize();
-            }
-        });
-
-        pane.add(button, 3, 0);
-
-        return pane;
     }
 }

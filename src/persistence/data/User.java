@@ -21,9 +21,6 @@ public class User {
         this.userItems = new ArrayList<>();
         this.userCharacters = new ArrayList<>();
         this.friends = new ArrayList<>();
-        this.diamonds = 10;
-        this.XP = 10;
-        this.gold = 10;
         this.level = 1;
         userCharacters.add(new Character("resources/icons/character2.png",2,"Character 2",3));
         userCharacters.add(new Character("resources/icons/character3.png",4,"Character 3",10));

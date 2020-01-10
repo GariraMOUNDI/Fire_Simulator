@@ -7,12 +7,12 @@ public class Item {
     private ItemType type;
     private String name;
     private int scope;
-    private float damage, price;
-    private int level;
+    private float damage;
+    private int level, price;
     private int regeneration;
     private String imageURL;
 
-    public Item(String name, int scope, float damage, float price, int level, int regeneration, String imageURL) {
+    public Item(String name, int scope, float damage, int price, int level, int regeneration, String imageURL) {
         this.type = null;
         this.name = name;
         this.scope = scope;
@@ -79,11 +79,11 @@ public class Item {
         return imageURL;
     }
 
-    public float getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(float price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
