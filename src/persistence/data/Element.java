@@ -19,11 +19,11 @@ public class Element {
     /**
      * Instantiates a new Element.
      *
-     * @param elementName  the element name
-     * @param flammability the flammability : attribute use in a method in an other class who can calculate the probability
+     * @param elementName  name of the element.
+     * @param flammability attribute use in a method in an other class who can calculate the probability
      *                     to which neighbours will burn or not.
-     * @param color        the color : Will appear in design of a map.
-     * @param type         the type : Rock, water, vegeation ...
+     * @param color        Will appear in design of a map.
+     * @param type         Rock, water, vegeation ...
      * @param username     This attribute represent the name of the owner of the element.
      */
     public Element(String elementName, int flammability, String color,TypeElementEnum type, String username){
@@ -178,10 +178,10 @@ public class Element {
      * This boolean method verifies if conditions to make an element are compliant.
      * for example, a rock can't have a flammability > 0, and can't be green !
      *
-     * @param flammability the flammability
-     * @param color        the color
-     * @param type         the type
-     * @return the boolean
+     * @param flammability int between 0 and 100
+     * @param color        Color of the element
+     * @param type         Rock, water, vegetation ...
+     * @return boolean
      */
     public boolean check(int flammability, String color, TypeElementEnum type){
         String colors[] = ColorElement.getColors(type);
