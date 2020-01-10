@@ -19,9 +19,13 @@ public class Box {
      *
      * @param state   the state : this attribute can be burned, intact, etc ... this attribute is useful to know if
      *                the box can burn again or not ...
+     *
      * @param x       the x : coordonate in the matrice (line)
+     *
      * @param y       the y : coordonate in the matrice (column)
+     *
      * @param life    the life : int between 0 and 100, this attribute will decrease if the box burn.
+     *
      * @param element the element : Tree, rock, vegetation : inform about Color, type etc.
      */
     public Box(StateBox state, int x, int y, int life, Element element){
