@@ -28,39 +28,76 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * The type Element controller.
+ */
 public class ElementController implements LoginInterface {
 
+    /**
+     * The element facade instance.
+     */
     ElementFacade EF = ElementFacade.getInstance(this);
+    /**
+     * The Sf.
+     */
+    SessionFacade SF = SessionFacade.getInstance(this);
 
-    @FXML
-    ScrollPane rockScrollPane, waterScrollPane, vegetationScrollPane;
 
+    /**
+     * The Rock scroll pane.
+     */
     @FXML
-    GridPane rockGridPane, vegetationGridPane, waterGridPane;
+    ScrollPane rockScrollPane, /**
+     * The Water scroll pane.
+     */
+    waterScrollPane, /**
+     * The Vegetation scroll pane.
+     */
+    vegetationScrollPane;
+
+    /**
+     * The Rock grid pane.
+     */
+    @FXML
+    GridPane rockGridPane, /**
+     * The Vegetation grid pane.
+     */
+    vegetationGridPane, /**
+     * The Water grid pane.
+     */
+    waterGridPane;
 
     private List<Element> elements;
 
+    /**
+     * This method initializes the fxml representation of the elements.
+     */
     public void initialize() {
         elements = EF.getUserElements(EF.getUserLoggedIn().getUsername());
         showElements();
     }
 
-
-    @Override
-    public void printResults(Object arg) {  }
-
-    public void deleteElement(Element element){
-        EF.deleteElement(element);
-    }
-
+    /**
+     * Back to solo menu.
+     *
+     * @throws Exception the exception
+     */
     public void backToSoloMenu() throws Exception {
         ApplicationUI.toSoloMenu(ApplicationUI.getStage());
     }
 
+    /**
+     * Go to element maker.
+     *
+     * @throws Exception the exception
+     */
     public void goToElementMaker() throws Exception {
         ApplicationUI.toElementMaker(ApplicationUI.getStage());
     }
 
+    /**
+     * Show elements.
+     */
     public void showElements(){
         ElementLabels name_value, flammability_value,element_name,flammability;
         ElementButtons modify, delete;
@@ -122,12 +159,64 @@ public class ElementController implements LoginInterface {
                 }
                 k++;
             }
+
+
         }
 
-        rockScrollPane.setContent(rockGridPane);
-        waterScrollPane.setContent(waterGridPane);
-        vegetationScrollPane.setContent(vegetationGridPane);
     }
+
+
+    @Override
+    public void printResults(Object arg) {
+
+    }
+
+
+    /**
+     * Delete element.
+     *
+     * @param element the element
+     */
+    public void deleteElement(Element element){
+        EF.deleteElement(element);
+    }
+
+    /**
+     * Create basic pane grid pane.
+     *
+     * @param e the e
+     * @return the grid pane
+     */
+    public GridPane createBasicPane(Element e){
+        GridPane gPane = new GridPane();
+        ColumnConstraints col = new ColumnConstraints();
+        col.setHalignment(HPos.CENTER);
+        gPane.getColumnConstraints().add(col);
+        gPane.setPadding(new Insets(20, 10, 20, 10));
+        gPane.setHgap(20);
+
+        Label element_name = new Label("Element name : " + e.getElementName());
+        Label flammability = new Label("Flammability : " + String.valueOf(e.getFlammability()));
+        Button modify = new Button("Modify");
+        modify.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                try {
+                    EF.setCurrentElement(e);
+                    ApplicationUI.toElementMaker(ApplicationUI.getStage());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        gPane.add(element_name, 0, 0);
+        gPane.add(flammability, 1, 0);
+        gPane.add(modify, 2, 0);
+
+        return gPane;
+    }
+
 
     private void deleteRows(GridPane grid){
         Set<Node> deleteNodes = new HashSet<>();
@@ -137,6 +226,11 @@ public class ElementController implements LoginInterface {
         grid.getRowConstraints().clear();
     }
 
+    /**
+     * Get facade element facade.
+     *
+     * @return the element facade
+     */
     public ElementFacade getFacade(){
         return EF;
     }

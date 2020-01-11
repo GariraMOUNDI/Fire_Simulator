@@ -21,18 +21,34 @@ import ui.model.ApplicationUI;
 
 import java.util.List;
 
+/**
+ * The type Element maker controller.
+ */
 public class ElementMakerController implements LoginInterface {
+    /**
+     * The element facade instance.
+     */
     ElementFacade EF = ElementFacade.getInstance(this);
+    /**
+     * The session facade instance.
+     */
     SessionFacade SF = SessionFacade.getInstance(this);
 
     @FXML
     private TextField ElementName_input, flammability_input;
+
     @FXML
-    Button createElement;
+    private Button createElement;
+    /**
+     * The Menu color.
+     */
     @FXML
     public MenuButton menu_color;
 
 
+    /**
+     * Initialize.
+     */
     public void initialize() {
         Element element = EF.getCurrentElement();
         String colors[] = ColorElement.getColors(element.getType());
@@ -47,8 +63,13 @@ public class ElementMakerController implements LoginInterface {
         }
     }
 
+    /**
+     * Create element.
+     *
+     * @param actionEvent the action event
+     * @throws Exception the exception
+     */
     public void createElement(ActionEvent actionEvent) throws Exception {
-        System.out.println();
         EF.createElement(ElementName_input.getText(),Integer.parseInt(flammability_input.getText()),menu_color.getText(), EF.getCurrentElement().getType(),SF.getUserLoggedIn().getUsername());
         backToElementManagement();
     }
@@ -57,6 +78,11 @@ public class ElementMakerController implements LoginInterface {
 
     }
 
+    /**
+     * Back to element management.
+     *
+     * @throws Exception the exception
+     */
     public void backToElementManagement() throws Exception{
         ApplicationUI.elementManagementView(ApplicationUI.getStage());
     }
