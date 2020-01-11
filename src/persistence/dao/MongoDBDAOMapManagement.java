@@ -12,12 +12,20 @@ import persistence.interfaces.DAO;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The type Mongo dbdao map management.
+ */
 public class MongoDBDAOMapManagement implements DAO<Terrain> {
 
     private MongoCollection<Document> collection;
     private Gson gson = new Gson();
     private BasicDBObject query, up;
 
+    /**
+     * Instantiates a new Mongo dbdao map management.
+     *
+     * @param database the database
+     */
     public MongoDBDAOMapManagement(MongoDatabase database){
         collection = database.getCollection("maps");
     }
