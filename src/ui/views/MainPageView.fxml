@@ -88,7 +88,7 @@
                   <Font name="Century Schoolbook" size="20.0" />
                </font>
                <effect>
-                  <DropShadow height="35.53" radius="12.5525" spread="0.31" width="16.68">
+                  <DropShadow height="20.0" radius="4.5" spread="0.31" width="0.0">
                      <color>
                         <Color red="0.11764705926179886" green="0.42352941632270813" blue="0.0470588244497776" />
                      </color>

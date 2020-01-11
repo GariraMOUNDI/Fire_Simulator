@@ -3,6 +3,7 @@ package businessLogic;
 import persistence.data.Element;
 import persistence.data.Terrain;
 import persistence.data.TypeElementEnum;
+import persistence.data.User;
 import persistence.factories.DAOType;
 import persistence.factories.MongoDBDAOFactory;
 import persistence.interfaces.DAO;
@@ -15,10 +16,16 @@ public class ElementFacade {
     private DAO dao;
     private Element currentElement;
     private static ElementFacade instance = null;
+    private SessionFacade session;
 
     private ElementFacade(LoginInterface loginIF) {
         this.loginIF = loginIF;
+        session = SessionFacade.getInstance(loginIF);
         dao = MongoDBDAOFactory.getInstance().createDAO(DAOType.Element);
+    }
+
+    public User getUserLoggedIn(){
+        return session.getUserLoggedIn();
     }
 
     public static ElementFacade getInstance(LoginInterface loginIF){

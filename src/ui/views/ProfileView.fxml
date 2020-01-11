@@ -23,7 +23,7 @@
                         <Font name="Century Schoolbook" size="35.0" />
                      </font>
                      <effect>
-                        <DropShadow height="59.13" radius="15.3625" width="4.32">
+                        <DropShadow height="118.57" radius="29.1425" width="0.0">
                            <color>
                               <Color red="0.11764705926179886" green="0.42352941632270813" blue="0.0470588244497776" />
                            </color></DropShadow>
@@ -47,7 +47,7 @@
    <center>
       <TabPane fx:id="profileTabPane" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="100.0" tabMaxWidth="100.0" tabMinHeight="30.0" tabMinWidth="150.0" BorderPane.alignment="CENTER">
         <tabs>
-          <Tab style="-fx-font-family: Arial; -fx-font-size: 14; -fx-font-weight: BOLD;" text="Personal Data">
+          <Tab style="-fx-font-family: Arial; -fx-font-size: 14; -fx-font-weight: BOLD; -fx-text-base-color: #842b0d;" text="Personal Data">
                <content>
                   <BorderPane>
                      <left>
@@ -88,7 +88,7 @@
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label alignment="CENTER" prefHeight="50.0" prefWidth="330.0" text="Current Information" textAlignment="CENTER" GridPane.valignment="TOP">
+                                    <Label alignment="CENTER" prefHeight="50.0" prefWidth="330.0" text="Current Information" textAlignment="CENTER" textFill="#842b0d" GridPane.valignment="TOP">
                                        <font>
                                           <Font name="System Bold Italic" size="20.0" />
                                        </font>
@@ -140,7 +140,7 @@
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
-                              <Label alignment="CENTER" prefHeight="50.0" prefWidth="500.0" text="Do you want to change something ?" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.valignment="TOP">
+                              <Label alignment="CENTER" prefHeight="50.0" prefWidth="500.0" text="Do you want to change something ?" textAlignment="CENTER" textFill="#842b0d" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.valignment="TOP">
                                  <font>
                                     <Font name="System Bold Italic" size="20.0" />
                                  </font>
@@ -241,7 +241,7 @@
                      </padding>
                   </BorderPane>
                </content></Tab>
-          <Tab style="-fx-font-family: Arial; -fx-font-size: 14; -fx-font-weight: BOLD;" text="Game Data">
+          <Tab style="-fx-font-family: Arial; -fx-font-size: 14; -fx-font-weight: BOLD; -fx-text-base-color: #842b0d;" text="Game Data">
                <content>
                   <BorderPane prefHeight="200.0" prefWidth="200.0">
                      <top>
@@ -399,7 +399,7 @@
                                     </Button>
                                  </right>
                                  <top>
-                                    <Label text="Your characters" BorderPane.alignment="CENTER">
+                                    <Label text="Your characters" textFill="#842b0d" BorderPane.alignment="CENTER">
                                        <font>
                                           <Font name="Arial Rounded MT Bold" size="18.0" />
                                        </font>
@@ -431,7 +431,7 @@
                                     </ScrollPane>
                                  </center>
                                  <top>
-                                    <Label text="Your Items" BorderPane.alignment="CENTER">
+                                    <Label text="Your Items" textFill="#842b0d" BorderPane.alignment="CENTER">
                                        <font>
                                           <Font name="Arial Rounded MT Bold" size="18.0" />
                                        </font>
@@ -446,17 +446,17 @@
                      </center>
                   </BorderPane>
                </content></Tab>
-            <Tab style="-fx-font-family: Arial; -fx-font-size: 14; -fx-font-weight: BOLD;" text="Game's Rules">
+            <Tab style="-fx-font-family: Arial; -fx-font-size: 14; -fx-font-weight: BOLD; -fx-text-base-color: #842b0d;" text="Game's Rules">
                 <BorderPane>
                   <top>
-                     <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="140.0" text="GamePlay" BorderPane.alignment="CENTER">
+                     <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="140.0" text="GamePlay" textFill="#842b0d" BorderPane.alignment="CENTER">
                         <font>
                            <Font name="Berlin Sans FB" size="30.0" />
                         </font>
                      </Label>
                   </top>
                   <center>
-                     <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" text="jqsjdjnq,snsdfdfsdf skjdfhkjdhfj  sdfkjdkf skjdfhkjsdbjk nsd2222222222222222222222222222222222jqshgdqsgdqsgqsjkhdqjkshdjkqshdkjqshdkjqshdjkqshdjqshjdhjsqhdnxbcnbw,xcxncbw,cbwbncwncbw,cb,wbcqjshdqskjdjksqhdjqskdwkjhjhdfjksd&#10;qsdsqdqs&#10;qsqsd&#10;qsd&#10;qsd&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq" wrapText="true" BorderPane.alignment="CENTER">
+                     <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: transparent;" text="jqsjdjnq,snsdfdfsdf skjdfhkjdhfj  sdfkjdkf skjdfhkjsdbjk nsd2222222222222222222222222222222222jqshgdqsgdqsgqsjkhdqjkshdjkqshdkjqshdkjqshdjkqshdjqshjdhjsqhdnxbcnbw,xcxncbw,cbwbncwncbw,cb,wbcqjshdqskjdjksqhdjqskdwkjhjhdfjksd&#10;qsdsqdqs&#10;qsqsd&#10;qsd&#10;qsd&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq" wrapText="true" BorderPane.alignment="CENTER">
                         <font>
                            <Font size="20.0" />
                         </font>

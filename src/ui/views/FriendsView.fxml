@@ -78,7 +78,7 @@
             </BorderPane>
          </center>
          <top>
-            <Label text="My Friends" BorderPane.alignment="CENTER">
+            <Label text="My Friends" textFill="#842b0d" BorderPane.alignment="CENTER">
                <font>
                   <Font name="System Bold Italic" size="18.0" />
                </font>
@@ -94,9 +94,9 @@
                   <TextField fx:id="searchForUnknow" onKeyTyped="#printSearchResultsUnknow" prefHeight="26.0" prefWidth="262.0" promptText="Find a friend" BorderPane.alignment="CENTER" />
                </top>
                <center>
-                  <ScrollPane fx:id="unknowScrollPane" fitToWidth="true" prefHeight="449.0" prefWidth="241.0" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER">
+                  <ScrollPane fx:id="unknowScrollPane" accessibleRole="IMAGE_VIEW" fitToWidth="true" prefHeight="449.0" prefWidth="241.0" style="-fx-background-color: transparent; -fx-background-radius: 30;" BorderPane.alignment="CENTER">
                      <content>
-                        <GridPane fx:id="unknowList" prefHeight="80.0" prefWidth="304.0">
+                        <GridPane fx:id="unknowList" prefHeight="80.0" prefWidth="304.0" style="-fx-background-color: transparent;">
                           <columnConstraints>
                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" percentWidth="20.0" prefWidth="100.0" />
@@ -112,7 +112,7 @@
             </BorderPane>
          </center>
          <top>
-            <Label text="Unknow Users" BorderPane.alignment="CENTER">
+            <Label text="Unknow Users" textFill="#842b0d" BorderPane.alignment="CENTER">
                <font>
                   <Font name="System Bold Italic" size="18.0" />
                </font>

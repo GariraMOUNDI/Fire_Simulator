@@ -46,7 +46,6 @@ public class MapManagementController implements LoginInterface {
                 Button modify = new Button("Modify");
                 Button delete = new Button("Delete");
 
-
                 gPane.add(map_name, 0, 0);
                 gPane.add(map_size, 1, 0);
                 gPane.add(modify, 2, 0);

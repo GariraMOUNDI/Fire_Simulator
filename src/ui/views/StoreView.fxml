@@ -29,7 +29,7 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </ImageView>
-                <Label text="Store" textFill="RED" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+                <Label text="Store" textFill="#842b0d" GridPane.columnIndex="1" GridPane.halignment="CENTER">
                     <font>
                         <Font name="Century Schoolbook" size="36.0" />
                     </font>
@@ -40,7 +40,7 @@
                      </color></DropShadow>
                </effect>
                 </Label>
-            <GridPane style="-fx-background-color: #cccccc; -fx-background-radius: 10;" GridPane.columnIndex="2">
+            <GridPane style="-fx-background-color: #ffe8d0; -fx-background-radius: 10;" GridPane.columnIndex="2">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -95,28 +95,12 @@
                 <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             </rowConstraints>
-            <Label text="Characters" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="0">
+            <Label text="Characters" textFill="#842b0d" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="0">
                 <font>
                     <Font name="Arial Rounded MT Bold" size="25.0" />
                 </font>
             </Label>
-            <BorderPane fx:id="characters" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #cccccc; -fx-background-radius: 20;" GridPane.columnIndex="0" GridPane.rowIndex="1">
-                <center>
-                    <VBox alignment="CENTER" BorderPane.alignment="CENTER">
-                        <ImageView fx:id="character_image" fitHeight="300.0" fitWidth="280.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
-                            <image>
-                                <Image url="@../../resources/icons/character.png" />
-                            </image>
-                            <VBox.margin>
-                                <Insets bottom="20.0" />
-                            </VBox.margin>
-                        </ImageView>
-                        <Button fx:id="character_purchase" style="-fx-background-color: #a1caf1; -fx-background-radius: 20;" text="Purchase">
-                            <cursor>
-                                <Cursor fx:constant="HAND" />
-                            </cursor></Button>
-                    </VBox>
-                </center>
+            <BorderPane fx:id="characters" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-background-radius: 20;" GridPane.columnIndex="0" GridPane.rowIndex="1">
                 <bottom>
                     <GridPane BorderPane.alignment="CENTER">
                         <columnConstraints>
@@ -200,30 +184,34 @@
                   </font>
                </Label>
             </top>
+            <center>
+               <BorderPane BorderPane.alignment="CENTER">
+                  <center>
+                           <ImageView fx:id="character_image" fitHeight="300.0" fitWidth="280.0" pickOnBounds="true" preserveRatio="true">
+                               <image>
+                                   <Image url="@../../resources/icons/character.png" />
+                               </image>
+                           </ImageView>
+                  </center>
+                  <bottom>
+                           <Button fx:id="character_purchase" style="-fx-background-color: #a1caf1; -fx-background-radius: 20;" text="Purchase" BorderPane.alignment="CENTER">
+                               <cursor>
+                                   <Cursor fx:constant="HAND" />
+                               </cursor>
+                        <effect>
+                           <InnerShadow height="25.0" radius="12.0" width="25.0" />
+                        </effect>
+                     </Button>
+                  </bottom>
+               </BorderPane>
+            </center>
             </BorderPane>
-            <Label text="Items" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="0">
+            <Label text="Items" textFill="#842b0d" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="0">
                 <font>
                     <Font name="Arial Rounded MT Bold" size="25.0" />
                 </font>
             </Label>
-            <BorderPane fx:id="items" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #cccccc; -fx-background-radius: 20;" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                <center>
-                    <VBox alignment="CENTER" BorderPane.alignment="CENTER">
-                        <ImageView fx:id="item_image" fitHeight="318.0" fitWidth="280.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
-                            <image>
-                                <Image url="@../../resources/items/gun/gun.png" />
-                            </image>
-                     <VBox.margin>
-                        <Insets bottom="20.0" />
-                     </VBox.margin>
-                        </ImageView>
-                        <Button fx:id="item_purchase" style="-fx-background-color: #a1caf1; -fx-background-radius: 20;" text="Purchase">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor></Button>
-                    </VBox>
-
-                </center>
+            <BorderPane fx:id="items" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-background-radius: 20;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                 <left>
                     <Button fx:id="item_left" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#prevItem" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #a1caf1; -fx-background-radius: 30;" text="&lt;" BorderPane.alignment="CENTER">
                         <graphic>
@@ -323,6 +311,27 @@
                   </font>
                </Label>
             </top>
+            <center>
+               <BorderPane BorderPane.alignment="CENTER">
+                  <center>
+                           <ImageView fx:id="item_image" fitHeight="318.0" fitWidth="280.0" pickOnBounds="true" preserveRatio="true">
+                               <image>
+                                   <Image url="@../../resources/items/gun/gun.png" />
+                               </image>
+                           </ImageView>
+                  </center>
+                  <bottom>
+                           <Button fx:id="item_purchase" style="-fx-background-color: #a1caf1; -fx-background-radius: 20;" text="Purchase" BorderPane.alignment="CENTER">
+                        <cursor>
+                           <Cursor fx:constant="HAND" />
+                        </cursor>
+                        <effect>
+                           <InnerShadow height="25.0" radius="12.0" width="25.0" />
+                        </effect>
+                     </Button>
+                  </bottom>
+               </BorderPane>
+            </center>
             </BorderPane>
         </GridPane>
     </center>
