@@ -46,6 +46,13 @@ public class Post {
     public Object getId() { return _id; }
 
     /**
+     * Sets the post id.
+     *
+     * @param  id the post id
+     */
+    public void setId(Object id) { this._id = id; }
+
+    /**
      * Gets username of the post's author.
      *
      * @return the username
