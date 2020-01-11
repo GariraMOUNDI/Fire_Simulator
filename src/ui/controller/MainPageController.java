@@ -30,7 +30,7 @@ public class MainPageController implements LoginInterface {
         ApplicationUI.toSoloMenu(ApplicationUI.getStage());
     }
 
-    public void toMainPage() throws Exception {
+    public void backToMainMenu() throws Exception {
         ApplicationUI.mainPageView(ApplicationUI.getStage());
     }
 
