@@ -13,12 +13,20 @@ import persistence.interfaces.DAO;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The type Mongo dbdao element.
+ */
 public class MongoDBDAOElement implements DAO<Element> {
 
     private MongoCollection<Document> collection;
     private Gson gson = new Gson();
     private BasicDBObject query, up;
 
+    /**
+     * Instantiates a new Mongo dbdao element.
+     *
+     * @param database the database of project.
+     */
     public MongoDBDAOElement(MongoDatabase database){
         collection = database.getCollection("elements");
     }
