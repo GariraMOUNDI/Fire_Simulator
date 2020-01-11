@@ -23,7 +23,7 @@ import ui.model.ApplicationUI;
 import java.util.List;
 
 /**
- * The type Create map menu controller.
+ * The type Create map menu controller, used by MapMenu view.
  */
 public class createMapMenuController implements LoginInterface{
     /**

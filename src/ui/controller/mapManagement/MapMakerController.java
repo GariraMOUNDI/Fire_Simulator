@@ -25,19 +25,42 @@ import ui.model.ApplicationUI;
 
 import java.util.List;
 
+/**
+ * The type Map maker controller, used by map Maker view.
+ */
 public class MapMakerController implements LoginInterface {
 
+    /**
+     * The Map management facade
+     */
     MapManagementFacade MMF = MapManagementFacade.getInstance(this);
+    /**
+     * The Session facade
+     */
     SessionFacade SF = SessionFacade.getInstance(this);
+    /**
+     * The Element facade.
+     */
     ElementFacade EF = ElementFacade.getInstance(this);
 
 
     @FXML
+    /**
+     * This scroll pane will contain a GridPane who represent the Matrix of a Terrain.
+     */
     private ScrollPane scrollPane;
     @FXML
-    Button toMapManagement, saveMap;
+    Button toMapManagement,
+    saveMap;
+
     @FXML
     ScrollPane element_view;
+
+    /**
+     * Initialize method : This method will get the currentTerrain set in the façade,
+     * and for each box of the matrix, it will fill the GridPane.
+     * This method get all Elements of the current User (+ BasicsElements) and print them.
+     */
     @FXML
     public void initialize() {
         Terrain terrain = MMF.getCurrentTerrain();
@@ -51,6 +74,10 @@ public class MapMakerController implements LoginInterface {
                 cell.setFill(Color.web(terrain.getMap().getBox(x,y).getElement().getColor()));
                 cell.setOnMouseClicked(new EventHandler<MouseEvent>()
                 {
+                    /**
+                     * This method check if currentElement is not null, if so, it set this element to
+                     * the clicked box.
+                     */
                     @Override
                     public void handle(MouseEvent t) {
                         if(currentElement[0] != null){
@@ -77,6 +104,9 @@ public class MapMakerController implements LoginInterface {
             pane.setStyle("-fx-background-color: "+ e.getColor() + ";");
             pane.setOnMouseClicked(new EventHandler<MouseEvent>()
             {
+                /**
+                 * This method set the current Element
+                 */
                 @Override
                 public void handle(MouseEvent t) {
                     pane.getScene().setCursor(Cursor.HAND);
@@ -94,11 +124,21 @@ public class MapMakerController implements LoginInterface {
 
     }
 
+    /**
+     * Save map on database, delegation to the facade.
+     *
+     * @throws Exception the exception
+     */
     public void saveMap() throws Exception {
         MMF.saveMap(MMF.getCurrentTerrain());
         ApplicationUI.MapManagementView(ApplicationUI.getStage());
     }
 
+    /**
+     * this method call the Map management view. used by back button.
+     *
+     * @throws Exception the exception
+     */
     public void backToMapManagement() throws  Exception{
         ApplicationUI.MapManagementView(ApplicationUI.getStage());
     }
