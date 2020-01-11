@@ -13,12 +13,20 @@ import persistence.interfaces.DAO;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The type MongoDB DAO element. This class is in charge of all connections to our MongoDB collection 'elements'
+ */
 public class MongoDBDAOElement implements DAO<Element> {
 
     private MongoCollection<Document> collection;
     private Gson gson = new Gson();
     private BasicDBObject query, up;
 
+    /**
+     * Instantiates a new MongoDB DAO element.
+     *
+     * @param database the database of project.
+     */
     public MongoDBDAOElement(MongoDatabase database){
         collection = database.getCollection("elements");
     }

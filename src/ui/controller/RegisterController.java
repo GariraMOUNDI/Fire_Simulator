@@ -12,7 +12,13 @@ import persistence.data.User;
 import ui.interfaces.LoginInterface;
 import ui.model.ApplicationUI;
 
+/**
+ * The type Register controller.
+ */
 public class RegisterController implements LoginInterface {
+    /**
+     * The session facade instance.
+     */
     SessionFacade SF = SessionFacade.getInstance(this);
 
     @FXML
@@ -27,6 +33,11 @@ public class RegisterController implements LoginInterface {
     private ImageView logo_img;
 
 
+    /**
+     * This method checks the user's input and delegates the register action to the session facade.
+     *
+     * @throws Exception the exception
+     */
     public void sendRegister() throws Exception {
         if (register_username.getText().trim().isEmpty() || register_password.getText().trim().isEmpty() || register_email.getText().trim().isEmpty()) {
             printResults("You must enter valid credentials");
@@ -38,6 +49,9 @@ public class RegisterController implements LoginInterface {
         }
     }
 
+    /**
+     * This method resets the fxml label.
+     */
     public void resetError() {
         error.setText("");
     }
@@ -58,9 +72,20 @@ public class RegisterController implements LoginInterface {
         return false;
     }
 
+    /**
+     * Go to the main page.
+     *
+     * @throws Exception the exception
+     */
     public void goToMainPage() throws Exception {
         ApplicationUI.mainPageView(ApplicationUI.getStage());
     }
+
+    /**
+     * Go back to the login page.
+     *
+     * @throws Exception the exception
+     */
     public void backToLogin() throws Exception {
         ApplicationUI.loginView(ApplicationUI.getStage());
     }

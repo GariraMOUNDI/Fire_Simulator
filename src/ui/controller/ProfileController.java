@@ -25,30 +25,38 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
+/**
+ * The type Profile controller.
+ */
 public class ProfileController implements LoginInterface {
 
     private SessionFacade session = SessionFacade.getInstance(this);
 
     @FXML
-    TabPane profileTabPane;
+    private TabPane profileTabPane;
     @FXML
-    Label usernameLabel, emailLabel, hwLabel, scopeCharacter, xpLabel, goldLabel, diamondsLabel, levelLabel;
+    private Label usernameLabel, emailLabel, hwLabel, scopeCharacter, xpLabel, goldLabel, diamondsLabel, levelLabel;
     @FXML
-    TextField usernameField, emailField, formerPasswordField, newPasswordField, confirmPasswordField, hwField;
+    private TextField usernameField, emailField, formerPasswordField, newPasswordField, confirmPasswordField, hwField;
     @FXML
-    Button saveButton, forwardCharacter, backwardCharacter;
+    private Button saveButton, forwardCharacter, backwardCharacter;
     @FXML
-    GridPane itemGridPane;
+    private GridPane itemGridPane;
     @FXML
-    ScrollPane itemScrollPane;
+    private ScrollPane itemScrollPane;
     @FXML
-    ImageView characterImage;
+    private ImageView characterImage;
 
     @Override
     public void printResults(Object arg) {
 
     }
 
+    /**
+     * The init method. This method does calculations based on the size of the window.
+     *
+     * @param stage the stage
+     */
     public void init(Stage stage){
         profileTabPane.setTabMinWidth(profileTabPane.getWidth() / 3.2);
         refreshInfo();
@@ -56,7 +64,7 @@ public class ProfileController implements LoginInterface {
         itemGridPane.setVgap(10);
         deleteRows(itemGridPane);
         showItems();
-        showChacracter(0);
+        showCharacter(0);
     }
 
 
@@ -74,6 +82,9 @@ public class ProfileController implements LoginInterface {
         hwField.setText("");
     }
 
+    /**
+     * This method checks all of the modified fields and saves the changes.
+     */
     public void saveChanges(){
         checkFields();
     }
@@ -135,10 +146,14 @@ public class ProfileController implements LoginInterface {
             alert.setTitle("Updating ... ");
             alert.show();
         }
-        //a.setGraphic(new ImageView("resources/icons/add.png"));
         return choice;
     }
 
+    /**
+     * Delete account.
+     *
+     * @throws Exception the exception
+     */
     public void deleteAccount() throws Exception {
         boolean delete = showPopupAlert(Alert.AlertType.CONFIRMATION, "Do you really want to delete your Account ???", "Once deleted, you will lose all your progress until this day !!! ");
         if (delete){
@@ -147,10 +162,18 @@ public class ProfileController implements LoginInterface {
         }
     }
 
+    /**
+     * Back to login page.
+     *
+     * @throws Exception the exception
+     */
     public void backToLoginPage() throws Exception {
         ApplicationUI.loginView(ApplicationUI.getStage());
     }
 
+    /**
+     * Print user attributes.
+     */
     public void printLevels(){
         xpLabel.setText(session.getUserLoggedIn().getXP()+"");
         goldLabel.setText(session.getUserLoggedIn().getGold()+"");
@@ -242,7 +265,7 @@ public class ProfileController implements LoginInterface {
             itemGridPane.add(new ItemLabels("You don't have any items.","red"),0,0,3,4);
     }
 
-    private void showChacracter(int characterIndex) {
+    private void showCharacter(int characterIndex) {
         Character character = session.getCharacterAt(characterIndex);
         if (character != null) {
             characterImage.setImage(new Image(character.getImageURL()));
@@ -252,18 +275,29 @@ public class ProfileController implements LoginInterface {
             /*   */ ;
     }
 
+    /**
+     * Set the previous character.
+     */
     public void previousCharacter(){
         Character character = session.previousCharacter();
         characterImage.setImage(new Image(character.getImageURL()));
         scopeCharacter.setText(String.valueOf(character.getScope()));
     }
 
+    /**
+     * Set the next character.
+     */
     public void nextCharacter(){
         Character character = session.nextCharacter();
         characterImage.setImage(new Image(character.getImageURL()));
         scopeCharacter.setText(String.valueOf(character.getScope()));
     }
 
+    /**
+     * Back to main page.
+     *
+     * @throws Exception the exception
+     */
     public void backToMainPage() throws Exception {
         ApplicationUI.mainPageView(ApplicationUI.getStage());
     }

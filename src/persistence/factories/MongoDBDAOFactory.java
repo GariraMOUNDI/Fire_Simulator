@@ -13,11 +13,23 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+/**
+ * The type MongoDB DAO factory.
+ */
 public class MongoDBDAOFactory {
 
     private Properties prop = new Properties();
 
+    /**
+     * The singleton factory instance.
+     */
     static MongoDBDAOFactory fac = null;
+
+    /**
+     * Gets the instance of the factory.
+     *
+     * @return the instance
+     */
     public static MongoDBDAOFactory getInstance() {
         if (fac == null) {
             fac = new MongoDBDAOFactory();
@@ -29,6 +41,10 @@ public class MongoDBDAOFactory {
     private MongoDatabase database;
     private MongoCollection collection;
 
+
+    /**
+     * The private factory constructor. Also initializes the connection to the mongoDB database.
+     */
     private MongoDBDAOFactory() {
         try (InputStream input = new FileInputStream("src/resources/database.properties")) {
             prop.load(input);
@@ -39,6 +55,12 @@ public class MongoDBDAOFactory {
         }
     }
 
+    /**
+     * Create a DAO based on the type passed as a parameter.
+     *
+     * @param type the type of DAO of type DAOType
+     * @return the newly created DAO
+     */
     public DAO createDAO(DAOType type) {
         switch (type){
             case Element:
@@ -57,10 +79,18 @@ public class MongoDBDAOFactory {
         }
     }
 
+    /**
+     * Close the database connection connection.
+     */
     public void closeConnection(){
         mongoClient.close();
     }
 
+    /**
+     * Connection exception.
+     *
+     * @param arg the arg
+     */
     public void connectionException(Object arg) {
 
     }

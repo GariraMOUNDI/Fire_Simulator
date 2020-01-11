@@ -20,19 +20,35 @@ import javafx.geometry.Insets;
 
 import java.util.List;
 
+/**
+ * The type Post controller.
+ */
 public class PostController implements LoginInterface {
     private PostFacade PF = PostFacade.getInstance(this);
     private SessionFacade SF = SessionFacade.getInstance(this);
 
     private Image image = new Image("resources/icons/gear.png",20, 20, false, false);
 
+    /**
+     * The main scroll pane.
+     */
     @FXML
     ScrollPane post_view;
+    /**
+     * The Root border pane.
+     */
     @FXML
     BorderPane root;
+    /**
+     * The My posts checkbox.
+     */
     @FXML
     CheckBox my_posts;
 
+    /**
+     * Initialize the fxml.
+     * This method gets the posts from the PostFacade and creates fxml elements to represent them graphically
+     */
     @FXML
     public void initialize() {
         List<Post> posts;
@@ -57,14 +73,29 @@ public class PostController implements LoginInterface {
         post_view.setContent(pane);
     }
 
+    /**
+     * Go back to the main page view.
+     *
+     * @throws Exception the exception
+     */
     public void backToMainPage() throws Exception {
         ApplicationUI.mainPageView(ApplicationUI.getStage());
     }
 
+    /**
+     * Go to the write post view.
+     *
+     * @throws Exception the exception
+     */
     public void toWritePost() throws Exception {
         ApplicationUI.writePostView(ApplicationUI.getStage());
     }
 
+    /**
+     * Go to the modify post view.
+     *
+     * @throws Exception the exception
+     */
     public void toModifyPost() throws Exception {
         ApplicationUI.modifyPostView(ApplicationUI.getStage());
     }
@@ -74,6 +105,11 @@ public class PostController implements LoginInterface {
 
     }
 
+    /**
+     * This method creates a javafx border pane that is the graphical view of post passed as a parameter.
+     * @param post the post to be created
+     * @return the border pane
+     */
     private BorderPane createPost(Post post) {
         BorderPane pane = new BorderPane();
         GridPane top = new GridPane();
@@ -151,6 +187,11 @@ public class PostController implements LoginInterface {
         return pane;
     }
 
+    /**
+     * This method creates a javafx grid pane that is the graphical view of the comments attached to the post passed as a parameter.
+     * @param post the post
+     * @return the javafx grid pane containing the comments
+     */
     private GridPane initComments(Post post) {
         GridPane pane = new GridPane();
         int i = 0;
@@ -185,6 +226,11 @@ public class PostController implements LoginInterface {
         return pane;
     }
 
+    /**
+     * This method creates a javafx grid pane that is the graphical view of a comment passed as a parameter.
+     * @param c the comment (which is of type Post)
+     * @return the javafx grid pane that is the graphical view of the comment
+     */
     private GridPane createComment(Post c) {
         GridPane pane = new GridPane();
         pane.getRowConstraints().add(new RowConstraints(10));

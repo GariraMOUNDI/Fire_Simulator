@@ -12,12 +12,20 @@ import persistence.interfaces.DAO;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The type MongoDB DAO user. This class is in charge of all connections to our MongoDB collection 'users'
+ */
 public class MongoDBDAOUser implements DAO<User> {
 
     private MongoCollection<Document> collection;
     private Gson gson = new Gson();
     private BasicDBObject query, up;
 
+    /**
+     * Instantiates a new MongoDB DAO user.
+     *
+     * @param database the database of the project
+     */
     public MongoDBDAOUser(MongoDatabase database){
         collection = database.getCollection("users");
     }

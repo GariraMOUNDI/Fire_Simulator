@@ -15,11 +15,19 @@ import java.lang.annotation.Documented;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The type MongoDB DAO post. This class is in charge of all connections to our MongoDB collection 'posts'
+ */
 public class MongoDBDAOPost implements DAO<Post> {
     private MongoCollection<Document> collection;
     private Gson gson = new Gson();
     private BasicDBObject query, up;
 
+    /**
+     * Instantiates a new MongoDB DAO post.
+     *
+     * @param database the database of the project
+     */
     public MongoDBDAOPost(MongoDatabase database){
         collection = database.getCollection("posts");
     }

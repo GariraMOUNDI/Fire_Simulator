@@ -12,12 +12,20 @@ import persistence.interfaces.DAO;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The type Mongo dbdao map management. This class is in charge of all connections to our MongoDB collection 'maps'
+ */
 public class MongoDBDAOMapManagement implements DAO<Terrain> {
 
     private MongoCollection<Document> collection;
     private Gson gson = new Gson();
     private BasicDBObject query, up;
 
+    /**
+     * Instantiates a new MongoDB DAO map management.
+     *
+     * @param database the database of the project
+     */
     public MongoDBDAOMapManagement(MongoDatabase database){
         collection = database.getCollection("maps");
     }

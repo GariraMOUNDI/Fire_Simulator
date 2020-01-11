@@ -22,21 +22,42 @@ import ui.model.ApplicationUI;
 
 import java.util.List;
 
+/**
+ * The type Create map menu controller, used by MapMenu view.
+ */
 public class createMapMenuController implements LoginInterface{
+    /**
+     * The Map management facade
+     */
     MapManagementFacade MMF = MapManagementFacade.getInstance(this);
+    /**
+     * The Session facade
+     */
     SessionFacade SF = SessionFacade.getInstance(this);
 
     @FXML
     private TextField name_input, size_input;
     @FXML
     private Label error;
-    
 
+
+    /**
+     * Change view to Map management
+     *
+     * @param actionEvent the action event
+     * @throws Exception the exception
+     */
     public void toMapManagement(ActionEvent actionEvent) throws  Exception{
         ApplicationUI.MapManagementView(ApplicationUI.getStage());
     }
 
 
+    /**
+     * Method called to create map. This method delegate the task to Map Management facade
+     * Once the map created, the Map maker view is called.
+     *
+     * @throws Exception the exception
+     */
     public void createMap() throws Exception {
         if (name_input.getText().trim().isEmpty() || size_input.getText().trim().isEmpty()) {
             printResults("You must enter valid input");
