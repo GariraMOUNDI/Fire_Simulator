@@ -5,6 +5,7 @@ import businessLogic.SessionFacade;
 import ui.interfaces.LoginInterface;
 import ui.model.ApplicationUI;
 
+import java.util.Date;
 import java.util.concurrent.ExecutionException;
 
 public class MainPageController implements LoginInterface {
