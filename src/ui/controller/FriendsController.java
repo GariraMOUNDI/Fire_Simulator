@@ -19,8 +19,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * The type Friends controller.
+ */
 public class FriendsController implements LoginInterface {
 
+    /**
+     * The Session facade instance.
+     */
     SessionFacade session = SessionFacade.getInstance(this);
     private RowConstraints row;
 
@@ -41,16 +47,27 @@ public class FriendsController implements LoginInterface {
 
     }
 
+    /**
+     * The initialize method, called automatically.
+     */
     @FXML
     public void initialize(){
         refreshLists();
     }
 
+    /**
+     * The init method, called from ApplicationUI.java.
+     *
+     * @param stage the stage
+     */
     public void init(Stage stage){
         unknowPane.setPrefWidth(stage.getWidth() / 2.5);
         friendsPane.setPrefWidth(stage.getWidth() / 2.5);
     }
 
+    /**
+     * This method refresh the user's lists.
+     */
     public void refreshLists(){
         row = new RowConstraints();
         row.setMinHeight(60);
@@ -58,6 +75,15 @@ public class FriendsController implements LoginInterface {
         showList(unknowScrollPane, unknowList, null, session.getOtherUser(), 1);
     }
 
+    /**
+     * The show list method initializes the list of users in fxml.
+     *
+     * @param scroll    the scroll
+     * @param grid      the grid
+     * @param arg       the arg
+     * @param users     the users
+     * @param nbButtons the nb buttons
+     */
     public void showList(ScrollPane scroll, GridPane grid, String arg, List<String> users, int nbButtons){
         deleteRows(grid);
         UserLabels user;
@@ -97,10 +123,20 @@ public class FriendsController implements LoginInterface {
         scroll.setContent(grid);
     }
 
+    /**
+     * Gets the session facade instance.
+     *
+     * @return the session
+     */
     public SessionFacade getSession() {
         return session;
     }
 
+    /**
+     * Delete rows. This method is used to reset the grid pane.
+     *
+     * @param grid the grid
+     */
     public void deleteRows(GridPane grid){
         Set<Node> deleteNodes = new HashSet<>();
         for (Node child : grid.getChildren()) {
@@ -110,14 +146,25 @@ public class FriendsController implements LoginInterface {
         grid.getRowConstraints().clear();
     }
 
+    /**
+     * Print search results friends.
+     */
     public void printSearchResultsFriends(){
         showList(friendsScrollPane, friendsList, searchForfriends.getText(), session.getUserLoggedInFriends(), 2);
     }
 
-    public void printSearchResultsUnknow(){
+    /**
+     * Print search results unknown.
+     */
+    public void printSearchResultsUnknown(){
         showList(unknowScrollPane, unknowList, searchForUnknow.getText(), session.getOtherUser(), 1);
     }
 
+    /**
+     * Back to main page.
+     *
+     * @throws Exception the exception
+     */
     public void backToMainPage() throws Exception {
         session.updateUser();
         ApplicationUI.mainPageView(ApplicationUI.getStage());

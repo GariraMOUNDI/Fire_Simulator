@@ -27,15 +27,44 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * The type Element controller.
+ */
 public class ElementController implements LoginInterface {
 
+    /**
+     * The element facade instance.
+     */
     ElementFacade EF = ElementFacade.getInstance(this);
+    /**
+     * The Sf.
+     */
+    SessionFacade SF = SessionFacade.getInstance(this);
 
-    @FXML
-    ScrollPane rockScrollPane, waterScrollPane, vegetationScrollPane;
 
+    /**
+     * The Rock scroll pane.
+     */
     @FXML
-    GridPane rockGridPane, vegetationGridPane, waterGridPane;
+    ScrollPane rockScrollPane, /**
+     * The Water scroll pane.
+     */
+    waterScrollPane, /**
+     * The Vegetation scroll pane.
+     */
+    vegetationScrollPane;
+
+    /**
+     * The Rock grid pane.
+     */
+    @FXML
+    GridPane rockGridPane, /**
+     * The Vegetation grid pane.
+     */
+    vegetationGridPane, /**
+     * The Water grid pane.
+     */
+    waterGridPane;
 
     @FXML
     TabPane elementTabPane;
@@ -43,6 +72,9 @@ public class ElementController implements LoginInterface {
     private List<Element> elements;
 
     public void initialize(){
+    /**
+     * This method initializes the fxml representation of the elements.
+     */
         elements = EF.getUserElements(EF.getUserLoggedIn().getUsername());
         showElements();
     }
@@ -59,6 +91,11 @@ public class ElementController implements LoginInterface {
         EF.deleteElement(element);
     }
 
+    /**
+     * Back to solo menu.
+     *
+     * @throws Exception the exception
+     */
     public void backToSoloMenu() throws Exception {
         ApplicationUI.toSoloMenu(ApplicationUI.getStage());
     }
@@ -75,6 +112,9 @@ public class ElementController implements LoginInterface {
         ApplicationUI.toElementMaker(ApplicationUI.getStage(), TypeElementEnum.Vegetation, EF.getCurrentElement());
     }
 
+    /**
+     * Show elements.
+     */
     public void showElements(){
         ElementLabels name_value, flammability_value,element_name,flammability;
         ElementButtons modify, delete;
@@ -136,6 +176,8 @@ public class ElementController implements LoginInterface {
                 }
                 k++;
             }
+
+
         }
 
         rockScrollPane.setContent(rockGridPane);
@@ -151,6 +193,11 @@ public class ElementController implements LoginInterface {
         grid.getRowConstraints().clear();
     }
 
+    /**
+     * Get facade element facade.
+     *
+     * @return the element facade
+     */
     public ElementFacade getFacade(){
         return EF;
     }

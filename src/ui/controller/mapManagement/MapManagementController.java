@@ -19,13 +19,28 @@ import ui.model.ApplicationUI;
 import javax.swing.*;
 import java.util.List;
 
+/**
+ * The type Map management controller.
+ */
 public class MapManagementController implements LoginInterface {
+    /**
+     * The map management facade instance.
+     */
     MapManagementFacade MMF = MapManagementFacade.getInstance(this);
+    /**
+     * The session facade instance.
+     */
     SessionFacade SF = SessionFacade.getInstance(this);
 
+    /**
+     * The Maps view.
+     */
     @FXML
     ScrollPane maps_view;
 
+    /**
+     * The initialize method prepares all of the javafx for this view.
+     */
     @FXML
     public void initialize() {
         List<Terrain> maps;
@@ -82,16 +97,40 @@ public class MapManagementController implements LoginInterface {
     }
 
 
+    /**
+     * To map menu.
+     *
+     * @param actionEvent the action event
+     * @throws Exception the exception
+     */
     public void toMapMenu (ActionEvent actionEvent) throws Exception {
         ApplicationUI.toMapmenu(ApplicationUI.getStage());
     }
+
+    /**
+     * To map management.
+     *
+     * @param actionEvent the action event
+     * @throws Exception the exception
+     */
     public void toMapManagement(ActionEvent actionEvent) throws  Exception{
         ApplicationUI.MapManagementView(ApplicationUI.getStage());
     }
+
+    /**
+     * Back to main page.
+     *
+     * @throws Exception the exception
+     */
     public void backToMainPage() throws Exception {
         ApplicationUI.mainPageView(ApplicationUI.getStage());
     }
 
+    /**
+     * Delete map.
+     *
+     * @param map the map
+     */
     public void deleteMap(Terrain map){
         MMF.deleteMap(map);
     }

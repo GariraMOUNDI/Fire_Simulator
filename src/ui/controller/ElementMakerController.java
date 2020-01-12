@@ -2,7 +2,6 @@ package ui.controller;
 
 import businessLogic.ElementFacade;
 import businessLogic.SessionFacade;
-import com.sun.javafx.collections.MappingChange;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -25,8 +24,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+/**
+ * The type Element maker controller.
+ */
 public class ElementMakerController implements LoginInterface {
 
+    /**
+     * The element facade instance.
+     */
     ElementFacade EF = ElementFacade.getInstance(this);
 
     @FXML
@@ -34,9 +39,14 @@ public class ElementMakerController implements LoginInterface {
 
     @FXML
     private Button buttonMaker;
+
     @FXML
     private MenuButton menu_color;
 
+    private Button createElement;
+    /**
+     * The Menu color.
+     */
     @FXML
     private Pane colorView;
     private TypeElementEnum elementType;
@@ -68,6 +78,11 @@ public class ElementMakerController implements LoginInterface {
         }
     }
 
+    /**
+     * Create element.
+     *
+     * @throws Exception the exception
+     */
     public void createElement() throws Exception {
         if (!ElementName_input.getText().trim().equals(""))
             try{
@@ -110,6 +125,11 @@ public class ElementMakerController implements LoginInterface {
 
     }
 
+    /**
+     * Back to element management.
+     *
+     * @throws Exception the exception
+     */
     public void backToElementManagement() throws Exception{
         ElementName_input.setText("");
         flammability_input.setText("");
@@ -117,5 +137,4 @@ public class ElementMakerController implements LoginInterface {
         EF.setCurrentElement(null);
         ApplicationUI.elementManagementView(ApplicationUI.getStage());
     }
-
 }
