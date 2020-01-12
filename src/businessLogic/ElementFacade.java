@@ -1,5 +1,6 @@
 package businessLogic;
 
+import org.bson.types.ObjectId;
 import persistence.data.Element;
 import persistence.data.Terrain;
 import persistence.data.TypeElementEnum;
@@ -56,10 +57,10 @@ public class ElementFacade {
      * @param flammability the flammability
      * @param color        the color
      * @param type         the type
-     * @param username     the username of the creator
+     * @param userId     the id of the creator
      */
-    public void createElement(String elementName, int flammability, String color, TypeElementEnum type, String username){
-        Element newElement = new Element(elementName,flammability,color,type, username);
+    public void createElement(String elementName, int flammability, String color, TypeElementEnum type, Object userId){
+        Element newElement = new Element(elementName,flammability,color,type, userId);
         dao.insertData(newElement);
     }
 
@@ -84,11 +85,11 @@ public class ElementFacade {
     /**
      * Get user elements list.
      *
-     * @param username the username
+     * @param id the username
      * @return the list
      */
-    public List<Element> getUserElements(String username){
-        return (List<Element>) dao.getDataById("username", username);
+    public List<Element> getUserElements(Object id){
+        return (List<Element>) dao.getDataById("userId", new ObjectId(Element.parseId(id.toString())));
     }
 
     /**
@@ -103,11 +104,11 @@ public class ElementFacade {
     /**
      * Get all elements list.
      *
-     * @param username the username
+     * @param id the user id
      * @return the list
      */
-    public List<Element> getAllElements(String username){
-        List<Element> result = (List<Element>) dao.getDataById("username", username);
+    public List<Element> getAllElements(Object id){
+        List<Element> result = getUserElements(id);
         result.addAll((List<Element>) dao.getDataById("basic", true));
         return result;
     }

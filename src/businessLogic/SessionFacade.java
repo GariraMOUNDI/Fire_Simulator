@@ -1,7 +1,9 @@
 package businessLogic;
 
+import org.bson.types.ObjectId;
 import persistence.data.Character;
 import persistence.data.Item;
+import persistence.data.Post;
 import persistence.factories.MongoDBDAOFactory;
 import persistence.data.User;
 import persistence.factories.DAOType;
@@ -221,5 +223,9 @@ public class SessionFacade {
     public void deleteAccount() {
         dao.deleteData(userLoggedIn);
         userLoggedIn = null;
+    }
+
+    public String getUsernameFromId(Object id) {
+        return ((User) dao.getDataById("_id", new ObjectId(Post.parseId(id)))).getUsername();
     }
 }
