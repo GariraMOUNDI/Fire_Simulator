@@ -4,10 +4,12 @@ import com.google.gson.Gson;
 import com.mongodb.BasicDBObject;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import com.sun.glass.ui.Application;
 import org.bson.Document;
 import org.bson.types.ObjectId;
 import persistence.data.User;
 import persistence.interfaces.DAO;
+import ui.model.ApplicationUI;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,13 +29,24 @@ public class MongoDBDAOUser implements DAO<User> {
      * @param database the database of the project
      */
     public MongoDBDAOUser(MongoDatabase database){
-        collection = database.getCollection("users");
+        if(database != null) {
+            collection = database.getCollection("users");
+        }
     }
 
     public User getDataById(String key, Object value) {
-        query = new BasicDBObject(key,value);
-        for (Document doc : collection.find(query)){
-            return gson.fromJson(doc.toJson(), User.class);
+        if (collection != null){
+            query = new BasicDBObject(key,value);
+            for (Document doc : collection.find(query)){
+                return gson.fromJson(doc.toJson(), User.class);
+            }
+            return null;
+        }else{
+            try {
+                ApplicationUI.noConnectionVue(ApplicationUI.getStage());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
         return null;
     }

@@ -1,6 +1,8 @@
 package persistence.data;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * The type Color element.
@@ -10,16 +12,47 @@ public class ColorElement {
     /**
      * ColorWater contain few variations of blue ...
      */
-    private static String colorsWater[] = {"#0000FF", "#0000A0", "#ADD8E6", "#00FFFF"};
+    private static Map<String, String> colorsWater =  new HashMap<>(){
+        {
+            put("Light Blue", "#ADD8E6");
+            put("Lavender", "#E6E6FA");
+            put("Light Sky Blue", "#87CEFA");
+            put("Sky Blue", "#87CEEB");
+            put("Deep Sky blue","#00BFFF");
+            put("Conflower Blue","#6495ED");
+            put("Dodger Blue", "#1E90FF");
+        }
+    };
+
     /**
          * ColorRock contain few variations of grey ...
     */
-    private static String colorsRock[] = {"#848482", "#837E7C", "#848482", "#B6B6B4"};
+    private static Map<String, String> colorsRock =  new HashMap<>(){
+        {
+            put("Light Gray","#D3D3D3");
+            put("Gainsboro","#DCDCDC");
+            put("Silver","#C0C0C0");
+            put("Dark Gray","#A9A9A9");
+            put("Gray","#808080");
+            put("Dim Gray","#696969");
+            put("Lightslate Gray","#778899");
+        }
+    };
+
     /**
      * ColorVegetation contain few variations of green ...
      */
-    private static String colorsVegetation[] = {"#254117", "#347C17", "#4AA02C", "#52D017","#7FE817","#347C2C", "#387C44","#228B22"};
-
+    private static Map<String, String> colorsVegetation = new HashMap<>(){
+        {
+            put("Pale Green", "#98FB98");
+            put("Light Green", "#90EE90");
+            put("Green Yellow", "#ADFF2F");
+            put("Lawn Green", "#7CFC00");
+            put("Lime green", "#32CD32");
+            put("Forest Green", "#228B22");
+            put("Dark Green", "#006400");
+        }
+    };
 
     /**
      * Get colors string [ ].
@@ -27,7 +60,7 @@ public class ColorElement {
      * @param type the type
      * @return the string [ ]
      */
-    public static String[] getColors(TypeElementEnum type){
+    public static Map getColors(TypeElementEnum type){
         if(type.equals(TypeElementEnum.Water)){
             return colorsWater;
         }

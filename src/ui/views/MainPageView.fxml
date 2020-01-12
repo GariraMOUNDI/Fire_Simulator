@@ -54,7 +54,10 @@
                         <Color red="0.6980392336845398" green="0.09019608050584793" blue="0.09019608050584793" />
                      </color>
                   </DropShadow>
-               </effect></Button>
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
             <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="200.0" style="-fx-background-color: #228b22; -fx-background-radius: 20;" text="Online" textFill="#842b0d" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                <font>
                   <Font name="Britannic Bold" size="25.0" />
@@ -65,7 +68,10 @@
                         <Color red="0.6980392336845398" green="0.09019608050584793" blue="0.09019608050584793" />
                      </color>
                   </DropShadow>
-               </effect></Button>
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
          </children>
          <BorderPane.margin>
             <Insets />

@@ -2,20 +2,19 @@ package ui.controller;
 
 import businessLogic.ElementFacade;
 import businessLogic.SessionFacade;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
+import javafx.stage.Stage;
 import persistence.data.Element;
 import persistence.data.Terrain;
 import persistence.data.TypeElementEnum;
@@ -38,13 +37,20 @@ public class ElementController implements LoginInterface {
     @FXML
     GridPane rockGridPane, vegetationGridPane, waterGridPane;
 
+    @FXML
+    TabPane elementTabPane;
+
     private List<Element> elements;
 
-    public void initialize() {
+    public void initialize(){
         elements = EF.getUserElements(EF.getUserLoggedIn().getUsername());
         showElements();
     }
 
+    public void init(Stage stage){
+        elementTabPane.setTabMinWidth(elementTabPane.getWidth() / 3.3);
+        initialize();
+    }
 
     @Override
     public void printResults(Object arg) {  }
@@ -57,8 +63,16 @@ public class ElementController implements LoginInterface {
         ApplicationUI.toSoloMenu(ApplicationUI.getStage());
     }
 
-    public void goToElementMaker() throws Exception {
-        ApplicationUI.toElementMaker(ApplicationUI.getStage());
+    public void goToRockMaker() throws Exception {
+        ApplicationUI.toElementMaker(ApplicationUI.getStage(), TypeElementEnum.Rock, EF.getCurrentElement());
+    }
+
+    public void goToWaterMaker() throws Exception {
+        ApplicationUI.toElementMaker(ApplicationUI.getStage(), TypeElementEnum.Water, EF.getCurrentElement());
+    }
+
+    public void goToVegetationMaker() throws Exception {
+        ApplicationUI.toElementMaker(ApplicationUI.getStage(), TypeElementEnum.Vegetation, EF.getCurrentElement());
     }
 
     public void showElements(){
@@ -139,5 +153,16 @@ public class ElementController implements LoginInterface {
 
     public ElementFacade getFacade(){
         return EF;
+    }
+
+    public TypeElementEnum getElementType() {
+        ObservableList<Tab> tabs = elementTabPane.getTabs();
+        if (tabs.get(0).isSelected())
+            return TypeElementEnum.Rock;
+        if (tabs.get(1).isSelected())
+            return TypeElementEnum.Vegetation;
+        if (tabs.get(2).isSelected())
+            return TypeElementEnum.Water;
+        return null;
     }
 }

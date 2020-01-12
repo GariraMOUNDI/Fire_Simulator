@@ -1,12 +1,15 @@
 package persistence.factories;
 
+import com.mongodb.MongoConfigurationException;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 
+import javafx.application.Application;
 import persistence.dao.*;
 import persistence.interfaces.DAO;
+import ui.model.ApplicationUI;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -45,13 +48,15 @@ public class MongoDBDAOFactory {
     /**
      * The private factory constructor. Also initializes the connection to the mongoDB database.
      */
-    private MongoDBDAOFactory() {
+    private MongoDBDAOFactory(){
         try (InputStream input = new FileInputStream("src/resources/database.properties")) {
             prop.load(input);
             mongoClient = MongoClients.create(prop.getProperty("DBconnectionURL"));
             database = mongoClient.getDatabase("FireBase");
         } catch (IOException ex) {
-            ex.printStackTrace();
+            System.out.println("Fichier de configuration inexistant !!!");
+        } catch( MongoConfigurationException e){
+            System.out.println("Erreur de connection !!!");
         }
     }
 
@@ -83,7 +88,8 @@ public class MongoDBDAOFactory {
      * Close the database connection connection.
      */
     public void closeConnection(){
-        mongoClient.close();
+        if (mongoClient != null)
+            mongoClient.close();
     }
 
     /**
