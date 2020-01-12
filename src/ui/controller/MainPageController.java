@@ -2,6 +2,9 @@ package ui.controller;
 
 import businessLogic.SessionFacade;
 
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import javafx.scene.text.Font;
 import ui.interfaces.LoginInterface;
 import ui.model.ApplicationUI;
 

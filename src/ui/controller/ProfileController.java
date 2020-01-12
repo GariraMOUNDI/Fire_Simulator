@@ -11,6 +11,7 @@ import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import persistence.data.Character;
 import persistence.data.Item;
@@ -35,7 +36,7 @@ public class ProfileController implements LoginInterface {
     @FXML
     private TabPane profileTabPane;
     @FXML
-    private Label usernameLabel, emailLabel, hwLabel, scopeCharacter, xpLabel, goldLabel, diamondsLabel, levelLabel;
+    private Label usernameLabel, emailLabel, hwLabel, scopeCharacter, xpLabel, goldLabel, diamondsLabel, levelLabel, help;
     @FXML
     private TextField usernameField, emailField, formerPasswordField, newPasswordField, confirmPasswordField, hwField;
     @FXML
@@ -50,6 +51,10 @@ public class ProfileController implements LoginInterface {
     @Override
     public void printResults(Object arg) {
 
+    }
+    @FXML
+    public void initialize() {
+        help.setFont(Font.loadFont(getClass().getResourceAsStream("/resources/fonts/BellMT.ttf"), 25));
     }
 
     /**

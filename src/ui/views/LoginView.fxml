@@ -50,7 +50,7 @@
                   <Image url="@../../resources/icons/logo.png" />
                </image>
             </ImageView>
-            <Label prefHeight="60.0" text="Fire Simulator" textFill="#842b0d">
+            <Label fx:id="title" prefHeight="60.0" text="Fire Simulator" textFill="#842b0d">
                <font>
                   <Font name="Century Schoolbook" size="46.0" />
                </font>
