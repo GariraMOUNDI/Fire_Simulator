@@ -8,12 +8,15 @@ import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Shape;
 import persistence.data.*;
 import persistence.data.Box;
 import ui.interfaces.LoginInterface;
+import ui.model.ApplicationUI;
+
 import java.util.ArrayList;
 
 
@@ -203,6 +206,10 @@ public class SimulationController implements LoginInterface{
     @Override
     public void printResults(Object arg) {
 
+    }
+
+    public void backToMainPage(MouseEvent mouseEvent) throws Exception {
+        ApplicationUI.mainPageView(ApplicationUI.getStage());
     }
 
 }
