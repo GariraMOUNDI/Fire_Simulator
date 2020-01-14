@@ -4,23 +4,16 @@ import businessLogic.SessionFacade;
 
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 
-import javafx.scene.control.ScrollPane;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Shape;
 import persistence.data.*;
 import persistence.data.Box;
 import ui.interfaces.LoginInterface;
-
-import java.awt.*;
-import java.awt.event.InputEvent;
 import java.util.ArrayList;
 
 
@@ -41,8 +34,8 @@ public class SimulationController implements LoginInterface{
     @FXML
     ScrollPane scrollPane;
 
-    ArrayList<GridPane> listGridPane = new ArrayList<>();
-    int i = 0;
+
+
 
     @FXML
     public void initialize() {
@@ -57,44 +50,16 @@ public class SimulationController implements LoginInterface{
                 matrice.setVgap(1);
             }
         }
-        scrollPane.setOnMouseClicked(new EventHandler<MouseEvent>()
-        {
-            /**
-             * This method set the current Element
-             */
-            @Override
-            public void handle(MouseEvent t) {
-                scrollPane.setContent(listGridPane.get(i));
-                i++;
-                try {
-                    Thread.sleep(100);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
+
         scrollPane.setContent(matrice);
     }
 
 
-
-
-
-    public void simulation() throws InterruptedException, AWTException {
+    public void simulation() throws InterruptedException {
         ArrayList<Box> burningBoxes = new ArrayList<>();
         burningBoxes.add(start_fire());
 
         runFire(burningBoxes);
-
-        Robot r = new Robot();
-        int ycursor = (int) (MouseInfo.getPointerInfo().getLocation().getY()-20);
-        int xcursor = (int) (MouseInfo.getPointerInfo().getLocation().getX());
-
-        for (int a = 0; a < listGridPane.size(); a++){
-            r.mouseMove(xcursor,ycursor);
-            r.mousePress(InputEvent.BUTTON1_DOWN_MASK);
-            r.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-        }
         //SimulationObserver s = new SimulationObserver(MMF.getCurrentTerrain(),this);
     }
 
@@ -113,17 +78,6 @@ public class SimulationController implements LoginInterface{
                 ((Shape) node).setFill(Color.web(MMF.getCurrentTerrain().getMap().getBox(x, y).getElement().getColor()));
             }
         }*/
-        GridPane newGrid = new GridPane();
-        for (int i = 0; i < MMF.getCurrentTerrain().getMap().getSize(); i++) {
-            for (int j = 0; j < MMF.getCurrentTerrain().getMap().getSize(); j++) {
-                Shape cell = (Shape) new javafx.scene.shape.Rectangle(30, 30);
-                cell.setFill(Color.web(MMF.getCurrentTerrain().getMap().getBox(i, j).getElement().getColor()));
-                newGrid.add(cell, i, j);
-                newGrid.setHgap(1);
-                newGrid.setVgap(1);
-            }
-        }
-        listGridPane.add(newGrid);
 
 
 
@@ -187,7 +141,7 @@ public class SimulationController implements LoginInterface{
 
 
     public void fire_probability(int x, int y){
-        int random = (int)(Math.random() * (70-1)) + 1;
+        int random = (int)(Math.random() * (100-1)) + 1;
         if ((random > MMF.getCurrentTerrain().getMap().getBox(x,y).getElement().getFlammability())){
             MMF.getCurrentTerrain().getMap().getBox(x,y).setState(StateBox.burning);
 
@@ -198,17 +152,6 @@ public class SimulationController implements LoginInterface{
                     ((Shape) node).setFill(Color.web(MMF.getCurrentTerrain().getMap().getBox(x, y).getElement().getColor()));
                 }
             }*/
-            GridPane newGrid = new GridPane();
-            for (int i = 0; i < MMF.getCurrentTerrain().getMap().getSize(); i++) {
-                for (int j = 0; j < MMF.getCurrentTerrain().getMap().getSize(); j++) {
-                    Shape cell = (Shape) new javafx.scene.shape.Rectangle(30, 30);
-                    cell.setFill(Color.web(MMF.getCurrentTerrain().getMap().getBox(i, j).getElement().getColor()));
-                    newGrid.add(cell, i, j);
-                    newGrid.setHgap(1);
-                    newGrid.setVgap(1);
-                }
-            }
-            listGridPane.add(newGrid);
         }
     }
 
@@ -231,22 +174,10 @@ public class SimulationController implements LoginInterface{
                             ((Shape) node).setFill(Color.web(burningBox.getElement().getColor()));
                         }
                     }*/
-                    GridPane newGrid = new GridPane();
-                    for (int i = 0; i < MMF.getCurrentTerrain().getMap().getSize(); i++) {
-                        for (int j = 0; j < MMF.getCurrentTerrain().getMap().getSize(); j++) {
-                            Shape cell = (Shape) new javafx.scene.shape.Rectangle(30, 30);
-                            cell.setFill(Color.web(MMF.getCurrentTerrain().getMap().getBox(i, j).getElement().getColor()));
-                            newGrid.add(cell, i, j);
-                            newGrid.setHgap(1);
-                            newGrid.setVgap(1);
-                        }
-                    }
-                    listGridPane.add(newGrid);
-
                     toRemove.add(burningBox);
                 }
                 else {
-                    burningBox.setLife(burningBox.getLife() - 25);
+                    burningBox.setLife(burningBox.getLife() - 10);
                 }
 
                 ArrayList<Box> neighbours = get_neighbours(burningBox, MMF.getCurrentTerrain().getMap());
