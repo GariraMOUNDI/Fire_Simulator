@@ -93,7 +93,7 @@ public class ElementMakerController implements LoginInterface {
                     } else
                         if (flammability <= 100 && flammability >= -100)
                             if( (flammability < 0 &&  elementType == TypeElementEnum.Water) || (flammability > 0 && elementType == TypeElementEnum.Vegetation)){
-                                EF.createElement(ElementName_input.getText(),flammability,menu_color.getText(), elementType ,EF.getUserLoggedIn().getUsername());
+                                EF.createElement(ElementName_input.getText(),flammability,colors[currentColor], elementType ,EF.getUserLoggedIn().getUsername());
                                 backToElementManagement();
                             }else
                                 showPopupAlert("The flammability must be a number :\n\t 0 an 100 for element of type Vegetation \n\t -100 an 0 for element of type Water.");
