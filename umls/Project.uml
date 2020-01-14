@@ -1,0 +1,1172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="2941.060156815699" y="3481.0">ui.model.ApplicationUI</node>
+    <node x="10.5" y="4200.0">test.persistence.data.TerrainTest</node>
+    <node x="4289.130611361154" y="5324.0">businessLogic.SessionFacade</node>
+    <node x="1517.6852557696348" y="4181.0">persistence.dao.MongoDBDAOMapManagement</node>
+    <node x="1619.6938545246148" y="1535.0">businessLogic.ElementFacade</node>
+    <node x="6487.952333830464" y="190.0">persistence.data.Character</node>
+    <node x="486.7916666666665" y="1708.0">resources.styles.ElementLabels</node>
+    <node x="1987.185255769635" y="5500.0">businessLogic.MapManagementFacade</node>
+    <node x="1350.6938545246148" y="756.0">persistence.data.ColorElement</node>
+    <node x="4078.4193454905085" y="733.0">persistence.factories.DAOType</node>
+    <node x="3687.089033189034" y="4170.0">persistence.dao.MongoDBDAOUser</node>
+    <node x="3473.3003968253975" y="6559.0">businessLogic.PostFacade</node>
+    <node x="6831.150407768941" y="125.0">persistence.data.Item</node>
+    <node x="1020.7916666666665" y="1579.0">persistence.dao.MongoDBDAOElement</node>
+    <node x="3597.9601568156986" y="745.0">persistence.interfaces.DAO</node>
+    <node x="48.5871356244179" y="1643.0">persistence.data.Box</node>
+    <node x="7135.150407768941" y="0.0">persistence.data.Tournament</node>
+    <node x="6152.83694623048" y="2550.0">ui.controller.FriendsController</node>
+    <node x="2536.3110121571754" y="3625.0">persistence.data.Post</node>
+    <node x="4336.578076837457" y="6568.0">ui.controller.MainPageController</node>
+    <node x="1883.6852557696348" y="2604.0">ui.controller.ElementMakerController</node>
+    <node x="6212.86194623048" y="1708.0">resources.styles.FriendsButtons</node>
+    <node x="5620.45569623048" y="1708.0">resources.styles.ItemButtons</node>
+    <node x="6908.150407768941" y="0.0">persistence.factories.ItemType</node>
+    <node x="906.6111111111113" y="6612.0">ui.controller.mapManagement.MapMakerController</node>
+    <node x="3519.2495414839213" y="4583.0">persistence.factories.MongoDBDAOFactory</node>
+    <node x="994.8494425299846" y="254.0">persistence.data.TypeElementEnum</node>
+    <node x="728.2916666666665" y="2528.0">ui.controller.ElementController</node>
+    <node x="4586.864702270245" y="799.0">ui.interfaces.LoginInterface</node>
+    <node x="2788.5602557696348" y="6634.0">ui.controller.mapManagement.MapManagementController</node>
+    <node x="4116.578076837457" y="6634.0">ui.controller.LoginController</node>
+    <node x="675.7916666666665" y="1708.0">resources.styles.ElementButtons</node>
+    <node x="2517.5602557696348" y="6645.0">ui.controller.mapManagement.createMapMenuController</node>
+    <node x="22.899635624417897" y="766.0">persistence.data.StateBox</node>
+    <node x="5332.45569623048" y="1579.0">persistence.dao.MongoDBDAOItem</node>
+    <node x="2596.257440728604" y="4211.0">test.persistence.data.PostTest</node>
+    <node x="3606.3003968253975" y="7446.0">ui.controller.post</node>
+    <node x="5254.257729328894" y="6449.0">businessLogic.StoreFacade</node>
+    <node x="5539.879213201093" y="2208.0">ui.controller.ProfileController</node>
+    <node x="6752.0566117496555" y="1411.0">test.persistence.data.UserTest</node>
+    <node x="3355.0503968253975" y="4181.0">persistence.dao.MongoDBDAOPost</node>
+    <node x="4949.001150775934" y="6557.0">ui.controller.RegisterController</node>
+    <node x="6044.86194623048" y="1708.0">resources.styles.UserLabels</node>
+    <node x="4174.725396825397" y="1579.0">persistence.dao.MongoDBDAOCharacter</node>
+    <node x="5832.45569623048" y="1708.0">resources.styles.ItemLabels</node>
+    <node x="6631.500407768941" y="570.0">persistence.data.User</node>
+    <node x="112.69130229108396" y="2694.0">persistence.data.Matrice</node>
+    <node x="360.0684523809523" y="680.0">persistence.data.Element</node>
+    <node x="204.5" y="3658.0">persistence.data.Terrain</node>
+    <node x="5165.760750360752" y="7138.0">ui.controller.StoreController</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="persistence.dao.MongoDBDAOItem" target="persistence.interfaces.DAO">
+      <point x="-66.75" y="-155.5" />
+      <point x="5399.20569623048" y="1161.0" />
+      <point x="3821.2518234823656" y="1161.0" />
+      <point x="106.79166666666697" y="80.5" />
+    </edge>
+    <edge source="persistence.factories.MongoDBDAOFactory" target="persistence.dao.MongoDBDAOItem">
+      <point x="107.09999999999991" y="-145.5" />
+      <point x="3745.349541483921" y="4563.0" />
+      <point x="5390.980650211193" y="4563.0" />
+      <point x="5390.980650211193" y="2188.0" />
+      <point x="5465.95569623048" y="2188.0" />
+      <point x="0.0" y="155.5" />
+    </edge>
+    <edge source="ui.controller.ProfileController" target="resources.styles.ItemButtons">
+      <point x="19.6875" y="-586.5" />
+      <point x="5717.066713201093" y="2158.0" />
+      <point x="5764.45569623048" y="2158.0" />
+      <point x="48.0" y="26.5" />
+    </edge>
+    <edge source="ui.controller.ElementMakerController" target="businessLogic.ElementFacade">
+      <point x="35.14285714285688" y="-190.5" />
+      <point x="2041.8281129124916" y="2088.0" />
+      <point x="1984.2494100801705" y="2088.0" />
+      <point x="171.55555555555566" y="199.5" />
+    </edge>
+    <edge source="businessLogic.MapManagementFacade" target="persistence.data.Matrice">
+      <point x="-36.44444444444434" y="-166.5" />
+      <point x="2114.7408113251904" y="4984.0" />
+      <point x="425.0" y="4984.0" />
+      <point x="425.0" y="3441.0" />
+      <point x="278.6079689577509" y="3441.0" />
+      <point x="75.41666666666697" y="100.5" />
+    </edge>
+    <edge source="persistence.dao.MongoDBDAOCharacter" target="persistence.interfaces.DAO">
+      <point x="-69.75" y="-155.5" />
+      <point x="4244.475396825397" y="1171.0" />
+      <point x="3801.8351568156986" y="1171.0" />
+      <point x="87.375" y="80.5" />
+    </edge>
+    <edge source="ui.controller.ElementController" target="persistence.data.TypeElementEnum">
+      <point x="39.81818181818198" y="-266.5" />
+      <point x="877.6098484848485" y="2128.0" />
+      <point x="1010.2916666666665" y="2128.0" />
+      <point x="1010.2916666666665" y="550.0" />
+      <point x="1064.5994425299846" y="550.0" />
+      <point x="-7.75" y="48.5" />
+    </edge>
+    <edge source="persistence.dao.MongoDBDAOMapManagement" target="persistence.data.Terrain">
+      <point x="-80.75" y="-155.5" />
+      <point x="1598.4352557696348" y="4150.0" />
+      <point x="402.83333333333303" y="4150.0" />
+      <point x="93.33333333333303" y="112.5" />
+    </edge>
+    <edge source="persistence.data.ColorElement" target="persistence.data.TypeElementEnum">
+      <point x="0.0" y="-69.5" />
+      <point x="1474.6938545246148" y="540.0" />
+      <point x="1095.5994425299846" y="540.0" />
+      <point x="23.25" y="48.5" />
+    </edge>
+    <edge source="persistence.factories.MongoDBDAOFactory" target="persistence.dao.MongoDBDAOElement">
+      <point x="-107.09999999999991" y="-145.5" />
+      <point x="3531.149541483921" y="4563.0" />
+      <point x="1156.2916666666665" y="4563.0" />
+      <point x="0.0" y="155.5" />
+    </edge>
+    <edge source="ui.controller.ProfileController" target="persistence.data.Item">
+      <point x="137.8125" y="-586.5" />
+      <point x="5835.191713201093" y="2188.0" />
+      <point x="6986.125407768941" y="2188.0" />
+      <point x="6986.125407768941" y="550.0" />
+      <point x="6973.600407768941" y="550.0" />
+      <point x="12.949999999999818" y="177.5" />
+    </edge>
+    <edge source="businessLogic.ElementFacade" target="persistence.factories.DAOType">
+      <point x="42.88888888888869" y="-199.5" />
+      <point x="1855.5827434135035" y="1211.0" />
+      <point x="4086.586012157175" y="1211.0" />
+      <point x="-40.833333333333485" y="92.5" />
+    </edge>
+    <edge source="businessLogic.MapManagementFacade" target="persistence.data.Terrain">
+      <point x="-109.33333333333303" y="-166.5" />
+      <point x="2041.851922436302" y="5004.0" />
+      <point x="337.6666666666665" y="5004.0" />
+      <point x="337.6666666666665" y="4140.0" />
+      <point x="356.16666666666697" y="4140.0" />
+      <point x="46.66666666666697" y="112.5" />
+    </edge>
+    <edge source="ui.controller.FriendsController" target="businessLogic.SessionFacade">
+      <point x="45.25" y="244.5" />
+      <point x="6379.08694623048" y="5254.0" />
+      <point x="4487.780611361153" y="5254.0" />
+      <point x="61.65000000000009" y="-342.5" />
+    </edge>
+    <edge source="ui.controller.ProfileController" target="persistence.data.Character">
+      <point x="-98.4375" y="-586.5" />
+      <point x="5598.941713201093" y="2168.0" />
+      <point x="5321.95569623048" y="2168.0" />
+      <point x="5321.95569623048" y="530.0" />
+      <point x="6550.952333830464" y="530.0" />
+      <point x="-45.0" y="112.5" />
+    </edge>
+    <edge source="persistence.data.Terrain" target="persistence.data.Matrice">
+      <point x="-52.5" y="-112.5" />
+      <point x="257.0" y="3461.0" />
+      <point x="218.274635624417" y="3461.0" />
+      <point x="15.08333333333303" y="100.5" />
+    </edge>
+    <edge source="persistence.factories.MongoDBDAOFactory" target="persistence.interfaces.DAO">
+      <point x="11.900000000000091" y="-145.5" />
+      <point x="3650.149541483921" y="4563.0" />
+      <point x="3632.5503968253975" y="4563.0" />
+      <point x="3632.5503968253975" y="1201.0" />
+      <point x="3724.1684901490316" y="1201.0" />
+      <point x="9.708333333333485" y="80.5" />
+    </edge>
+    <edge source="ui.controller.post" target="ui.interfaces.LoginInterface">
+      <point x="50.571428571428555" y="-14.5" />
+      <point x="3715.871825396826" y="7118.0" />
+      <point x="4938.501150775934" y="7118.0" />
+      <point x="4938.501150775934" y="1321.0" />
+      <point x="4712.978338633882" y="1321.0" />
+      <point x="36.61363636363649" y="26.5" />
+    </edge>
+    <edge source="test.persistence.data.TerrainTest" target="persistence.data.Terrain">
+      <point x="21.625" y="-136.5" />
+      <point x="118.625" y="4140.0" />
+      <point x="216.16666666666697" y="4140.0" />
+      <point x="-93.33333333333303" y="112.5" />
+    </edge>
+    <edge source="ui.controller.mapManagement.MapMakerController" target="ui.interfaces.LoginInterface">
+      <point x="62.70833333333303" y="-146.5" />
+      <point x="1076.8194444444443" y="6289.0" />
+      <point x="2422.5575396825398" y="6289.0" />
+      <point x="2422.5575396825398" y="5144.0" />
+      <point x="4499.634487734489" y="5144.0" />
+      <point x="4499.634487734489" y="1281.0" />
+      <point x="4639.751065906608" y="1281.0" />
+      <point x="-36.61363636363649" y="26.5" />
+    </edge>
+    <edge source="test.persistence.data.TerrainTest" target="persistence.data.Matrice">
+      <point x="-21.625" y="-136.5" />
+      <point x="75.375" y="3461.0" />
+      <point x="157.94130229108396" y="3461.0" />
+      <point x="-45.25" y="100.5" />
+    </edge>
+    <edge source="ui.controller.ElementMakerController" target="persistence.data.ColorElement">
+      <point x="-70.28571428571422" y="-190.5" />
+      <point x="1936.3995414839205" y="2118.0" />
+      <point x="1474.6938545246148" y="2118.0" />
+      <point x="0.0" y="69.5" />
+    </edge>
+    <edge source="ui.model.ApplicationUI" target="ui.controller.ElementController">
+      <point x="-123.55000000000018" y="-289.5" />
+      <point x="2994.010156815699" y="3441.0" />
+      <point x="865.1666666666665" y="3441.0" />
+      <point x="27.375" y="266.5" />
+    </edge>
+    <edge source="ui.controller.mapManagement.MapManagementController" target="businessLogic.MapManagementFacade">
+      <point x="-35.85714285714312" y="-124.5" />
+      <point x="2878.2031129124916" y="6199.0" />
+      <point x="2287.8519224363017" y="6199.0" />
+      <point x="136.66666666666697" y="166.5" />
+    </edge>
+    <edge source="ui.controller.ProfileController" target="ui.interfaces.LoginInterface">
+      <point x="-137.8125" y="-586.5" />
+      <point x="5559.566713201093" y="2178.0" />
+      <point x="5285.980650211193" y="2178.0" />
+      <point x="5285.980650211193" y="1271.0" />
+      <point x="4753.6601568157" y="1271.0" />
+      <point x="77.2954545454545" y="26.5" />
+    </edge>
+    <edge source="persistence.dao.MongoDBDAOPost" target="persistence.data.Post">
+      <point x="-66.75" y="-155.5" />
+      <point x="3421.8003968253975" y="4090.0" />
+      <point x="2752.6681550143176" y="4090.0" />
+      <point x="99.85714285714266" y="145.5" />
+    </edge>
+    <edge source="ui.controller.mapManagement.MapManagementController" target="ui.model.ApplicationUI">
+      <point x="0.0" y="-124.5" />
+      <point x="2914.0602557696348" y="5074.0" />
+      <point x="3120.794080068862" y="5074.0" />
+      <point x="3120.794080068862" y="4150.0" />
+      <point x="3064.610156815699" y="4150.0" />
+      <point x="-52.94999999999982" y="289.5" />
+    </edge>
+    <edge source="persistence.data.Element" target="persistence.data.TypeElementEnum">
+      <point x="82.75" y="-145.5" />
+      <point x="608.3184523809523" y="530.0" />
+      <point x="1033.5994425299846" y="530.0" />
+      <point x="-38.75" y="48.5" />
+    </edge>
+    <edge source="businessLogic.SessionFacade" target="persistence.data.User">
+      <point x="116.44999999999982" y="-342.5" />
+      <point x="4542.580611361153" y="5294.0" />
+      <point x="6729.454953223487" y="5294.0" />
+      <point x="6729.454953223487" y="1351.0" />
+      <point x="6743.500407768941" y="1351.0" />
+      <point x="0.0" y="255.5" />
+    </edge>
+    <edge source="ui.model.ApplicationUI" target="ui.controller.ElementMakerController">
+      <point x="-17.65000000000009" y="-289.5" />
+      <point x="3099.9101568156984" y="3411.0" />
+      <point x="1945.1852557696348" y="3411.0" />
+      <point x="-61.5" y="190.5" />
+    </edge>
+    <edge source="ui.controller.mapManagement.createMapMenuController" target="ui.interfaces.LoginInterface">
+      <point x="47.0625" y="-113.5" />
+      <point x="2690.1227557696348" y="6259.0" />
+      <point x="4251.357884088426" y="6259.0" />
+      <point x="4251.357884088426" y="5154.0" />
+      <point x="4507.770851370853" y="5154.0" />
+      <point x="4507.770851370853" y="1291.0" />
+      <point x="4647.887429542972" y="1291.0" />
+      <point x="-28.47727272727252" y="26.5" />
+    </edge>
+    <edge source="ui.controller.StoreController" target="ui.interfaces.LoginInterface">
+      <point x="-51.25" y="-322.5" />
+      <point x="5217.010750360752" y="7118.0" />
+      <point x="5199.501150775934" y="7118.0" />
+      <point x="5199.501150775934" y="1301.0" />
+      <point x="4729.251065906608" y="1301.0" />
+      <point x="52.88636363636351" y="26.5" />
+    </edge>
+    <edge source="ui.controller.ElementMakerController" target="persistence.data.TypeElementEnum">
+      <point x="70.28571428571468" y="-190.5" />
+      <point x="2076.9709700553494" y="2078.0" />
+      <point x="2040.027187857948" y="2078.0" />
+      <point x="2040.027187857948" y="510.0" />
+      <point x="1142.0994425299846" y="510.0" />
+      <point x="69.75" y="48.5" />
+    </edge>
+    <edge source="businessLogic.PostFacade" target="persistence.factories.MongoDBDAOFactory">
+      <point x="-28.444444444444457" y="-199.5" />
+      <point x="3572.855952380953" y="6159.0" />
+      <point x="3322.5503968253975" y="6159.0" />
+      <point x="3322.5503968253975" y="5094.0" />
+      <point x="3608.4995414839213" y="5094.0" />
+      <point x="-29.75" y="145.5" />
+    </edge>
+    <edge source="ui.controller.mapManagement.createMapMenuController" target="businessLogic.SessionFacade">
+      <point x="78.4375" y="-113.5" />
+      <point x="2721.4977557696348" y="6319.0" />
+      <point x="4327.186166916709" y="6319.0" />
+      <point x="-98.94444444444434" y="342.5" />
+    </edge>
+    <edge source="ui.controller.mapManagement.MapMakerController" target="ui.model.ApplicationUI">
+      <point x="8.95833333333303" y="-146.5" />
+      <point x="1023.0694444444443" y="6429.0" />
+      <point x="1019.6111111111113" y="6429.0" />
+      <point x="1019.6111111111113" y="5054.0" />
+      <point x="2809.261012157175" y="5054.0" />
+      <point x="2809.261012157175" y="4130.0" />
+      <point x="2958.7101568156986" y="4130.0" />
+      <point x="-158.8499999999999" y="289.5" />
+    </edge>
+    <edge source="persistence.data.Matrice" target="persistence.data.StateBox">
+      <point x="-75.41666666666697" y="-100.5" />
+      <point x="127.77463562441699" y="2178.0" />
+      <point x="38.0871356244179" y="2178.0" />
+      <point x="38.0871356244179" y="1391.0" />
+      <point x="40.3996356244179" y="1391.0" />
+      <point x="-35.0" y="59.5" />
+    </edge>
+    <edge source="businessLogic.PostFacade" target="ui.interfaces.LoginInterface">
+      <point x="56.888888888888914" y="-199.5" />
+      <point x="3658.1892857142866" y="6289.0" />
+      <point x="4278.630611361154" y="6289.0" />
+      <point x="4278.630611361154" y="5184.0" />
+      <point x="4535.04357864358" y="5184.0" />
+      <point x="4535.04357864358" y="1321.0" />
+      <point x="4672.296520452063" y="1321.0" />
+      <point x="-4.0681818181819835" y="26.5" />
+    </edge>
+    <edge source="businessLogic.StoreFacade" target="persistence.data.User">
+      <point x="81.84615384615381" y="-309.5" />
+      <point x="5469.103883175048" y="6409.0" />
+      <point x="6968.5566117496555" y="6409.0" />
+      <point x="6968.5566117496555" y="1331.0" />
+      <point x="6845.318589587123" y="1331.0" />
+      <point x="101.81818181818198" y="255.5" />
+    </edge>
+    <edge source="ui.controller.ElementController" target="ui.interfaces.LoginInterface">
+      <point x="99.5454545454545" y="-266.5" />
+      <point x="937.337121212121" y="2178.0" />
+      <point x="4464.225396825397" y="2178.0" />
+      <point x="4464.225396825397" y="1241.0" />
+      <point x="4607.205611361154" y="1241.0" />
+      <point x="-69.15909090909099" y="26.5" />
+    </edge>
+    <edge source="ui.model.ApplicationUI" target="ui.controller.FriendsController">
+      <point x="123.55000000000018" y="-289.5" />
+      <point x="3241.110156815699" y="3451.0" />
+      <point x="6198.08694623048" y="3451.0" />
+      <point x="-135.75" y="244.5" />
+    </edge>
+    <edge source="businessLogic.MapManagementFacade" target="persistence.interfaces.DAO">
+      <point x="0.0" y="-166.5" />
+      <point x="2151.1852557696348" y="1171.0" />
+      <point x="3665.9184901490316" y="1171.0" />
+      <point x="-48.541666666666515" y="80.5" />
+    </edge>
+    <edge source="persistence.factories.MongoDBDAOFactory" target="persistence.dao.MongoDBDAOCharacter">
+      <point x="83.30000000000018" y="-145.5" />
+      <point x="3721.5495414839215" y="4553.0" />
+      <point x="4314.225396825397" y="4553.0" />
+      <point x="0.0" y="155.5" />
+    </edge>
+    <edge source="test.persistence.data.UserTest" target="persistence.data.User">
+      <point x="-48.75" y="-323.5" />
+      <point x="6800.8066117496555" y="1361.0" />
+      <point x="6784.227680496214" y="1361.0" />
+      <point x="40.72727272727275" y="255.5" />
+    </edge>
+    <edge source="ui.controller.StoreController" target="persistence.data.Item">
+      <point x="85.41666666666652" y="-322.5" />
+      <point x="5353.677417027418" y="7118.0" />
+      <point x="7030.125407768941" y="7118.0" />
+      <point x="7030.125407768941" y="550.0" />
+      <point x="7077.200407768942" y="550.0" />
+      <point x="116.55000000000018" y="177.5" />
+    </edge>
+    <edge source="ui.controller.RegisterController" target="businessLogic.SessionFacade">
+      <point x="-48.0" y="-201.5" />
+      <point x="5021.001150775934" y="6119.0" />
+      <point x="4509.852833583375" y="6119.0" />
+      <point x="83.72222222222217" y="342.5" />
+    </edge>
+    <edge source="persistence.dao.MongoDBDAOElement" target="persistence.data.Element">
+      <point x="-67.75" y="-155.5" />
+      <point x="1088.5416666666665" y="1371.0" />
+      <point x="584.6755952380954" y="1371.0" />
+      <point x="59.10714285714312" y="145.5" />
+    </edge>
+    <edge source="businessLogic.PostFacade" target="persistence.interfaces.DAO">
+      <point x="-113.77777777777783" y="-199.5" />
+      <point x="3487.5226190476196" y="6189.0" />
+      <point x="2336.6852557696348" y="6189.0" />
+      <point x="2336.6852557696348" y="1181.0" />
+      <point x="3685.3351568156986" y="1181.0" />
+      <point x="-29.125" y="80.5" />
+    </edge>
+    <edge source="ui.controller.FriendsController" target="resources.styles.UserLabels">
+      <point x="-72.40000000000009" y="-244.5" />
+      <point x="6261.436946230479" y="2168.0" />
+      <point x="6155.86194623048" y="2168.0" />
+      <point x="37.0" y="26.5" />
+    </edge>
+    <edge source="persistence.data.Matrice" target="persistence.data.Element">
+      <point x="75.41666666666697" y="-100.5" />
+      <point x="278.6079689577509" y="2188.0" />
+      <point x="332.39070705298946" y="2188.0" />
+      <point x="332.39070705298946" y="1391.0" />
+      <point x="419.1755952380954" y="1391.0" />
+      <point x="-106.39285714285688" y="145.5" />
+    </edge>
+    <edge source="ui.controller.MainPageController" target="ui.model.ApplicationUI">
+      <point x="-83.25" y="-190.5" />
+      <point x="4364.328076837457" y="6139.0" />
+      <point x="3311.5503968253975" y="6139.0" />
+      <point x="3311.5503968253975" y="4120.0" />
+      <point x="3170.510156815699" y="4120.0" />
+      <point x="52.95000000000027" y="289.5" />
+    </edge>
+    <edge source="ui.controller.post" target="ui.model.ApplicationUI">
+      <point x="-33.71428571428578" y="-14.5" />
+      <point x="3631.5861111111117" y="7108.0" />
+      <point x="2507.0602557696348" y="7108.0" />
+      <point x="2507.0602557696348" y="5064.0" />
+      <point x="2820.261012157175" y="5064.0" />
+      <point x="2820.261012157175" y="4140.0" />
+      <point x="2994.010156815699" y="4140.0" />
+      <point x="-123.55000000000018" y="289.5" />
+    </edge>
+    <edge source="ui.model.ApplicationUI" target="persistence.factories.MongoDBDAOFactory">
+      <point x="123.55000000000018" y="289.5" />
+      <point x="3241.110156815699" y="4100.0" />
+      <point x="3344.5503968253975" y="4100.0" />
+      <point x="3344.5503968253975" y="4533.0" />
+      <point x="3602.5495414839206" y="4533.0" />
+      <point x="-35.70000000000027" y="-145.5" />
+    </edge>
+    <edge source="ui.controller.mapManagement.createMapMenuController" target="persistence.data.Matrice">
+      <point x="-109.8125" y="-113.5" />
+      <point x="2533.2477557696348" y="6259.0" />
+      <point x="194.0" y="6259.0" />
+      <point x="194.0" y="3461.0" />
+      <point x="188.10796895775093" y="3461.0" />
+      <point x="-15.08333333333303" y="100.5" />
+    </edge>
+    <edge source="ui.model.ApplicationUI" target="persistence.data.TypeElementEnum">
+      <point x="-52.95000000000027" y="-289.5" />
+      <point x="3064.6101568156982" y="3421.0" />
+      <point x="1302.2916666666665" y="3421.0" />
+      <point x="1302.2916666666665" y="550.0" />
+      <point x="1080.0994425299846" y="550.0" />
+      <point x="7.75" y="48.5" />
+    </edge>
+    <edge source="persistence.data.User" target="persistence.data.Character">
+      <point x="0.0" y="-255.5" />
+      <point x="6743.500407768941" y="540.0" />
+      <point x="6676.952333830464" y="540.0" />
+      <point x="81.0" y="112.5" />
+    </edge>
+    <edge source="ui.controller.mapManagement.MapMakerController" target="persistence.data.Box">
+      <point x="-98.54166666666697" y="-146.5" />
+      <point x="915.5694444444443" y="6429.0" />
+      <point x="0.0" y="6429.0" />
+      <point x="0.0" y="2188.0" />
+      <point x="77.7121356244179" y="2188.0" />
+      <point x="-87.375" y="91.5" />
+    </edge>
+    <edge source="ui.controller.StoreController" target="persistence.data.Character">
+      <point x="51.25" y="-322.5" />
+      <point x="5319.510750360752" y="7108.0" />
+      <point x="6610.000407768941" y="7108.0" />
+      <point x="6610.000407768941" y="550.0" />
+      <point x="6604.952333830464" y="550.0" />
+      <point x="9.0" y="112.5" />
+    </edge>
+    <edge source="persistence.dao.MongoDBDAOElement" target="persistence.interfaces.DAO">
+      <point x="67.75" y="-155.5" />
+      <point x="1224.0416666666665" y="1141.0" />
+      <point x="3607.6684901490316" y="1141.0" />
+      <point x="-106.79166666666652" y="80.5" />
+    </edge>
+    <edge source="persistence.data.Box" target="persistence.data.Element">
+      <point x="87.375" y="-91.5" />
+      <point x="252.4621356244179" y="1381.0" />
+      <point x="395.5327380952376" y="1381.0" />
+      <point x="-130.03571428571468" y="145.5" />
+    </edge>
+    <edge source="ui.controller.StoreController" target="ui.model.ApplicationUI">
+      <point x="-85.41666666666674" y="-322.5" />
+      <point x="5182.844083694085" y="7088.0" />
+      <point x="3247.049541483921" y="7088.0" />
+      <point x="3247.049541483921" y="4140.0" />
+      <point x="3099.9101568156984" y="4140.0" />
+      <point x="-17.65000000000009" y="289.5" />
+    </edge>
+    <edge source="ui.controller.LoginController" target="businessLogic.SessionFacade">
+      <point x="25.0" y="-124.5" />
+      <point x="4241.578076837457" y="6399.0" />
+      <point x="4448.963944694487" y="6399.0" />
+      <point x="22.833333333333485" y="342.5" />
+    </edge>
+    <edge source="ui.controller.FriendsController" target="ui.interfaces.LoginInterface">
+      <point x="144.79999999999973" y="-244.5" />
+      <point x="6478.636946230479" y="2178.0" />
+      <point x="6524.36194623048" y="2178.0" />
+      <point x="6524.36194623048" y="1151.0" />
+      <point x="4761.796520452063" y="1151.0" />
+      <point x="85.43181818181802" y="26.5" />
+    </edge>
+    <edge source="persistence.factories.MongoDBDAOFactory" target="persistence.factories.DAOType">
+      <point x="59.5" y="-145.5" />
+      <point x="3697.7495414839213" y="4543.0" />
+      <point x="4105.586012157175" y="4543.0" />
+      <point x="4105.586012157175" y="1211.0" />
+      <point x="4102.919345490509" y="1211.0" />
+      <point x="-24.5" y="92.5" />
+    </edge>
+    <edge source="ui.controller.mapManagement.createMapMenuController" target="ui.model.ApplicationUI">
+      <point x="15.6875" y="-113.5" />
+      <point x="2658.7477557696348" y="5074.0" />
+      <point x="2901.604762157175" y="5074.0" />
+      <point x="2901.604762157175" y="4150.0" />
+      <point x="3029.310156815699" y="4150.0" />
+      <point x="-88.25" y="289.5" />
+    </edge>
+    <edge source="persistence.factories.MongoDBDAOFactory" target="persistence.dao.MongoDBDAOUser">
+      <point x="35.69999999999982" y="-145.5" />
+      <point x="3673.949541483921" y="4533.0" />
+      <point x="3820.589033189034" y="4533.0" />
+      <point x="0.0" y="166.5" />
+    </edge>
+    <edge source="ui.controller.mapManagement.MapManagementController" target="ui.interfaces.LoginInterface">
+      <point x="35.85714285714312" y="-124.5" />
+      <point x="2949.917398626778" y="6269.0" />
+      <point x="4259.49424772479" y="6269.0" />
+      <point x="4259.49424772479" y="5164.0" />
+      <point x="4515.907215007216" y="5164.0" />
+      <point x="4515.907215007216" y="1301.0" />
+      <point x="4656.023793179336" y="1301.0" />
+      <point x="-20.34090909090901" y="26.5" />
+    </edge>
+    <edge source="persistence.data.Item" target="persistence.factories.ItemType">
+      <point x="-64.75" y="-177.5" />
+      <point x="6895.900407768941" y="100.0" />
+      <point x="6934.400407768941" y="100.0" />
+      <point x="-26.25" y="37.5" />
+    </edge>
+    <edge source="ui.controller.mapManagement.MapMakerController" target="businessLogic.MapManagementFacade">
+      <point x="26.875" y="-146.5" />
+      <point x="1040.9861111111113" y="6269.0" />
+      <point x="2014.518589102968" y="6269.0" />
+      <point x="-136.66666666666697" y="166.5" />
+    </edge>
+    <edge source="resources.styles.ElementButtons" target="ui.controller.ElementController">
+      <point x="108.0" y="26.5" />
+      <point x="945.7916666666665" y="2118.0" />
+      <point x="857.7007575757575" y="2118.0" />
+      <point x="19.90909090909099" y="-266.5" />
+    </edge>
+    <edge source="ui.controller.post" target="businessLogic.PostFacade">
+      <point x="0.0" y="-14.5" />
+      <point x="64.0" y="199.5" />
+    </edge>
+    <edge source="ui.controller.ElementController" target="ui.model.ApplicationUI">
+      <point x="82.125" y="266.5" />
+      <point x="919.9166666666665" y="3431.0" />
+      <point x="3029.310156815699" y="3431.0" />
+      <point x="-88.25" y="-289.5" />
+    </edge>
+    <edge source="ui.controller.ElementController" target="businessLogic.SessionFacade">
+      <point x="-27.375" y="266.5" />
+      <point x="810.4166666666665" y="3461.0" />
+      <point x="788.5416666666665" y="3461.0" />
+      <point x="788.5416666666665" y="4964.0" />
+      <point x="4309.680611361154" y="4964.0" />
+      <point x="-116.44999999999982" y="-342.5" />
+    </edge>
+    <edge source="businessLogic.StoreFacade" target="persistence.interfaces.DAO">
+      <point x="-102.30769230769238" y="-309.5" />
+      <point x="5284.950037021202" y="6079.0" />
+      <point x="3964.589033189034" y="6079.0" />
+      <point x="3964.589033189034" y="1191.0" />
+      <point x="3763.0018234823647" y="1191.0" />
+      <point x="48.541666666666515" y="80.5" />
+    </edge>
+    <edge source="ui.controller.ElementController" target="businessLogic.ElementFacade">
+      <point x="59.72727272727252" y="-266.5" />
+      <point x="897.518939393939" y="2138.0" />
+      <point x="1641.1382989690592" y="2138.0" />
+      <point x="-171.55555555555566" y="199.5" />
+    </edge>
+    <edge source="persistence.dao.MongoDBDAOUser" target="ui.model.ApplicationUI">
+      <point x="-89.0" y="-166.5" />
+      <point x="3731.589033189034" y="4080.0" />
+      <point x="3276.4101568156984" y="4080.0" />
+      <point x="158.8499999999999" y="289.5" />
+    </edge>
+    <edge source="persistence.dao.MongoDBDAOItem" target="persistence.data.Item">
+      <point x="66.75" y="-155.5" />
+      <point x="5532.70569623048" y="1371.0" />
+      <point x="6917.115295815298" y="1371.0" />
+      <point x="6917.115295815298" y="550.0" />
+      <point x="6895.900407768941" y="550.0" />
+      <point x="-64.75" y="177.5" />
+    </edge>
+    <edge source="businessLogic.MapManagementFacade" target="ui.interfaces.LoginInterface">
+      <point x="109.33333333333303" y="-166.5" />
+      <point x="2260.518589102968" y="5124.0" />
+      <point x="4480.498124098125" y="5124.0" />
+      <point x="4480.498124098125" y="1261.0" />
+      <point x="4623.478338633882" y="1261.0" />
+      <point x="-52.88636363636351" y="26.5" />
+    </edge>
+    <edge source="ui.controller.RegisterController" target="ui.interfaces.LoginInterface">
+      <point x="48.0" y="-201.5" />
+      <point x="5117.001150775934" y="6099.0" />
+      <point x="5036.941713201093" y="6099.0" />
+      <point x="5036.941713201093" y="1311.0" />
+      <point x="4721.114702270245" y="1311.0" />
+      <point x="44.75" y="26.5" />
+    </edge>
+    <edge source="ui.controller.mapManagement.createMapMenuController" target="persistence.data.Terrain">
+      <point x="-78.4375" y="-113.5" />
+      <point x="2564.6227557696348" y="6249.0" />
+      <point x="282.6666666666665" y="6249.0" />
+      <point x="282.6666666666665" y="4150.0" />
+      <point x="286.16666666666697" y="4150.0" />
+      <point x="-23.33333333333303" y="112.5" />
+    </edge>
+    <edge source="ui.controller.ElementController" target="resources.styles.ElementButtons">
+      <point x="0.0" y="-266.5" />
+      <point x="0.0" y="26.5" />
+    </edge>
+    <edge source="ui.controller.ElementMakerController" target="persistence.data.Element">
+      <point x="-105.42857142857156" y="-190.5" />
+      <point x="1901.2566843410632" y="2128.0" />
+      <point x="1463.6938545246148" y="2128.0" />
+      <point x="1463.6938545246148" y="1131.0" />
+      <point x="608.3184523809523" y="1131.0" />
+      <point x="82.75" y="145.5" />
+    </edge>
+    <edge source="businessLogic.StoreFacade" target="persistence.data.Item">
+      <point x="122.76923076923072" y="-309.5" />
+      <point x="5510.026960098125" y="6429.0" />
+      <point x="7019.125407768941" y="6429.0" />
+      <point x="7019.125407768941" y="540.0" />
+      <point x="7051.300407768941" y="540.0" />
+      <point x="90.65000000000009" y="177.5" />
+    </edge>
+    <edge source="ui.controller.LoginController" target="ui.interfaces.LoginInterface">
+      <point x="75.0" y="-124.5" />
+      <point x="4291.578076837457" y="6419.0" />
+      <point x="4701.679942279944" y="6419.0" />
+      <point x="4701.679942279944" y="1341.0" />
+      <point x="4696.705611361154" y="1341.0" />
+      <point x="20.34090909090901" y="26.5" />
+    </edge>
+    <edge source="ui.controller.mapManagement.MapManagementController" target="persistence.data.Terrain">
+      <point x="-107.57142857142844" y="-124.5" />
+      <point x="2806.4888271982063" y="6219.0" />
+      <point x="1030.6111111111113" y="6219.0" />
+      <point x="1030.6111111111113" y="5024.0" />
+      <point x="315.6666666666665" y="5024.0" />
+      <point x="315.6666666666665" y="4150.0" />
+      <point x="309.5" y="4150.0" />
+      <point x="0.0" y="112.5" />
+    </edge>
+    <edge source="businessLogic.ElementFacade" target="ui.interfaces.LoginInterface">
+      <point x="128.66666666666697" y="-199.5" />
+      <point x="1941.3605211912818" y="1231.0" />
+      <point x="4599.06924772479" y="1231.0" />
+      <point x="-77.2954545454545" y="26.5" />
+    </edge>
+    <edge source="ui.controller.StoreController" target="businessLogic.StoreFacade">
+      <point x="17.083333333333314" y="-322.5" />
+      <point x="5285.344083694085" y="7098.0" />
+      <point x="5453.757729328894" y="7098.0" />
+      <point x="66.5" y="309.5" />
+    </edge>
+    <edge source="ui.controller.ProfileController" target="ui.model.ApplicationUI">
+      <point x="-39.375" y="586.5" />
+      <point x="5658.004213201093" y="3441.0" />
+      <point x="3205.810156815699" y="3441.0" />
+      <point x="88.25" y="-289.5" />
+    </edge>
+    <edge source="businessLogic.SessionFacade" target="persistence.data.Post">
+      <point x="-75.34999999999991" y="-342.5" />
+      <point x="4350.780611361153" y="4934.0" />
+      <point x="2789.757440728604" y="4934.0" />
+      <point x="2789.757440728604" y="4140.0" />
+      <point x="2719.382440728604" y="4140.0" />
+      <point x="66.57142857142844" y="145.5" />
+    </edge>
+    <edge source="ui.controller.mapManagement.MapManagementController" target="businessLogic.SessionFacade">
+      <point x="107.57142857142844" y="-124.5" />
+      <point x="3021.631684341063" y="6349.0" />
+      <point x="4372.852833583375" y="6349.0" />
+      <point x="-53.27777777777783" y="342.5" />
+    </edge>
+    <edge source="ui.controller.post" target="businessLogic.SessionFacade">
+      <point x="33.714285714285666" y="-14.5" />
+      <point x="3699.0146825396832" y="7108.0" />
+      <point x="4569.078076837457" y="7108.0" />
+      <point x="4569.078076837457" y="6409.0" />
+      <point x="4494.630611361154" y="6409.0" />
+      <point x="68.5" y="342.5" />
+    </edge>
+    <edge source="ui.controller.mapManagement.MapMakerController" target="persistence.data.Element">
+      <point x="-44.79166666666697" y="-146.5" />
+      <point x="969.3194444444443" y="6399.0" />
+      <point x="374.75" y="6399.0" />
+      <point x="374.75" y="5304.0" />
+      <point x="454.2916666666665" y="5304.0" />
+      <point x="454.2916666666665" y="1371.0" />
+      <point x="466.4613095238092" y="1371.0" />
+      <point x="-59.10714285714312" y="145.5" />
+    </edge>
+    <edge source="ui.model.ApplicationUI" target="persistence.data.Element">
+      <point x="-158.8499999999999" y="-289.5" />
+      <point x="2958.7101568156986" y="3451.0" />
+      <point x="465.2916666666665" y="3451.0" />
+      <point x="465.2916666666665" y="1381.0" />
+      <point x="490.10416666666697" y="1381.0" />
+      <point x="-35.464285714285325" y="145.5" />
+    </edge>
+    <edge source="businessLogic.MapManagementFacade" target="persistence.factories.DAOType">
+      <point x="72.88888888888869" y="-166.5" />
+      <point x="2224.0741446585234" y="5104.0" />
+      <point x="4116.586012157175" y="5104.0" />
+      <point x="4116.586012157175" y="1211.0" />
+      <point x="4119.252678823842" y="1211.0" />
+      <point x="-8.166666666666515" y="92.5" />
+    </edge>
+    <edge source="businessLogic.SessionFacade" target="ui.interfaces.LoginInterface">
+      <point x="-20.550000000000182" y="-342.5" />
+      <point x="4405.580611361153" y="5194.0" />
+      <point x="4561.4359051202855" y="5194.0" />
+      <point x="4561.4359051202855" y="1331.0" />
+      <point x="4680.432884088427" y="1331.0" />
+      <point x="4.0681818181819835" y="26.5" />
+    </edge>
+    <edge source="ui.controller.post" target="persistence.data.Post">
+      <point x="-50.571428571428555" y="-14.5" />
+      <point x="3614.728968253969" y="7118.0" />
+      <point x="2325.6852557696348" y="7118.0" />
+      <point x="2325.6852557696348" y="5044.0" />
+      <point x="2366.5602557696348" y="5044.0" />
+      <point x="2366.5602557696348" y="4130.0" />
+      <point x="2552.9538693000322" y="4130.0" />
+      <point x="-99.85714285714266" y="145.5" />
+    </edge>
+    <edge source="businessLogic.ElementFacade" target="persistence.data.Element">
+      <point x="-85.77777777777737" y="-199.5" />
+      <point x="1726.9160767468375" y="1101.0" />
+      <point x="679.2470238095239" y="1101.0" />
+      <point x="153.67857142857156" y="145.5" />
+    </edge>
+    <edge source="businessLogic.SessionFacade" target="persistence.factories.MongoDBDAOFactory">
+      <point x="-61.65000000000009" y="-342.5" />
+      <point x="4364.480611361153" y="4924.0" />
+      <point x="3727.4995414839213" y="4924.0" />
+      <point x="89.25" y="145.5" />
+    </edge>
+    <edge source="persistence.data.Matrice" target="persistence.data.TypeElementEnum">
+      <point x="45.25" y="-100.5" />
+      <point x="248.44130229108396" y="2178.0" />
+      <point x="292.0871356244179" y="2178.0" />
+      <point x="292.0871356244179" y="510.0" />
+      <point x="1002.5994425299846" y="510.0" />
+      <point x="-69.75" y="48.5" />
+    </edge>
+    <edge source="businessLogic.StoreFacade" target="persistence.factories.MongoDBDAOFactory">
+      <point x="-122.76923076923072" y="-309.5" />
+      <point x="5264.488498559664" y="6089.0" />
+      <point x="3667.9995414839213" y="6089.0" />
+      <point x="29.75" y="145.5" />
+    </edge>
+    <edge source="ui.controller.ProfileController" target="resources.styles.ItemLabels">
+      <point x="59.0625" y="-586.5" />
+      <point x="5756.441713201093" y="2168.0" />
+      <point x="5878.70569623048" y="2168.0" />
+      <point x="-46.25" y="26.5" />
+    </edge>
+    <edge source="ui.controller.FriendsController" target="ui.model.ApplicationUI">
+      <point x="-45.25" y="244.5" />
+      <point x="6288.58694623048" y="3461.0" />
+      <point x="3276.4101568156984" y="3461.0" />
+      <point x="158.8499999999999" y="-289.5" />
+    </edge>
+    <edge source="resources.styles.FriendsButtons" target="ui.controller.FriendsController">
+      <point x="75.25" y="26.5" />
+      <point x="6438.61194623048" y="2178.0" />
+      <point x="6406.23694623048" y="2178.0" />
+      <point x="72.40000000000009" y="-244.5" />
+    </edge>
+    <edge source="businessLogic.SessionFacade" target="persistence.data.Item">
+      <point x="130.1500000000001" y="-342.5" />
+      <point x="4556.280611361153" y="5304.0" />
+      <point x="6997.125407768941" y="5304.0" />
+      <point x="6997.125407768941" y="550.0" />
+      <point x="6999.500407768941" y="550.0" />
+      <point x="38.84999999999991" y="177.5" />
+    </edge>
+    <edge source="persistence.data.Matrice" target="persistence.data.Box">
+      <point x="-45.25" y="-100.5" />
+      <point x="157.94130229108396" y="2188.0" />
+      <point x="135.9621356244179" y="2188.0" />
+      <point x="-29.125" y="91.5" />
+    </edge>
+    <edge source="resources.styles.ElementButtons" target="persistence.data.TypeElementEnum">
+      <point x="81.0" y="-26.5" />
+      <point x="918.7916666666665" y="540.0" />
+      <point x="1049.0994425299846" y="540.0" />
+      <point x="-23.25" y="48.5" />
+    </edge>
+    <edge source="persistence.factories.MongoDBDAOFactory" target="persistence.dao.MongoDBDAOPost">
+      <point x="-11.900000000000091" y="-145.5" />
+      <point x="3626.349541483921" y="4523.0" />
+      <point x="3488.5503968253975" y="4523.0" />
+      <point x="0.0" y="155.5" />
+    </edge>
+    <edge source="businessLogic.ElementFacade" target="businessLogic.SessionFacade">
+      <point x="0.0" y="199.5" />
+      <point x="1812.6938545246148" y="2168.0" />
+      <point x="1851.1852557696348" y="2168.0" />
+      <point x="1851.1852557696348" y="4954.0" />
+      <point x="4323.380611361154" y="4954.0" />
+      <point x="-102.75" y="-342.5" />
+    </edge>
+    <edge source="ui.controller.ProfileController" target="businessLogic.SessionFacade">
+      <point x="118.125" y="586.5" />
+      <point x="5815.504213201093" y="3441.0" />
+      <point x="5793.999386724388" y="3441.0" />
+      <point x="5793.999386724388" y="5244.0" />
+      <point x="4474.080611361153" y="5244.0" />
+      <point x="47.94999999999982" y="-342.5" />
+    </edge>
+    <edge source="persistence.factories.MongoDBDAOFactory" target="persistence.dao.MongoDBDAOMapManagement">
+      <point x="-83.30000000000018" y="-145.5" />
+      <point x="3554.949541483921" y="4553.0" />
+      <point x="1679.1852557696348" y="4553.0" />
+      <point x="0.0" y="155.5" />
+    </edge>
+    <edge source="ui.controller.RegisterController" target="persistence.data.User">
+      <point x="96.0" y="-201.5" />
+      <point x="5165.001150775934" y="6389.0" />
+      <point x="6740.454953223487" y="6389.0" />
+      <point x="6740.454953223487" y="1361.0" />
+      <point x="6763.864044132577" y="1361.0" />
+      <point x="20.363636363636488" y="255.5" />
+    </edge>
+    <edge source="businessLogic.MapManagementFacade" target="persistence.factories.MongoDBDAOFactory">
+      <point x="36.44444444444434" y="-166.5" />
+      <point x="2187.629700214079" y="5084.0" />
+      <point x="3548.9995414839213" y="5084.0" />
+      <point x="-89.25" y="145.5" />
+    </edge>
+    <edge source="persistence.dao.MongoDBDAOUser" target="persistence.interfaces.DAO">
+      <point x="0.0" y="-166.5" />
+      <point x="3820.589033189034" y="1201.0" />
+      <point x="3743.5851568156986" y="1201.0" />
+      <point x="29.125" y="80.5" />
+    </edge>
+    <edge source="ui.controller.ElementMakerController" target="ui.model.ApplicationUI">
+      <point x="61.5" y="190.5" />
+      <point x="2068.1852557696348" y="3401.0" />
+      <point x="3135.2101568156986" y="3401.0" />
+      <point x="17.65000000000009" y="-289.5" />
+    </edge>
+    <edge source="persistence.data.User" target="persistence.data.Item">
+      <point x="89.59999999999991" y="-255.5" />
+      <point x="6833.100407768941" y="550.0" />
+      <point x="6870.000407768941" y="550.0" />
+      <point x="-90.64999999999999" y="177.5" />
+    </edge>
+    <edge source="resources.styles.ElementButtons" target="persistence.data.Element">
+      <point x="-81.0" y="-26.5" />
+      <point x="756.7916666666665" y="1381.0" />
+      <point x="561.0327380952376" y="1381.0" />
+      <point x="35.464285714285325" y="145.5" />
+    </edge>
+    <edge source="persistence.dao.MongoDBDAOCharacter" target="persistence.data.Character">
+      <point x="69.75" y="-155.5" />
+      <point x="4383.975396825397" y="500.0" />
+      <point x="6496.952333830464" y="500.0" />
+      <point x="-99.0" y="112.5" />
+    </edge>
+    <edge source="businessLogic.StoreFacade" target="persistence.factories.DAOType">
+      <point x="-40.923076923076906" y="-309.5" />
+      <point x="5346.334652405818" y="6049.0" />
+      <point x="4583.325055805598" y="6049.0" />
+      <point x="4583.325055805598" y="4894.0" />
+      <point x="4164.225396825397" y="4894.0" />
+      <point x="4164.225396825397" y="1211.0" />
+      <point x="4168.252678823842" y="1211.0" />
+      <point x="40.833333333333485" y="92.5" />
+    </edge>
+    <edge source="businessLogic.PostFacade" target="persistence.data.Post">
+      <point x="-85.33333333333337" y="-199.5" />
+      <point x="3515.967063492064" y="6179.0" />
+      <point x="2377.5602557696348" y="6179.0" />
+      <point x="2377.5602557696348" y="4140.0" />
+      <point x="2586.239583585747" y="4140.0" />
+      <point x="-66.57142857142844" y="145.5" />
+    </edge>
+    <edge source="businessLogic.StoreFacade" target="persistence.data.Character">
+      <point x="40.923076923076906" y="-309.5" />
+      <point x="5428.180806251971" y="6379.0" />
+      <point x="6553.21194623048" y="6379.0" />
+      <point x="6553.21194623048" y="550.0" />
+      <point x="6586.952333830464" y="550.0" />
+      <point x="-9.0" y="112.5" />
+    </edge>
+    <edge source="businessLogic.ElementFacade" target="persistence.data.User">
+      <point x="171.55555555555566" y="-199.5" />
+      <point x="1984.2494100801705" y="1351.0" />
+      <point x="6641.682225950759" y="1351.0" />
+      <point x="-101.81818181818176" y="255.5" />
+    </edge>
+    <edge source="ui.controller.ElementController" target="resources.styles.ElementLabels">
+      <point x="-59.72727272727252" y="-266.5" />
+      <point x="778.064393939394" y="2168.0" />
+      <point x="612.7916666666665" y="2168.0" />
+      <point x="42.0" y="26.5" />
+    </edge>
+    <edge source="ui.controller.LoginController" target="ui.model.ApplicationUI">
+      <point x="-75.0" y="-124.5" />
+      <point x="4141.578076837457" y="6149.0" />
+      <point x="3300.5503968253975" y="6149.0" />
+      <point x="3300.5503968253975" y="4130.0" />
+      <point x="3135.2101568156986" y="4130.0" />
+      <point x="17.65000000000009" y="289.5" />
+    </edge>
+    <edge source="ui.controller.ProfileController" target="persistence.data.User">
+      <point x="-59.0625" y="-586.5" />
+      <point x="5638.316713201093" y="2188.0" />
+      <point x="5609.95569623048" y="2188.0" />
+      <point x="5609.95569623048" y="1361.0" />
+      <point x="6662.045862314395" y="1361.0" />
+      <point x="-81.4545454545455" y="255.5" />
+    </edge>
+    <edge source="ui.controller.MainPageController" target="ui.interfaces.LoginInterface">
+      <point x="83.25" y="-190.5" />
+      <point x="4530.828076837457" y="6429.0" />
+      <point x="4792.566713201093" y="6429.0" />
+      <point x="4792.566713201093" y="1331.0" />
+      <point x="4704.841974997518" y="1331.0" />
+      <point x="28.477272727272975" y="26.5" />
+    </edge>
+    <edge source="businessLogic.StoreFacade" target="businessLogic.SessionFacade">
+      <point x="-81.84615384615384" y="-309.5" />
+      <point x="5305.411575482741" y="6069.0" />
+      <point x="4540.2972780278205" y="6069.0" />
+      <point x="114.16666666666697" y="342.5" />
+    </edge>
+    <edge source="persistence.dao.MongoDBDAOPost" target="persistence.interfaces.DAO">
+      <point x="66.75" y="-155.5" />
+      <point x="3555.3003968253975" y="1191.0" />
+      <point x="3704.7518234823647" y="1191.0" />
+      <point x="-9.708333333333485" y="80.5" />
+    </edge>
+    <edge source="ui.controller.post" target="ui.controller.post">
+      <point x="0.0" y="14.5" />
+      <point x="3665.3003968253975" y="7495.0" />
+      <point x="3586.3003968253975" y="7495.0" />
+      <point x="3586.3003968253975" y="7460.5" />
+      <point x="-59.0" y="-0.0" />
+    </edge>
+    <edge source="test.persistence.data.UserTest" target="persistence.data.Character">
+      <point x="-81.25" y="-323.5" />
+      <point x="6768.3066117496555" y="1341.0" />
+      <point x="6621.000407768941" y="1341.0" />
+      <point x="6621.000407768941" y="550.0" />
+      <point x="6622.952333830464" y="550.0" />
+      <point x="27.0" y="112.5" />
+    </edge>
+    <edge source="businessLogic.SessionFacade" target="persistence.interfaces.DAO">
+      <point x="-47.94999999999982" y="-342.5" />
+      <point x="4378.180611361154" y="4914.0" />
+      <point x="4057.537896825397" y="4914.0" />
+      <point x="4057.537896825397" y="1181.0" />
+      <point x="3782.4184901490316" y="1181.0" />
+      <point x="67.95833333333348" y="80.5" />
+    </edge>
+    <edge source="businessLogic.PostFacade" target="persistence.factories.DAOType">
+      <point x="0.0" y="-199.5" />
+      <point x="3601.3003968253975" y="6249.0" />
+      <point x="3694.491473572234" y="6249.0" />
+      <point x="3694.491473572234" y="5114.0" />
+      <point x="4127.586012157175" y="5114.0" />
+      <point x="4127.586012157175" y="1211.0" />
+      <point x="4135.586012157175" y="1211.0" />
+      <point x="8.166666666666515" y="92.5" />
+    </edge>
+    <edge source="businessLogic.ElementFacade" target="persistence.data.TypeElementEnum">
+      <point x="-42.88888888888869" y="-199.5" />
+      <point x="1769.8049656357261" y="1131.0" />
+      <point x="1794.24626792681" y="1131.0" />
+      <point x="1794.24626792681" y="520.0" />
+      <point x="1126.5994425299846" y="520.0" />
+      <point x="54.25" y="48.5" />
+    </edge>
+    <edge source="ui.controller.mapManagement.MapMakerController" target="businessLogic.ElementFacade">
+      <point x="-26.875" y="-146.5" />
+      <point x="987.2361111111113" y="6389.0" />
+      <point x="952.8102557696348" y="6389.0" />
+      <point x="952.8102557696348" y="5034.0" />
+      <point x="1496.1852557696348" y="5034.0" />
+      <point x="1496.1852557696348" y="2158.0" />
+      <point x="1726.9160767468375" y="2158.0" />
+      <point x="-85.77777777777737" y="199.5" />
+    </edge>
+    <edge source="ui.controller.ElementMakerController" target="ui.interfaces.LoginInterface">
+      <point x="105.42857142857156" y="-190.5" />
+      <point x="2112.1138271982063" y="2188.0" />
+      <point x="4472.361760461761" y="2188.0" />
+      <point x="4472.361760461761" y="1251.0" />
+      <point x="4615.341974997518" y="1251.0" />
+      <point x="-61.02272727272748" y="26.5" />
+    </edge>
+    <edge source="test.persistence.data.UserTest" target="persistence.data.Item">
+      <point x="48.75" y="-323.5" />
+      <point x="6898.3066117496555" y="1381.0" />
+      <point x="6928.115295815298" y="1381.0" />
+      <point x="6928.115295815298" y="540.0" />
+      <point x="6921.800407768941" y="540.0" />
+      <point x="-38.84999999999991" y="177.5" />
+    </edge>
+    <edge source="businessLogic.SessionFacade" target="persistence.data.Character">
+      <point x="20.550000000000182" y="-342.5" />
+      <point x="4446.680611361154" y="5224.0" />
+      <point x="5307.980650211193" y="5224.0" />
+      <point x="5307.980650211193" y="520.0" />
+      <point x="6532.952333830464" y="520.0" />
+      <point x="-63.0" y="112.5" />
+    </edge>
+    <edge source="ui.controller.FriendsController" target="resources.styles.FriendsButtons">
+      <point x="0.0" y="-244.5" />
+      <point x="6333.83694623048" y="2178.0" />
+      <point x="6288.11194623048" y="2178.0" />
+      <point x="-75.25" y="26.5" />
+    </edge>
+    <edge source="businessLogic.ElementFacade" target="persistence.factories.MongoDBDAOFactory">
+      <point x="85.77777777777737" y="199.5" />
+      <point x="1898.4716323023922" y="2168.0" />
+      <point x="1873.1852557696348" y="2168.0" />
+      <point x="1873.1852557696348" y="4543.0" />
+      <point x="3578.7495414839213" y="4543.0" />
+      <point x="-59.5" y="-145.5" />
+    </edge>
+    <edge source="persistence.dao.MongoDBDAOMapManagement" target="persistence.interfaces.DAO">
+      <point x="80.75" y="-155.5" />
+      <point x="1759.9352557696348" y="3461.0" />
+      <point x="2140.1852557696348" y="3461.0" />
+      <point x="2140.1852557696348" y="1161.0" />
+      <point x="3646.5018234823647" y="1161.0" />
+      <point x="-67.95833333333348" y="80.5" />
+    </edge>
+    <edge source="persistence.data.Box" target="persistence.data.StateBox">
+      <point x="-29.125" y="-91.5" />
+      <point x="135.9621356244179" y="1391.0" />
+      <point x="110.3996356244179" y="1391.0" />
+      <point x="35.0" y="59.5" />
+    </edge>
+    <edge source="businessLogic.SessionFacade" target="persistence.factories.DAOType">
+      <point x="-34.25" y="-342.5" />
+      <point x="4391.880611361154" y="4904.0" />
+      <point x="4153.225396825397" y="4904.0" />
+      <point x="4153.225396825397" y="1211.0" />
+      <point x="4151.919345490509" y="1211.0" />
+      <point x="24.5" y="92.5" />
+    </edge>
+    <edge source="ui.controller.mapManagement.MapMakerController" target="businessLogic.SessionFacade">
+      <point x="80.625" y="-146.5" />
+      <point x="1094.7361111111113" y="6299.0" />
+      <point x="4296.741722472265" y="6299.0" />
+      <point x="-129.3888888888887" y="342.5" />
+    </edge>
+    <edge source="ui.controller.mapManagement.createMapMenuController" target="businessLogic.MapManagementFacade">
+      <point x="-15.6875" y="-113.5" />
+      <point x="2627.3727557696348" y="6229.0" />
+      <point x="2178.518589102968" y="6229.0" />
+      <point x="27.33333333333303" y="166.5" />
+    </edge>
+    <edge source="businessLogic.PostFacade" target="businessLogic.SessionFacade">
+      <point x="113.77777777777783" y="-199.5" />
+      <point x="3715.0781746031753" y="6369.0" />
+      <point x="4403.29727802782" y="6369.0" />
+      <point x="-22.833333333333485" y="342.5" />
+    </edge>
+    <edge source="ui.controller.mapManagement.MapMakerController" target="persistence.data.Terrain">
+      <point x="-80.625" y="-146.5" />
+      <point x="933.4861111111113" y="6419.0" />
+      <point x="91.5" y="6419.0" />
+      <point x="91.5" y="5284.0" />
+      <point x="271.6666666666665" y="5284.0" />
+      <point x="271.6666666666665" y="4150.0" />
+      <point x="262.83333333333303" y="4150.0" />
+      <point x="-46.66666666666697" y="112.5" />
+    </edge>
+    <edge source="ui.model.ApplicationUI" target="ui.controller.ProfileController">
+      <point x="52.94999999999982" y="-289.5" />
+      <point x="3170.510156815699" y="3431.0" />
+      <point x="5579.254213201093" y="3431.0" />
+      <point x="-118.125" y="586.5" />
+    </edge>
+    <edge source="persistence.dao.MongoDBDAOUser" target="persistence.data.User">
+      <point x="89.0" y="-166.5" />
+      <point x="3909.589033189034" y="4150.0" />
+      <point x="6696.454953223487" y="4150.0" />
+      <point x="6696.454953223487" y="1361.0" />
+      <point x="6682.409498678032" y="1361.0" />
+      <point x="-61.09090909090901" y="255.5" />
+    </edge>
+    <edge source="businessLogic.StoreFacade" target="ui.interfaces.LoginInterface">
+      <point x="0.0" y="-309.5" />
+      <point x="5387.257729328894" y="6029.0" />
+      <point x="5277.84428657483" y="6029.0" />
+      <point x="5277.84428657483" y="1281.0" />
+      <point x="4745.523793179336" y="1281.0" />
+      <point x="69.15909090909099" y="26.5" />
+    </edge>
+    <edge source="test.persistence.data.PostTest" target="persistence.data.Post">
+      <point x="-45.75" y="-125.5" />
+      <point x="2642.007440728604" y="4150.0" />
+      <point x="2652.8110121571754" y="4150.0" />
+      <point x="0.0" y="145.5" />
+    </edge>
+    <edge source="ui.controller.RegisterController" target="ui.model.ApplicationUI">
+      <point x="-96.0" y="-201.5" />
+      <point x="4973.001150775934" y="6129.0" />
+      <point x="3333.5503968253975" y="6129.0" />
+      <point x="3333.5503968253975" y="4110.0" />
+      <point x="3205.810156815699" y="4110.0" />
+      <point x="88.25" y="289.5" />
+    </edge>
+    <edge source="ui.controller.ElementController" target="persistence.data.Element">
+      <point x="-39.81818181818198" y="-266.5" />
+      <point x="797.9734848484845" y="2158.0" />
+      <point x="665.2916666666665" y="2158.0" />
+      <point x="665.2916666666665" y="1391.0" />
+      <point x="537.3898809523807" y="1391.0" />
+      <point x="11.821428571428442" y="145.5" />
+    </edge>
+    <edge source="ui.controller.MainPageController" target="businessLogic.SessionFacade">
+      <point x="27.75" y="-190.5" />
+      <point x="4475.328076837457" y="6409.0" />
+      <point x="4479.408389138931" y="6409.0" />
+      <point x="53.27777777777783" y="342.5" />
+    </edge>
+    <edge source="businessLogic.ElementFacade" target="persistence.interfaces.DAO">
+      <point x="0.0" y="-199.5" />
+      <point x="1812.6938545246148" y="1151.0" />
+      <point x="3627.0851568156986" y="1151.0" />
+      <point x="-87.375" y="80.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.40000000000000013" x="2876.25" y="2927.2499999999995" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Properties</Category>
+    <Category>Methods</Category>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
