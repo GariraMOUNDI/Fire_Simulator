@@ -1,0 +1,208 @@
+package ui.controller;
+import businessLogic.MapManagementFacade;
+import businessLogic.SessionFacade;
+
+import javafx.collections.ListChangeListener;
+import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
+import javafx.scene.Node;
+import javafx.scene.control.*;
+
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Shape;
+import persistence.data.*;
+import persistence.data.Box;
+import ui.interfaces.LoginInterface;
+import java.util.ArrayList;
+
+
+
+public class SimulationController implements LoginInterface{
+    /**
+     * The map management facade instance.
+     */
+    MapManagementFacade MMF = MapManagementFacade.getInstance(this);
+
+    Terrain terrain;
+    GridPane matrice;
+
+    /**
+     * The session facade instance.
+     */
+    SessionFacade SF = SessionFacade.getInstance(this);
+    @FXML
+    ScrollPane scrollPane;
+
+
+
+
+    @FXML
+    public void initialize() {
+        matrice = new GridPane();
+        terrain = MMF.getCurrentTerrain();
+        for (int x = 0; x < terrain.getMap().getSize(); x++) {
+            for (int y = 0; y < terrain.getMap().getSize(); y++) {
+                Shape cell = (Shape) new javafx.scene.shape.Rectangle(30, 30);
+                cell.setFill(Color.web(terrain.getMap().getBox(x, y).getElement().getColor()));
+                matrice.add(cell, x, y);
+                matrice.setHgap(1);
+                matrice.setVgap(1);
+            }
+        }
+
+        scrollPane.setContent(matrice);
+    }
+
+
+    public void simulation() throws InterruptedException {
+        ArrayList<Box> burningBoxes = new ArrayList<>();
+        burningBoxes.add(start_fire());
+
+        runFire(burningBoxes);
+        //SimulationObserver s = new SimulationObserver(MMF.getCurrentTerrain(),this);
+    }
+
+    public Box start_fire() throws InterruptedException {
+        int x = (int)(Math.random() * (MMF.getCurrentTerrain().getMap().getSize()));
+        int y = (int)(Math.random() * (MMF.getCurrentTerrain().getMap().getSize()));
+        while (!MMF.getCurrentTerrain().getMap().getBox(x,y).getElement().getType().equals(TypeElementEnum.Vegetation) && MMF.getCurrentTerrain().getMap().getBox(x,y).getState().equals(StateBox.burning)){
+            x = (int)(Math.random() * (MMF.getCurrentTerrain().getMap().getSize()));
+            y = (int)(Math.random() * (MMF.getCurrentTerrain().getMap().getSize()));
+        }
+        MMF.getCurrentTerrain().getMap().getBox(x,y).setState(StateBox.burning);
+        /*
+        ObservableList<Node> childrens = matrice.getChildren();
+        for (Node node : childrens) {
+            if(GridPane.getRowIndex(node) == x && GridPane.getColumnIndex(node) == y) {
+                ((Shape) node).setFill(Color.web(MMF.getCurrentTerrain().getMap().getBox(x, y).getElement().getColor()));
+            }
+        }*/
+
+
+
+
+
+        return MMF.getCurrentTerrain().getMap().getBox(x,y);
+    }
+
+    public ArrayList<Box> get_neighbours(Box box, Matrice map){
+        int x = box.getX();
+        int y = box.getY();
+        ArrayList<Box> result = new ArrayList<>();
+        if (x == 0){
+            if (y == 0){
+                result.add(map.getBox(x + 1,y));
+                result.add(map.getBox(x,y+1));
+            }
+            else if (y == map.getSize()-1){
+                result.add(map.getBox(x + 1,y));
+                result.add(map.getBox(x,y-1));
+            }
+            else{
+                result.add(map.getBox(x + 1,y));
+                result.add(map.getBox(x,y-1));
+                result.add(map.getBox(x,y+1));
+            }
+        }
+        else if (x == map.getSize()-1){
+            if (y == 0){
+                result.add(map.getBox(x - 1,y));
+                result.add(map.getBox(x,y+1));
+            }
+            else if (y == map.getSize()-1){
+                result.add(map.getBox(x - 1,y));
+                result.add(map.getBox(x,y-1));
+            }
+            else{
+                result.add(map.getBox(x - 1,y));
+                result.add(map.getBox(x,y-1));
+                result.add(map.getBox(x,y+1));
+            }
+        }
+        else if (y == 0){
+            result.add(map.getBox(x + 1,y));
+            result.add(map.getBox(x-1,y));
+            result.add(map.getBox(x,y+1));
+        }
+        else if (y == map.getSize()-1){
+            result.add(map.getBox(x + 1,y));
+            result.add(map.getBox(x-1,y));
+            result.add(map.getBox(x,y-1));
+        }
+        else {
+            result.add(map.getBox(x, y-1));
+            result.add(map.getBox(x, y+1));
+            result.add(map.getBox(x-1, y));
+            result.add(map.getBox(x+1, y));
+        }
+        return result;
+    }
+
+
+    public void fire_probability(int x, int y){
+        int random = (int)(Math.random() * (100-1)) + 1;
+        if ((random > MMF.getCurrentTerrain().getMap().getBox(x,y).getElement().getFlammability())){
+            MMF.getCurrentTerrain().getMap().getBox(x,y).setState(StateBox.burning);
+
+            /*
+            ObservableList<Node> childrens = matrice.getChildren();
+            for (Node node : childrens) {
+                if(GridPane.getRowIndex(node) == x && GridPane.getColumnIndex(node) == y) {
+                    ((Shape) node).setFill(Color.web(MMF.getCurrentTerrain().getMap().getBox(x, y).getElement().getColor()));
+                }
+            }*/
+        }
+    }
+
+
+    public void runFire(ArrayList<Box> burningBoxes) throws InterruptedException {
+        if (!(burningBoxes.isEmpty())){
+
+            ArrayList<Box> toRemove = new ArrayList<>();
+            ArrayList<Box> toAdd = new ArrayList<>();
+            for (Box burningBox : burningBoxes) {
+                MMF.getCurrentTerrain().getMap().setBox(burningBox.getX(),burningBox.getY(),burningBox);
+                if ((burningBox.getLife() < 0) && burningBox.getElement().getType().equals(TypeElementEnum.Vegetation)) {
+                    burningBox.setState(StateBox.dust);
+                    MMF.getCurrentTerrain().getMap().setBox(burningBox.getX(),burningBox.getY(),burningBox);
+
+                    /*
+                    ObservableList<Node> childrens = matrice.getChildren();
+                    for (Node node : childrens) {
+                        if(GridPane.getRowIndex(node) == burningBox.getX() && GridPane.getColumnIndex(node) == burningBox.getY()) {
+                            ((Shape) node).setFill(Color.web(burningBox.getElement().getColor()));
+                        }
+                    }*/
+                    toRemove.add(burningBox);
+                }
+                else {
+                    burningBox.setLife(burningBox.getLife() - 10);
+                }
+
+                ArrayList<Box> neighbours = get_neighbours(burningBox, MMF.getCurrentTerrain().getMap());
+                for (Box neighbour : neighbours) {
+                    if ((neighbour.getElement().getType().equals(TypeElementEnum.Vegetation) && neighbour.getState().equals(StateBox.intact)) || ((neighbour.getElement().getType().equals(TypeElementEnum.Vegetation) && neighbour.getState().equals(StateBox.scorched)))) {
+                        fire_probability(neighbour.getX(),neighbour.getY());
+                        if (neighbour.getState().equals(StateBox.burning)) {
+                            MMF.getCurrentTerrain().getMap().setBox(neighbour.getX(),neighbour.getY(),neighbour);
+                            toAdd.add(neighbour);
+                        }
+                    }
+                }
+            }
+            burningBoxes.removeAll(toRemove);
+            burningBoxes.addAll(toAdd);
+            runFire(burningBoxes);
+        }
+
+    }
+
+
+
+    @Override
+    public void printResults(Object arg) {
+
+    }
+
+}
