@@ -100,7 +100,7 @@ public class ElementMakerController implements LoginInterface {
                     }else{
                         EF.getCurrentElement().setElementName(ElementName_input.getText());
                         EF.getCurrentElement().setFlammability(flammability);
-                        EF.getCurrentElement().setColor(menu_color.getText());
+                        EF.getCurrentElement().setColor(colors[currentColor]);
                         EF.updateElement();
                         backToElementManagement();
                     }
