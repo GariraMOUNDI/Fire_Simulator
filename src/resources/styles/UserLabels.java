@@ -10,7 +10,7 @@ public class UserLabels extends Label {
         super(text);
         setWidth(50);
         setHeight(30);
-        setFont(new Font("Lucida Handwriting", 20));
+        setFont(Font.loadFont(getClass().getResourceAsStream("/resources/fonts/LucidaHandwriting.ttf"), 20));
         setStyle("-fx-font-weight: bold");
     }
 }

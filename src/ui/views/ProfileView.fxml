@@ -45,7 +45,7 @@
       </BorderPane>
    </top>
    <center>
-      <TabPane fx:id="profileTabPane" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="100.0" tabMaxWidth="100.0" tabMinHeight="30.0" tabMinWidth="150.0" BorderPane.alignment="CENTER">
+      <TabPane fx:id="profileTabPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background: none;" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="100.0" tabMaxWidth="100.0" tabMinHeight="30.0" tabMinWidth="150.0" BorderPane.alignment="CENTER">
         <tabs>
           <Tab style="-fx-font-family: Arial; -fx-font-size: 14; -fx-font-weight: BOLD; -fx-text-base-color: #842b0d;" text="Personal Data">
                <content>
@@ -68,17 +68,20 @@
                                     <RowConstraints maxHeight="134.39999999999998" minHeight="10.0" prefHeight="87.0" vgrow="NEVER" />
                                 </rowConstraints>
                                  <children>
-                                    <Label text="Username" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+                                    <Label fx:id="usrname" text="Username" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
                                        <font>
                                           <Font name="Bell MT Bold" size="25.0" />
                                        </font>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
                                     </Label>
                                     <Label fx:id="emailLabel" layoutX="10.0" layoutY="16.0" text="mazougarira@yahoo.fr" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="TOP">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label layoutX="10.0" layoutY="16.0" text="E-mail" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="BOTTOM">
+                                    <Label fx:id="email" layoutX="10.0" layoutY="16.0" text="E-mail" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="BOTTOM">
                                        <font>
                                           <Font name="Bell MT Bold" size="25.0" />
                                        </font>
@@ -88,12 +91,12 @@
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label alignment="CENTER" prefHeight="50.0" prefWidth="330.0" text="Current Information" textAlignment="CENTER" textFill="#842b0d" GridPane.valignment="TOP">
+                                    <Label fx:id="cu_title" alignment="CENTER" prefHeight="50.0" prefWidth="330.0" text="Current Information" textAlignment="CENTER" textFill="#842b0d" GridPane.valignment="TOP">
                                        <font>
                                           <Font name="System Bold Italic" size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="Help word" GridPane.halignment="LEFT" GridPane.rowIndex="5" GridPane.valignment="BOTTOM">
+                                    <Label fx:id="help" text="Help word" GridPane.halignment="LEFT" GridPane.rowIndex="5" GridPane.valignment="BOTTOM">
                                        <font>
                                           <Font name="Bell MT Bold" size="25.0" />
                                        </font>
@@ -140,12 +143,12 @@
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
-                              <Label alignment="CENTER" prefHeight="50.0" prefWidth="500.0" text="Do you want to change something ?" textAlignment="CENTER" textFill="#842b0d" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.valignment="TOP">
+                              <Label fx:id="do_title" alignment="CENTER" prefHeight="50.0" prefWidth="500.0" text="Do you want to change something ?" textAlignment="CENTER" textFill="#842b0d" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.valignment="TOP">
                                  <font>
                                     <Font name="System Bold Italic" size="20.0" />
                                  </font>
                               </Label>
-                               <Label text="Former password" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                               <Label fx:id="fr_pswd" text="Former password" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                    <font>
                                        <Font name="Bell MT Bold" size="20.0" />
                                    </font>
@@ -153,7 +156,7 @@
                                        <Insets left="80.0" />
                                    </GridPane.margin>
                                </Label>
-                              <Label layoutX="10.0" layoutY="124.0" text="E-mail" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                              <Label fx:id="Email" layoutX="10.0" layoutY="124.0" text="E-mail" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                  <font>
                                     <Font name="Bell MT Bold" size="20.0" />
                                  </font>
@@ -161,7 +164,7 @@
                                     <Insets left="80.0" />
                                  </GridPane.margin>
                               </Label>
-                              <Label layoutX="10.0" layoutY="189.0" text="Username" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                              <Label fx:id="usrName" layoutX="10.0" layoutY="189.0" text="Username" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                  <font>
                                     <Font name="Bell MT Bold" size="20.0" />
                                  </font>
@@ -169,7 +172,7 @@
                                     <Insets left="80.0" />
                                  </padding>
                               </Label>
-                              <Label layoutX="10.0" layoutY="124.0" text="New password" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                              <Label fx:id="nw_pswd" layoutX="10.0" layoutY="124.0" text="New password" GridPane.columnIndex="1" GridPane.rowIndex="4">
                                   <font>
                                       <Font name="Bell MT Bold" size="20.0" />
                                   </font>
@@ -177,7 +180,7 @@
                                       <Insets left="80.0" />
                                   </GridPane.margin>
                               </Label>
-                              <Label text="Confirm password" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                              <Label fx:id="con_pswd" text="Confirm password" GridPane.columnIndex="1" GridPane.rowIndex="5">
                                   <font>
                                       <Font name="Bell MT Bold" size="20.0" />
                                   </font>
@@ -185,7 +188,7 @@
                                       <Insets left="80.0" />
                                   </GridPane.margin>
                               </Label>
-                              <Label text="Help word" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                              <Label fx:id="hlpwrd" text="Help word" GridPane.columnIndex="1" GridPane.rowIndex="6">
                                   <font>
                                       <Font name="Bell MT Bold" size="20.0" />
                                   </font>
@@ -193,32 +196,32 @@
                                       <Insets left="80.0" />
                                   </GridPane.margin>
                               </Label>
-                              <TextField fx:id="usernameField" prefHeight="30.0" promptText="username" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                              <TextField fx:id="usernameField" prefHeight="30.0" promptText="username" style="-fx-background-color: white;" GridPane.columnIndex="2" GridPane.rowIndex="1">
                                  <GridPane.margin>
                                     <Insets right="20.0" />
                                  </GridPane.margin>
                               </TextField>
-                              <TextField fx:id="emailField" prefHeight="30.0" promptText="you@gmail.com" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                              <TextField fx:id="emailField" prefHeight="30.0" promptText="you@gmail.com" style="-fx-background-color: white;" GridPane.columnIndex="2" GridPane.rowIndex="2">
                                  <GridPane.margin>
                                     <Insets right="20.0" />
                                  </GridPane.margin>
                               </TextField>
-                              <PasswordField fx:id="formerPasswordField" prefHeight="30.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                              <PasswordField fx:id="formerPasswordField" prefHeight="30.0" style="-fx-background-color: white;" GridPane.columnIndex="2" GridPane.rowIndex="3">
                                  <GridPane.margin>
                                     <Insets right="20.0" />
                                  </GridPane.margin>
                               </PasswordField>
-                              <PasswordField fx:id="newPasswordField" prefHeight="30.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                              <PasswordField fx:id="newPasswordField" prefHeight="30.0" style="-fx-background-color: white;" GridPane.columnIndex="2" GridPane.rowIndex="4">
                                  <GridPane.margin>
                                     <Insets right="20.0" />
                                  </GridPane.margin>
                               </PasswordField>
-                              <PasswordField fx:id="confirmPasswordField" prefHeight="30.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                              <PasswordField fx:id="confirmPasswordField" prefHeight="30.0" style="-fx-background-color: white;" GridPane.columnIndex="2" GridPane.rowIndex="5">
                                  <GridPane.margin>
                                     <Insets right="20.0" />
                                  </GridPane.margin>
                               </PasswordField>
-                              <TextField fx:id="hwField" prefHeight="30.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                              <TextField fx:id="hwField" prefHeight="30.0" style="-fx-background-color: white;" GridPane.columnIndex="2" GridPane.rowIndex="6">
                                  <GridPane.margin>
                                     <Insets right="20.0" />
                                  </GridPane.margin>
@@ -411,7 +414,7 @@
                               </BorderPane>
                               <BorderPane GridPane.columnIndex="1">
                                  <center>
-                                    <ScrollPane fx:id="itemScrollPane" fitToWidth="true" prefHeight="35.0" prefWidth="480.0" style="-fx-background-color: transparent;">
+                                    <ScrollPane fx:id="itemScrollPane" fitToWidth="true" prefHeight="35.0" prefWidth="480.0" style="-fx-background: none;">
                                        <padding>
                                           <Insets left="20.0" />
                                        </padding>
@@ -456,7 +459,7 @@
                      </Label>
                   </top>
                   <center>
-                     <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: transparent;" text="jqsjdjnq,snsdfdfsdf skjdfhkjdhfj  sdfkjdkf skjdfhkjsdbjk nsd2222222222222222222222222222222222jqshgdqsgdqsgqsjkhdqjkshdjkqshdkjqshdkjqshdjkqshdjqshjdhjsqhdnxbcnbw,xcxncbw,cbwbncwncbw,cb,wbcqjshdqskjdjksqhdjqskdwkjhjhdfjksd&#10;qsdsqdqs&#10;qsqsd&#10;qsd&#10;qsd&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq" wrapText="true" BorderPane.alignment="CENTER">
+                     <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" style="-fx-background: none;" text="jqsjdjnq,snsdfdfsdf skjdfhkjdhfj  sdfkjdkf skjdfhkjsdbjk nsd2222222222222222222222222222222222jqshgdqsgdqsgqsjkhdqjkshdjkqshdkjqshdkjqshdjkqshdjqshjdhjsqhdnxbcnbw,xcxncbw,cbwbncwncbw,cb,wbcqjshdqskjdjksqhdjqskdwkjhjhdfjksd&#10;qsdsqdqs&#10;qsqsd&#10;qsd&#10;qsd&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq" wrapText="true" BorderPane.alignment="CENTER">
                         <font>
                            <Font size="20.0" />
                         </font>

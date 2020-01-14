@@ -3,6 +3,7 @@ package persistence.data;
 import javafx.scene.paint.Color;
 
 import java.util.Arrays;
+import java.util.Map;
 
 /**
  * The type Element.
@@ -27,14 +28,12 @@ public class Element {
      * @param username     This attribute represent the name of the owner of the element.
      */
     public Element(String elementName, int flammability, String color,TypeElementEnum type, String username){
-        if(check(flammability,color,type)){
             this.elementName = elementName;
             this.flammability = flammability;
             this.color = color;
             this.basic = false;
             this.type = type;
             this.username = username;
-        }
     }
 
     /**
@@ -170,8 +169,11 @@ public class Element {
      * @return the string
      */
     public static String parseId(Object id) {
-        String p = id.toString().split("=")[1];
-        return p.substring(0,p.length()-1);
+        if (id.toString().charAt(0) == '{') {
+            String p = id.toString().split("=")[1];
+            return p.substring(0,p.length()-1);
+        }
+        return id.toString();
     }
 
     /**
@@ -183,15 +185,5 @@ public class Element {
      * @param type         Rock, water, vegetation ...
      * @return boolean
      */
-    public boolean check(int flammability, String color, TypeElementEnum type){
-        String colors[] = ColorElement.getColors(type);
 
-        if(type.equals(TypeElementEnum.Water) || type.equals(TypeElementEnum.Rock)){
-            return (flammability == 0 && Arrays.asList(colors).contains(color));
-        }
-        else if(type.equals(TypeElementEnum.Vegetation)){
-            return (flammability > 0 && flammability < 100 && Arrays.asList(colors).contains(color) );
-        }
-        return false;
-    }
 }

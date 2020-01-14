@@ -11,6 +11,8 @@ import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import persistence.data.Character;
 import persistence.data.Item;
@@ -35,7 +37,7 @@ public class ProfileController implements LoginInterface {
     @FXML
     private TabPane profileTabPane;
     @FXML
-    private Label usernameLabel, emailLabel, hwLabel, scopeCharacter, xpLabel, goldLabel, diamondsLabel, levelLabel;
+    private Label usernameLabel, emailLabel, hwLabel, scopeCharacter, xpLabel, goldLabel, diamondsLabel, levelLabel, help,cu_title,do_title,usrname,email,usrName,Email, fr_pswd, nw_pswd, con_pswd,hlpwrd;
     @FXML
     private TextField usernameField, emailField, formerPasswordField, newPasswordField, confirmPasswordField, hwField;
     @FXML
@@ -51,7 +53,32 @@ public class ProfileController implements LoginInterface {
     public void printResults(Object arg) {
 
     }
+    @FXML
+    public void initialize() {
+        setFontLabel(help, 25);
+        setFontLabel(hwLabel,25);
+        setFontLabel(usernameLabel,25);
+        setFontLabel(emailLabel,20);
+        setFontLabel(scopeCharacter,55);
+        setFontLabel(xpLabel,25);
+        setFontLabel(goldLabel,25);
+        setFontLabel(diamondsLabel,25);
+        setFontLabel(levelLabel,25);
+        setFontLabel(cu_title,25);
+        setFontLabel(do_title,25);
+        setFontLabel(usrName,20);
+        setFontLabel(email,25);
+        setFontLabel(Email,20);
+        setFontLabel(fr_pswd,20);
+        setFontLabel(nw_pswd,20);
+        setFontLabel(con_pswd,20);
+        setFontLabel(hlpwrd,20);
+        setFontLabel(usrname, 25);
+    }
 
+    public void setFontLabel(Label label, int height){
+        label.setFont(Font.loadFont(getClass().getResourceAsStream("/resources/fonts/BellMT.ttf"), height));
+    }
     /**
      * The init method. This method does calculations based on the size of the window.
      *

@@ -44,7 +44,7 @@
         </rowConstraints>
          <children>
 
-            <Button mnemonicParsing="false" onAction="#toSoloMenu" prefHeight="45.0" prefWidth="200.0" style="-fx-background-color: #228b22; -fx-background-radius: 20;" text="Solo Menu" textFill="#842b0d" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+            <Button fx:id="button_main2" mnemonicParsing="false" onAction="#toSoloMenu" prefHeight="45.0" prefWidth="200.0" style="-fx-background-color: #228b22; -fx-background-radius: 20;" text="Solo Menu" textFill="#842b0d" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                <font>
                   <Font name="Britannic Bold" size="25.0" />
                </font>
@@ -54,8 +54,11 @@
                         <Color red="0.6980392336845398" green="0.09019608050584793" blue="0.09019608050584793" />
                      </color>
                   </DropShadow>
-               </effect></Button>
-            <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="200.0" style="-fx-background-color: #228b22; -fx-background-radius: 20;" text="Online" textFill="#842b0d" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="button_main" mnemonicParsing="false" prefHeight="45.0" prefWidth="200.0" style="-fx-background-color: #228b22; -fx-background-radius: 20;" text="Online" textFill="#842b0d" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                <font>
                   <Font name="Britannic Bold" size="25.0" />
                </font>
@@ -65,7 +68,10 @@
                         <Color red="0.6980392336845398" green="0.09019608050584793" blue="0.09019608050584793" />
                      </color>
                   </DropShadow>
-               </effect></Button>
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
          </children>
          <BorderPane.margin>
             <Insets />

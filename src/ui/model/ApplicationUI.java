@@ -5,7 +5,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import persistence.data.Element;
+import persistence.data.TypeElementEnum;
 import persistence.factories.MongoDBDAOFactory;
+import ui.controller.ElementController;
+import ui.controller.ElementMakerController;
 import ui.controller.FriendsController;
 import ui.controller.ProfileController;
 
@@ -33,6 +37,9 @@ public class ApplicationUI extends Application {
         Application.launch(ApplicationUI.class);
     }
 
+    public static void noConnectionVue(Stage stage) throws IOException {
+        uploadView(stage, "Database", "../views/NoConnectionView.fxml");
+    }
 
 
 
@@ -126,6 +133,7 @@ public class ApplicationUI extends Application {
      */
     public static void elementManagementView(Stage stage) throws Exception {
         uploadView(stage, "Element Menu", "../views/ElementManagementView.fxml");
+        ((ElementController)loader.getController()).init(stage);
     }
 
     /**
@@ -134,8 +142,9 @@ public class ApplicationUI extends Application {
      * @param stage the stage
      * @throws Exception the exception
      */
-    public static void toElementMaker(Stage stage) throws Exception {
+    public static void toElementMaker(Stage stage, TypeElementEnum type, Element modify) throws Exception {
         uploadView(stage, "Element Maker", "../views/ElementMaker.fxml");
+        ((ElementMakerController)loader.getController()).init(type, modify);
     }
 
     /**

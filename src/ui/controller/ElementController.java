@@ -2,20 +2,19 @@ package ui.controller;
 
 import businessLogic.ElementFacade;
 import businessLogic.SessionFacade;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
+import javafx.stage.Stage;
 import persistence.data.Element;
 import persistence.data.Terrain;
 import persistence.data.TypeElementEnum;
@@ -67,14 +66,29 @@ public class ElementController implements LoginInterface {
      */
     waterGridPane;
 
+    @FXML
+    TabPane elementTabPane;
+
     private List<Element> elements;
 
+    public void initialize(){
     /**
      * This method initializes the fxml representation of the elements.
      */
-    public void initialize() {
         elements = EF.getUserElements(EF.getUserLoggedIn().getUsername());
         showElements();
+    }
+
+    public void init(Stage stage){
+        elementTabPane.setTabMinWidth(elementTabPane.getWidth() / 3.3);
+        initialize();
+    }
+
+    @Override
+    public void printResults(Object arg) {  }
+
+    public void deleteElement(Element element){
+        EF.deleteElement(element);
     }
 
     /**
@@ -86,13 +100,16 @@ public class ElementController implements LoginInterface {
         ApplicationUI.toSoloMenu(ApplicationUI.getStage());
     }
 
-    /**
-     * Go to element maker.
-     *
-     * @throws Exception the exception
-     */
-    public void goToElementMaker() throws Exception {
-        ApplicationUI.toElementMaker(ApplicationUI.getStage());
+    public void goToRockMaker() throws Exception {
+        ApplicationUI.toElementMaker(ApplicationUI.getStage(), TypeElementEnum.Rock, EF.getCurrentElement());
+    }
+
+    public void goToWaterMaker() throws Exception {
+        ApplicationUI.toElementMaker(ApplicationUI.getStage(), TypeElementEnum.Water, EF.getCurrentElement());
+    }
+
+    public void goToVegetationMaker() throws Exception {
+        ApplicationUI.toElementMaker(ApplicationUI.getStage(), TypeElementEnum.Vegetation, EF.getCurrentElement());
     }
 
     /**
@@ -163,60 +180,10 @@ public class ElementController implements LoginInterface {
 
         }
 
+        rockScrollPane.setContent(rockGridPane);
+        waterScrollPane.setContent(waterGridPane);
+        vegetationScrollPane.setContent(vegetationGridPane);
     }
-
-
-    @Override
-    public void printResults(Object arg) {
-
-    }
-
-
-    /**
-     * Delete element.
-     *
-     * @param element the element
-     */
-    public void deleteElement(Element element){
-        EF.deleteElement(element);
-    }
-
-    /**
-     * Create basic pane grid pane.
-     *
-     * @param e the e
-     * @return the grid pane
-     */
-    public GridPane createBasicPane(Element e){
-        GridPane gPane = new GridPane();
-        ColumnConstraints col = new ColumnConstraints();
-        col.setHalignment(HPos.CENTER);
-        gPane.getColumnConstraints().add(col);
-        gPane.setPadding(new Insets(20, 10, 20, 10));
-        gPane.setHgap(20);
-
-        Label element_name = new Label("Element name : " + e.getElementName());
-        Label flammability = new Label("Flammability : " + String.valueOf(e.getFlammability()));
-        Button modify = new Button("Modify");
-        modify.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                try {
-                    EF.setCurrentElement(e);
-                    ApplicationUI.toElementMaker(ApplicationUI.getStage());
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-
-        gPane.add(element_name, 0, 0);
-        gPane.add(flammability, 1, 0);
-        gPane.add(modify, 2, 0);
-
-        return gPane;
-    }
-
 
     private void deleteRows(GridPane grid){
         Set<Node> deleteNodes = new HashSet<>();
@@ -233,5 +200,16 @@ public class ElementController implements LoginInterface {
      */
     public ElementFacade getFacade(){
         return EF;
+    }
+
+    public TypeElementEnum getElementType() {
+        ObservableList<Tab> tabs = elementTabPane.getTabs();
+        if (tabs.get(0).isSelected())
+            return TypeElementEnum.Rock;
+        if (tabs.get(1).isSelected())
+            return TypeElementEnum.Vegetation;
+        if (tabs.get(2).isSelected())
+            return TypeElementEnum.Water;
+        return null;
     }
 }
