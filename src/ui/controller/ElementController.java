@@ -73,7 +73,7 @@ public class ElementController implements LoginInterface {
      * This method initializes the fxml representation of the elements.
      */
     public void initialize() {
-        elements = EF.getUserElements(EF.getUserLoggedIn().get_id());
+        elements = EF.getUserElements(EF.getUserLoggedIn().getUsername());
         showElements();
     }
 

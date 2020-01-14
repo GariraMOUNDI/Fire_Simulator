@@ -70,7 +70,7 @@ public class ElementMakerController implements LoginInterface {
      * @throws Exception the exception
      */
     public void createElement(ActionEvent actionEvent) throws Exception {
-        EF.createElement(ElementName_input.getText(),Integer.parseInt(flammability_input.getText()),menu_color.getText(), EF.getCurrentElement().getType(),SF.getUserLoggedIn().get_id());
+        EF.createElement(ElementName_input.getText(),Integer.parseInt(flammability_input.getText()),menu_color.getText(), EF.getCurrentElement().getType(),SF.getUserLoggedIn().getUsername());
         backToElementManagement();
     }
     @Override

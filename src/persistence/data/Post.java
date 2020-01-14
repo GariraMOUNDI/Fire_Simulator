@@ -105,6 +105,7 @@ public class Post {
      * @return the new id as a String
      */
     public static String parseId(Object id) {
+        System.out.println(id);
         if (id.toString().charAt(0) == '{') {
             String p = id.toString().split("=")[1];
             return p.substring(0,p.length()-1);

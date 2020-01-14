@@ -57,10 +57,10 @@ public class ElementFacade {
      * @param flammability the flammability
      * @param color        the color
      * @param type         the type
-     * @param userId     the id of the creator
+     * @param username     the username of the creator
      */
-    public void createElement(String elementName, int flammability, String color, TypeElementEnum type, Object userId){
-        Element newElement = new Element(elementName,flammability,color,type, userId);
+    public void createElement(String elementName, int flammability, String color, TypeElementEnum type, String username){
+        Element newElement = new Element(elementName,flammability,color,type, username);
         dao.insertData(newElement);
     }
 
@@ -85,11 +85,11 @@ public class ElementFacade {
     /**
      * Get user elements list.
      *
-     * @param id the username
+     * @param username the username
      * @return the list
      */
-    public List<Element> getUserElements(Object id){
-        return (List<Element>) dao.getDataById("userId", new ObjectId(Element.parseId(id.toString())));
+    public List<Element> getUserElements(String username){
+        return (List<Element>) dao.getDataById("username", username);
     }
 
     /**
@@ -104,11 +104,11 @@ public class ElementFacade {
     /**
      * Get all elements list.
      *
-     * @param id the user id
+     * @param username the username
      * @return the list
      */
-    public List<Element> getAllElements(Object id){
-        List<Element> result = getUserElements(id);
+    public List<Element> getAllElements(String username){
+        List<Element> result = (List<Element>) dao.getDataById("username", username);
         result.addAll((List<Element>) dao.getDataById("basic", true));
         return result;
     }

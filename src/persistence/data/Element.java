@@ -8,11 +8,12 @@ import java.util.Arrays;
  * The type Element.
  */
 public class Element {
-    private Object _id, userId;
+    private Object _id;
     private String elementName;
     private int flammability;
     private String color;
     private boolean basic;
+    private String username;
     private TypeElementEnum type;
 
     /**
@@ -23,16 +24,16 @@ public class Element {
      *                     to which neighbours will burn or not.
      * @param color        Will appear in design of a map.
      * @param type         Rock, water, vegeation ...
-     * @param userId     This attribute represent the name of the owner of the element.
+     * @param username     This attribute represent the name of the owner of the element.
      */
-    public Element(String elementName, int flammability, String color,TypeElementEnum type, Object userId){
+    public Element(String elementName, int flammability, String color,TypeElementEnum type, String username){
         if(check(flammability,color,type)){
             this.elementName = elementName;
             this.flammability = flammability;
             this.color = color;
             this.basic = false;
             this.type = type;
-            this.userId = userId;
+            this.username = username;
         }
     }
 
@@ -140,8 +141,8 @@ public class Element {
      *
      * @return the username
      */
-    public Object getUserId() {
-        return userId;
+    public String getUsername() {
+        return username;
     }
 
     /**
@@ -149,9 +150,9 @@ public class Element {
      *
      * @param username the username
      */
-//    public void setUsername(String username) {
-//        this.username = username;
-//    }
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
     /**
      * Sets id.
