@@ -60,6 +60,11 @@ public class Matrice {
         return this.boxes[x][y];
     }
 
+
+    public void setBox(int x, int y, Box box){
+        this.boxes[x][y] = box;
+    }
+
     /**
      * Get coordinate send Box if we parameters x and y.
      *
@@ -69,4 +74,6 @@ public class Matrice {
     public int[] getCoordonate(Box box){
         return new int[]{box.getX(), box.getY()};
     }
+
+
 }

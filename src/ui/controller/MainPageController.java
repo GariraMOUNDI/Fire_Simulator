@@ -2,6 +2,7 @@ package ui.controller;
 
 import businessLogic.SessionFacade;
 
+import javafx.event.ActionEvent;
 import ui.interfaces.LoginInterface;
 import ui.model.ApplicationUI;
 
@@ -110,5 +111,12 @@ public class MainPageController implements LoginInterface {
      */
     public void goToProfilePage() throws Exception{
         ApplicationUI.profileView(ApplicationUI.getStage());
+    }
+
+    public void toSimulation(ActionEvent actionEvent) throws Exception {
+        ApplicationUI.toSimulation(ApplicationUI.getStage());
+    }
+    public void toSimulationMenu(ActionEvent actionEvent) throws Exception {
+        ApplicationUI.toSimulationMenu(ApplicationUI.getStage());
     }
 }
