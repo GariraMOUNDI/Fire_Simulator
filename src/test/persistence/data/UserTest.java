@@ -48,8 +48,7 @@ public void testGet_id() throws Exception {
 @Test
 public void testGetPassword() throws Exception {
     User u = new User("test","mypssd","test@test","lapin");
-    String mypassword = u.getPassword();
-    assertEquals("failure - Strings not equals","mypssd", mypassword);
+    assertEquals("failure - Strings not equals","mypssd", u.getPassword());
 } 
 
 /** 
