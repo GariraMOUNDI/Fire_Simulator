@@ -45,7 +45,7 @@
       </BorderPane>
    </top>
    <center>
-      <TabPane fx:id="profileTabPane" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="100.0" tabMaxWidth="100.0" tabMinHeight="30.0" tabMinWidth="150.0" BorderPane.alignment="CENTER">
+      <TabPane fx:id="profileTabPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background: none;" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="100.0" tabMaxWidth="100.0" tabMinHeight="30.0" tabMinWidth="150.0" BorderPane.alignment="CENTER">
         <tabs>
           <Tab style="-fx-font-family: Arial; -fx-font-size: 14; -fx-font-weight: BOLD; -fx-text-base-color: #842b0d;" text="Personal Data">
                <content>
@@ -72,6 +72,9 @@
                                        <font>
                                           <Font name="Bell MT Bold" size="25.0" />
                                        </font>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
                                     </Label>
                                     <Label fx:id="emailLabel" layoutX="10.0" layoutY="16.0" text="mazougarira@yahoo.fr" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="TOP">
                                        <font>
@@ -193,32 +196,32 @@
                                       <Insets left="80.0" />
                                   </GridPane.margin>
                               </Label>
-                              <TextField fx:id="usernameField" prefHeight="30.0" promptText="username" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                              <TextField fx:id="usernameField" prefHeight="30.0" promptText="username" style="-fx-background-color: white;" GridPane.columnIndex="2" GridPane.rowIndex="1">
                                  <GridPane.margin>
                                     <Insets right="20.0" />
                                  </GridPane.margin>
                               </TextField>
-                              <TextField fx:id="emailField" prefHeight="30.0" promptText="you@gmail.com" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                              <TextField fx:id="emailField" prefHeight="30.0" promptText="you@gmail.com" style="-fx-background-color: white;" GridPane.columnIndex="2" GridPane.rowIndex="2">
                                  <GridPane.margin>
                                     <Insets right="20.0" />
                                  </GridPane.margin>
                               </TextField>
-                              <PasswordField fx:id="formerPasswordField" prefHeight="30.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                              <PasswordField fx:id="formerPasswordField" prefHeight="30.0" style="-fx-background-color: white;" GridPane.columnIndex="2" GridPane.rowIndex="3">
                                  <GridPane.margin>
                                     <Insets right="20.0" />
                                  </GridPane.margin>
                               </PasswordField>
-                              <PasswordField fx:id="newPasswordField" prefHeight="30.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                              <PasswordField fx:id="newPasswordField" prefHeight="30.0" style="-fx-background-color: white;" GridPane.columnIndex="2" GridPane.rowIndex="4">
                                  <GridPane.margin>
                                     <Insets right="20.0" />
                                  </GridPane.margin>
                               </PasswordField>
-                              <PasswordField fx:id="confirmPasswordField" prefHeight="30.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                              <PasswordField fx:id="confirmPasswordField" prefHeight="30.0" style="-fx-background-color: white;" GridPane.columnIndex="2" GridPane.rowIndex="5">
                                  <GridPane.margin>
                                     <Insets right="20.0" />
                                  </GridPane.margin>
                               </PasswordField>
-                              <TextField fx:id="hwField" prefHeight="30.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                              <TextField fx:id="hwField" prefHeight="30.0" style="-fx-background-color: white;" GridPane.columnIndex="2" GridPane.rowIndex="6">
                                  <GridPane.margin>
                                     <Insets right="20.0" />
                                  </GridPane.margin>
@@ -411,7 +414,7 @@
                               </BorderPane>
                               <BorderPane GridPane.columnIndex="1">
                                  <center>
-                                    <ScrollPane fx:id="itemScrollPane" fitToWidth="true" prefHeight="35.0" prefWidth="480.0" style="-fx-background-color: transparent;">
+                                    <ScrollPane fx:id="itemScrollPane" fitToWidth="true" prefHeight="35.0" prefWidth="480.0" style="-fx-background: none;">
                                        <padding>
                                           <Insets left="20.0" />
                                        </padding>
