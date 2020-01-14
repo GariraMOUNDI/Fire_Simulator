@@ -19,7 +19,6 @@ import java.util.List;
 public class PostFacade {
     private LoginInterface loginIF;
     private DAO dao;
-    private Gson gson = new Gson();
     private static PostFacade instance = null;
     private static SessionFacade SF = null;
 
