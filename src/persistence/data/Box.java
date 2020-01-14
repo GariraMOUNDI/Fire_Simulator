@@ -2,6 +2,8 @@ package persistence.data;
 
 import persistence.factories.DAOType;
 
+import javax.swing.plaf.nimbus.State;
+
 /**
  * The type Box.
  */
@@ -51,7 +53,18 @@ public class Box {
      * @param state the state of the current Box
      */
     public void setState(StateBox state) {
-        this.state = state;
+        if (this.element.getType().equals(TypeElementEnum.Vegetation)) {
+            this.state = state;
+            if (state.equals(StateBox.burning)) {
+                this.element.setColor("#FF0000");
+            }
+            if (state.equals(StateBox.scorched)) {
+                this.element.setColor("#61380B");
+            }
+            if (state.equals(StateBox.dust)) {
+                this.element.setColor("#190707");
+            }
+        }
     }
 
     /**

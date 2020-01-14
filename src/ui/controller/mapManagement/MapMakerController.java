@@ -84,7 +84,6 @@ public class MapMakerController implements LoginInterface {
                             currentBox.setElement(currentElement[0]);
                             matrice.getScene().setCursor(Cursor.DEFAULT);
                             initialize();
-
                         }
                     }
                 });
