@@ -119,6 +119,7 @@ public class ElementController implements LoginInterface {
         ElementLabels name_value, flammability_value,element_name,flammability;
         ElementButtons modify, delete;
         deleteRows(rockGridPane);
+
         deleteRows(waterGridPane);
         deleteRows(vegetationGridPane);
 
