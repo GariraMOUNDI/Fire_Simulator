@@ -51,7 +51,7 @@
       </GridPane>
    </top>
    <center>
-      <ScrollPane fx:id="post_view" fitToWidth="true" prefHeight="200.0" prefWidth="500.0" BorderPane.alignment="CENTER">
+      <ScrollPane fx:id="post_view" fitToWidth="true" prefHeight="200.0" prefWidth="500.0" style="-fx-background: none;" BorderPane.alignment="CENTER">
       </ScrollPane>
    </center>
 </BorderPane>
