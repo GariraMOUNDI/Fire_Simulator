@@ -1,6 +1,5 @@
 package resources.styles;
 
-import businessLogic.ElementFacade;
 import javafx.scene.control.Button;
 import persistence.data.Element;
 import persistence.data.TypeElementEnum;

@@ -459,7 +459,7 @@
                      </Label>
                   </top>
                   <center>
-                     <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: transparent;" text="jqsjdjnq,snsdfdfsdf skjdfhkjdhfj  sdfkjdkf skjdfhkjsdbjk nsd2222222222222222222222222222222222jqshgdqsgdqsgqsjkhdqjkshdjkqshdkjqshdkjqshdjkqshdjqshjdhjsqhdnxbcnbw,xcxncbw,cbwbncwncbw,cb,wbcqjshdqskjdjksqhdjqskdwkjhjhdfjksd&#10;qsdsqdqs&#10;qsqsd&#10;qsd&#10;qsd&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq" wrapText="true" BorderPane.alignment="CENTER">
+                     <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" style="-fx-background: none;" text="jqsjdjnq,snsdfdfsdf skjdfhkjdhfj  sdfkjdkf skjdfhkjsdbjk nsd2222222222222222222222222222222222jqshgdqsgdqsgqsjkhdqjkshdjkqshdkjqshdkjqshdjkqshdjqshjdhjsqhdnxbcnbw,xcxncbw,cbwbncwncbw,cb,wbcqjshdqskjdjksqhdjqskdwkjhjhdfjksd&#10;qsdsqdqs&#10;qsqsd&#10;qsd&#10;qsd&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq" wrapText="true" BorderPane.alignment="CENTER">
                         <font>
                            <Font size="20.0" />
                         </font>

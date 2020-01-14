@@ -12,6 +12,7 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
 import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import persistence.data.Character;
 import persistence.data.Item;
@@ -54,27 +55,30 @@ public class ProfileController implements LoginInterface {
     }
     @FXML
     public void initialize() {
-        help.setFont(Font.loadFont(getClass().getResourceAsStream("/resources/fonts/BellMT.ttf"), 25));
-        hwLabel.setFont(Font.loadFont(getClass().getResourceAsStream("/resources/fonts/BellMT.ttf"), 25));
-        usernameLabel.setFont(Font.loadFont(getClass().getResourceAsStream("/resources/fonts/BellMT.ttf"), 25));
-        emailLabel.setFont(Font.loadFont(getClass().getResourceAsStream("/resources/fonts/BellMT.ttf"), 25));
-        scopeCharacter.setFont(Font.loadFont(getClass().getResourceAsStream("/resources/fonts/BellMT.ttf"), 25));
-        xpLabel.setFont(Font.loadFont(getClass().getResourceAsStream("/resources/fonts/BellMT.ttf"), 25));
-        goldLabel.setFont(Font.loadFont(getClass().getResourceAsStream("/resources/fonts/BellMT.ttf"), 25));
-        diamondsLabel.setFont(Font.loadFont(getClass().getResourceAsStream("/resources/fonts/BellMT.ttf"), 25));
-        levelLabel.setFont(Font.loadFont(getClass().getResourceAsStream("/resources/fonts/BellMT.ttf"), 25));
-        cu_title.setFont(Font.loadFont(getClass().getResourceAsStream("/resources/fonts/BellMT.ttf"), 25));
-        do_title.setFont(Font.loadFont(getClass().getResourceAsStream("/resources/fonts/BellMT.ttf"), 25));
-        usrName.setFont(Font.loadFont(getClass().getResourceAsStream("/resources/fonts/BellMT.ttf"), 25));
-        usrname.setFont(Font.loadFont(getClass().getResourceAsStream("/resources/fonts/BellMT.ttf"), 25));
-        email.setFont(Font.loadFont(getClass().getResourceAsStream("/resources/fonts/BellMT.ttf"), 25));
-        Email.setFont(Font.loadFont(getClass().getResourceAsStream("/resources/fonts/BellMT.ttf"), 25));
-        fr_pswd.setFont(Font.loadFont(getClass().getResourceAsStream("/resources/fonts/BellMT.ttf"), 25));
-        nw_pswd.setFont(Font.loadFont(getClass().getResourceAsStream("/resources/fonts/BellMT.ttf"), 25));
-        con_pswd.setFont(Font.loadFont(getClass().getResourceAsStream("/resources/fonts/BellMT.ttf"), 25));
-        hlpwrd.setFont(Font.loadFont(getClass().getResourceAsStream("/resources/fonts/BellMT.ttf"), 25));
+        setFontLabel(help, 25);
+        setFontLabel(hwLabel,25);
+        setFontLabel(usernameLabel,25);
+        setFontLabel(emailLabel,20);
+        setFontLabel(scopeCharacter,55);
+        setFontLabel(xpLabel,25);
+        setFontLabel(goldLabel,25);
+        setFontLabel(diamondsLabel,25);
+        setFontLabel(levelLabel,25);
+        setFontLabel(cu_title,25);
+        setFontLabel(do_title,25);
+        setFontLabel(usrName,20);
+        setFontLabel(email,25);
+        setFontLabel(Email,20);
+        setFontLabel(fr_pswd,20);
+        setFontLabel(nw_pswd,20);
+        setFontLabel(con_pswd,20);
+        setFontLabel(hlpwrd,20);
+        setFontLabel(usrname, 25);
     }
 
+    public void setFontLabel(Label label, int height){
+        label.setFont(Font.loadFont(getClass().getResourceAsStream("/resources/fonts/BellMT.ttf"), height));
+    }
     /**
      * The init method. This method does calculations based on the size of the window.
      *

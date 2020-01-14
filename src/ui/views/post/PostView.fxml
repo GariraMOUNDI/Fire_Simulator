@@ -3,11 +3,13 @@
 <?import javafx.geometry.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: radial-gradient(focus-distance 0% , center 50% 50% , radius 60% , #006400, #FEA100);" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.post.PostController">
+<BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="900.0" style="-fx-background-color: radial-gradient(focus-distance 0% , center 50% 50% , radius 60% , #006400, #FEA100);" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.post.PostController">
    <top>
       <GridPane alignment="TOP_CENTER" prefHeight="60.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -19,13 +21,19 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="write_post" contentDisplay="CENTER" mnemonicParsing="false" onAction="#toWritePost" prefHeight="27.0" prefWidth="171.0" style="-fx-background-color: #347deb;" text="Write Post" textFill="WHITE" GridPane.columnIndex="2">
+            <Button fx:id="write_post" contentDisplay="CENTER" mnemonicParsing="false" onAction="#toWritePost" prefHeight="27.0" prefWidth="100.0" style="-fx-background-color: #228b22; -fx-background-radius: 15;" text="Write Post" textFill="#842b0d" GridPane.columnIndex="2">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
                <GridPane.margin>
                   <Insets right="10.0" />
-               </GridPane.margin></Button>
+               </GridPane.margin>
+               <effect>
+                  <DropShadow height="87.73" radius="43.477500000000006" spread="0.35" width="88.18">
+                     <color>
+                        <Color red="0.6980392336845398" green="0.09019608050584793" blue="0.09019608050584793" />
+                     </color></DropShadow>
+               </effect></Button>
              <ImageView fitHeight="50.0" fitWidth="50.0" onMouseClicked="#backToMainPage" pickOnBounds="true" preserveRatio="true" translateX="15.0" BorderPane.alignment="CENTER">
                  <image>
                      <Image url="@/resources/icons/back_icon.png" />
@@ -34,7 +42,7 @@
                      <Cursor fx:constant="HAND" />
                  </cursor>
              </ImageView>
-            <CheckBox fx:id="my_posts" mnemonicParsing="false" onAction="#initialize" style="-fx-alignment: top-right;" text="My posts" GridPane.halignment="RIGHT">
+            <CheckBox fx:id="my_posts" mnemonicParsing="false" onAction="#initialize" style="-fx-alignment: top-right;" text="My posts" textFill="#842b0d" GridPane.halignment="RIGHT">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -42,10 +50,17 @@
                   <Insets right="10.0" />
                </GridPane.margin>
             </CheckBox>
-            <Label text="Posts" textFill="#347deb" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+            <Label fx:id="postLabel" text="Posts" textFill="#842b0d" GridPane.columnIndex="1" GridPane.halignment="CENTER">
                <font>
                   <Font size="24.0" />
                </font>
+               <effect>
+                  <DropShadow height="59.13" radius="14.2825" width="0.0">
+                     <color>
+                        <Color red="0.11764705926179886" green="0.42352941632270813" blue="0.0470588244497776" />
+                     </color>
+                  </DropShadow>
+               </effect>
             </Label>
          </children>
       </GridPane>
@@ -54,4 +69,7 @@
       <ScrollPane fx:id="post_view" fitToWidth="true" prefHeight="200.0" prefWidth="500.0" style="-fx-background: none;" BorderPane.alignment="CENTER">
       </ScrollPane>
    </center>
+   <padding>
+      <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+   </padding>
 </BorderPane>

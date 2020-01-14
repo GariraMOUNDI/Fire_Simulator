@@ -1,28 +1,19 @@
 package ui.controller;
 
 import businessLogic.ElementFacade;
-import businessLogic.SessionFacade;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.geometry.HPos;
-import javafx.geometry.Insets;
 import javafx.scene.control.*;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.ColumnConstraints;
-import javafx.scene.layout.GridPane;
+import javafx.scene.control.Button;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import persistence.data.ColorElement;
 import persistence.data.Element;
-import persistence.data.Terrain;
 import persistence.data.TypeElementEnum;
 import ui.interfaces.LoginInterface;
 import ui.model.ApplicationUI;
 
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.awt.*;
 
 /**
  * The type Element maker controller.
@@ -43,15 +34,17 @@ public class ElementMakerController implements LoginInterface {
     @FXML
     private MenuButton menu_color;
 
-    private Button createElement;
+    private String[] colors;
     /**
      * The Menu color.
      */
     @FXML
     private Pane colorView;
     private TypeElementEnum elementType;
+    private int currentColor;
 
     public void init(TypeElementEnum type, Element modify) {
+        colors = ColorElement.getColors(type);
         EF.setCurrentElement(modify);
         if (modify != null){
             ElementName_input.setText(modify.getElementName());
@@ -66,18 +59,24 @@ public class ElementMakerController implements LoginInterface {
         }
 
         menu_color.getItems().clear();
-        Map colors = ColorElement.getColors(type);
-        Iterator keys = colors.keySet().iterator();
-        while(keys.hasNext()){
-            MenuItem color = new MenuItem((String) keys.next());
+
+        currentColor = 0;
+        for (int i=0; i< colors.length ; i++){
+            MenuItem color = new MenuItem("\t\t");
+            int j = i;
             color.setOnAction(a->{
-                menu_color.setText(color.getText());
-                colorView.setStyle("-fx-background-color: "+colors.get(color.getText())+ "; -fx-background-radius: 40;");
+                actionColor(j);
             });
+            color.setStyle("-fx-background-color: "+ colors[j] + ";");
+
             menu_color.getItems().add(color);
         }
     }
 
+    private void actionColor(int j){
+        colorView.setStyle("-fx-background-color: "+ colors[j] + "; -fx-background-radius: 40;");
+        currentColor = j;
+    }
     /**
      * Create element.
      *
@@ -89,7 +88,7 @@ public class ElementMakerController implements LoginInterface {
                 int flammability = Integer.parseInt(flammability_input.getText().trim());
                 if (buttonMaker.getText().equals("Create")){
                     if (elementType == TypeElementEnum.Rock){
-                        EF.createElement(ElementName_input.getText(),0,menu_color.getText(), elementType ,EF.getUserLoggedIn().getUsername());
+                        EF.createElement(ElementName_input.getText(),0,colors[currentColor], elementType ,EF.getUserLoggedIn().getUsername());
                         backToElementManagement();
                     } else
                         if (flammability <= 100 && flammability >= -100)
