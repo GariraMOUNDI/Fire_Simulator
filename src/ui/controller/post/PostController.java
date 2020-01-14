@@ -25,7 +25,7 @@ import java.util.List;
  */
 public class PostController implements LoginInterface {
     private PostFacade PF = PostFacade.getInstance(this);
-    private SessionFacade SF = SessionFacade.getInstance(this);
+//    private SessionFacade SF = SessionFacade.getInstance(this);
 
     private Image image = new Image("resources/icons/gear.png",20, 20, false, false);
 
@@ -52,7 +52,7 @@ public class PostController implements LoginInterface {
     @FXML
     public void initialize() {
         List<Post> posts;
-        if (my_posts.isSelected()) posts = PF.getUserPosts(SF.getUserLoggedIn().getUsername());
+        if (my_posts.isSelected()) posts = PF.getUserPosts();
         else posts = PF.getAllPosts();
 
         GridPane pane = new GridPane();
@@ -114,14 +114,14 @@ public class PostController implements LoginInterface {
         BorderPane pane = new BorderPane();
         GridPane top = new GridPane();
         TextFlow center = new TextFlow();
-        Label user = new Label(post.getUsername());
+        Label user = new Label(PF.getUsernameFromId(post.getUserId()));
         Label date = new Label(post.getDate());
         Text cont = new Text(post.getContent());
 
         pane.prefWidthProperty().bind(root.widthProperty());
         pane.setStyle("-fx-border-color: black;-fx-background-color: white; -fx-background-radius: 5px;-fx-border-radius: 5px");
 
-        if (SF.getUserLoggedIn().getUsername().equals(post.getUsername())) {
+        if (PF.getUserId().equals(post.getUserId())) {
             MenuButton menuButton = new MenuButton();
             menuButton.setGraphic(new ImageView(image));
             menuButton.setStyle("-fx-background-color: #e6f0ff");
@@ -211,7 +211,7 @@ public class PostController implements LoginInterface {
             @Override
             public void handle(ActionEvent actionEvent) {
                 if (!field.getText().isEmpty()) {
-                    PF.writeComment(post.getId(), SF.getUserLoggedIn().getUsername(), field.getText());
+                    PF.writeComment(post.getId(), field.getText());
                     initialize();
                 }
             }
@@ -235,10 +235,10 @@ public class PostController implements LoginInterface {
         GridPane pane = new GridPane();
         pane.getRowConstraints().add(new RowConstraints(10));
         pane.prefWidthProperty().bind(root.widthProperty());
-        if (SF.getUserLoggedIn().getUsername().equals(c.getUsername())) {
+        if (PF.getUserId().equals(c.getUserId())) {
             pane.setStyle("-fx-border-color: #dbdbdb;-fx-border-width: 0 0 1 0;-fx-padding: 10;-fx-background-color: #f0f6ff");
         } else pane.setStyle("-fx-border-color: #dbdbdb;-fx-border-width: 0 0 1 0;-fx-padding: 10;-fx-background-color: #f2f2f2");
-        pane.getChildren().add(new Label(c.getUsername()+ " : "+c.getContent()));
+        pane.getChildren().add(new Label(PF.getUsernameFromId(c.getUserId())+ " : "+c.getContent()));
 
         return pane;
     }

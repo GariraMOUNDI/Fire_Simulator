@@ -169,8 +169,11 @@ public class Element {
      * @return the string
      */
     public static String parseId(Object id) {
-        String p = id.toString().split("=")[1];
-        return p.substring(0,p.length()-1);
+        if (id.toString().charAt(0) == '{') {
+            String p = id.toString().split("=")[1];
+            return p.substring(0,p.length()-1);
+        }
+        return id.toString();
     }
 
     /**
