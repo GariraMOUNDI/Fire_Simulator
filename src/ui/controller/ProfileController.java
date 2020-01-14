@@ -36,7 +36,7 @@ public class ProfileController implements LoginInterface {
     @FXML
     private TabPane profileTabPane;
     @FXML
-    private Label usernameLabel, emailLabel, hwLabel, scopeCharacter, xpLabel, goldLabel, diamondsLabel, levelLabel, help;
+    private Label usernameLabel, emailLabel, hwLabel, scopeCharacter, xpLabel, goldLabel, diamondsLabel, levelLabel, help,cu_title,do_title,usrname,email,usrName,Email, fr_pswd, nw_pswd, con_pswd,hlpwrd;
     @FXML
     private TextField usernameField, emailField, formerPasswordField, newPasswordField, confirmPasswordField, hwField;
     @FXML
@@ -55,6 +55,24 @@ public class ProfileController implements LoginInterface {
     @FXML
     public void initialize() {
         help.setFont(Font.loadFont(getClass().getResourceAsStream("/resources/fonts/BellMT.ttf"), 25));
+        hwLabel.setFont(Font.loadFont(getClass().getResourceAsStream("/resources/fonts/BellMT.ttf"), 25));
+        usernameLabel.setFont(Font.loadFont(getClass().getResourceAsStream("/resources/fonts/BellMT.ttf"), 25));
+        emailLabel.setFont(Font.loadFont(getClass().getResourceAsStream("/resources/fonts/BellMT.ttf"), 25));
+        scopeCharacter.setFont(Font.loadFont(getClass().getResourceAsStream("/resources/fonts/BellMT.ttf"), 25));
+        xpLabel.setFont(Font.loadFont(getClass().getResourceAsStream("/resources/fonts/BellMT.ttf"), 25));
+        goldLabel.setFont(Font.loadFont(getClass().getResourceAsStream("/resources/fonts/BellMT.ttf"), 25));
+        diamondsLabel.setFont(Font.loadFont(getClass().getResourceAsStream("/resources/fonts/BellMT.ttf"), 25));
+        levelLabel.setFont(Font.loadFont(getClass().getResourceAsStream("/resources/fonts/BellMT.ttf"), 25));
+        cu_title.setFont(Font.loadFont(getClass().getResourceAsStream("/resources/fonts/BellMT.ttf"), 25));
+        do_title.setFont(Font.loadFont(getClass().getResourceAsStream("/resources/fonts/BellMT.ttf"), 25));
+        usrName.setFont(Font.loadFont(getClass().getResourceAsStream("/resources/fonts/BellMT.ttf"), 25));
+        usrname.setFont(Font.loadFont(getClass().getResourceAsStream("/resources/fonts/BellMT.ttf"), 25));
+        email.setFont(Font.loadFont(getClass().getResourceAsStream("/resources/fonts/BellMT.ttf"), 25));
+        Email.setFont(Font.loadFont(getClass().getResourceAsStream("/resources/fonts/BellMT.ttf"), 25));
+        fr_pswd.setFont(Font.loadFont(getClass().getResourceAsStream("/resources/fonts/BellMT.ttf"), 25));
+        nw_pswd.setFont(Font.loadFont(getClass().getResourceAsStream("/resources/fonts/BellMT.ttf"), 25));
+        con_pswd.setFont(Font.loadFont(getClass().getResourceAsStream("/resources/fonts/BellMT.ttf"), 25));
+        hlpwrd.setFont(Font.loadFont(getClass().getResourceAsStream("/resources/fonts/BellMT.ttf"), 25));
     }
 
     /**
