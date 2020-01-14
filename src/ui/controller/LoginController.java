@@ -5,6 +5,7 @@ import businessLogic.SessionFacade;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.text.Font;
 import ui.interfaces.LoginInterface;
 import ui.model.ApplicationUI;
 
@@ -22,7 +23,12 @@ public class LoginController implements LoginInterface {
     private TextField username, password;
 
     @FXML
-    private Label print;
+    private Label print, title;
+
+    @FXML
+    public void initialize() {
+        title.setFont(Font.loadFont(getClass().getResourceAsStream("/resources/fonts/CenturySchoolbook.ttf"),46));
+    }
 
     /**
      * Send login.

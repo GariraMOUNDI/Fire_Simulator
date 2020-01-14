@@ -8,6 +8,7 @@ import org.bson.Document;
 import org.bson.types.ObjectId;
 import persistence.data.Element;
 import persistence.data.Terrain;
+import persistence.data.User;
 import persistence.interfaces.DAO;
 
 import java.util.ArrayList;
@@ -60,7 +61,10 @@ public class MongoDBDAOElement implements DAO<Element> {
 
     @Override
     public void updateData(Element arg) {
-
+        query = new BasicDBObject("_id",new ObjectId((String) arg.get_id()));
+        arg.set_id(null);
+        up = new BasicDBObject("$set",Document.parse(gson.toJson(arg)));
+        collection.findOneAndUpdate(query, up);
     }
 
     @Override

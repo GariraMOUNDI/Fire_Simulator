@@ -61,6 +61,7 @@ public class ElementFacade {
      */
     public void createElement(String elementName, int flammability, String color, TypeElementEnum type, String username){
         Element newElement = new Element(elementName,flammability,color,type, username);
+        System.out.println(newElement.getElementName());
         dao.insertData(newElement);
     }
 
@@ -120,5 +121,9 @@ public class ElementFacade {
      */
     public void deleteElement(Element element) {
         dao.deleteData(element);
+    }
+
+    public void updateElement() {
+        dao.updateData(currentElement);
     }
 }

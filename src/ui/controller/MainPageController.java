@@ -2,6 +2,10 @@ package ui.controller;
 
 import businessLogic.SessionFacade;
 
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.text.Font;
 import ui.interfaces.LoginInterface;
 import ui.model.ApplicationUI;
 
@@ -15,6 +19,17 @@ public class MainPageController implements LoginInterface {
      * The session facade instance.
      */
     SessionFacade SF = SessionFacade.getInstance(this);
+
+    @FXML
+    Button button_main, button_main2;
+
+    @FXML
+    public void initialize() {
+        if (button_main != null && button_main2 != null) {
+            button_main.setFont(Font.loadFont(getClass().getResourceAsStream("/resources/fonts/BritannicBold.ttf"),25));
+            button_main2.setFont(Font.loadFont(getClass().getResourceAsStream("/resources/fonts/BritannicBold.ttf"),25));
+        }
+    }
 
     /**
      * Log out.
