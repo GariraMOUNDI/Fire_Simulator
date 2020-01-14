@@ -70,7 +70,7 @@ public class MongoDBDAOPost implements DAO<Post> {
 
     @Override
     public void deleteData(Post arg) {
-        query = new BasicDBObject("username",arg.getUsername());
+        query = new BasicDBObject("userId",arg.getUserId());
         query.append("content",arg.getContent());
         collection.findOneAndDelete(query);
     }

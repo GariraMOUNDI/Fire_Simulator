@@ -21,6 +21,7 @@ public class PostFacade {
     private DAO dao;
     private Gson gson = new Gson();
     private static PostFacade instance = null;
+    private static SessionFacade SF = null;
 
     /**
      * Get the instance of post facade.
@@ -37,16 +38,24 @@ public class PostFacade {
     private PostFacade(LoginInterface loginIF) {
         this.loginIF = loginIF;
         dao = MongoDBDAOFactory.getInstance().createDAO(DAOType.Post);
+        SF = SessionFacade.getInstance(loginIF);
     }
 
     /**
      * Get user posts list.
      *
-     * @param username the username
      * @return the list
      */
-    public List<Post> getUserPosts(String username){
-        return (List<Post>) dao.getDataById("username", username);
+    public List<Post> getUserPosts(){
+        return (List<Post>) dao.getDataById("userId", new ObjectId(Post.parseId(SF.getUserLoggedIn().get_id())));
+    }
+
+    public String getUsernameFromId(Object id) {
+        return SF.getUsernameFromId(id);
+    }
+
+    public Object getUserId() {
+        return SF.getUserLoggedIn().get_id();
     }
 
     /**
@@ -59,23 +68,21 @@ public class PostFacade {
     /**
      * Write post.
      *
-     * @param username the username of the author
      * @param content  the content of the post
      */
-    public void writePost(String username, String content) {
-        dao.insertData(new Post(username, new Date().toString(), content));
+    public void writePost(String content) {
+        dao.insertData(new Post(SF.getUserLoggedIn().get_id(), new Date().toString(), content));
     }
 
     /**
      * Write comment.
      *
      * @param postId  the post id
-     * @param user    the user
      * @param content the content of the comment
      */
-    public void writeComment(Object postId, String user, String content) {
+    public void writeComment(Object postId, String content) {
         Post original = ((List<Post>) dao.getDataById("_id", new ObjectId(Post.parseId(postId)))).get(0);
-        original.writeComment(user, content);
+        original.writeComment(SF.getUserLoggedIn().get_id(), content);
         dao.updateData(original);
     }
 
