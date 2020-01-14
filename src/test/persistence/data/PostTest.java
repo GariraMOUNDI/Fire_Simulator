@@ -64,16 +64,6 @@ public void testSetId() throws Exception {
     assertEquals("the id",p.getId());
 } 
 
-/** 
-* 
-* Method: getUsername() 
-* 
-*/ 
-@Test
-public void testGetUsername() throws Exception {
-    Post p = new Post("user","01/01/2020","content");
-    //assertEquals("user",p.getUsername());
-}
 
 /** 
 * 

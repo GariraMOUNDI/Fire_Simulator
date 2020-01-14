@@ -13,7 +13,7 @@
    <center>
       <BorderPane>
          <top>
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="160.0" style="-fx-background-color: #228b22; -fx-background-radius: 20;" text="Simulation" textFill="#842b0d" BorderPane.alignment="CENTER">
+            <Button fx:id="toSimulationMenu" mnemonicParsing="false" onAction="#toSimulationMenu" prefHeight="25.0" prefWidth="160.0" style="-fx-background-color: #228b22; -fx-background-radius: 20;" text="Simulation" textFill="#842b0d" BorderPane.alignment="CENTER">
                <font>
                   <Font name="Britannic Bold" size="25.0" />
                </font>

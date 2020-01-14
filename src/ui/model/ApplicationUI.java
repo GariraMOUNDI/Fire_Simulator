@@ -42,6 +42,7 @@ public class ApplicationUI extends Application {
     }
 
 
+
     public void start(Stage primaryStage) throws Exception{
         ApplicationUI.loginView(primaryStage);
     }
@@ -178,6 +179,7 @@ public class ApplicationUI extends Application {
         ((ProfileController)loader.getController()).init(stage);
     }
 
+
     /**
      * Go to the store view.
      *
@@ -216,6 +218,19 @@ public class ApplicationUI extends Application {
      */
     public static void modifyPostView(Stage stage) throws Exception {
         uploadView(stage, "Modify Post","../views/post/ModifyPostView.fxml");
+    }
+
+    /**
+     * Go to the simulation view.
+     *
+     * @param stage the stage
+     * @throws Exception the exception
+     */
+    public static void toSimulation(Stage stage) throws Exception {
+        uploadView(stage, "Simulation","../views/Simulation.fxml");
+    }
+    public static void toSimulationMenu(Stage stage) throws IOException {
+        uploadView(stage, "Simulation menu","../views/SimulationMenu.fxml");
     }
 
     private static void uploadView(Stage stage,String title, String path) throws IOException {
