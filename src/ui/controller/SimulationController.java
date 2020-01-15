@@ -169,7 +169,7 @@ public class SimulationController implements LoginInterface{
 
 
     public void fire_probability(int x, int y){
-        int random = (int)(Math.random() * (70-1)) + 1;
+        int random = (int)(Math.random() * (65-1)) + 1;
         if ((random > MMF.getCurrentTerrain().getMap().getBox(x,y).getElement().getFlammability())){
             MMF.getCurrentTerrain().getMap().getBox(x,y).setState(StateBox.burning);
             GridPane newGrid = new GridPane();
