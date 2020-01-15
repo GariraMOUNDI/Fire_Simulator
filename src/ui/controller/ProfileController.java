@@ -298,8 +298,6 @@ public class ProfileController implements LoginInterface {
             characterImage.setImage(new Image(character.getImageURL()));
             scopeCharacter.setText(String.valueOf(character.getScope()));
         }
-        else
-            /*   */ ;
     }
 
     /**

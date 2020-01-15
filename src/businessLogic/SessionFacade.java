@@ -21,7 +21,6 @@ public class SessionFacade {
     private DAO dao;
     private User userLoggedIn;
     private List<String> others, friends;
-    private List<Character> characters;
     private static SessionFacade instance = null;
     private int characterIndex;
 

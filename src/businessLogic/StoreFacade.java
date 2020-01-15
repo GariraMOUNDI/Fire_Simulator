@@ -21,7 +21,6 @@ public class StoreFacade {
     private SessionFacade SF = null;
     private DAO daoItem, daoCharacter;
     private User userLoggedIn;
-    private Gson gson = new Gson();
     private static StoreFacade instance = null;
     private List<Item> storeItems;
     private List<Character> storeCharacters;
