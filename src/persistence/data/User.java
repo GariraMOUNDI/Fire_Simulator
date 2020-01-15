@@ -216,9 +216,7 @@ public class User {
      *
      * @param gold the gold
      */
-    public void setGold(int gold) {
-        this.gold = gold;
-    }
+    public void setGold(int gold) { this.gold = gold; }
 
     /**
      * Gets level.

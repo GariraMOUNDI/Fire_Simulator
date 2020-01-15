@@ -59,9 +59,7 @@ public class PostController implements LoginInterface {
         ColumnConstraints col = new ColumnConstraints();
 
         col.setHalignment(HPos.CENTER);
-
         pane.getColumnConstraints().add(col);
-        pane.setPadding(new Insets(15, 12, 15, 12));
         pane.setVgap(20);
 
         int i = posts.size()-1;
@@ -119,8 +117,8 @@ public class PostController implements LoginInterface {
         Text cont = new Text(post.getContent());
 
         pane.prefWidthProperty().bind(root.widthProperty());
-        pane.setStyle("-fx-border-color: black;-fx-background-color: white; -fx-background-radius: 5px;-fx-border-radius: 5px");
 
+        pane.setStyle("-fx-border: none;-fx-background-color: white; -fx-background-radius: 5px;-fx-border-radius: 5px");
         if (PF.getUserId().equals(post.getUserId())) {
             MenuButton menuButton = new MenuButton();
             menuButton.setGraphic(new ImageView(image));

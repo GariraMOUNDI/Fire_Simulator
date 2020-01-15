@@ -86,7 +86,6 @@ public class SimulationController implements LoginInterface{
             r.mousePress(InputEvent.BUTTON1_DOWN_MASK);
             r.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         }
-        //SimulationObserver s = new SimulationObserver(MMF.getCurrentTerrain(),this);
     }
 
     public Box start_fire() throws InterruptedException {
@@ -97,13 +96,6 @@ public class SimulationController implements LoginInterface{
             y = (int)(Math.random() * (MMF.getCurrentTerrain().getMap().getSize()));
         }
         MMF.getCurrentTerrain().getMap().getBox(x,y).setState(StateBox.burning);
-        /*
-        ObservableList<Node> childrens = matrice.getChildren();
-        for (Node node : childrens) {
-            if(GridPane.getRowIndex(node) == x && GridPane.getColumnIndex(node) == y) {
-                ((Shape) node).setFill(Color.web(MMF.getCurrentTerrain().getMap().getBox(x, y).getElement().getColor()));
-            }
-        }*/
 
         GridPane newGrid = new GridPane();
         for (int i = 0; i < MMF.getCurrentTerrain().getMap().getSize(); i++) {
@@ -180,14 +172,6 @@ public class SimulationController implements LoginInterface{
         int random = (int)(Math.random() * (70-1)) + 1;
         if ((random > MMF.getCurrentTerrain().getMap().getBox(x,y).getElement().getFlammability())){
             MMF.getCurrentTerrain().getMap().getBox(x,y).setState(StateBox.burning);
-
-            /*
-            ObservableList<Node> childrens = matrice.getChildren();
-            for (Node node : childrens) {
-                if(GridPane.getRowIndex(node) == x && GridPane.getColumnIndex(node) == y) {
-                    ((Shape) node).setFill(Color.web(MMF.getCurrentTerrain().getMap().getBox(x, y).getElement().getColor()));
-                }
-            }*/
             GridPane newGrid = new GridPane();
             for (int i = 0; i < MMF.getCurrentTerrain().getMap().getSize(); i++) {
                 for (int j = 0; j < MMF.getCurrentTerrain().getMap().getSize(); j++) {
@@ -214,13 +198,6 @@ public class SimulationController implements LoginInterface{
                     burningBox.setState(StateBox.dust);
                     MMF.getCurrentTerrain().getMap().setBox(burningBox.getX(),burningBox.getY(),burningBox);
 
-                    /*
-                    ObservableList<Node> childrens = matrice.getChildren();
-                    for (Node node : childrens) {
-                        if(GridPane.getRowIndex(node) == burningBox.getX() && GridPane.getColumnIndex(node) == burningBox.getY()) {
-                            ((Shape) node).setFill(Color.web(burningBox.getElement().getColor()));
-                        }
-                    }*/
                     GridPane newGrid = new GridPane();
                     for (int i = 0; i < MMF.getCurrentTerrain().getMap().getSize(); i++) {
                         for (int j = 0; j < MMF.getCurrentTerrain().getMap().getSize(); j++) {
