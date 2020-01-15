@@ -235,6 +235,7 @@ public class SimulationController implements LoginInterface{
 
     public void backToSimMenuPage(MouseEvent mouseEvent) throws Exception {
         ApplicationUI.toSimulationMenu(ApplicationUI.getStage());
+
     }
 
 
