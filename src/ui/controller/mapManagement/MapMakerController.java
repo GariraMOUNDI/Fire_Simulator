@@ -55,7 +55,7 @@ public class MapMakerController implements LoginInterface {
 
     @FXML
     ScrollPane element_view;
-
+    final Element[] currentElement = new Element[1];
     /**
      * Initialize method : This method will get the currentTerrain set in the façade,
      * and for each box of the matrix, it will fill the GridPane.
@@ -65,7 +65,7 @@ public class MapMakerController implements LoginInterface {
     public void initialize() {
         Terrain terrain = MMF.getCurrentTerrain();
         GridPane matrice = new GridPane();
-        final Element[] currentElement = new Element[1];
+
 
         for (int x = 0; x < terrain.getMap().getSize(); x++){
             for (int y = 0; y < terrain.getMap().getSize(); y++){
