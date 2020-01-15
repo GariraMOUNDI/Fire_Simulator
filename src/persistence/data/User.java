@@ -13,7 +13,7 @@ public class User {
     private List<Item> userItems;
     private List<Character> userCharacters;
     private Object _id;
-    private int diamonds, XP, gold, level;
+    private int diamonds = 100, XP = 100, gold = 100, level = 1;
 
 
     /**
