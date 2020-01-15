@@ -3,24 +3,13 @@ package ui.controller.mapManagement;
 import businessLogic.MapManagementFacade;
 import businessLogic.SessionFacade;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.geometry.HPos;
-import javafx.geometry.Insets;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.ColumnConstraints;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
 import persistence.data.Matrice;
 import persistence.data.Terrain;
 import ui.interfaces.LoginInterface;
 import ui.model.ApplicationUI;
-
-import java.util.List;
 
 /**
  * The type Create map menu controller, used by MapMenu view.
@@ -29,11 +18,7 @@ public class createMapMenuController implements LoginInterface{
     /**
      * The Map management facade
      */
-    MapManagementFacade MMF = MapManagementFacade.getInstance(this);
-    /**
-     * The Session facade
-     */
-    SessionFacade SF = SessionFacade.getInstance(this);
+    private MapManagementFacade MMF = MapManagementFacade.getInstance(this);
 
     @FXML
     private TextField name_input, size_input;
@@ -63,7 +48,7 @@ public class createMapMenuController implements LoginInterface{
             printResults("You must enter valid input");
         }
         else{
-            MMF.createMap(name_input.getText(),new Matrice(Integer.parseInt(size_input.getText())), SF.getUserLoggedIn().getUsername());
+            MMF.createMap(name_input.getText(),new Matrice(Integer.parseInt(size_input.getText())), MMF.getSession().getUserLoggedIn().getUsername());
             ApplicationUI.toMapMaker(ApplicationUI.getStage());
         }
     }

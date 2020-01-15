@@ -1,10 +1,4 @@
 package persistence.data;
-
-import javafx.scene.paint.Color;
-
-import java.util.Arrays;
-import java.util.Map;
-
 /**
  * The type Element.
  */

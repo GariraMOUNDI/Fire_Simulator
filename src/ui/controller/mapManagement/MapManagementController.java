@@ -122,8 +122,8 @@ public class MapManagementController implements LoginInterface {
      *
      * @throws Exception the exception
      */
-    public void backToMainPage() throws Exception {
-        ApplicationUI.mainPageView(ApplicationUI.getStage());
+    public void backToMenuPage() throws Exception {
+        ApplicationUI.toSoloMenu(ApplicationUI.getStage());
     }
 
     /**

@@ -1,9 +1,5 @@
 package persistence.data;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * The type Color element.
  * ColorElement is constitute by 3 Arrays, every array contains basics values. We use HTML code of Color.

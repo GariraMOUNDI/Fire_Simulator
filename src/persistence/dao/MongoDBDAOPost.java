@@ -1,17 +1,13 @@
 package persistence.dao;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonElement;
 import com.mongodb.BasicDBObject;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 import org.bson.types.ObjectId;
 import persistence.data.Post;
-import persistence.data.User;
 import persistence.interfaces.DAO;
-
-import java.lang.annotation.Documented;
 import java.util.ArrayList;
 import java.util.List;
 

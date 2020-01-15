@@ -1,6 +1,5 @@
 package businessLogic;
 
-import com.google.gson.Gson;
 import javafx.scene.control.Alert;
 import persistence.data.Character;
 import persistence.data.Item;
@@ -9,8 +8,6 @@ import persistence.factories.DAOType;
 import persistence.factories.MongoDBDAOFactory;
 import persistence.interfaces.DAO;
 import ui.interfaces.LoginInterface;
-
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -21,7 +18,6 @@ public class StoreFacade {
     private SessionFacade SF = null;
     private DAO daoItem, daoCharacter;
     private User userLoggedIn;
-    private Gson gson = new Gson();
     private static StoreFacade instance = null;
     private List<Item> storeItems;
     private List<Character> storeCharacters;
@@ -47,24 +43,6 @@ public class StoreFacade {
         storeItems = (List<Item>) daoItem.getAllData();
         storeCharacters = (List<Character>) daoCharacter.getAllData();
         userLoggedIn = SF.getUserLoggedIn();
-    }
-
-    /**
-     * Gets store items.
-     *
-     * @return the store items
-     */
-    public List<Item> getStoreItems() {
-        return storeItems;
-    }
-
-    /**
-     * Gets store characters.
-     *
-     * @return the store characters
-     */
-    public List<Character> getStoreCharacters() {
-        return storeCharacters;
     }
 
     /**

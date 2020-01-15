@@ -13,8 +13,6 @@ import persistence.data.TypeElementEnum;
 import ui.interfaces.LoginInterface;
 import ui.model.ApplicationUI;
 
-import java.awt.*;
-
 /**
  * The type Element maker controller.
  */
@@ -23,7 +21,7 @@ public class ElementMakerController implements LoginInterface {
     /**
      * The element facade instance.
      */
-    ElementFacade EF = ElementFacade.getInstance(this);
+    private ElementFacade EF = ElementFacade.getInstance(this);
 
     @FXML
     private TextField ElementName_input, flammability_input;

@@ -7,9 +7,7 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Paint;
-import javafx.scene.text.Font;
 import javafx.stage.Stage;
-import persistence.data.User;
 import resources.styles.FriendsButtons;
 import resources.styles.UserLabels;
 import ui.interfaces.LoginInterface;
@@ -27,7 +25,7 @@ public class FriendsController implements LoginInterface {
     /**
      * The Session facade instance.
      */
-    SessionFacade session = SessionFacade.getInstance(this);
+    private SessionFacade session = SessionFacade.getInstance(this);
     private RowConstraints row;
 
     @FXML

@@ -33,17 +33,17 @@ public class PostController implements LoginInterface {
      * The main scroll pane.
      */
     @FXML
-    ScrollPane post_view;
+    private ScrollPane post_view;
     /**
      * The Root border pane.
      */
     @FXML
-    BorderPane root;
+    private BorderPane root;
     /**
      * The My posts checkbox.
      */
     @FXML
-    CheckBox my_posts;
+    private CheckBox my_posts;
 
     /**
      * Initialize the fxml.

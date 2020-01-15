@@ -2,11 +2,8 @@ package ui.controller;
 
 import businessLogic.SessionFacade;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
 import persistence.data.User;
 
 import ui.interfaces.LoginInterface;
@@ -22,15 +19,9 @@ public class RegisterController implements LoginInterface {
     SessionFacade SF = SessionFacade.getInstance(this);
 
     @FXML
-    private Button sendRegister;
-    @FXML
-    private Hyperlink backToLogin;
-    @FXML
     private TextField register_username, register_email, register_password, register_confirm_password, register_help;
     @FXML
     private Label error;
-    @FXML
-    private ImageView logo_img;
 
 
     /**

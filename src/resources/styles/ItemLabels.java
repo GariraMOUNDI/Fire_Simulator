@@ -3,8 +3,6 @@ package resources.styles;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.paint.Paint;
-import javafx.scene.text.Font;
-import persistence.factories.ItemType;
 
 public class ItemLabels extends Label {
 

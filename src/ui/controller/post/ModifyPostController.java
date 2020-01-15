@@ -20,7 +20,7 @@ public class ModifyPostController implements LoginInterface {
      * The elements from the fxml.
      */
     @FXML
-    TextArea modify_content;
+    private TextArea modify_content;
 
     /**
      * Initialize the fxml.

@@ -7,8 +7,6 @@ import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 import org.bson.types.ObjectId;
 import persistence.data.Element;
-import persistence.data.Terrain;
-import persistence.data.User;
 import persistence.interfaces.DAO;
 
 import java.util.ArrayList;

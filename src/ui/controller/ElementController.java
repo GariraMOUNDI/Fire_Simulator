@@ -3,20 +3,13 @@ package ui.controller;
 import businessLogic.ElementFacade;
 import businessLogic.SessionFacade;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.geometry.HPos;
-import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.control.*;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
 import javafx.stage.Stage;
 import persistence.data.Element;
-import persistence.data.Terrain;
 import persistence.data.TypeElementEnum;
 import resources.styles.ElementButtons;
 import resources.styles.ElementLabels;
@@ -35,18 +28,18 @@ public class ElementController implements LoginInterface {
     /**
      * The element facade instance.
      */
-    ElementFacade EF = ElementFacade.getInstance(this);
+    private ElementFacade EF = ElementFacade.getInstance(this);
     /**
      * The Sf.
      */
-    SessionFacade SF = SessionFacade.getInstance(this);
+    private SessionFacade SF = SessionFacade.getInstance(this);
 
 
     /**
      * The Rock scroll pane.
      */
     @FXML
-    ScrollPane rockScrollPane, /**
+    private ScrollPane rockScrollPane, /**
      * The Water scroll pane.
      */
     waterScrollPane, /**
@@ -58,7 +51,7 @@ public class ElementController implements LoginInterface {
      * The Rock grid pane.
      */
     @FXML
-    GridPane rockGridPane, /**
+    private GridPane rockGridPane, /**
      * The Vegetation grid pane.
      */
     vegetationGridPane, /**
@@ -67,7 +60,7 @@ public class ElementController implements LoginInterface {
     waterGridPane;
 
     @FXML
-    TabPane elementTabPane;
+    private TabPane elementTabPane;
 
     private List<Element> elements;
 

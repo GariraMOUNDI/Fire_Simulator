@@ -1,7 +1,5 @@
 package persistence.data;
 
-import javafx.scene.paint.Color;
-
 /**
  * The type Matrice.
  */
@@ -9,11 +7,11 @@ public class Matrice {
     /**
      * This attribute is the size of the matrix, here we have always a square matrix.
      */
-    int size;
+    private int size;
     /**
      * All cell in this matrice will be a Box.
      */
-    Box [][] boxes;
+    private Box [][] boxes;
 
     /**
      * Gets size.

@@ -18,7 +18,7 @@ public class WritePostController implements LoginInterface {
      * The text area to write the post.
      */
     @FXML
-    TextArea content;
+    private TextArea content;
 
     /**
      * Go back to posts view.

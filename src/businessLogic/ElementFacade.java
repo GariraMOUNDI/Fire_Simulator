@@ -1,8 +1,6 @@
 package businessLogic;
 
-import org.bson.types.ObjectId;
 import persistence.data.Element;
-import persistence.data.Terrain;
 import persistence.data.TypeElementEnum;
 import persistence.data.User;
 import persistence.factories.DAOType;
@@ -91,15 +89,6 @@ public class ElementFacade {
      */
     public List<Element> getUserElements(String username){
         return (List<Element>) dao.getDataById("username", username);
-    }
-
-    /**
-     * Get basics elements list.
-     *
-     * @return the list
-     */
-    public List<Element> getBasicsElements(){
-        return (List<Element>) dao.getDataById("basic", true);
     }
 
     /**

@@ -1,9 +1,5 @@
 package persistence.data;
 
-import persistence.factories.DAOType;
-
-import javax.swing.plaf.nimbus.State;
-
 /**
  * The type Box.
  */

@@ -1,14 +1,8 @@
 package ui.controller;
 import businessLogic.MapManagementFacade;
 import businessLogic.SessionFacade;
-
-import javafx.collections.ListChangeListener;
-import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
-import javafx.scene.control.*;
-
 import javafx.scene.control.ScrollPane;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
@@ -29,20 +23,20 @@ public class SimulationController implements LoginInterface{
     /**
      * The map management facade instance.
      */
-    MapManagementFacade MMF = MapManagementFacade.getInstance(this);
+    private MapManagementFacade MMF = MapManagementFacade.getInstance(this);
 
-    Terrain terrain;
-    GridPane matrice;
+    private Terrain terrain;
+    private GridPane matrice;
 
     /**
      * The session facade instance.
      */
-    SessionFacade SF = SessionFacade.getInstance(this);
+    private SessionFacade SF = SessionFacade.getInstance(this);
     @FXML
-    ScrollPane scrollPane;
+    private ScrollPane scrollPane;
 
-    ArrayList<GridPane> listGridPane = new ArrayList<>();
-    int i = 0;
+    private ArrayList<GridPane> listGridPane = new ArrayList<>();
+    private int i = 0;
 
 
     @FXML
@@ -262,8 +256,8 @@ public class SimulationController implements LoginInterface{
 
     }
 
-    public void backToMainPage(MouseEvent mouseEvent) throws Exception {
-        ApplicationUI.mainPageView(ApplicationUI.getStage());
+    public void backToSimMenuPage(MouseEvent mouseEvent) throws Exception {
+        ApplicationUI.toSimulationMenu(ApplicationUI.getStage());
     }
 
 

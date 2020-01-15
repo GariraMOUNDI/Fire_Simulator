@@ -1,34 +1,18 @@
 package ui.controller;
 
-import businessLogic.SessionFacade;
 import businessLogic.StoreFacade;
-import com.sun.glass.ui.Accessible;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.geometry.HPos;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.ColumnConstraints;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.text.Font;
 import persistence.data.Character;
 import persistence.data.Item;
 import ui.interfaces.LoginInterface;
 import ui.model.ApplicationUI;
-
-import javax.swing.*;
-import java.util.List;
-
-
 /**
  * The type Store controller.
  */
@@ -40,7 +24,7 @@ public class StoreController implements LoginInterface {
      * The Item name.
      */
     @FXML
-    Label item_name, /**
+    private Label item_name, /**
      * The Item price.
      */
     item_price, /**
@@ -72,7 +56,7 @@ public class StoreController implements LoginInterface {
      * The Item image view.
      */
     @FXML
-    ImageView item_image, /**
+    private ImageView item_image, /**
      * The Character image.
      */
     character_image;
@@ -80,7 +64,7 @@ public class StoreController implements LoginInterface {
      * The Items border pane.
      */
     @FXML
-    BorderPane items, /**
+    private BorderPane items, /**
      * The Characters border pane.
      */
     characters;
@@ -88,7 +72,7 @@ public class StoreController implements LoginInterface {
      * The purchase Item button.
      */
     @FXML
-    Button item_purchase, /**
+    private Button item_purchase, /**
      * The purchase Character button.
      */
     character_purchase;

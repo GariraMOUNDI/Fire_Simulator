@@ -1,7 +1,5 @@
 package businessLogic;
 
-import com.google.gson.Gson;
-import org.bson.types.ObjectId;
 import persistence.data.Matrice;
 import persistence.data.Terrain;
 import persistence.factories.DAOType;
@@ -19,8 +17,11 @@ public class MapManagementFacade {
     private DAO dao;
     private Terrain currentTerrain;
     private static MapManagementFacade instance = null;
+    private SessionFacade session;
 
-
+    public SessionFacade getSession(){
+        return session;
+    }
     /**
      * Gets current terrain.
      *
@@ -39,6 +40,7 @@ public class MapManagementFacade {
         this.currentTerrain = currentTerrain;
     }
     private MapManagementFacade(LoginInterface loginIF) {
+        session = SessionFacade.getInstance(loginIF);
         this.loginIF = loginIF;
         dao = MongoDBDAOFactory.getInstance().createDAO(DAOType.Terrain);
     }

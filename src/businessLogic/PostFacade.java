@@ -1,15 +1,10 @@
 package businessLogic;
 
-import com.google.gson.Gson;
-import javafx.geometry.Pos;
 import org.bson.types.ObjectId;
-import persistence.dao.MongoDBDAOPost;
 import persistence.data.*;
 import persistence.factories.*;
 import persistence.interfaces.DAO;
 import ui.interfaces.LoginInterface;
-
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -20,7 +15,7 @@ public class PostFacade {
     private LoginInterface loginIF;
     private DAO dao;
     private static PostFacade instance = null;
-    private static SessionFacade SF = null;
+    private SessionFacade SF = null;
 
     /**
      * Get the instance of post facade.

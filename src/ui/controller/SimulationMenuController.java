@@ -1,7 +1,6 @@
 package ui.controller;
 import businessLogic.MapManagementFacade;
 import businessLogic.SessionFacade;
-import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -9,14 +8,9 @@ import javafx.geometry.*;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
-import javafx.scene.text.*;
-import persistence.data.Matrice;
 import persistence.data.Terrain;
-import persistence.data.User;
 import ui.interfaces.LoginInterface;
 import ui.model.ApplicationUI;
-
-import javax.swing.*;
 import java.util.List;
 
 
@@ -24,15 +18,15 @@ public class SimulationMenuController implements LoginInterface{
     /**
      * The map management facade instance.
      */
-    MapManagementFacade MMF = MapManagementFacade.getInstance(this);
+    private MapManagementFacade MMF = MapManagementFacade.getInstance(this);
     /**
      * The session facade instance.
      */
-    SessionFacade SF = SessionFacade.getInstance(this);
+    private SessionFacade SF = SessionFacade.getInstance(this);
 
 
     @FXML
-    ScrollPane maps_view;
+    private ScrollPane maps_view;
 
     /**
      * The initialize method prepares all of the javafx for this view.
@@ -83,7 +77,7 @@ public class SimulationMenuController implements LoginInterface{
 
     }
 
-    public void backToMainPage(MouseEvent mouseEvent) throws Exception {
-        ApplicationUI.mainPageView(ApplicationUI.getStage());
+    public void backToSoloMenuPage(MouseEvent mouseEvent) throws Exception {
+        ApplicationUI.toSoloMenu(ApplicationUI.getStage());
     }
 }

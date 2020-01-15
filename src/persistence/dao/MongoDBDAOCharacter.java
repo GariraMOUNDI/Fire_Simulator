@@ -6,7 +6,6 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 import persistence.data.Character;
-import persistence.data.User;
 import persistence.interfaces.DAO;
 
 import java.util.ArrayList;

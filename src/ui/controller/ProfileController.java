@@ -12,7 +12,6 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
 import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import persistence.data.Character;
 import persistence.data.Item;
@@ -41,11 +40,7 @@ public class ProfileController implements LoginInterface {
     @FXML
     private TextField usernameField, emailField, formerPasswordField, newPasswordField, confirmPasswordField, hwField;
     @FXML
-    private Button saveButton, forwardCharacter, backwardCharacter;
-    @FXML
     private GridPane itemGridPane;
-    @FXML
-    private ScrollPane itemScrollPane;
     @FXML
     private ImageView characterImage;
 
@@ -187,15 +182,6 @@ public class ProfileController implements LoginInterface {
             session.deleteAccount();
             ApplicationUI.getStage().close();
         }
-    }
-
-    /**
-     * Back to login page.
-     *
-     * @throws Exception the exception
-     */
-    public void backToLoginPage() throws Exception {
-        ApplicationUI.loginView(ApplicationUI.getStage());
     }
 
     /**

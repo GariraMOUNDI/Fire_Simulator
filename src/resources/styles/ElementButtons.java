@@ -9,7 +9,10 @@ public class ElementButtons extends Button {
 
     public ElementButtons(String text, ElementController controller, Element element){
         super(text);
-        setStyle("-fx-background-color: #FF8C00; -fx-background-radius: 15;");
+        if (text.trim().equals("Modify")){
+            setStyle("-fx-background-color: #FF8C00; -fx-background-radius: 15;");
+        }else
+            setStyle("-fx-background-color:  red; -fx-background-radius: 15;");
         setOnAction(e -> {
             if (text.trim().equals("Modify")){
                     try {

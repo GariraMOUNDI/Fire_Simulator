@@ -1,8 +1,4 @@
 package persistence.data;
-
-import org.bson.types.ObjectId;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -94,9 +90,6 @@ public class Post {
      * @param index the index of the comment
      * @return the comment
      */
-    public Post getComment(int index) {
-        return comments.get(index);
-    }
 
     /**
      * Static method that parses an id passed as an argument to be compatible with mongodb.

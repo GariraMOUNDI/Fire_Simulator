@@ -4,7 +4,6 @@ import com.google.gson.Gson;
 import com.mongodb.BasicDBObject;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
-import com.sun.glass.ui.Application;
 import org.bson.Document;
 import org.bson.types.ObjectId;
 import persistence.data.User;
