@@ -3,7 +3,9 @@ package ui.controller.post;
 import businessLogic.PostFacade;
 import businessLogic.SessionFacade;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.text.Font;
 import ui.interfaces.LoginInterface;
 import ui.model.ApplicationUI;
 
@@ -16,6 +18,9 @@ public class ModifyPostController implements LoginInterface {
     private static Object currentId;
     private static String cont;
 
+    @FXML
+    private Label modifyPost;
+
     /**
      * The elements from the fxml.
      */
@@ -27,6 +32,7 @@ public class ModifyPostController implements LoginInterface {
      */
     @FXML
     public void initialize() {
+        modifyPost.setFont(Font.loadFont(getClass().getResourceAsStream("/resources/fonts/CenturySchoolbook.ttf"), 24));
         modify_content.setText(cont);
     }
 

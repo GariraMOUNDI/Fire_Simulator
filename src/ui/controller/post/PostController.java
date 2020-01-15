@@ -9,6 +9,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import persistence.data.Post;
@@ -45,6 +46,9 @@ public class PostController implements LoginInterface {
     @FXML
     private CheckBox my_posts;
 
+    @FXML
+    private Label postLabel;
+
     /**
      * Initialize the fxml.
      * This method gets the posts from the PostFacade and creates fxml elements to represent them graphically
@@ -52,6 +56,7 @@ public class PostController implements LoginInterface {
     @FXML
     public void initialize() {
         List<Post> posts;
+        postLabel.setFont(Font.loadFont(getClass().getResourceAsStream("/resources/fonts/CenturySchoolbook.ttf"), 24));
         if (my_posts.isSelected()) posts = PF.getUserPosts();
         else posts = PF.getAllPosts();
 
@@ -67,7 +72,6 @@ public class PostController implements LoginInterface {
             pane.add(createPost(p),0,i);
             i--;
         }
-
         post_view.setContent(pane);
     }
 
